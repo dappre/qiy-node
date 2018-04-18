@@ -511,7 +511,7 @@ Content-Length: 215
 
 # 7 Messaging
 
-This chapter describes the transmission of [Qiy Node Messages](#qiy-node-messages) between two Qiy Apps over the Connection between their Qiy Nodes.
+This chapter describes the transmission of [Qiy Node Messages](#qiy-node-message) between two Qiy Apps over the Connection between their Qiy Nodes.
 
 ## 7.1 Send Message
 
@@ -525,7 +525,7 @@ A [Qiy Node](#qiy-node) transmits a [Qiy Node Message](#qiy-node-message) over a
 
 ## 7.3 Receive Message
 
-A [Qiy App](#qiy-app) can receive [Qiy Node Messages](#qiy-node-messages) using the [Messages Request](#messages-request).
+A [Qiy App](#qiy-app) can receive [Qiy Node Messages](#qiy-node-message) using the [Messages Request](#messages-request).
 
 
 # 8 Data Reuse 
