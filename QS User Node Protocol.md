@@ -108,6 +108,7 @@
 	1. [Qiy Node Delete Request](#qiy-node-delete-request)
 	1. [Qiy Node Message](#qiy-node-message)
 	1. [Qiy App](#qiy-app)
+	1. [QS User Node](#qs-user-node)
 	1. [Service Catalogue](#service-catalogue)
 	1. [Service Desk](#service-desk)
 	1. [Service Endpoint](#service-endpoint)
@@ -1011,6 +1012,12 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md) | [Qiy Application](Definitions.md#qiy-application)
+
+## QS User Node
+
+Specification | Reference
+------------- | ---------
+[Definitions](Definitions.md) | [QS User Node](Definitions.md#qs-user-node)
 
 ## Service Catalogue
 

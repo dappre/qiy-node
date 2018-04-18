@@ -460,6 +460,9 @@ The basic principles, which underlie the [Qiy Scheme](#qiy-scheme) and its overa
 ### Qiy User
 A [Business Role](#business-role): an [Entity](#entity) that is using the [Qiy Trust Network](#qiy-trust-network).
 
+### QS User Node
+The name of the [Qiy Node Implementation](#qiy-node-implementation) of [Digital Me](https://digital-me.nl).
+
 ### Reference
 A [Literal](#literal).
 

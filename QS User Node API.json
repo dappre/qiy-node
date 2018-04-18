@@ -3,7 +3,7 @@
     "info": {
         "version": "0.0.0",
         "title": "QS User Node API",
-        "description": "RESTful API documentation of the [QS User Node](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qs-user-node): a [Qiy Node Implementation](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qiy-node-implementation) made by Digital Me.",
+        "description": "RESTful API documentation of the [QS User Node](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qs-user-node): a [Qiy Node Implementation](https://github.com/digital-me/qiy-node/tree/topic/initial-version/Definitions.md#qiy-node-implementation) made by Digital Me.",
         "license": {
             "name": "(C) Digital Me 2018 - All rights reserved",
             "url": "https://digital-me.nl"
