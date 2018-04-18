@@ -15,6 +15,9 @@ An organization which provides [Qiy Users](#qiy-user) access to the [Qiy Trust N
 ### Anonymous
 Not directly or indirectly traceable to a natural person.
 
+### Application
+An [Application Service](#application-service) or software for such a service. 
+
 ### Application Connect Token
 A [Token](#token) that is used by [Qiy Applications](#qiy-application) to create [Connections](#connection).
 
@@ -380,7 +383,7 @@ Synonymous with [Identifier](#identifier)
 See https://en.wikipedia.org/wiki/Public_key_infrastructure.
 
 ### Qiy Application
-An [Application Service](#application-service) or software that complies with the [Qiy Scheme Policy for Applications](#qiy-scheme-policy-for-applications).
+An [Application](#application) that complies with the [Qiy Scheme Policy for Applications](#qiy-scheme-policy-for-applications).
 
 ### Qiy Application Protocol
 A protocol that is part of the [Qiy Open Standard](#qiy-open-standard) and which describes the interactions of [Qiy Applications](#qiy-application).
