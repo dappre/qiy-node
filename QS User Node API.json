@@ -917,7 +917,7 @@
             "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#authorization-header-parameter).",
             "required": true,
             "type": "string",
-            "format": "QTF <Qiy Node id> <Unix time in ms>:<signature>"
+            "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
         },
         "authorizationOptionalParam": {
             "name": "Authorization",
@@ -925,7 +925,7 @@
             "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#authorization-header-parameter).",
             "required": false,
             "type": "string",
-            "format": "QTF <Qiy Node id> <Unix time in ms>:<signature>"
+            "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
         },
         "idParam": {
             "name": "id",
