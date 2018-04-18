@@ -69,6 +69,9 @@
                     },
                     "links": {
                         "description": "tbd",
+			"items": {
+				"type": "object"
+			},
                         "type": "array"
                     }
                 }
