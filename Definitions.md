@@ -413,7 +413,7 @@ A member of the [Qiy Foundation](#qiy-foundation), see https://www.qiyfoundation
 tbd
 
 ### Qiy Node
-A [Techology Service](#techology-service): a point of entry for a [Qiy User](#qiy-user) to connect to his personal or organisational [Data](#data) and allowing to manage and reuse [Data](#data) via the [Qiy Trust Network](#qiy-trust-network).
+A [Technology Service](#technology-service): a point of entry for a [Qiy User](#qiy-user) to connect to his personal or organisational [Data](#data) and allowing to manage and reuse [Data](#data) via the [Qiy Trust Network](#qiy-trust-network).
 
 ### Qiy Node API
 A [Technology Interface](#technology-interface) of the [Qiy Node](#qiy-node) that is part of the [Qiy Open Standard](#qiy-open-standard).
@@ -563,13 +563,13 @@ A [Business Object](#business-object) for information about all the [Services](#
 A [Business Role](#business-role): a legal entity which provides [Services](#service).
 
 ### Service Register Request
-A [Qiy Node Request](#qiy-node-request) to register a [Service](#service), see [UC09 Manage Service Catalogue](#uc09-manage-service-catalogue)(../../use-cases/UC09%20Manage%20Service%20Catalogue#.md).
+A [Qiy Node Request](#qiy-node-request) to register a [Service](#service).
 
 ### Service Source
 A [Service Provider](#service-provider) that can or is providing a specific [Service](#service).
 
 ### Service Unregister Request
-A [Qiy Node Request](#qiy-node-request) to unregister a [Service](#service), see [UC09 Manage Service Catalogue](#uc09-manage-service-catalogue)(../../use-cases/UC09%20Manage%20Service%20Catalogue#.md).
+A [Qiy Node Request](#qiy-node-request) to unregister a [Service](#service).
 
 ### Service by Reference
 A pattern for consuming [Services](#service) indirectly using [References](#reference) ([Operation Reference](#operation-reference)).
@@ -607,7 +607,7 @@ The geographic region served by a [Regional Authority](#regional-authority).
 ### Token
 See https://en.wikipedia.org/wiki/Token#Computing.
 
-### Transition Phase 
+### Transition Phase
 Temporarily phase from July 1, 2015 to the [Expiration Date](#expiration-date) during which an ad-interim [Governance Model](#governance-model) for the [Qiy Scheme](#qiy-scheme) is established. During this period the [Qiy Foundation](#qiy-foundation) fulfills the [Roles](#role) of [Global Scheme Authority](#global-scheme-authority) and [Regional Scheme Authority](#regional-scheme-authority). 
 
 ### Transport Connect Token
