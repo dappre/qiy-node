@@ -60,7 +60,7 @@ See [Binding Principles for Relying Parties and Data Providers](#binding-princip
 ### Binding Principles for Relying Parties and Data Providers
 The rules for [Entities](#entity) ([Relying Parties](#relying-party) and [Data Providers](#data-provider)) to follow in order to be allowed to participate in the [Qiy Scheme](#qiy-scheme).
 
-One of the documents of the [Qiy Scheme Rulebook](#qiy-scheme-rulebook), see [Binding Principles for Relying Parties and Data Providers](../../Definitions.md#binding-principles-for-relying-parties-and-data-providers)Binding%20Principles%20for%20Relying%20Parties%20and%20Data%20Providers.md).
+One of the documents of the [Qiy Scheme Rulebook](#qiy-scheme-rulebook), see [Binding Principles for Relying Parties and Data Providers](Binding%20Principles%20for%20Relying%20Parties%20and%20Data%20Providers.md).
 
 ### Business Actor
 As defined in Archimate 3.0, see https://pubs.opengroup.org/architecture/archimate3-doc/toc.html
@@ -446,7 +446,7 @@ A [HTTP Request](#http-request) for a [Qiy Node](#qiy-node).
 tbd
 
 ### Qiy Open Standard
-A set of open standards for Qiy, maintained by the [Work Stream Functionality & Technology](#work-stream-functionality-&-technology), see https://www.qiyfoundation.org/qiy-scheme/workstreams/.
+A set of open standards for Qiy, maintained by the [Work Stream Functionality & Technology](#work-stream-functionality--technology), see https://www.qiyfoundation.org/qiy-scheme/workstreams/.
 
 ### Qiy Scheme
 The open standard and the set of technical, operational and business rules and agreements which fosters interoperability between the interconnected [Entities](#entity), and which enables the exchange of [Data](#data) between [Data Providers](#data-provider), [Individuals](#individual) and [Relying Parties](#relying-party), with the [Consent](#consent) of the [Individual](#individual). The [Qiy Scheme](#qiy-scheme) forms the basis of the [Qiy Trust Network](#qiy-trust-network) through which [Users](#user) can safely control and exchange personal information to which an [Individual](#individual) can connect via a personal [Qiy Node](#qiy-node).
