@@ -566,11 +566,16 @@ A [Qiy App](#qiy-app) can receive [Qiy Node Messages](#qiy-node-message) using t
 
 # 8 Data Reuse
 
+This chapter describes the use case for data reuse.
+* [8.1 Main Flow](#81-main-flow) describes the main flow.
+* [8.2 Setup](#82-setup) describes the preparations for the main flow.
+* [8.3 No Data Provider](#83-no-data-provider) and the remaining sections flesh out the alternate flows.
+
+
 ![Data Reuse Overview](./images/Data_Reuse_Overview_-_QS_User_Node_Protocol.png)
 
 (Diagram source code: [11.2 Data Reuse Overview](#112-data-reuse-overview))
 
-The example messages are generated using Data Reuse testscripts, see https://code.in.digital-me.nl/DEVtst/DapprePyTests and/or https://code.in.digital-me.nl/DEVtst/DapprePyTests/blob/data_reuse/Tests/DataReuse_test.py.
 
 ## 8.1 Main Flow
 
