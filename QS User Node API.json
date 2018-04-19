@@ -3,7 +3,7 @@
     "info": {
         "version": "0.0.0",
         "title": "QS User Node API",
-        "description": "RESTful API documentation of the [QS User Node](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qs-user-node): a [Qiy Node Implementation](https://github.com/digital-me/qiy-node/tree/topic/initial-version/Definitions.md#qiy-node-implementation) made by Digital Me.",
+        "description": "RESTful API documentation of the [QS User Node](QS%20User%20Node.md#qs-user-node): a [Qiy Node Implementation](https://github.com/digital-me/qiy-node/tree/topic/initial-version/Definitions.md#qiy-node-implementation) made by Digital Me.",
         "license": {
             "name": "(C) Digital Me 2018 - All rights reserved",
             "url": "https://digital-me.nl"
@@ -57,7 +57,7 @@
             ]
         },
         "ConnectionsResponseModel": {
-            "description": "Response of [Connections Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connections-request).",
+            "description": "Response of [Connections Request](QS%20User%20Node.md#connections-request).",
             "items": {
                 "type": "object",
                 "properties": {
@@ -205,7 +205,7 @@
             }
         },
         "ConnectTokenModel": {
-            "description": "See [Connect Token](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connect-token).",
+            "description": "See [Connect Token](QS%20User%20Node.md#connect-token).",
             "properties": {
                 "target": {
                     "description": "The [Transport Connect Token](https://code.in.digital-me.nl/DOC/FuncQiy/blob/master/Functional%20Specification-gitbucket.md#transport-connect-token).",
@@ -248,7 +248,7 @@
                     "$ref": "#/definitions/MessageModel"
                 },
                 {
-                    "description": "[Domain Details Message](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#domain-details-message).",
+                    "description": "[Domain Details Message](QS%20User%20Node.md#domain-details-message).",
                     "type": "object",
                     "properties": {
                         "payload": {
@@ -258,7 +258,7 @@
                                     "type": "string"
                                 },
                                 "persistentId": {
-                                    "description": "Base64-encoded [Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#persistent-id) of the Data Provider",
+                                    "description": "Base64-encoded [Persistent Id](QS%20User%20Node.md#persistent-id) of the Data Provider",
                                     "type": "string",
 				    "format": "Base64-encoded"
                                 },
@@ -286,7 +286,7 @@
                         },
                         "protocol": {
                             "type": "string",
-                            "description": "[Service Descriptor](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#service-descriptor) for the service catalogue publication service.",
+                            "description": "[Service Descriptor](QS%20User%20Node.md#service-descriptor) for the service catalogue publication service.",
                             "format": "url, value: 'https://protocols.qiy.nl/domain-details/v.1.0.0'"
                         }
                     }
@@ -359,7 +359,7 @@
 	    "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 { 
-	            "description": "See [Events](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#events).",
+	            "description": "See [Events](QS%20User%20Node.md#events).",
 	            "format": "Stream of event objects."
 		}
             ]
@@ -546,7 +546,7 @@
             "type": "array"
         },
         "MessageModel": {
-            "description": "See [Qiy Node Message](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qiy-node-message).",
+            "description": "See [Qiy Node Message](QS%20User%20Node.md#qiy-node-message).",
             "type": "object",
             "properties": {
                 "protocol": {
@@ -609,7 +609,7 @@
                         },
                         "protocol": {
                             "type": "string",
-                            "description": "[Data Descriptor](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#data-descriptor) to identify the requested data.",
+                            "description": "[Data Descriptor](QS%20User%20Node.md#data-descriptor) to identify the requested data.",
                             "format": "url"
                         }
                     }
@@ -618,7 +618,7 @@
         },
         "OperationSpecificationModel": {
             "type": "object",
-            "description": "See [Operation Specification](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#operation-specification).",
+            "description": "See [Operation Specification](QS%20User%20Node.md#operation-specification).",
             "properties": {
                 "body": {
                     "description": "Required body data.",
@@ -679,7 +679,7 @@
 	    "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
-                    "description": "See [Persistent Id Event](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#persistent-id-event).",
+                    "description": "See [Persistent Id Event](QS%20User%20Node.md#persistent-id-event).",
                     "type": "object",
                     "properties": {
                         "connectionUrl": {
@@ -688,7 +688,7 @@
                             "format": "url"
                         },
                         "extraData": {
-                            "description": "[Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#persistent-id) and Connection Url of active connection when applicable.",
+                            "description": "[Persistent Id](QS%20User%20Node.md#persistent-id) and Connection Url of active connection when applicable.",
                             "type": "object",
                             "properties": {
 		                "new-uri": {
@@ -697,7 +697,7 @@
 				    "format": "url"
 				},
 		                "pid": {
-				    "description": "[Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#persistent-id) of the connected Qiy Node.",
+				    "description": "[Persistent Id](QS%20User%20Node.md#persistent-id) of the connected Qiy Node.",
 				    "type": "string"
 				}
 		            },
@@ -723,7 +723,7 @@
                     "maxItems": 1
                 },
                 "password": {
-                    "description": "See [Transport Password](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#transport-password).",
+                    "description": "See [Transport Password](QS%20User%20Node.md#transport-password).",
                     "type": "string",
                     "minItems": 1,
                     "maxItems": 1
@@ -876,7 +876,7 @@
 	    "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
-                    "description": "See [State Handled Event](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#state-handled-event).",
+                    "description": "See [State Handled Event](QS%20User%20Node.md#state-handled-event).",
                     "type": "object",
                     "properties": {
                         "connectionUrl": {
@@ -914,7 +914,7 @@
         "authorizationParam": {
             "name": "Authorization",
             "in": "header",
-            "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#authorization-header-parameter).",
+            "description": "See [Authorization Header Parameter](QS%20User%20Node.md#authorization-header-parameter).",
             "required": true,
             "type": "string",
             "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
@@ -922,7 +922,7 @@
         "authorizationOptionalParam": {
             "name": "Authorization",
             "in": "header",
-            "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#authorization-header-parameter).",
+            "description": "See [Authorization Header Parameter](QS%20User%20Node.md#authorization-header-parameter).",
             "required": false,
             "type": "string",
             "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
@@ -936,7 +936,7 @@
         },
         "passwordParam": {
             "name": "password",
-            "description": "See [Transport Password](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#transport-password).",
+            "description": "See [Transport Password](QS%20User%20Node.md#transport-password).",
             "in": "header",
             "required": true,
             "type": "string"
@@ -954,7 +954,7 @@
         "/api": {
             "get": {
                 "summary": "API information",
-                "description": "Get api information and current endpoint addresses. Use this request daily to remain operational, see [Dynamic Path Endpoint Addresses](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#dynamic-path-endpoint-addresses) for more information.",
+                "description": "Get api information and current endpoint addresses. Use this request daily to remain operational, see [Dynamic Path Endpoint Addresses](QS%20User%20Node.md#dynamic-path-endpoint-addresses) for more information.",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationOptionalParam"
@@ -980,7 +980,7 @@
         "/connectionUrl": {
             "get": {
                 "summary": "Get Connection Details",
-                "description": "See [Connection Details Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connection-details-request).",
+                "description": "See [Connection Details Request](QS%20User%20Node.md#connection-details-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1007,7 +1007,7 @@
         "/connectionsEndpoint": {
             "get": {
                 "summary": "Get Connections",
-                "description": "See [Connections Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connections-request).",
+                "description": "See [Connections Request](QS%20User%20Node.md#connections-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1036,7 +1036,7 @@
         "/connectTokenUrl": {
             "get": {
                 "summary": "Get Connect Token Details",
-                "description": "Get Connect Token Details, see [Connect Token Create Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connect-token-create-request).",
+                "description": "Get Connect Token Details, see [Connect Token Create Request](QS%20User%20Node.md#connect-token-create-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1065,7 +1065,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "description": "See [Qiy Node Create Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qiy-node-create-request).",
+                "description": "See [Qiy Node Create Request](QS%20User%20Node.md#qiy-node-create-request).",
                 "parameters": [
                     {
                         "in": "body",
@@ -1095,7 +1095,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "description": "See [Connect Token Create Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connect-token-create-request) or [Connect Token Register Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connect-token-register-request).",
+                "description": "See [Connect Token Create Request](QS%20User%20Node.md#connect-token-create-request) or [Connect Token Register Request](QS%20User%20Node.md#connect-token-register-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/passwordParam"
@@ -1134,7 +1134,7 @@
         "/eventsEndpoint": {
             "get": {
                 "summary": "Start listening to events",
-                "description": "See [Events](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#events).",
+                "description": "See [Events](QS%20User%20Node.md#events).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1165,7 +1165,7 @@
         "/mboxUrl": {
             "get": {
                 "summary": "Get messages",
-                "description": "See [Messages Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#messages-request).",
+                "description": "See [Messages Request](QS%20User%20Node.md#messages-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1199,7 +1199,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "description": "See [Message Post Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#message-post-request).",
+                "description": "See [Message Post Request](QS%20User%20Node.md#message-post-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/passwordParam"
@@ -1236,7 +1236,7 @@
         "/owners/id/{id}": {
             "delete": {
                 "summary": "Delete Qiy Node.",
-                "description": "See [Qiy Node Delete Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#qiy-node-delete-request).",
+                "description": "See [Qiy Node Delete Request](QS%20User%20Node.md#qiy-node-delete-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/passwordParam"
@@ -1269,7 +1269,7 @@
         "/refEndpoint": {
             "get": {
                 "summary": "Operation Execute Request",
-                "description": "See [Operation Execute Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#operation-execute-request).",
+                "description": "See [Operation Execute Request](QS%20User%20Node.md#operation-execute-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1301,7 +1301,7 @@
         "/refsEndpoint": {
             "get": {
                 "summary": "Resolve references",
-                "description": "See [Operation Execute Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#operation-execute-request).",
+                "description": "See [Operation Execute Request](QS%20User%20Node.md#operation-execute-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
@@ -1331,14 +1331,14 @@
             },
             "post": {
                 "summary": "Register Operation Specification",
-                "description": "See [Operation Register Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#operation-register-request).",
+                "description": "See [Operation Register Request](QS%20User%20Node.md#operation-register-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
                         "name": "operationSpecification",
-                        "description": "See [Operation Specification](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#operation-specification).",
+                        "description": "See [Operation Specification](QS%20User%20Node.md#operation-specification).",
                         "in": "body",
                         "required": true,
                         "schema": {
@@ -1375,7 +1375,7 @@
                 "consumes": [
                     "application/json"
                 ],
-                "description": "See [Connection Create Request](https://github.com/digital-me/qiy-node/tree/topic/initial-version/QS%20User%20Node%20Protocol.md#connection-create-request).",
+                "description": "See [Connection Create Request](QS%20User%20Node.md#connection-create-request).",
                 "parameters": [
                     {
                         "$ref": "#/parameters/passwordParam"
