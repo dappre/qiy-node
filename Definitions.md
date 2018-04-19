@@ -209,6 +209,9 @@ An agreement required for [Data Providers](#data-provider).
 ### Data Reference
 An [Operation Reference](#operation-reference) which can be used to obtain [Personal Data](#personal-data) of an [Individual](#individual).
 
+### Data Reference Request
+An [Operation Reference Request](#operation-reference-request) for a [Data Reference](#data-reference).
+
 ### Data Service
 A [Service](#service), namely the provisioning of [Data](#data).
 
@@ -332,6 +335,9 @@ A [Connect Token](#connect-token) created by a [Qiy Application](#qiy-applicatio
 ### Online Connect Token
 A [Connect Token](#connect-token) created by a [Qiy Node](#qiy-node).
 
+### Operate Request
+A [Request](#request) to a [Service Endpoint](#service-endpoint) of a [Service Provider](#service-provider) for the execution of an [Operation](#operation) of one of its [Services](#service).
+
 ### Operation
 A 'sub-service' which can be used to consume a [Service](#service).
 
@@ -339,13 +345,16 @@ A 'sub-service' which can be used to consume a [Service](#service).
 A [Qiy Node Request](#qiy-node-request) that can be used to command the execution of an [Operation](#operation) by [Reference](#reference) using an [Operation Reference](#operation-reference).
 
 ### Operation Reference
-A [Business Object](#business-object) used by the [Service by Reference](#service-by-reference)-pattern.
+A [Business Object](#business-object) used by the [Service by Reference](#service-by-reference)-pattern to execute an [Operation](#operation) by reference.
 
 ### Operation Reference Message
 A [Qiy Node Message](#qiy-node-message) that can be used to convey [Operation References](#operation-reference) over a [Connection](#connection).
 
 ### Operation Reference Received Event
 A [Qiy Node Event](#qiy-node-event) that is generated when a [Qiy Node](#qiy-node) has received a new [Operation Reference](#operation-reference).
+
+### Operation Reference Request
+A request passed in an [Operation Reference Request Message](#operation-reference-request-message) for an [Operation Reference](#operation-reference).
 
 ### Operation Reference Request Message
 A [Qiy Node Message](#qiy-node-message) that can be used to [Request](#request) for [Operation References](#operation-reference).
@@ -488,7 +497,7 @@ A [Business Role](#business-role), a specialisation of [Qiy User](#qiy-user): a 
 An agreement that is required for [Relying Parties](#relying-party).
 
 ### Request
-A [Business Object](#business-object): a message requesting something.
+A [Business Object](#business-object): a call or message requesting something.
 
 ### Resource
 A [Service](#service), which its owner can provide to another [Identity](#identity).
