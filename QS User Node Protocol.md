@@ -1,9 +1,15 @@
-# QS User Node Protocol
+# QS User Node 
 
+# Abstract
+
+This document describes the [QS User Node](#qs-user-node): the [Qiy Node Implementation](Definitions.md#qiy-node-implementation) of [Digital Me](https://digital-me.nl).
 
 # Contents
 
 1. [Introduction](#1-introduction)
+	1. [Purpose](#11-purpose)
+	1. [Readers' Guidance](#12-readers-guidance)
+	1. [Overview](#13-overview)
 1. [QS User Node Application Service](#2-qs-user-node-application-service)
 	1. [Service Desk](#21-service-desk)
 	1. [Open API Specification](#22-open-api-specification)
@@ -132,9 +138,33 @@
 
 # 1 Introduction
 
-This document describes:
-* the QS User Node Application Service as provided by Digital Me
-* the QS User Node Protocol: the Qiy Node Protocol as implemented by Digital Me
+## 1.1 Purpose
+
+This document is the entry point for information analysts, service managers, software engineers and systems engineers that need to kow how they can use the [QS User Node](#qs-user-node).
+
+## 1.2 Readers' Guidance
+
+* Information analysts are advised to read all but [2 QS User Node Application Service](#2-qs-user-node-application-service).
+* Software engineers are advised to read the complete document.
+* Systems engineers are advised to read the [2 QS User Node Application Service](#2-qs-user-node-application-service). 
+* Service managers are advised to read the [2 QS User Node Application Service](#2-qs-user-node-application-service). 
+
+## 1.3 Overview
+
+* [2 QS User Node Application Service](#2-qs-user-node-application-service) describes the [QS User Node](#qs-user-node) as an [Application Service](Definitions.md#application-service) provided by Digital Me.
+
+Most of the remaining chapters describe the [Application Interface](Definitions.md#application-interface) of the [QS User Node](#qs-user-node):
+* [3 Lifecycle](#3-lifecycle) describes how [QS User Node](#qs-user-node) can be used to manage Qiy Nodes throughout their lifecycles.
+* [4 Authentication](#4-authentication) describes how requests can be authenticated.
+* [5 Events](#5-events) is dedicated to working with events.
+* [6 Connect](#6-connect) describes how one can create [Connections](Definitions.md#connection).
+* [7 Messaging](#7-messaging) describes the messaging mechanism.
+* [8 Data Reuse](#8-data-reuse) describes how data can be reused.
+
+The last chapters are:
+* [9 Data Descriptions](#9-data-descriptions) contains an example data description.
+* [10 Index](#10-index) contains an index for the terms used in the [QS User Node](#qs-user-node) documentation.
+* [11 Diagram sources](#11-diagram-sources) contains the source code for the sequence diagrams in this document.
 
 # 2 QS User Node Application Service
 
