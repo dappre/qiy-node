@@ -631,7 +631,7 @@ message = {
     "serialNr": 3,
     "payload": "eyJyZWx5aW5nX3BhcnR5IjogIlJlbHlpbmcgUGFydHkiLCAiZGF0YV9kZXNjcmlwdG9yIjogImh0dHA6Ly9kaWdpdGFsLW1lLm5sL3FzX3VzZXJfbm9kZS90ZXN0L3JlcXVlc3RfZGF0YS90ZXN0X2RhdGEifQ==",
     "text": "Verzoek openstaande schulden",
-    "protocol": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/master/QS%20User%20Node%20Protocol-gitbucket.md#4.1-test-data",
+    "protocol": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
     "refSerialNr": -1,
     "sent": false
     }
@@ -674,7 +674,7 @@ message = {
 
 payload = {
     "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.2-individual-requests-data-reference",
-    "data_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#2.1-test-data",
+    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
     "created": 1520414766940
 }
 ```
@@ -711,7 +711,7 @@ message = {
 
 payload = {
     "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.3-data-provider-sends-data-reference",
-    "data_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#2.1-test-data",
+    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
     "data_reference": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
     "created": 1520414852177
 }
@@ -738,7 +738,7 @@ message = {
 
 payload = {
     "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.4-individual-sends-data-reference",
-    "data_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#2.1-test-data",
+    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
     "data_reference": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
     "created": 1520414907790
 }
