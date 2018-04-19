@@ -905,7 +905,7 @@ Specification | Reference
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Domain Details Message](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/initial-version/QS%20User%20Node%20API.html#DomainDetailsMessage)
+[QS User Node API](QS%20User%20Node%20API.json) | [Domain Details Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/initial-version/QS%20User%20Node%20API.html#DomainDetailsMessageModel)
 [QS User Node Protocol](QS%20User%20Node%20Protocol.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
 
 ## Dynamic Path Endpoint Addresses
@@ -969,7 +969,9 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Message](Definitions.md#operation-reference-message)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/initial-version/QS%20User%20Node%20API.html#OperationReferenceMessageModel)
+[QS User Node API](QS%20User%20Node%20API.json) | tbd
+[QS User Node Protocol](QS%20User%20Node%20Protocol.md) | [8.1.15 D14 Qiy Node of Individual Sends Data Reference](#8115-d14-qiy-node-of-individual-sends-data-reference)
+[QS User Node Protocol](QS%20User%20Node%20Protocol.md) | [8.1.16 D15 Qiy App of Relying Party Receives Data Reference](#8116-d15-qiy-app-of-relying-party-receives-data-reference)
 
 ## Operation Reference Request
 
