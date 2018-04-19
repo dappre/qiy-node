@@ -41,7 +41,7 @@
 	1. [Send Message](#71-send-message)
 	1. [Transmit Message](#72-transmit-message)
 	1. [Receive Message](#73-receive-message)
-1. [Data Reuse ](#8-data-reuse-)
+1. [Data Reuse](#8-data-reuse)
 	1. [Main Flow](#81-main-flow)
 		1. [Preconditons](#811-preconditons)
 		1. [D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
@@ -534,7 +534,7 @@ A [Qiy Node](#qiy-node) transmits a [Qiy Node Message](#qiy-node-message) over a
 A [Qiy App](#qiy-app) can receive [Qiy Node Messages](#qiy-node-message) using the [Messages Request](#messages-request).
 
 
-# 8 Data Reuse 
+# 8 Data Reuse
 
 ![Data Reuse Overview](./images/Data_Reuse_Overview_-_QS_User_Node_Protocol.png)
 
@@ -831,7 +831,7 @@ Specification | Reference
 ------------- | ---------
 [QS User Node Protocol](QS%20User%20Node%20Protocol.md) | [4 Authentication](#4-authentication)
 
-## Connect Token 
+## Connect Token
 
 Specification | Reference
 ------------- | ---------
