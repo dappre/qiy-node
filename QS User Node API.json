@@ -917,7 +917,7 @@
             "description": "See [Authorization Header Parameter](QS%20User%20Node.md#authorization-header-parameter).",
             "required": true,
             "type": "string",
-            "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
+            "format": "QTF [Qiy Node id] [Unix time in ms]:[signature]"
         },
         "authorizationOptionalParam": {
             "name": "Authorization",
@@ -925,7 +925,7 @@
             "description": "See [Authorization Header Parameter](QS%20User%20Node.md#authorization-header-parameter).",
             "required": false,
             "type": "string",
-            "format": "QTF &lbrack;Qiy Node id&rbrack; &lbrack;Unix time in ms&rbrack;:&lbrack;signature&rbrack;"
+            "format": "QTF [Qiy Node id] [Unix time in ms]:[signature]"
         },
         "idParam": {
             "name": "id",

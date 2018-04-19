@@ -314,10 +314,10 @@ Most requests must be authenticated using the [Authorization Header Parameter](#
 
 In Java, the value of the Authorization header parameter can be calculated as follows:
 ```
-public String signatureHeaderForData(String uuid, byte&lbrack;] data) {
+public String signatureHeaderForData(String uuid, byte[] data) {
   String nonce = "" + System.currentTimeMillis();
-  byte&lbrack;] nonceBytes = nonce.getBytes(StandardCharsets.UTF_8);
-  byte&lbrack;] id = uuid.getBytes();
+  byte[] nonceBytes = nonce.getBytes(StandardCharsets.UTF_8);
+  byte[] id = uuid.getBytes();
   PrivateKey pk = getKeyPair(uuid).getPrivate();
 
   Signature sig = Signature.getInstance("SHA256withRSA", "SunRsaSign");
@@ -327,7 +327,7 @@ public String signatureHeaderForData(String uuid, byte&lbrack;] data) {
   if (data != null) {
 	sig.update(data, 0, data.length);
   }
-  byte&lbrack;] signature = sig.sign();
+  byte[] signature = sig.sign();
 
   String result = Base64.getEncoder().encodeToString(signature);
   return String.format("QTF %s %s:%s", uuid, nonce, result);
@@ -419,7 +419,7 @@ node_message: {
 unencoded_payload: {
     "name":"pt_usernode_dr_in_lo",
     "persistentId":"BwH5lDWsmvB3CMKgbZhOtw==",
-    "protocols":&lbrack;"https://protocols.qiy.nl/invites/v.1.0.0"],
+    "protocols":["https://protocols.qiy.nl/invites/v.1.0.0"],
     "publicKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0EA7giZCXiIIrLYQvoG7kkEbsRQalRDZweEwAeNBnMntwAScBnFxyaGmGbo6FnVHWp8l1iz4ni6jKUha+6P6dXtma05s5z9PRZ4tL6V5no/TYbCoVrR4dtql03UZMo1DjntRi36yVmRjB5Xpom3HH7Wy2H37HDVBMMqN6oPGQuQjch4p+gQL7MSTOLABwMcIvZIveeYiAf5VRmAbvg8X7ZSn+LEuBAoBs5dYI4QEeDKhC0JA3JC6eGWoa0okdlGiFzb+r+1Ir+9wL0ZiyC9GyLH1led64//1AP2mBM6bk1UUuKQhS8sDby8uI7TTCHAMSkyTiKLIARvk08X+2WKFhQIDAQAB"
 }
 ```
@@ -540,7 +540,7 @@ Content-Encoding: gzip
 Content-Length: 215
 
 
-{"result":&lbrack;{"state":"connected","activeFrom":1521728877000,"activeUntil":null,"links":{"self":"http://127.0.0.1:8087/user/connections/user/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886","references":"http://127.0.0.1:8087/user/references/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886","mbox":"http://127.0.0.1:8087/user/mbox/user/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886"}}],"links":null}
+{"result":[{"state":"connected","activeFrom":1521728877000,"activeUntil":null,"links":{"self":"http://127.0.0.1:8087/user/connections/user/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886","references":"http://127.0.0.1:8087/user/references/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886","mbox":"http://127.0.0.1:8087/user/mbox/user/pt_usernode_dr_dp_lo/22452909-c659-418e-bf63-53175643e886"}}],"links":null}
 ```
 
 
@@ -606,7 +606,7 @@ message={
 payload={
     "name":"cardnode-test.scheme.qiy",
     "persistentId":"X/WH06LiNmRupaAwc3nzIg==",
-    "protocols":&lbrack;"https://protocols.qiy.nl/invites/v.1.0.0","https://protocols.qidida.nl/dappre/v.1.0.0"],
+    "protocols":["https://protocols.qiy.nl/invites/v.1.0.0","https://protocols.qidida.nl/dappre/v.1.0.0"],
     "publicKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1jvgzkhh0NlVLRnJBRhVa0gSURBPnuXmBjEURE1MQErmPLNIJOBJO9AayWmWk+UGqJqnQZEMYR6bBvsGDvfXukm4UtQCCUkA1EmO8NwWwe6S9z6UwiO/2K8d8GhHZLCfuTlW5oMGbKI6QbV2vfpWZ9E0zohriJ77LBRICz5fmKeR2iIDH5UWyeMZpBbAx7GpMx33k+QmbwONjDOwYTEvzsKPxdnr6YaC1DDacdtxSyRb+M/OFCwC8j2XaIzOdqkmcmolaicvUPqbPWjY0mUosqKO5qoODSWaKneTFAWceBzuMNVb974nJXSUssRLCzN/tZZza/02B6gbczs/3kHYfQIDAQAB"
 }
 ```
