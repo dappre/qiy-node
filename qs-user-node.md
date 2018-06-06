@@ -1220,29 +1220,30 @@ Qiy Node of Proposer-->App of Proposer: Connect Token Details
 ```
 title Data Reuse Overview - QS User Node Protocol
 
-Qiy App of DP->Qiy Node of DP: D1 Send service catalogue
-Qiy Node of DP-->Qiy Node of IN: D2 Service catalogue
-Qiy App of RP->Qiy Node of RP: D3 Request data reference
-Qiy Node of RP-->Qiy Node of IN: D4 Data reference request
-Qiy Node of IN->Qiy Node of IN: D5 Process data reference request
-Qiy Node of IN-->Qiy Node of DP: D6 Data reference request
-Qiy Node of DP-->Qiy App of DP: D7 Data reference request
-Qiy App of DP->Qiy App of DP: D8 Specify operation
-Qiy App of DP->Qiy Node of DP: D9 Register operation specification
-Qiy Node of DP-->Qiy App of DP: D10 Data reference
-Qiy App of DP->Qiy Node of DP: D11 Send data reference
-Qiy Node of DP-->Qiy Node of IN: D12 Data reference
-Qiy Node of IN->Qiy Node of IN: D13 Process data reference
-Qiy Node of IN->Qiy Node of RP: D14 Send data reference
-Qiy Node of RP-->Qiy App of RP: D15 Data reference
-Qiy App of RP->Qiy Node of RP: D16 Resolve data reference
-Qiy Node of RP->Qiy Node of RP: D17 Generate operation request
-Qiy Node of RP->Service Endpoint of DP: D18 Request operation
-Service Endpoint of DP->Service Endpoint of DP: D19 Process operation request
-Service Endpoint of DP-->Qiy Node of RP: D20 Data
-Qiy Node of RP-->Qiy App of RP: D21 Data
+
+participant "Qiy App of DP" as DPa
+participant "Qiy Node of IN" as INq
+participant "Qiy App of IN" as INa
+participant "Qiy App of RP" as RPa
+participant "Qiy Node of RP" as RPq
+participant "Service Endpoint of DP" as DPs
+
+
+DPa -> INq: D1 DP sends service catalogue
+RPa -> INq: D2 RP asks for reference
+INq -> INa: D3 Qiy proposes DP
+INa -> INq: D4 Individual chooses DP
+INq -> DPa: D5 Qiy forwards reference request
+DPa -> INq: D6 DP generates reference
+INq -> RPa: D7 Qiy forwards reference
+RPa -> RPq: D8 RP asks for data
+RPq -> DPs: D9 Qiy resolves reference
+DPs -> RPq: D10 Service endpoint returns data
+RPq -> RPa: D11 Qiy forwards data
+
 
 ```
+
 
 
 
