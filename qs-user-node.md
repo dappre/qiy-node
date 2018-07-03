@@ -50,12 +50,12 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 1. [Data Reuse](#8-data-reuse)
 	1. [Main Flow](#81-main-flow)
 		1. [Preconditons](#811-preconditons)
-		1. [D1 Data Provider Sends Service Catalogue](#812-d1-data-provider-sends-service-catalogue)
+		1. [D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
 			1. [Example Message](#8121-example-message)
-		1. [D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
+		1. [D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
 		1. [D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 		1. [D4 Individual chooses DP](#815-d4-individual-chooses-dp)
-		1. [D5 Qiy Node of Individual Forwards the Reference Request](#816-d5-qiy-node-of-individual-forwards-the-reference-request)
+		1. [D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 		1. [D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 		1. [D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 		1. [D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
@@ -582,7 +582,7 @@ The preconditions for the scenario are:
 1. The Data Provider has enrolled the Individual, see [8.2.3 Data Provider Enrolls Individual](#823-data-provider-enrolls-individual).
 1. The Relying Party requests Personal Data that the Data Provider can provide.
 
-### 8.1.2 D1 Data Provider Sends Service Catalogue
+### 8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue
 
 The Qiy App of the Data Provider sends its [Service Catalogue](#service-catalogue) using a [Domain Details Message](#domain-details-message).
 
@@ -609,7 +609,7 @@ payload={
 }
 ```
 
-### 8.1.3 D2 Qiy App of Relying Party Requests Data Reference
+### 8.1.3 D2 Qiy App of Relying Party Asks for Reference
 
 The Qiy App of the Relying Party requests a [Data Reference](#data-reference) by sending an [Operation Reference Request Message](#operation-reference-request-message) over the Connection with the Individual, see [7.1 Send Message](#71-send-message).
 
@@ -639,7 +639,7 @@ The Qiy Node of the Individual extracts the [Operation Reference Request](#opera
 
 ### 8.1.5 D4 Individual chooses DP
 
-### 8.1.6 D5 Qiy Node of Individual Forwards the Reference Request
+### 8.1.6 D5 Qiy Node of Individual Forwards Reference Request
 
 The Qiy App of the Data Provider receives the Data Reference Request, see [7.3 Receive Message](#73-receive-message).
 
@@ -867,9 +867,9 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)       | [Data Reference Request](Definitions.md#data-reference-request)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
 [QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
-[QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy Node of Individual Transmits Data Reference Request](#817-d6-qiy-node-of-individual-transmits-data-reference-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.8 D7 Qiy App of Individual Receives Data Reference Request](#818-d7-qiy-app-of-individual-receives-data-reference-request)
+[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Domain Details Message
 
@@ -920,9 +920,7 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operate Request](Definitions.md#operate-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.18 D17 Qiy Node of Relying Party Generates Operate Request](#8118-d17-qiy-node-of-relying-party-generates-operate-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.20 D19 Service Endpoint Processes Operate Request](#8120-d19-service-endpoint-processes-operate-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.21 D20 Service Endpoint Returns Data](#8121-d20-service-endpoint-returns-data)
+[QS User Node](QS%20User%20Node.md) | [8.1.10 D9 Qiy Node of Relying Party Resolves Reference](#8110-d9-qiy-node-of-relying-party-resolves-reference)
 
 ## Operation Execute Request
 
@@ -931,7 +929,7 @@ Specification | Reference
 [Definitions](Definitions.md)                       | [Operation Execute Request](Definitions.md#operation-execute-request)
 [QS User Node API](QS%20User%20Node%20API.json) | [GET /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointGet)
 [QS User Node API](QS%20User%20Node%20API.json) | [GET /refEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refEndpointGet)
-[QS User Node](QS%20User%20Node.md) | [8.1.17 D16 Qiy App of Relying Party Resolves Data Reference](#8117-d16-qiy-app-of-relying-party-resolves-data-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.9 D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
 
 
 ## Operation Reference Message
@@ -940,8 +938,8 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Message](Definitions.md#operation-reference-message)
 [QS User Node API](QS%20User%20Node%20API.json) | tbd
-[QS User Node](QS%20User%20Node.md) | [8.1.15 D14 Qiy Node of Individual Sends Data Reference](#8115-d14-qiy-node-of-individual-sends-data-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.16 D15 Qiy App of Relying Party Receives Data Reference](#8116-d15-qiy-app-of-relying-party-receives-data-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Operation Reference Request
 
@@ -949,8 +947,9 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Request](Definitions.md#operation-reference-request)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Processes Data Reference Request](#816-d5-qiy-node-of-individual-processes-data-reference-request)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+
 
 ## Operation Reference Request Message
 
@@ -958,7 +957,8 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Request Message](Definitions.md#operation-reference-request-message)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Operation Register Request
 
@@ -966,7 +966,7 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Register Request](Definitions.md#operation-register-request)
 [QS User Node API](QS%20User%20Node%20API.json) | [POST /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointPost)
-[QS User Node](QS%20User%20Node.md) | [8.1.10 D9 Qiy App of Data Provider Registers Operation Specification](#8110-d9-qiy-app-of-data-provider-registers-operation-specification)
+[QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 
 ## Operation Specification
 
@@ -974,7 +974,7 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Specification](Definitions.md#operation-specification)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Specification Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationSpecificationModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.9 D8 Qiy App of Data Provider Generates Operation Specification](#819-d8-qiy-app-of-data-provider-generates-operation-specification)
+[QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 
 ## Persistent Id
 
