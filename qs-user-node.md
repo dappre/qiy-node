@@ -50,28 +50,18 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 1. [Data Reuse](#8-data-reuse)
 	1. [Main Flow](#81-main-flow)
 		1. [Preconditons](#811-preconditons)
-		1. [D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+		1. [D1 Data Provider Sends Service Catalogue](#812-d1-data-provider-sends-service-catalogue)
 			1. [Example Message](#8121-example-message)
-		1. [D2 Qiy Node of Data Provider Transfers Service Catalogue](#813-d2-qiy-node-of-data-provider-transfers-service-catalogue)
-		1. [D3 Qiy App of Relying Party Requests Data Reference](#814-d3-qiy-app-of-relying-party-requests-data-reference)
-		1. [D4 Qiy Node of Relying Party Transmits Data Reference Request](#815-d4-qiy-node-of-relying-party-transmits-data-reference-request)
-		1. [D5 Qiy Node of Individual Processes Data Reference Request](#816-d5-qiy-node-of-individual-processes-data-reference-request)
-		1. [D6 Qiy Node of Individual Transmits Data Reference Request](#817-d6-qiy-node-of-individual-transmits-data-reference-request)
-		1. [D7 Qiy App of Individual Receives Data Reference Request](#818-d7-qiy-app-of-individual-receives-data-reference-request)
-		1. [D8 Qiy App of Data Provider Generates Operation Specification](#819-d8-qiy-app-of-data-provider-generates-operation-specification)
-		1. [D9 Qiy App of Data Provider Registers Operation Specification](#8110-d9-qiy-app-of-data-provider-registers-operation-specification)
-		1. [D10 Qiy App of Data Provider Receives Data Reference](#8111-d10-qiy-app-of-data-provider-receives-data-reference)
-		1. [D11 Qiy App of Data Provider Sends Data Reference](#8112-d11-qiy-app-of-data-provider-sends-data-reference)
-		1. [D12 Qiy Node of Data Provider Sends Data Reference](#8113-d12-qiy-node-of-data-provider-sends-data-reference)
-		1. [D13 Qiy Node of Individual Processes Data Reference](#8114-d13-qiy-node-of-individual-processes-data-reference)
-		1. [D14 Qiy Node of Individual Sends Data Reference](#8115-d14-qiy-node-of-individual-sends-data-reference)
-		1. [D15 Qiy App of Relying Party Receives Data Reference](#8116-d15-qiy-app-of-relying-party-receives-data-reference)
-		1. [D16 Qiy App of Relying Party Resolves Data Reference](#8117-d16-qiy-app-of-relying-party-resolves-data-reference)
-		1. [D17 Qiy Node of Relying Party Generates Operate Request](#8118-d17-qiy-node-of-relying-party-generates-operate-request)
-		1. [D18 Qiy Node of Relying Party Requests Operation](#8119-d18-qiy-node-of-relying-party-requests-operation)
-		1. [D19 Service Endpoint Processes Operate Request](#8120-d19-service-endpoint-processes-operate-request)
-		1. [D20 Service Endpoint Returns Data](#8121-d20-service-endpoint-returns-data)
-		1. [D21 Qiy App of Relying Party Receives Data](#8122-d21-qiy-app-of-relying-party-receives-data)
+		1. [D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
+		1. [D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
+		1. [D4 Individual chooses DP](#815-d4-individual-chooses-dp)
+		1. [D5 Qiy Node of Individual Forwards the Reference Request](#816-d5-qiy-node-of-individual-forwards-the-reference-request)
+		1. [D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+		1. [D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
+		1. [D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
+		1. [D9 Qiy Node of Relying Party Resolves Reference](#8110-d9-qiy-node-of-relying-party-resolves-reference)
+		1. [D10 Service Endpoint Returns Data](#8111-d10-service-endpoint-returns-data)
+		1. [D11 Qiy Node of Relying Party Forwards the Data](#8112-d11-qiy-node-of-relying-party-forwards-the-data)
 	1. [Setup](#82-setup)
 		1. [Individual and Relying Party Connect](#821-individual-and-relying-party-connect)
 		1. [Individual and Data Provider Connect](#822-individual-and-data-provider-connect)
@@ -135,6 +125,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 		1. [Connect Offline](#1112-connect-offline)
 		1. [Request Connect Token](#1113-request-connect-token)
 	1. [Data Reuse Overview](#112-data-reuse-overview)
+	1. [D1 DP Sends Service Catalogue](#1121-d1-dp-sends-service-catalogue)
 
 # 1 Introduction
 
@@ -591,9 +582,14 @@ The preconditions for the scenario are:
 1. The Data Provider has enrolled the Individual, see [8.2.3 Data Provider Enrolls Individual](#823-data-provider-enrolls-individual).
 1. The Relying Party requests Personal Data that the Data Provider can provide.
 
-### 8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue
+### 8.1.2 D1 Data Provider Sends Service Catalogue
 
 The Qiy App of the Data Provider sends its [Service Catalogue](#service-catalogue) using a [Domain Details Message](#domain-details-message).
+
+![D1 DP Sends Service Catalogue](./images/D1_DP_Sends_Service_Catalogue_-_QS_User_Node_Protocol.png)
+
+(Diagram source code: [11.2.1 D1 DP Sends Service Catalogue](#1121-d1-dp-sends-service-catalogue))
+
 
 #### 8.1.2.1 Example Message
 
@@ -613,17 +609,9 @@ payload={
 }
 ```
 
-### 8.1.3 D2 Qiy Node of Data Provider Transfers Service Catalogue
-
-The Qiy Node of the Data Provider transfers the [Domain Details Message](#domain-details-message) with the [Service Catalogue](#service-catalogue) to the Qiy Node of the Individual.
-
-### 8.1.4 D3 Qiy App of Relying Party Requests Data Reference
+### 8.1.3 D2 Qiy App of Relying Party Requests Data Reference
 
 The Qiy App of the Relying Party requests a [Data Reference](#data-reference) by sending an [Operation Reference Request Message](#operation-reference-request-message) over the Connection with the Individual, see [7.1 Send Message](#71-send-message).
-
-### 8.1.5 D4 Qiy Node of Relying Party Transmits Data Reference Request
-
-The Qiy Node of the Relying Party transmits the [Operation Reference Request Message](#operation-reference-request-message) to the Qiy Node of the Individual using the Transport Layer, see [7.2 Transmit Message](#72-transmit-message).
 
 Example message as received by the Qiy Node of the Individual:
 
@@ -644,22 +632,16 @@ payload = {
 }
 ```
 
-### 8.1.6 D5 Qiy Node of Individual Processes Data Reference Request
+### 8.1.4 D3 Qiy Node of Individual Proposes Data Provider
 
 The Qiy Node of the Individual extracts the [Operation Reference Request](#operation-reference-request) from the [Operation Reference Request Message](#operation-reference-request-message) and processes it:
-1. The [Qiy Node](#qiy-node) makes a list of all [Data Providers](#data-providers) that can provide the requested data.
 1. The [Qiy Node](#qiy-node) finds the [Data Provider](#data-provider) that can provide the data.
 
+### 8.1.5 D4 Individual chooses DP
 
-### 8.1.7 D6 Qiy Node of Individual Transmits Data Reference Request
-
-The Qiy Node of the Individual transmits the Data Reference Request to the Qiy Node of the Data Provider using the Transport Layer.
-For more information, see [7.2 Transmit Message](#72-transmit-message).
-
-### 8.1.8 D7 Qiy App of Individual Receives Data Reference Request
+### 8.1.6 D5 Qiy Node of Individual Forwards the Reference Request
 
 The Qiy App of the Data Provider receives the Data Reference Request, see [7.3 Receive Message](#73-receive-message).
-
 
 Example message:
 
@@ -681,22 +663,12 @@ payload = {
 }
 ```
 
-### 8.1.9 D8 Qiy App of Data Provider Generates Operation Specification
+### 8.1.7 D6 Qiy App of Data Provider Generates Reference
 
-The Qiy App of the Data Provider generates an [Operation Specification](#operation-specification).
-
-### 8.1.10 D9 Qiy App of Data Provider Registers Operation Specification
-
-The Qiy App of the Data Provider registers the [Operation Specification](#operation-specification) using an [Operation Register Request](#operation-register-request), see also [7.1 Send Message](#71-send-message).
-
-### 8.1.11 D10 Qiy App of Data Provider Receives Data Reference
-
-The Qiy App of the Data Provider receives the Data Reference in the response of the [Operation Register Request](#operation-register-request).
-
-### 8.1.12 D11 Qiy App of Data Provider Sends Data Reference
-
-The Qiy App of the Data Provider sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the Qiy Node of the Individual, see [7.1 Send Message](#71-send-message).
-
+1. The Qiy App of the Data Provider generates an [Operation Specification](#operation-specification).
+1. The Qiy App of the Data Provider registers the [Operation Specification](#operation-specification) using an [Operation Register Request](#operation-register-request).
+1. The Qiy App of the Data Provider receives the Data Reference in the response of the [Operation Register Request](#operation-register-request).
+1. The Qiy App of the Data Provider sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the Qiy Node of the Individual, see [7.1 Send Message](#71-send-message).
 
 Example message as received by the Qiy Node of the Individual:
 
@@ -720,65 +692,27 @@ payload = {
 
 ```
 
-### 8.1.13 D12 Qiy Node of Data Provider Sends Data Reference
+### 8.1.8 D7 Qiy Node of Individual Forwards Reference
 
-The Qiy Node of the Data Provider sends the Data Reference to the Qiy Node of the Individual using an [Operation Reference Message](#operation-reference-message), see [7.2 Transmit Message](#72-transmit-message).
+1. The Qiy Node of the Individual processes the Data Reference; it looks up the related [Data Reference Request](#data-reference-request).
+1. The Qiy Node of the Individual sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the sender of the [Data Reference Request](#data-reference-request): the [Relying Party](#relying-party), see [7.1 Send Message](#71-send-message).
+1. The Qiy App of the Relying Party receives the Data Reference in an [Operation Reference Message](#operation-reference-message) as a reply on the [Operation Reference Request Message](#operation-reference-request-message) sent earlier.
 
-Example message as received by the Qiy Node of the Individual:
+### 8.1.9 D8 Qiy App of Relying Party Asks for Data
 
-```
-message = {
-    "inbound": true,
-    "serialNr": 6,
-    "payload": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
-    "text": "Datareferentie voor openstaande schulden",
-    "protocol": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md",
-    "refSerialNr": 3,
-    "sent": false
-}
+The Qiy App of the Relying Party asks for the Data by using the Data Reference in an [Operation Execute Request](#operation-execute-request) to its Qiy Node.
 
+### 8.1.10 D9 Qiy Node of Relying Party Resolves Reference
 
-payload = {
-    "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.4-individual-sends-data-reference",
-    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
-    "data_reference": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
-    "created": 1520414907790
-}
-```
+1. The Qiy Node of the Relying Party looks up the [Operation Specification](#operation-specification) for the given Data Reference and uses it to generate the [Operate Request](#operate-request).
+1. The Qiy Node of the Relying Party sends the [Operate Request](#operate-request) to the [Service Endpoint](#service-endpoint).
 
-### 8.1.14 D13 Qiy Node of Individual Processes Data Reference
-
-The Qiy Node of the Individual processes the Data Reference; it looks up the related [Data Reference Request](#data-reference-request).
-
-### 8.1.15 D14 Qiy Node of Individual Sends Data Reference
-
-The Qiy Node of the Individual sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the sender of the [Data Reference Request](#data-reference-request): the [Relying Party](#relying-party), see [7.1 Send Message](#71-send-message).
-
-### 8.1.16 D15 Qiy App of Relying Party Receives Data Reference
-
-The Qiy App of the Relying Party receives the Data Reference in an [Operation Reference Message](#operation-reference-message) as a reply on the [Operation Reference Request Message](#operation-reference-request-message) sent earlier.
-
-### 8.1.17 D16 Qiy App of Relying Party Resolves Data Reference
-
-The Qiy App of the Relying Party resolves the Data Reference by using it in an [Operation Execute Request](#operation-execute-request) to its Qiy Node.
-
-### 8.1.18 D17 Qiy Node of Relying Party Generates Operate Request
-
-The Qiy Node of the Relying Party looks up the [Operation Specification](#operation-specification) for the given Data Reference and uses it to generate the [Operate Request](#operate-request).
-
-### 8.1.19 D18 Qiy Node of Relying Party Requests Operation
-
-The Qiy Node of the Relying Party sends the [Operate Request](#operate-request) to the [Service Endpoint](#service-endpoint).
-
-### 8.1.20 D19 Service Endpoint Processes Operate Request
+### 8.1.11 D10 Service Endpoint Returns Data
 
 The Service Endpoint processes the [Operate Request](#operate-request).
-
-### 8.1.21 D20 Service Endpoint Returns Data
-
 If the Service Endpoint processes the [Operate Request](#operate-request) succesfully, it returns the data to the Qiy Node of the Relying Party in the response of the request.
 
-### 8.1.22 D21 Qiy App of Relying Party Receives Data
+### 8.1.12 D11 Qiy Node of Relying Party Forwards the Data
 
 The Qiy App of the Relying Party obtains the Data in the response of the [Operation Execute Request](#operation-execute-request) it issued earlier.
  
@@ -932,9 +866,8 @@ Specification | Reference
 
 Specification | Reference
 ------------- | ---------
-[Definitions](Definitions.md)                       | [Data Reference Request](Definitions.md#data-reference-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.5 D4 Qiy Node of Relying Party Transmits Data Reference Request](#815-d4-qiy-node-of-relying-party-transmits-data-reference-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Processes Data Reference Request](#816-d5-qiy-node-of-individual-processes-data-reference-request)
+[Definitions](Definitions.md)       | [Data Reference Request](Definitions.md#data-reference-request)
+[QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 [QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy Node of Individual Transmits Data Reference Request](#817-d6-qiy-node-of-individual-transmits-data-reference-request)
 [QS User Node](QS%20User%20Node.md) | [8.1.8 D7 Qiy App of Individual Receives Data Reference Request](#818-d7-qiy-app-of-individual-receives-data-reference-request)
 
@@ -1016,7 +949,7 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Request](Definitions.md#operation-reference-request)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy App of Relying Party Requests Data Reference](#814-d3-qiy-app-of-relying-party-requests-data-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
 [QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Processes Data Reference Request](#816-d5-qiy-node-of-individual-processes-data-reference-request)
 
 ## Operation Reference Request Message
@@ -1025,7 +958,7 @@ Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Request Message](Definitions.md#operation-reference-request-message)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy App of Relying Party Requests Data Reference](#814-d3-qiy-app-of-relying-party-requests-data-reference)
+[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Requests Data Reference](#813-d2-qiy-app-of-relying-party-requests-data-reference)
 
 ## Operation Register Request
 
@@ -1241,9 +1174,25 @@ RPq -> DPs: D9 Qiy resolves reference
 DPs -> RPq: D10 Service endpoint returns data
 RPq -> RPa: D11 Qiy forwards data
 
-
 ```
 
+## 11.2.1 D1 DP Sends Service Catalogue
+
+```
+title D1 DP Sends Service Catalogue - QS User Node Protocol
+
+
+participant "Qiy App of DP" as DPa
+participant "Qiy Node of DP" as DPq
+participant "Qiy Node of IN" as INq
+participant "Qiy App of IN" as INa
+
+DPa ->  DPq: Post service catalogue message
+DPq --> INq: Service catalogue message
+INq --> INa: Service catalogue message received notification
+INa ->  INq: Get service catalogue message
+
+```
 
 
 
