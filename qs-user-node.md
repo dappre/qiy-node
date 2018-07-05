@@ -583,6 +583,7 @@ The preconditions for the scenario are:
 1. The Connections between the Qiy Nodes will remain for the duration of the scenario.
 1. The Data Provider has enrolled the Individual, see [8.2.3 Data Provider Enrolls Individual](#823-data-provider-enrolls-individual).
 1. The Relying Party requests Personal Data that the Data Provider can provide.
+1. The Qiy Applications of the Relying Party, the Individual and the Data Provider are listening to the [Qiy Node Events](#qiy-node-event) and will do so for the duration of the scenario.
 
 ### 8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue
 

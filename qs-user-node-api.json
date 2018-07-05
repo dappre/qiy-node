@@ -64,14 +64,14 @@
                     "result": {
                         "items": {  
                             "$ref": "#/definitions/ConnectionDetailsModel"
-			},
+                        },
                         "type": "array"
                     },
                     "links": {
                         "description": "tbd",
-			"items": {
-				"type": "object"
-			},
+                        "items": {
+                                "type": "object"
+                        },
                         "type": "array"
                     }
                 }
@@ -116,9 +116,9 @@
                         }
                     },
                     "required": [
-		        "mbox",
-		        "references",
-		        "self"
+                        "mbox",
+                        "references",
+                        "self"
                     ]
                 }
             },
@@ -226,20 +226,20 @@
             "required": [
                 "target",
                 "tmpSecret"
-	    ],
+            ],
             "type": "object"
         },
         "ConnectTokenRequestParametersModel": {
-	    "allOf": [
-	        { "$ref": "#/definitions/ConnectTokenMetadataModel" },
-	        {
-	            "type": "object",
-		    "properties": {
-	                "json": {
-			    "$ref": "#/definitions/ConnectTokenModel" 
-			}
-		    }
-		}
+            "allOf": [
+                { "$ref": "#/definitions/ConnectTokenMetadataModel" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "json": {
+                            "$ref": "#/definitions/ConnectTokenModel" 
+                        }
+                    }
+                }
             ]
         },
         "DomainDetailsMessageModel": {
@@ -260,29 +260,29 @@
                                 "persistentId": {
                                     "description": "Base64-encoded [Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#persistent-id) of the Data Provider",
                                     "type": "string",
-				    "format": "Base64-encoded"
+                                    "format": "Base64-encoded"
                                 },
                                 "protocols": {
                                     "description": "List of provided (data) services.",
                                     "type": "array",
-				    "items": {
-				        "description": "Service Descriptor or Data Descriptor.",
-				        "type": "string",
-				        "format": "url"
-				    }
+                                    "items": {
+                                        "description": "Service Descriptor or Data Descriptor.",
+                                        "type": "string",
+                                        "format": "url"
+                                    }
                                 },
                                 "publicKey": {
                                     "description": "Base64-encoded public key of the Data Provider.",
                                     "type": "string",
-				    "format": "Base64-encoded"
+                                    "format": "Base64-encoded"
                                 }
                             },
                             "required": [
-			        "publicKey",
-			        "name",
-			        "persistentId",
-			        "protocols"
-			    ]
+                                "publicKey",
+                                "name",
+                                "persistentId",
+                                "protocols"
+                            ]
                         },
                         "protocol": {
                             "type": "string",
@@ -356,12 +356,12 @@
             }
         },
         "EventStreamModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 { 
-	            "description": "See [Events](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#events).",
-	            "format": "Stream of event objects."
-		}
+                    "description": "See [Events](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#events).",
+                    "format": "Stream of event objects."
+                }
             ]
         },
         "EventModel": {
@@ -382,17 +382,17 @@
                     "type": "string"
                 }
             },
-	    "required": [
+            "required": [
                 "connectionUrl",
                 "extraData",
                 "type"
             ]
         },
         "ConnectedToRouterEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
-	            "description": "Connected To Router Event.",
+                    "description": "Connected To Router Event.",
                     "example": {
                         "type": "CONNECTED_TO_ROUTER",
                         "connectionUrl": "https://dappre-all.local/user/connections/user/Sint Joseph/0a3a2d37-9790-4244-b55d-37b94e180a8b",
@@ -415,11 +415,11 @@
                         }
                     },
                     "type": "object"
-	        }
-	    ]
+                }
+            ]
         },
         "DataReferenceReceivedEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "Data Reference Received Event.",
@@ -436,7 +436,7 @@
                         },
                         "extraData": {
                             "description": "Base64-encoded data reference.",
-			    "format": "Base64-encoded",
+                            "format": "Base64-encoded",
                             "type": "string"
                         },
                         "type": {
@@ -445,11 +445,11 @@
                         }
                     },
                     "type": "object"
-	        }
-	    ]
+                }
+            ]
         },
         "DataRequestForwardedEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "Data Request Forwarded Event.",
@@ -470,11 +470,11 @@
                             "type": "string"
                         }
                     }
-	        }
-	    ]
+                }
+            ]
         },
         "DataRequestFulfilledEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "Data Request Fulfilled Event.",
@@ -495,8 +495,8 @@
                         }
                     },
                     "type": "object"
-	        }
-	    ]
+                }
+            ]
         },
         "LocationAndLinkModel": {
             "description": "Location and link. NB - both passed as response header parameters.",
@@ -532,9 +532,9 @@
                         }
                     },
                     "required": [
-		        "inbound",
-		        "serialNr"
-	            ]
+                        "inbound",
+                        "serialNr"
+                    ]
                 }
             ]
         },
@@ -561,7 +561,7 @@
                     "minItems": 1,
                     "maxItems": 1,
                     "type": "integer",
-		    "format": "nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)"
+                    "format": "nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)"
                 },
                 "text": {
                     "description": "Subject",
@@ -579,7 +579,7 @@
                     "type": "object"
                 }
             },
-	    "required": [
+            "required": [
                 "protocol",
                 "refSerialNr",
                 "text",
@@ -595,17 +595,7 @@
                     "type": "object",
                     "properties": {
                         "payload": {
-                            "properties": {
-                                "message_descriptor": {
-                                    "type": "string",
-                                    "format": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/master/QS%20User%20Node%20Protocol-gitbucket.md#operation-reference-request-message"
-                                },
-                                "created": {
-                                    "description": "Message creation time.",
-                                    "type": "integer",
-                                    "format": "Unix time in ms"
-                                }
-                            }
+                            "$ref": "#/definitions/OperationReferenceRequestBaseModel"
                         },
                         "protocol": {
                             "type": "string",
@@ -615,6 +605,29 @@
                     }
                 }
             ]
+        },
+        "OperationReferenceRequestBaseModel": {
+            "properties": {
+                "message_descriptor": {
+                    "type": "string",
+                    "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message"
+                },
+                "operation_descriptor": {
+                    "description": "Operation Descriptor of the Operation to be executed by reference.",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "created": {
+                    "description": "Message creation time.",
+                    "type": "integer",
+                    "format": "Unix time in ms"
+                }
+            },
+            "required": [
+                "message_descriptor",
+                "operation_descriptor"
+            ],
+            "type": "object"
         },
         "OperationSpecificationModel": {
             "type": "object",
@@ -676,7 +689,7 @@
             }
         },
         "PersistentIdEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "See [Persistent Id Event](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#persistent-id-event).",
@@ -691,27 +704,27 @@
                             "description": "[Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#persistent-id) and Connection Url of active connection when applicable.",
                             "type": "object",
                             "properties": {
-		                "new-uri": {
-				    "description": "Connection Url of active connection.",
-				    "type": "string",
-				    "format": "url"
-				},
-		                "pid": {
-				    "description": "[Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#persistent-id) of the connected Qiy Node.",
-				    "type": "string"
-				}
-		            },
-			    "required": [
-		                "pid"
-		            ]
+                                "new-uri": {
+                                    "description": "Connection Url of active connection.",
+                                    "type": "string",
+                                    "format": "url"
+                                },
+                                "pid": {
+                                    "description": "[Persistent Id](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#persistent-id) of the connected Qiy Node.",
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "pid"
+                            ]
                         },
                         "type": {
                             "format": "PID",
                             "type": "string"
                         }
                     }
-	        }
-	    ]
+                }
+            ]
         },
         "QiyNodeCreateRequestParametersModel": {
             "type": "object",
@@ -818,7 +831,7 @@
             "uniqueItems": true
         },
         "SharedSecretReceivedEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "Shared Secret Received Event.",
@@ -844,11 +857,11 @@
                             "type": "string"
                         }
                     }
-	        }
-	    ]
+                }
+            ]
         },
         "SharedSecretSentEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "Shared Secret Sent Event.",
@@ -869,11 +882,11 @@
                             "type": "string"
                         }
                     }
-	        }
-	    ]
+                }
+            ]
         },
         "StateHandledEventModel": {
-	    "allOf": [
+            "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
                 {
                     "description": "See [State Handled Event](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#state-handled-event).",
@@ -894,8 +907,8 @@
                             "type": "string"
                         }
                     }
-	        }
-	    ]
+                }
+            ]
         },
         "TemplatesModel": {
             "type": "object",

@@ -2006,7 +2006,7 @@ font-style: italic;
     <li><a href="#LocationAndLinkModel"><code>LocationAndLinkModel</code> - </a></li>
     <li><a href="#MailboxMessagesModel"><code>MailboxMessagesModel</code> - </a></li>
     <li><a href="#MessageModel"><code>MessageModel</code> - </a></li>
-    <li><a href="#OperationReferenceRequestMessageModel_payload"><code>OperationReferenceRequestMessageModel_payload</code> - </a></li>
+    <li><a href="#OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel"><code>OperationSpecificationModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel_headers"><code>OperationSpecificationModel_headers</code> - </a></li>
     <li><a href="#PersistentIdEventModel_extraData"><code>PersistentIdEventModel_extraData</code> - </a></li>
@@ -2160,10 +2160,11 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
-    <h3><a name="OperationReferenceRequestMessageModel_payload"><code>OperationReferenceRequestMessageModel_payload</code> - </a> <a class="up" href="#__Models">Up</a></h3>
-    
+    <h3><a name="OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">message_descriptor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://code.in.digital-me.nl/DOC/FuncQiy/blob/master/QS%20User%20Node%20Protocol-gitbucket.md#operation-reference-request-message</div>
+      <div class="param">message_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message</div>
+<div class="param">operation_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
 <div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
     </div>  <!-- field-items -->
   </div>
@@ -2353,7 +2354,7 @@ font-style: italic;
       <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> <a href="https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#data-descriptor">Data Descriptor</a> to identify the requested data. format: url</div>
 <div class="param">refSerialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Reference serial number format: nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)</div>
 <div class="param">text </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Subject </div>
-<div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceRequestMessageModel_payload">OperationReferenceRequestMessageModel_payload</a></span>  </div>
+<div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceRequestBaseModel">OperationReferenceRequestBaseModel</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
