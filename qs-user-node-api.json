@@ -596,6 +596,14 @@
 		    },
                     "type": "array"
                 },
+                "chosen_service_provider_ids": {
+                    "description": "Ids of chosen Service Providers.",
+		    "items": {
+                        "description": "Service Provider Id",
+                        "type": "string"
+		    },
+                    "type": "array"
+                },
                 "created": {
                     "description": "Message creation time.",
                     "type": "integer",
@@ -608,6 +616,11 @@
                 "message_descriptor": {
                     "type": "string",
                     "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request"
+                },
+                "operation_reference_request_url": {
+                    "description": "Endpoint address for the Operation Reference Request.",
+                    "type": "string",
+                    "format": "uri"
                 },
                 "operation_descriptor": {
                     "description": "Operation Descriptor of the Operation to be executed by reference.",
@@ -1289,6 +1302,35 @@
                     "Data Provider",
                     "Message",
                     "Transport Requests"
+                ]
+            }
+        },
+        "/operationReferenceRequestUrl": {
+            "POST": {
+                "summary": "Operation Reference Request",
+                "consumes": [
+                    "application/json"
+                ],
+                "description": "See [Operation Reference Request](https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request).",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/authorizationOptionalParam"
+                    },
+                    {
+                        "name": "OperationReferenceRequest",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/OperationReferenceRequestBaseModel"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successfull response"
+                    }
+                },
+                "tags": [
+                    "Operation"
                 ]
             }
         },

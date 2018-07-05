@@ -936,11 +936,8 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                   | [Operation Reference Request](Definitions.md#operation-reference-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node-api.html#OperationReferenceRequestEventModel)
-[QS User Node](QS%20User%20Node.md)             | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
-[QS User Node](QS%20User%20Node.md)             | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
+[QS User Node API](QS%20User%20Node%20API.json) | [POST /operationReferenceRequestUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node-api.html#operationReferenceRequestUrlPost)
 [QS User Node](QS%20User%20Node.md)             | [8.1.5 D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider) 
-[QS User Node](QS%20User%20Node.md)             | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Operation Reference Request Event
 
