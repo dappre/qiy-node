@@ -54,8 +54,9 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 			1. [Example Message](#8121-example-message)
 		1. [D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
 		1. [D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
-		1. [D4 Individual chooses DP](#815-d4-individual-chooses-dp)
+		1. [D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider)
 		1. [D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+			1. [Example](#8161-example)
 		1. [D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 		1. [D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 		1. [D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
@@ -98,6 +99,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Operation Execute Request](#operation-execute-request)
 	1. [Operation Reference Message](#operation-reference-message)
 	1. [Operation Reference Request](#operation-reference-request)
+	1. [Operation Reference Request Event](#operation-reference-request-event)
 	1. [Operation Reference Request Message](#operation-reference-request-message)
 	1. [Operation Register Request](#operation-register-request)
 	1. [Operation Specification](#operation-specification)
@@ -113,7 +115,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Service Catalogue](#service-catalogue)
 	1. [Service Desk](#service-desk)
 	1. [Service Endpoint](#service-endpoint)
-	1. [Source Candidate Proposal](#source-candidate-proposal)
+	1. [Source Candidates Event](#source-candidates-event)
 	1. [Source Register Request](#source-register-request)
 	1. [State Handled Event](#state-handled-event)
 	1. [Transport Layer](#transport-layer)
@@ -634,16 +636,21 @@ payload = {
 
 ### 8.1.4 D3 Qiy Node of Individual Proposes Data Provider
 
-The Qiy Node of the Individual extracts the [Operation Reference Request](#operation-reference-request) from the [Operation Reference Request Message](#operation-reference-request-message) and processes it:
+The Qiy Node of the Individual processes the [Operation Reference Request Message](#operation-reference-request-message):
 1. The [Qiy Node](#qiy-node) finds the [Data Provider](#data-provider) that can provide the data.
+1. The [Qiy Node](#qiy-node) forwards the request and the available [Data Provider](#data-provider) using a [Operation Reference Request Event](#operation-reference-request-event) to the Qiy App of the Idividual.
 
-### 8.1.5 D4 Individual chooses DP
+### 8.1.5 D4 Individual chooses Data Provider
+
+The Individual reads the request for data and decides to grant it and approves the use of the proposed Data Provider which is communicated by the App of the Individual to the Qiy Node of the Individual with an [Operation Reference Request](#operation-reference-request).
 
 ### 8.1.6 D5 Qiy Node of Individual Forwards Reference Request
 
-The Qiy App of the Data Provider receives the Data Reference Request, see [7.3 Receive Message](#73-receive-message).
+The Qiy Node of the Individual forwards the Operation Reference Request to the [Data Provider](#data-provider) using a [Operation Reference Request Messsage](#operation-reference-request-messsage).
 
-Example message:
+#### 8.1.6.1 Example
+
+Example of a [Operation Reference Request Message](#operation-reference-request-message) as received by the [Data Provider](#data-provider):
 
 ```
 message = {
@@ -651,14 +658,15 @@ message = {
     "serialNr": 4,
     "payload": "eyJyZWx5aW5nX3BhcnR5IjogIlJlbHlpbmcgUGFydHkiLCAiZGF0YV9kZXNjcmlwdG9yIjogImh0dHA6Ly9kaWdpdGFsLW1lLm5sL3FzX3VzZXJfbm9kZS90ZXN0L3JlcXVlc3RfZGF0YS90ZXN0X2RhdGEifQ==",
     "text": "Verzoek openstaande schulden",
-    "protocol": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md",
+    "protocol": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message",
     "refSerialNr": -1,
     "sent": false
 }
 
 payload = {
-    "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.2-individual-requests-data-reference",
-    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
+    "message_descriptor": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message",
+    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#91-test-data",
+    "request_id": "Qr7HOG0",
     "created": 1520414766940
 }
 ```
@@ -931,25 +939,33 @@ Specification | Reference
 [QS User Node API](QS%20User%20Node%20API.json) | [GET /refEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refEndpointGet)
 [QS User Node](QS%20User%20Node.md) | [8.1.9 D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
 
-
 ## Operation Reference Message
 
 Specification | Reference
 ------------- | ---------
-[Definitions](Definitions.md)                       | [Operation Reference Message](Definitions.md#operation-reference-message)
-[QS User Node API](QS%20User%20Node%20API.json) | tbd
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+[Definitions](Definitions.md)                   | [Operation Reference Message](Definitions.md#operation-reference-message)
+[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceMessageModel)
+[QS User Node](QS%20User%20Node.md)             | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+[QS User Node](QS%20User%20Node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 
 ## Operation Reference Request
 
 Specification | Reference
 ------------- | ---------
-[Definitions](Definitions.md)                       | [Operation Reference Request](Definitions.md#operation-reference-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+[Definitions](Definitions.md)                   | [Operation Reference Request](Definitions.md#operation-reference-request)
+[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestEventModel)
+[QS User Node](QS%20User%20Node.md)             | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](QS%20User%20Node.md)             | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
+[QS User Node](QS%20User%20Node.md)             | [8.1.5 D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider) 
+[QS User Node](QS%20User%20Node.md)             | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
+## Operation Reference Request Event
+
+Specification | Reference
+------------- | ---------
+[Definitions](Definitions.md)                   | [Operation Reference Request Event](Definitions.md#operation-reference-request-event)
+[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestEventModel)
+[QS User Node](QS%20User%20Node.md)             | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 
 ## Operation Reference Request Message
 
@@ -1056,9 +1072,11 @@ Specification | Reference
 [Definitions](Definitions.md)                       | [Service Endpoint](Definitions.md#service-endpoint)
 [QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
 
-## Source Candidate Proposal
+## Source Candidates Event
 
-tbd
+[Definitions](Definitions.md)       | [Source Candidates Event](Definitions.md#source-candidates-event)
+[QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
+[QS User Node API](QS%20User%20Node%20API.json) | [Source Candidates Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#SourceCandidatesEventModel)
 
 ## Source Register Request
 
