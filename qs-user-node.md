@@ -616,24 +616,6 @@ payload={
 
 The Qiy App of the Relying Party requests a [Data Reference](#data-reference) by sending an [Operation Reference Request Message](#operation-reference-request-message) over the Connection with the Individual, see [7.1 Send Message](#71-send-message).
 
-Example message as received by the Qiy Node of the Individual:
-
-```
-message = { 
-    "inbound": true,
-    "serialNr": 3,
-    "payload": "eyJyZWx5aW5nX3BhcnR5IjogIlJlbHlpbmcgUGFydHkiLCAiZGF0YV9kZXNjcmlwdG9yIjogImh0dHA6Ly9kaWdpdGFsLW1lLm5sL3FzX3VzZXJfbm9kZS90ZXN0L3JlcXVlc3RfZGF0YS90ZXN0X2RhdGEifQ==",
-    "text": "Verzoek openstaande schulden",
-    "protocol": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
-    "refSerialNr": -1,
-    "sent": false
-    }
-
-payload = {
-    "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/master/QS%20User%20Node%20Protocol-gitbucket.md#operation-reference-request-message",
-    "created": 1520414730748
-}
-```
 
 ### 8.1.4 D3 Qiy Node of Individual Proposes Data Provider
 

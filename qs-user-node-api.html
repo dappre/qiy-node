@@ -2026,6 +2026,7 @@ font-style: italic;
     <li><a href="#DomainDetailsMessageModel"><code>DomainDetailsMessageModel</code> - </a></li>
     <li><a href="#EventStreamModel"><code>EventStreamModel</code> - </a></li>
     <li><a href="#MailboxMessageModel"><code>MailboxMessageModel</code> - </a></li>
+    <li><a href="#OperationReferenceRequestEventModel"><code>OperationReferenceRequestEventModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestMessageModel"><code>OperationReferenceRequestMessageModel</code> - </a></li>
     <li><a href="#PersistentIdEventModel"><code>PersistentIdEventModel</code> - </a></li>
     <li><a href="#SharedSecretReceivedEventModel"><code>SharedSecretReceivedEventModel</code> - </a></li>
@@ -2163,12 +2164,13 @@ font-style: italic;
     <h3><a name="OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
+      <div class="param">candidate_service_provider_ids (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Ids of possible Service Providers. </div>
+<div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
+<div class="param">from_relying_party_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Relying Party Id in case of a request by a Relying Party to an Individual. </div>
 <div class="param">message_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request</div>
 <div class="param">operation_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
 <div class="param">request_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
-<div class="param">relying_party_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Relying Party Id in case of a request by a Relying Party to an Individual. </div>
-<div class="param">service_provider_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id in case of a request by an Individual to a Service Provider. </div>
+<div class="param">to_service_provider_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id in case of a request by an Individual to a Service Provider. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -2348,6 +2350,15 @@ font-style: italic;
 <div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span> The Base64-encoded payload of the message. </div>
 <div class="param">inbound </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether the received message is inbound or outbound. </div>
 <div class="param">serialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Serial number of the message. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="OperationReferenceRequestEventModel"><code>OperationReferenceRequestEventModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">connectionUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Connection Url of the connection of the Operation Reference Request Message. format: url</div>
+<div class="param">extraData </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceRequestBaseModel">OperationReferenceRequestBaseModel</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: OPERATION_REFERENCE_REQUEST</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
