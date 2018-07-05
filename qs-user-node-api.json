@@ -608,22 +608,35 @@
         },
         "OperationReferenceRequestBaseModel": {
             "properties": {
+                "created": {
+                    "description": "Message creation time.",
+                    "type": "integer",
+                    "format": "Unix time in ms"
+                },
                 "message_descriptor": {
                     "type": "string",
-                    "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message"
+                    "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request"
                 },
                 "operation_descriptor": {
                     "description": "Operation Descriptor of the Operation to be executed by reference.",
                     "type": "string",
                     "format": "uri"
                 },
-                "created": {
-                    "description": "Message creation time.",
-                    "type": "integer",
-                    "format": "Unix time in ms"
+                "request_id": {
+                    "description": "Request Id",
+                    "type": "string"
+                },
+                "relying_party_id": {
+                    "description": "Relying Party Id in case of a request by a Relying Party to an Individual.",
+                    "type": "string"
+                },
+                "service_provider_id": {
+                    "description": "Service Provider Id in case of a request by an Individual to a Service Provider.",
+                    "type": "string"
                 }
             },
             "required": [
+                "request_id",
                 "message_descriptor",
                 "operation_descriptor"
             ],

@@ -2163,9 +2163,12 @@ font-style: italic;
     <h3><a name="OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">message_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message</div>
+      <div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
+<div class="param">message_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request</div>
 <div class="param">operation_descriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
-<div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
+<div class="param">request_id </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
+<div class="param">relying_party_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Relying Party Id in case of a request by a Relying Party to an Individual. </div>
+<div class="param">service_provider_id (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id in case of a request by an Individual to a Service Provider. </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
