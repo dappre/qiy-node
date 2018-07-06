@@ -588,7 +588,7 @@
         },
         "OperationReferenceRequestBaseModel": {
             "properties": {
-                "candidate_service_provider_ids": {
+                "candidateServiceProviderIds": {
                     "description": "Ids of possible Service Providers.",
 		    "items": {
                         "description": "Service Provider Id",
@@ -596,7 +596,7 @@
 		    },
                     "type": "array"
                 },
-                "chosen_service_provider_ids": {
+                "chosenServiceProviderIds": {
                     "description": "Ids of chosen Service Providers.",
 		    "items": {
                         "description": "Service Provider Id",
@@ -609,37 +609,37 @@
                     "type": "integer",
                     "format": "Unix time in ms"
                 },
-                "from_relying_party_id": {
+                "fromRelyingPartyId": {
                     "description": "Relying Party Id in case of a request by a Relying Party to an Individual.",
                     "type": "string"
                 },
-                "message_descriptor": {
+                "messageDescriptor": {
                     "type": "string",
                     "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request"
                 },
-                "operation_reference_request_url": {
+                "operationReferenceRequestUrl": {
                     "description": "Endpoint address for the Operation Reference Request.",
                     "type": "string",
                     "format": "uri"
                 },
-                "operation_descriptor": {
+                "operationDescriptor": {
                     "description": "Operation Descriptor of the Operation to be executed by reference.",
                     "type": "string",
                     "format": "uri"
                 },
-                "request_id": {
+                "requestId": {
                     "description": "Request Id",
                     "type": "string"
                 },
-                "to_service_provider_id": {
+                "toServiceProviderId": {
                     "description": "Service Provider Id in case of a request by an Individual to a Service Provider.",
                     "type": "string"
                 }
             },
             "required": [
-                "request_id",
-                "message_descriptor",
-                "operation_descriptor"
+                "requestId",
+                "messageDescriptor",
+                "operationDescriptor"
             ],
             "type": "object"
         },
