@@ -586,6 +586,75 @@
                 "payload"
             ]
         },
+        "OperationReferenceModel": {
+            "properties": {
+                "created": {
+                    "description": "Creation time.",
+                    "type": "integer",
+                    "format": "Unix time in ms"
+                },
+                "expires": {
+                    "description": "Expiration time.",
+                    "format": "Unix time in ms or -1 for maxint, default: maxint",
+                    "type": "integer"
+                },
+                "useBudget": {
+                    "description": "Use budget.",
+                    "format": "-1 for maxint, default: maxint",
+                    "type": "integer"
+                },
+                "relyingPartyIds": {
+                    "description": "Relying Party Ids of related Relying Parties.",
+		    "items": {
+	                "description": "Relying Party Id",
+			"type": "string"
+		    },
+                    "type": "array"
+                },
+                "operationReferenceJson": {
+                    "description": "Operation Reference.",
+		    "properties": {
+		        "referenceValue": {
+				"description": "Operation Reference value",
+				"pattern": "[a-zA-Z0-9]{8,128}",
+				"type": "string"
+			},
+		        "since": {
+				"description": "Used in execution requests to request for changes since the latest request.",
+				"format": "Unix time in ms, default 0",
+				"type": "string"
+			}
+		    },
+		    "required": [
+	                "referenceValue"
+		    ],
+                    "type": "object"
+                },
+                "operationReferenceUrl": {
+                    "description": "Endpoint address for the Operation Reference.",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "operationDescriptor": {
+                    "description": "Operation Descriptor of the Operation to be executed by reference.",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "requestId": {
+                    "description": "Request Id",
+                    "type": "string"
+                },
+                "serviceProviderId": {
+                    "description": "Service Provider Id of the organization that provides the service.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "operationReferenceUrl",
+                "created"
+            ],
+            "type": "object"
+        },
         "OperationReferenceRequestBaseModel": {
             "properties": {
                 "candidateServiceProviderIds": {
@@ -615,7 +684,7 @@
                 },
                 "messageDescriptor": {
                     "type": "string",
-                    "format": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request"
+                    "format": "uri"
                 },
                 "operationReferenceRequestUrl": {
                     "description": "Endpoint address for the Operation Reference Request.",
@@ -626,6 +695,13 @@
                     "description": "Operation Descriptor of the Operation to be executed by reference.",
                     "type": "string",
                     "format": "uri"
+                },
+                "operationReferences": {
+                    "description": "Operation References.",
+		    "items": {
+                        "$ref": "#/definitions/OperationReferenceModel"
+		    },
+                    "type": "array"
                 },
                 "requestId": {
                     "description": "Request Id",
@@ -638,8 +714,7 @@
             },
             "required": [
                 "requestId",
-                "messageDescriptor",
-                "operationDescriptor"
+                "created"
             ],
             "type": "object"
         },

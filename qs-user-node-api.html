@@ -2051,6 +2051,8 @@ font-style: italic;
     <li><a href="#LocationAndLinkModel"><code>LocationAndLinkModel</code> - </a></li>
     <li><a href="#MailboxMessagesModel"><code>MailboxMessagesModel</code> - </a></li>
     <li><a href="#MessageModel"><code>MessageModel</code> - </a></li>
+    <li><a href="#OperationReferenceModel"><code>OperationReferenceModel</code> - </a></li>
+    <li><a href="#OperationReferenceModel_operationReferenceJson"><code>OperationReferenceModel_operationReferenceJson</code> - </a></li>
     <li><a href="#OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel"><code>OperationSpecificationModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel_headers"><code>OperationSpecificationModel_headers</code> - </a></li>
@@ -2206,16 +2208,40 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3><a name="OperationReferenceModel"><code>OperationReferenceModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">created </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Creation time. format: Unix time in ms</div>
+<div class="param">expires (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expiration time. format: Unix time in ms or -1 for maxint, default: maxint</div>
+<div class="param">useBudget (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Use budget. format: -1 for maxint, default: maxint</div>
+<div class="param">relyingPartyIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Relying Party Ids of related Relying Parties. </div>
+<div class="param">operationReferenceJson (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel_operationReferenceJson">OperationReferenceModel_operationReferenceJson</a></span>  </div>
+<div class="param">operationReferenceUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Endpoint address for the Operation Reference. format: uri</div>
+<div class="param">operationDescriptor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
+<div class="param">requestId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
+<div class="param">serviceProviderId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id of the organization that provides the service. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="OperationReferenceModel_operationReferenceJson"><code>OperationReferenceModel_operationReferenceJson</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Operation Reference.</div>
+    <div class="field-items">
+      <div class="param">referenceValue </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Reference value </div>
+<div class="param">since (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Used in execution requests to request for changes since the latest request. format: Unix time in ms, default 0</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3><a name="OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
       <div class="param">candidateServiceProviderIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Ids of possible Service Providers. </div>
 <div class="param">chosenServiceProviderIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Ids of chosen Service Providers. </div>
-<div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
+<div class="param">created </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Message creation time. format: Unix time in ms</div>
 <div class="param">fromRelyingPartyId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Relying Party Id in case of a request by a Relying Party to an Individual. </div>
-<div class="param">messageDescriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request</div>
+<div class="param">messageDescriptor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: uri</div>
 <div class="param">operationReferenceRequestUrl (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Endpoint address for the Operation Reference Request. format: uri</div>
-<div class="param">operationDescriptor </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
+<div class="param">operationDescriptor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
+<div class="param">operationReferences (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel">array[OperationReferenceModel]</a></span> Operation References. </div>
 <div class="param">requestId </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
 <div class="param">toServiceProviderId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id in case of a request by an Individual to a Service Provider. </div>
     </div>  <!-- field-items -->
