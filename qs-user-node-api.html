@@ -2402,6 +2402,7 @@ font-style: italic;
     <li><a href="#EventStreamModel"><code>EventStreamModel</code> - </a></li>
     <li><a href="#MailboxMessageModel"><code>MailboxMessageModel</code> - </a></li>
     <li><a href="#OperationReferenceMessageModel"><code>OperationReferenceMessageModel</code> - </a></li>
+    <li><a href="#OperationReferenceReceivedEventModel"><code>OperationReferenceReceivedEventModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestEventModel"><code>OperationReferenceRequestEventModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestMessageModel"><code>OperationReferenceRequestMessageModel</code> - </a></li>
     <li><a href="#PersistentIdEventModel"><code>PersistentIdEventModel</code> - </a></li>
@@ -2763,6 +2764,15 @@ font-style: italic;
 <div class="param">refSerialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Reference serial number format: nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)</div>
 <div class="param">text </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Subject </div>
 <div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel">OperationReferenceModel</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="OperationReferenceReceivedEventModel"><code>OperationReferenceReceivedEventModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">connectionUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Connection Url of the connection over which the Operation Reference was received. format: url</div>
+<div class="param">extraData </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel">OperationReferenceModel</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: OPERATION_REFERENCE_RECEIVED</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

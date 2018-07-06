@@ -736,6 +736,31 @@
                 }
             ]
         },
+        "OperationReferenceReceivedEventModel": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/EventModel"
+                },
+                {
+                    "description": "See [Operation Reference Received Event](https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-received-event).",
+                    "type": "object",
+                    "properties": {
+                        "connectionUrl": {
+                            "description": "Connection Url of the connection over which the Operation Reference was received.",
+                            "type": "string",
+                            "format": "url"
+                        },
+                        "extraData": {
+                            "$ref": "#/definitions/OperationReferenceModel"
+                        },
+                        "type": {
+                            "format": "OPERATION_REFERENCE_RECEIVED",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
         "OperationReferenceRequestEventModel": {
             "allOf": [
                 {

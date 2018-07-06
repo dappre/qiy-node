@@ -97,6 +97,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Operate Request](#operate-request)
 	1. [Operation Execute Request](#operation-execute-request)
 	1. [Operation Reference Message](#operation-reference-message)
+	1. [Operation Reference Received Event](#operation-reference-received-event)
 	1. [Operation Reference Request](#operation-reference-request)
 	1. [Operation Reference Request Event](#operation-reference-request-event)
 	1. [Operation Reference Request Message](#operation-reference-request-message)
@@ -642,7 +643,7 @@ The Qiy Node of the Individual forwards the Operation Reference Request to the [
 
 1. The Qiy Node of the Individual processes the Data Reference; it looks up the related [Data Reference Request](#data-reference-request).
 1. The Qiy Node of the Individual sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the sender of the [Data Reference Request](#data-reference-request): the [Relying Party](#relying-party), see [7.1 Send Message](#71-send-message).
-1. The Qiy App of the Relying Party receives the Data Reference in an [Operation Reference Message](#operation-reference-message) as a reply on the [Operation Reference Request Message](#operation-reference-request-message) sent earlier.
+1. The Qiy App of the Relying Party receives the Data Reference in an [Operation Reference Received Event](#operation-reference-received-event).
 
 ### 8.1.9 D8 Qiy App of Relying Party Asks for Data
 
@@ -884,6 +885,14 @@ Specification | Reference
 [Definitions](Definitions.md)                   | [Operation Reference Message](Definitions.md#operation-reference-message)
 [QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node-api.html#OperationReferenceMessageModel)
 [QS User Node](QS%20User%20Node.md)             | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+[QS User Node](QS%20User%20Node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
+
+## Operation Reference Received Event
+
+Specification | Reference
+------------- | ---------
+[Definitions](Definitions.md)                   | [Operation Reference Received Event](Definitions.md#operation-reference-received-event)
+[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Received Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node-api.html#OperationReferenceReceivedEventModel)
 [QS User Node](QS%20User%20Node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 
 ## Operation Reference Request
