@@ -232,6 +232,9 @@ font-style: italic;
   <h4><a href="#Operation">Operation</a></h4>
   <ul>
   <li><a href="#operationReferenceRequestUrlPost"><code><span class="http-method">post</span> /operationReferenceRequestUrl</code></a></li>
+  <li><a href="#refEndpointGet"><code><span class="http-method">get</span> /refEndpoint</code></a></li>
+  <li><a href="#refsEndpointGet"><code><span class="http-method">get</span> /refsEndpoint</code></a></li>
+  <li><a href="#refsEndpointPost"><code><span class="http-method">post</span> /refsEndpoint</code></a></li>
   </ul>
   <h4><a href="#PathEndpointAddresses">PathEndpointAddresses</a></h4>
   <ul>
@@ -248,6 +251,10 @@ font-style: italic;
   <li><a href="#refEndpointGet"><code><span class="http-method">get</span> /refEndpoint</code></a></li>
   <li><a href="#refsEndpointGet"><code><span class="http-method">get</span> /refsEndpoint</code></a></li>
   <li><a href="#scanEndpointPost"><code><span class="http-method">post</span> /scanEndpoint</code></a></li>
+  </ul>
+  <h4><a href="#ServiceProvider">ServiceProvider</a></h4>
+  <ul>
+  <li><a href="#refsEndpointPost"><code><span class="http-method">post</span> /refsEndpoint</code></a></li>
   </ul>
   <h4><a href="#TransportRequests">TransportRequests</a></h4>
   <ul>
@@ -1344,6 +1351,200 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <div class="method"><a name="refEndpointGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /refEndpoint</code></pre></div>
+    <div class="method-summary">Operation Execute Request (<span class="nickname">refEndpointGet</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-execute-request">Operation Execute Request</a>.</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; id parameter. </div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ReferenceResultModel">ReferenceResultModel</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "data" : "OWEzYjJlZDEtMjYzYS00NzIyLWE1MTUtMDkyMzA2OGE3YTMw\""
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#ReferenceResultModel">ReferenceResultModel</a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="refsEndpointGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /refsEndpoint</code></pre></div>
+    <div class="method-summary">Resolve references (<span class="nickname">refsEndpointGet</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-execute-request">Operation Execute Request</a>.</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Query parameters</h3>
+    <div class="field-items">
+      <div class="param">since (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Query Parameter</span> &mdash; Limit results to period after date=time stamp 'since'. format: Unix time in ms</div>
+    </div>  <!-- field-items -->
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ReferencesResultModel">ReferencesResultModel</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "https://protocols.qidida.nl/dappre/v.1.0.0" : [ {
+    "ref" : "mmywczbvmq3wcljrmyytaljugi2dcllbgzrwgllbgvtdkytcha2dqnrsga",
+    "value" : null,
+    "connection" : "https://user.dolden.net/user/connections/user/5951c859-ace9-4a64-a13b-1b48f1669a7c/ed2bf121-d472-4471-a02f-df08c722eb00"
+  }, {
+    "ref" : "my4gcojxgy4tcljsga3dgljuhbswcllbgi2deljzgq4deojxmjsdkojvg4",
+    "value" : null,
+    "connection" : "https://user.dolden.net/user/connections/user/5951c859-ace9-4a64-a13b-1b48f1669a7c/85dffda9-beb1-4579-92d8-32ae9dc2ff13"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#ReferencesResultModel">ReferencesResultModel</a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="refsEndpointPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /refsEndpoint</code></pre></div>
+    <div class="method-summary">Register Operation Specification (<span class="nickname">refsEndpointPost</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-register-request">Operation Register Request</a>.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">operationReference <a href="#OperationReferenceModel">OperationReferenceModel</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference">Operation Reference</a>. </div>
+
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#OperationReferenceModel">OperationReferenceModel</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "operationSpecification" : {
+    "headers" : [ {
+      "accept" : "text/plain"
+    } ],
+    "method" : "get",
+    "queryParams" : [ "{}" ],
+    "transport" : "https",
+    "body" : "{}",
+    "url" : "http://example.com/aeiou"
+  },
+  "expires" : 1,
+  "relyingPartyIds" : [ "relyingPartyIds", "relyingPartyIds" ],
+  "serviceProviderId" : "serviceProviderId",
+  "created" : 6,
+  "operationReferenceJson" : {
+    "referenceValue" : { },
+    "since" : "since"
+  },
+  "requestId" : "requestId",
+  "operationDescriptor" : "http://example.com/aeiou",
+  "operationReferenceUrl" : "http://example.com/aeiou",
+  "useBudget" : 5
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#OperationReferenceModel">OperationReferenceModel</a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <h1><a name="PathEndpointAddresses">PathEndpointAddresses</a></h1>
   <div class="method"><a name="apiGet"/>
     <div class="method-path">
@@ -1838,6 +2039,87 @@ font-style: italic;
     <h4 class="field-label">201</h4>
     201 Successful execution.
         <a href="#LocationAndLinkModel">LocationAndLinkModel</a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <h1><a name="ServiceProvider">ServiceProvider</a></h1>
+  <div class="method"><a name="refsEndpointPost"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /refsEndpoint</code></pre></div>
+    <div class="method-summary">Register Operation Specification (<span class="nickname">refsEndpointPost</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-register-request">Operation Register Request</a>.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">operationReference <a href="#OperationReferenceModel">OperationReferenceModel</a> (required)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference">Operation Reference</a>. </div>
+
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#OperationReferenceModel">OperationReferenceModel</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "operationSpecification" : {
+    "headers" : [ {
+      "accept" : "text/plain"
+    } ],
+    "method" : "get",
+    "queryParams" : [ "{}" ],
+    "transport" : "https",
+    "body" : "{}",
+    "url" : "http://example.com/aeiou"
+  },
+  "expires" : 1,
+  "relyingPartyIds" : [ "relyingPartyIds", "relyingPartyIds" ],
+  "serviceProviderId" : "serviceProviderId",
+  "created" : 6,
+  "operationReferenceJson" : {
+    "referenceValue" : { },
+    "since" : "since"
+  },
+  "requestId" : "requestId",
+  "operationDescriptor" : "http://example.com/aeiou",
+  "operationReferenceUrl" : "http://example.com/aeiou",
+  "useBudget" : 5
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#OperationReferenceModel">OperationReferenceModel</a>
     <h4 class="field-label">400</h4>
     400,600 Unsuccessful execution.
         <a href="#"></a>

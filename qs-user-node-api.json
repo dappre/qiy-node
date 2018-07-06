@@ -1468,6 +1468,7 @@
                 },
                 "tags": [
                     "Data",
+                    "Operation",
                     "Relying Party"
                 ]
             }
@@ -1500,6 +1501,7 @@
                 },
                 "tags": [
                     "Data",
+                    "Operation",
                     "Relying Party"
                 ]
             },
@@ -1539,7 +1541,9 @@
                 },
                 "tags": [
                     "Data",
-                    "Data Provider"
+                    "Data Provider",
+                    "Operation",
+                    "Service Provider"
                 ]
             }
         },
