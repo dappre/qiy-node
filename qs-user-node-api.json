@@ -1306,7 +1306,7 @@
             }
         },
         "/operationReferenceRequestUrl": {
-            "POST": {
+            "post": {
                 "summary": "Operation Reference Request",
                 "consumes": [
                     "application/json"
