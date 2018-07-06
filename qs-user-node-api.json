@@ -715,6 +715,27 @@
             ],
             "type": "object"
         },
+        "OperationReferenceMessageModel": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/MessageModel"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "payload": {
+                            "$ref": "#/definitions/OperationReferenceModel"
+                        },
+                        "protocol": {
+                            "description": "Operation Reference Message Descriptor.",
+                            "format": "url",
+                            "pattern": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-message",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
         "OperationReferenceRequestEventModel": {
             "allOf": [
                 {
@@ -734,27 +755,6 @@
                         },
                         "type": {
                             "format": "OPERATION_REFERENCE_REQUEST",
-                            "type": "string"
-                        }
-                    }
-                }
-            ]
-        },
-        "OperationReferenceMessageModel": {
-            "allOf": [
-                {
-                    "$ref": "#/definitions/MessageModel"
-                },
-                {
-                    "type": "object",
-                    "properties": {
-                        "payload": {
-                            "$ref": "#/definitions/OperationReferenceModel"
-                        },
-                        "protocol": {
-                            "description": "Operation Reference Message Descriptor.",
-                            "format": "url",
-                            "pattern": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-message",
                             "type": "string"
                         }
                     }

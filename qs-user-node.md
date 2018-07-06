@@ -638,28 +638,6 @@ The Qiy Node of the Individual forwards the Operation Reference Request to the [
 1. The Qiy App of the Data Provider receives the Data Reference in the response of the [Operation Register Request](#operation-register-request).
 1. The Qiy App of the Data Provider sends the Data Reference in an [Operation Reference Message](#operation-reference-message) to the Qiy Node of the Individual, see [7.1 Send Message](#71-send-message).
 
-Example message as received by the Qiy Node of the Individual:
-
-```
-message = {
-    "inbound": true,
-    "serialNr": 4,
-    "payload": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
-    "text": "Datareferentie voor openstaande schulden",
-    "protocol": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md",
-    "refSerialNr": 4,
-    "sent": false
-}
-
-payload = {
-    "message_descriptor": "https://code.in.digital-me.nl/DOC/FuncQiy/blob/data_reuse/Qiy%20Node%20Protocol-gitbucket.md#1.3-data-provider-sends-data-reference",
-    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/master/QS%20User%20Node.md#91-test-data",
-    "data_reference": "RYQIh4JsRcPdcSwLHYtHqrHIzLc=",
-    "created": 1520414852177
-}
-
-```
-
 ### 8.1.8 D7 Qiy Node of Individual Forwards Reference
 
 1. The Qiy Node of the Individual processes the Data Reference; it looks up the related [Data Reference Request](#data-reference-request).
