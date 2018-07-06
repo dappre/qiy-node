@@ -598,47 +598,43 @@
                     "format": "Unix time in ms or -1 for maxint, default: maxint",
                     "type": "integer"
                 },
-                "useBudget": {
-                    "description": "Use budget.",
-                    "format": "-1 for maxint, default: maxint",
-                    "type": "integer"
-                },
-                "relyingPartyIds": {
-                    "description": "Relying Party Ids of related Relying Parties.",
-		    "items": {
-	                "description": "Relying Party Id",
-			"type": "string"
-		    },
-                    "type": "array"
+                "operationDescriptor": {
+                    "description": "Operation Descriptor of the Operation to be executed by reference.",
+                    "type": "string",
+                    "format": "uri"
                 },
                 "operationReferenceJson": {
                     "description": "Operation Reference.",
-		    "properties": {
-		        "referenceValue": {
-				"description": "Operation Reference value",
-				"pattern": "[a-zA-Z0-9]{8,128}",
-				"type": "string"
-			},
-		        "since": {
-				"description": "Used in execution requests to request for changes since the latest request.",
-				"format": "Unix time in ms, default 0",
-				"type": "string"
-			}
-		    },
-		    "required": [
-	                "referenceValue"
-		    ],
+                    "properties": {
+                        "referenceValue": {
+                            "$ref": "#/definitions/OperationReferenceValueModel"
+                        },
+                        "since": {
+                            "description": "Used in execution requests to request for changes since the latest request.",
+                            "format": "Unix time in ms, default 0",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "referenceValue"
+                    ],
                     "type": "object"
+                },
+                "operationSpecification": {
+                    "$ref": "#/definitions/OperationSpecificationModel"
                 },
                 "operationReferenceUrl": {
                     "description": "Endpoint address for the Operation Reference.",
                     "type": "string",
                     "format": "uri"
                 },
-                "operationDescriptor": {
-                    "description": "Operation Descriptor of the Operation to be executed by reference.",
-                    "type": "string",
-                    "format": "uri"
+                "relyingPartyIds": {
+                    "description": "Relying Party Ids of related Relying Parties.",
+                    "items": {
+                        "description": "Relying Party Id",
+                        "type": "string"
+                    },
+                    "type": "array"
                 },
                 "requestId": {
                     "description": "Request Id",
@@ -647,11 +643,14 @@
                 "serviceProviderId": {
                     "description": "Service Provider Id of the organization that provides the service.",
                     "type": "string"
+                },
+                "useBudget": {
+                    "description": "Use budget.",
+                    "format": "-1 for maxint, default: maxint",
+                    "type": "integer"
                 }
             },
             "required": [
-                "operationReferenceUrl",
-                "created"
             ],
             "type": "object"
         },
@@ -659,18 +658,18 @@
             "properties": {
                 "candidateServiceProviderIds": {
                     "description": "Ids of possible Service Providers.",
-		    "items": {
+                    "items": {
                         "description": "Service Provider Id",
                         "type": "string"
-		    },
+                    },
                     "type": "array"
                 },
                 "chosenServiceProviderIds": {
                     "description": "Ids of chosen Service Providers.",
-		    "items": {
+                    "items": {
                         "description": "Service Provider Id",
                         "type": "string"
-		    },
+                    },
                     "type": "array"
                 },
                 "created": {
@@ -698,9 +697,9 @@
                 },
                 "operationReferences": {
                     "description": "Operation References.",
-		    "items": {
+                    "items": {
                         "$ref": "#/definitions/OperationReferenceModel"
-		    },
+                    },
                     "type": "array"
                 },
                 "requestId": {
@@ -762,6 +761,11 @@
                     }
                 }
             ]
+        },
+        "OperationReferenceValueModel": {
+            "description": "Operation Reference value",
+            "pattern": "[a-zA-Z0-9]{8,128}",
+            "type": "string"
         },
         "OperationSpecificationModel": {
             "type": "object",
@@ -920,10 +924,6 @@
                     "type": "string"
                 }
             }
-        },
-        "ReferenceModel": {
-            "description": "Operation Reference",
-            "type": "string"
         },
         "ReferenceResultModel": {
             "description": "Resolved Reference",
@@ -1513,12 +1513,12 @@
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
-                        "name": "operationSpecification",
-                        "description": "See [Operation Specification](https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-specification).",
+                        "name": "operationReference",
+                        "description": "See [Operation Reference](https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference).",
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/OperationSpecificationModel"
+                            "$ref": "#/definitions/OperationReferenceModel"
                         }
                     }
                 ],
@@ -1532,7 +1532,7 @@
                     "200": {
                         "description": "200, Successful execution.",
                         "schema": {
-                            "$ref": "#/definitions/ReferenceModel"
+                            "$ref": "#/definitions/OperationReferenceModel"
                         }
                     },
                     "400": {

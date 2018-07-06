@@ -775,9 +775,9 @@ font-style: italic;
 
     <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">operationSpecification <a href="#OperationSpecificationModel">OperationSpecificationModel</a> (required)</div>
+      <div class="param">operationReference <a href="#OperationReferenceModel">OperationReferenceModel</a> (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-specification">Operation Specification</a>. </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference">Operation Reference</a>. </div>
 
     </div>  <!-- field-items -->
 
@@ -790,7 +790,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#ReferenceModel">ReferenceModel</a>
+      <a href="#OperationReferenceModel">OperationReferenceModel</a>
       
     </div>
 
@@ -798,7 +798,30 @@ font-style: italic;
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{ }</code></pre>
+    <pre class="example"><code>{
+  "operationSpecification" : {
+    "headers" : [ {
+      "accept" : "text/plain"
+    } ],
+    "method" : "get",
+    "queryParams" : [ "{}" ],
+    "transport" : "https",
+    "body" : "{}",
+    "url" : "http://example.com/aeiou"
+  },
+  "expires" : 1,
+  "relyingPartyIds" : [ "relyingPartyIds", "relyingPartyIds" ],
+  "serviceProviderId" : "serviceProviderId",
+  "created" : 6,
+  "operationReferenceJson" : {
+    "referenceValue" : { },
+    "since" : "since"
+  },
+  "requestId" : "requestId",
+  "operationDescriptor" : "http://example.com/aeiou",
+  "operationReferenceUrl" : "http://example.com/aeiou",
+  "useBudget" : 5
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -810,7 +833,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     200, Successful execution.
-        <a href="#ReferenceModel">ReferenceModel</a>
+        <a href="#OperationReferenceModel">OperationReferenceModel</a>
     <h4 class="field-label">400</h4>
     400,600 Unsuccessful execution.
         <a href="#"></a>
@@ -927,9 +950,9 @@ font-style: italic;
 
     <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">operationSpecification <a href="#OperationSpecificationModel">OperationSpecificationModel</a> (required)</div>
+      <div class="param">operationReference <a href="#OperationReferenceModel">OperationReferenceModel</a> (required)</div>
 
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-specification">Operation Specification</a>. </div>
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash; See <a href="https://github.com/digital-me/qiy-node/tree/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference">Operation Reference</a>. </div>
 
     </div>  <!-- field-items -->
 
@@ -942,7 +965,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#ReferenceModel">ReferenceModel</a>
+      <a href="#OperationReferenceModel">OperationReferenceModel</a>
       
     </div>
 
@@ -950,7 +973,30 @@ font-style: italic;
 
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{ }</code></pre>
+    <pre class="example"><code>{
+  "operationSpecification" : {
+    "headers" : [ {
+      "accept" : "text/plain"
+    } ],
+    "method" : "get",
+    "queryParams" : [ "{}" ],
+    "transport" : "https",
+    "body" : "{}",
+    "url" : "http://example.com/aeiou"
+  },
+  "expires" : 1,
+  "relyingPartyIds" : [ "relyingPartyIds", "relyingPartyIds" ],
+  "serviceProviderId" : "serviceProviderId",
+  "created" : 6,
+  "operationReferenceJson" : {
+    "referenceValue" : { },
+    "since" : "since"
+  },
+  "requestId" : "requestId",
+  "operationDescriptor" : "http://example.com/aeiou",
+  "operationReferenceUrl" : "http://example.com/aeiou",
+  "useBudget" : 5
+}</code></pre>
 
     <h3 class="field-label">Produces</h3>
     This API call produces the following media types according to the <span class="header">Accept</span> request header;
@@ -962,7 +1008,7 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     200, Successful execution.
-        <a href="#ReferenceModel">ReferenceModel</a>
+        <a href="#OperationReferenceModel">OperationReferenceModel</a>
     <h4 class="field-label">400</h4>
     400,600 Unsuccessful execution.
         <a href="#"></a>
@@ -2054,12 +2100,12 @@ font-style: italic;
     <li><a href="#OperationReferenceModel"><code>OperationReferenceModel</code> - </a></li>
     <li><a href="#OperationReferenceModel_operationReferenceJson"><code>OperationReferenceModel_operationReferenceJson</code> - </a></li>
     <li><a href="#OperationReferenceRequestBaseModel"><code>OperationReferenceRequestBaseModel</code> - </a></li>
+    <li><a href="#OperationReferenceValueModel"><code>OperationReferenceValueModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel"><code>OperationSpecificationModel</code> - </a></li>
     <li><a href="#OperationSpecificationModel_headers"><code>OperationSpecificationModel_headers</code> - </a></li>
     <li><a href="#PersistentIdEventModel_extraData"><code>PersistentIdEventModel_extraData</code> - </a></li>
     <li><a href="#QiyNodeCreateRequestParametersModel"><code>QiyNodeCreateRequestParametersModel</code> - </a></li>
     <li><a href="#ReferenceDetailsModel"><code>ReferenceDetailsModel</code> - </a></li>
-    <li><a href="#ReferenceModel"><code>ReferenceModel</code> - </a></li>
     <li><a href="#ReferenceResultModel"><code>ReferenceResultModel</code> - </a></li>
     <li><a href="#ReferencesResultModel"><code>ReferencesResultModel</code> - </a></li>
     <li><a href="#TemplatesModel"><code>TemplatesModel</code> - </a></li>
@@ -2211,22 +2257,23 @@ font-style: italic;
     <h3><a name="OperationReferenceModel"><code>OperationReferenceModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'></div>
     <div class="field-items">
-      <div class="param">created </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Creation time. format: Unix time in ms</div>
+      <div class="param">created (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Creation time. format: Unix time in ms</div>
 <div class="param">expires (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Expiration time. format: Unix time in ms or -1 for maxint, default: maxint</div>
-<div class="param">useBudget (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Use budget. format: -1 for maxint, default: maxint</div>
-<div class="param">relyingPartyIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Relying Party Ids of related Relying Parties. </div>
-<div class="param">operationReferenceJson (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel_operationReferenceJson">OperationReferenceModel_operationReferenceJson</a></span>  </div>
-<div class="param">operationReferenceUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Endpoint address for the Operation Reference. format: uri</div>
 <div class="param">operationDescriptor (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Descriptor of the Operation to be executed by reference. format: uri</div>
+<div class="param">operationReferenceJson (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel_operationReferenceJson">OperationReferenceModel_operationReferenceJson</a></span>  </div>
+<div class="param">operationSpecification (optional)</div><div class="param-desc"><span class="param-type"><a href="#OperationSpecificationModel">OperationSpecificationModel</a></span>  </div>
+<div class="param">operationReferenceUrl (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Endpoint address for the Operation Reference. format: uri</div>
+<div class="param">relyingPartyIds (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> Relying Party Ids of related Relying Parties. </div>
 <div class="param">requestId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
 <div class="param">serviceProviderId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id of the organization that provides the service. </div>
+<div class="param">useBudget (optional)</div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Use budget. format: -1 for maxint, default: maxint</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3><a name="OperationReferenceModel_operationReferenceJson"><code>OperationReferenceModel_operationReferenceJson</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'>Operation Reference.</div>
     <div class="field-items">
-      <div class="param">referenceValue </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Reference value </div>
+      <div class="param">referenceValue </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceValueModel">OperationReferenceValueModel</a></span>  </div>
 <div class="param">since (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Used in execution requests to request for changes since the latest request. format: Unix time in ms, default 0</div>
     </div>  <!-- field-items -->
   </div>
@@ -2245,6 +2292,12 @@ font-style: italic;
 <div class="param">requestId </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Request Id </div>
 <div class="param">toServiceProviderId (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Provider Id in case of a request by an Individual to a Service Provider. </div>
     </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="OperationReferenceValueModel"><code>OperationReferenceValueModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Operation Reference value</div>
+    <div class="field-items">
+          </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3><a name="OperationSpecificationModel"><code>OperationSpecificationModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
@@ -2291,12 +2344,6 @@ font-style: italic;
 <div class="param">value (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Return value of the resource, accessed immediately after the request. format: Base64-encoded</div>
 <div class="param">connection (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Connection uri. format: uri</div>
     </div>  <!-- field-items -->
-  </div>
-  <div class="model">
-    <h3><a name="ReferenceModel"><code>ReferenceModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
-    <div class='model-description'>Operation Reference</div>
-    <div class="field-items">
-          </div>  <!-- field-items -->
   </div>
   <div class="model">
     <h3><a name="ReferenceResultModel"><code>ReferenceResultModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
