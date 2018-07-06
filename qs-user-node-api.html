@@ -2401,6 +2401,7 @@ font-style: italic;
     <li><a href="#DomainDetailsMessageModel"><code>DomainDetailsMessageModel</code> - </a></li>
     <li><a href="#EventStreamModel"><code>EventStreamModel</code> - </a></li>
     <li><a href="#MailboxMessageModel"><code>MailboxMessageModel</code> - </a></li>
+    <li><a href="#OperationReferenceMessageModel"><code>OperationReferenceMessageModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestEventModel"><code>OperationReferenceRequestEventModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestMessageModel"><code>OperationReferenceRequestMessageModel</code> - </a></li>
     <li><a href="#PersistentIdEventModel"><code>PersistentIdEventModel</code> - </a></li>
@@ -2752,6 +2753,16 @@ font-style: italic;
 <div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#object">Object</a></span> The Base64-encoded payload of the message. </div>
 <div class="param">inbound </div><div class="param-desc"><span class="param-type"><a href="#boolean">Boolean</a></span> Whether the received message is inbound or outbound. </div>
 <div class="param">serialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Serial number of the message. </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="OperationReferenceMessageModel"><code>OperationReferenceMessageModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Operation Reference Message Descriptor. format: url</div>
+<div class="param">refSerialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Reference serial number format: nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)</div>
+<div class="param">text </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Subject </div>
+<div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#OperationReferenceModel">OperationReferenceModel</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
