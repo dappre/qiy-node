@@ -56,7 +56,6 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 		1. [D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 		1. [D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider)
 		1. [D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
-			1. [Example](#8161-example)
 		1. [D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 		1. [D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 		1. [D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
@@ -629,30 +628,8 @@ The Individual reads the request for data and decides to grant it and approves t
 
 ### 8.1.6 D5 Qiy Node of Individual Forwards Reference Request
 
-The Qiy Node of the Individual forwards the Operation Reference Request to the [Data Provider](#data-provider) using a [Operation Reference Request Messsage](#operation-reference-request-messsage).
+The Qiy Node of the Individual forwards the Operation Reference Request to the [Data Provider](#data-provider) using a [Operation Reference Request Message](#operation-reference-request-message).
 
-#### 8.1.6.1 Example
-
-Example of a [Operation Reference Request Message](#operation-reference-request-message) as received by the [Data Provider](#data-provider):
-
-```
-message = {
-    "inbound": true,
-    "serialNr": 4,
-    "payload": "eyJyZWx5aW5nX3BhcnR5IjogIlJlbHlpbmcgUGFydHkiLCAiZGF0YV9kZXNjcmlwdG9yIjogImh0dHA6Ly9kaWdpdGFsLW1lLm5sL3FzX3VzZXJfbm9kZS90ZXN0L3JlcXVlc3RfZGF0YS90ZXN0X2RhdGEifQ==",
-    "text": "Verzoek openstaande schulden",
-    "protocol": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message",
-    "refSerialNr": -1,
-    "sent": false
-}
-
-payload = {
-    "message_descriptor": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#operation-reference-request-message",
-    "data_descriptor": "https://github.com/digital-me/qiy-node/blob/topic/updating-chapter-8-data-reuse/qs-user-node.md#91-test-data",
-    "request_id": "Qr7HOG0",
-    "created": 1520414766940
-}
-```
 
 ### 8.1.7 D6 Qiy App of Data Provider Generates Reference
 
