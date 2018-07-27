@@ -442,7 +442,6 @@ When an Accepter already has a Connection with the Proposer, the Connection Url 
 The [Persistent Id](#persistent-id) is always fired and returns the [Persistent Id](#persistent-id):
 * The [Persistent Id](#persistent-id) can be used to uniquely identify a connected Qiy Node.
 * The [Persistent Id](#persistent-id) for two connected Qiy Nodes is always the same.
-* The [Persistent Id](#persistent-id) of a Connection can be looked up by either the Qiy Nodes using the [Service Catalogue Message](#service-catalogue-message) that was transferred when the Connection was established.
 
 
 #### 6.3.2.1 First Time
@@ -950,34 +949,35 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Service Catalogue](Definitions.md#service-catalogue)
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node](QS%20User%20Node.md) | [6.2 Qiy App Creates Connection](#62-qiy-app-creates-connection) 
 
 ## Service Catalogue Event
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
 [QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueEventModel)
 
 ## Service Catalogue Message
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
 [QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueMessageModel)
 
 ## Service Catalogue Replace Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditions](#811-preconditions)
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
 [QS User Node API](QS%20User%20Node%20API.json) | [PUT /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointPut)
 
 ## Service Catalogue Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
 [QS User Node API](QS%20User%20Node%20API.json) | [GET /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointGet)
 
 ## Service Desk
