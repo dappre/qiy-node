@@ -32,7 +32,6 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 1. [Connect](#6-connect)
 	1. [Qiy App Requests Connect Token](#61-qiy-app-requests-connect-token)
 	1. [Qiy App Creates Connection](#62-qiy-app-creates-connection)
-		1. [Example Domain Details Message](#621-example-domain-details-message)
 	1. [Qiy Node Events](#63-qiy-node-events)
 		1. [Proposer Events](#631-proposer-events)
 			1. [First Time](#6311-first-time)
@@ -50,8 +49,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 1. [Data Reuse](#8-data-reuse)
 	1. [Main Flow](#81-main-flow)
 		1. [Preconditons](#811-preconditons)
-		1. [D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
-			1. [Example Message](#8121-example-message)
+		1. [D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
 		1. [D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
 		1. [D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 		1. [D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider)
@@ -88,7 +86,6 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Data Provider](#data-provider)
 	1. [Data Reference](#data-reference)
 	1. [Data Reference Request](#data-reference-request)
-	1. [Domain Details Message](#domain-details-message)
 	1. [Dynamic Path Endpoint Addresses](#dynamic-path-endpoint-addresses)
 	1. [Events](#events)
 	1. [Events Request](#events-request)
@@ -113,6 +110,10 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [QS User Node](#qs-user-node)
 	1. [Relying Party](#relying-party)
 	1. [Service Catalogue](#service-catalogue)
+	1. [Service Catalogue Event](#service-catalogue-event)
+	1. [Service Catalogue Message](#service-catalogue-message)
+	1. [Service Catalogue Replace Request](#service-catalogue-replace-request)
+	1. [Service Catalogue Request](#service-catalogue-request)
 	1. [Service Desk](#service-desk)
 	1. [Service Endpoint](#service-endpoint)
 	1. [Source Candidates Event](#source-candidates-event)
@@ -127,7 +128,6 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 		1. [Connect Offline](#1112-connect-offline)
 		1. [Request Connect Token](#1113-request-connect-token)
 	1. [Data Reuse Overview](#112-data-reuse-overview)
-	1. [D1 DP Sends Service Catalogue](#1121-d1-dp-sends-service-catalogue)
 
 # 1 Introduction
 
@@ -396,28 +396,7 @@ see [Connect Token Create Request](#connect-token-create-request) for more infor
 
 Use [Connection Create Request](#connection-create-request).
 
-When the Connection is established, the Qiy Node of the Qiy App receives a [Domain Details Message](#domain-details-message), like the one below.
-
-### 6.2.1 Example Domain Details Message
-
-```
-node_message: {
-    "serialNr":1,
-    "refSerialNr":null,
-    "text":"Our details",
-    "protocol":"https://protocols.qiy.nl/domain-details/v.1.0.0",
-    "inbound":false,
-    "sent":true,
-    "payload":"eyJwdWJsaWNLZXkiOiJNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQTBFQTdnaVpDWGlJSXJMWVF2b0c3a2tFYnNSUWFsUkRad2VFd0FlTkJuTW50d0FTY0JuRnh5YUdtR2JvNkZuVkhXcDhsMWl6NG5pNmpLVWhhKzZQNmRYdG1hMDVzNXo5UFJaNHRMNlY1bm8vVFliQ29WclI0ZHRxbDAzVVpNbzFEam50UmkzNnlWbVJqQjVYcG9tM0hIN1d5MkgzN0hEVkJNTXFONm9QR1F1UWpjaDRwK2dRTDdNU1RPTEFCd01jSXZaSXZlZVlpQWY1VlJtQWJ2ZzhYN1pTbitMRXVCQW9CczVkWUk0UUVlREtoQzBKQTNKQzZlR1dvYTBva2RsR2lGemIrcisxSXIrOXdMMFppeUM5R3lMSDFsZWQ2NC8vMUFQMm1CTTZiazFVVXVLUWhTOHNEYnk4dUk3VFRDSEFNU2t5VGlLTElBUnZrMDhYKzJXS0ZoUUlEQVFBQiIsInBlcnNpc3RlbnRJZCI6IkJ3SDVsRFdzbXZCM0NNS2diWmhPdHc9PSIsInByb3RvY29scyI6WyJodHRwczovL3Byb3RvY29scy5xaXkubmwvaW52aXRlcy92LjEuMC4wIl0sIm5hbWUiOiJwdF91c2Vybm9kZV9kcl9pbl9sbyJ9"
-}
-
-unencoded_payload: {
-    "name":"pt_usernode_dr_in_lo",
-    "persistentId":"BwH5lDWsmvB3CMKgbZhOtw==",
-    "protocols":["https://protocols.qiy.nl/invites/v.1.0.0"],
-    "publicKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0EA7giZCXiIIrLYQvoG7kkEbsRQalRDZweEwAeNBnMntwAScBnFxyaGmGbo6FnVHWp8l1iz4ni6jKUha+6P6dXtma05s5z9PRZ4tL6V5no/TYbCoVrR4dtql03UZMo1DjntRi36yVmRjB5Xpom3HH7Wy2H37HDVBMMqN6oPGQuQjch4p+gQL7MSTOLABwMcIvZIveeYiAf5VRmAbvg8X7ZSn+LEuBAoBs5dYI4QEeDKhC0JA3JC6eGWoa0okdlGiFzb+r+1Ir+9wL0ZiyC9GyLH1led64//1AP2mBM6bk1UUuKQhS8sDby8uI7TTCHAMSkyTiKLIARvk08X+2WKFhQIDAQAB"
-}
-```
+When the Connection is established, the Qiy Node of the Qiy App receives a [Service Catalogue Message](#service-catalogue-message), like the one below.
 
 ## 6.3 Qiy Node Events
 
@@ -463,7 +442,7 @@ When an Accepter already has a Connection with the Proposer, the Connection Url 
 The [Persistent Id](#persistent-id) is always fired and returns the [Persistent Id](#persistent-id):
 * The [Persistent Id](#persistent-id) can be used to uniquely identify a connected Qiy Node.
 * The [Persistent Id](#persistent-id) for two connected Qiy Nodes is always the same.
-* The [Persistent Id](#persistent-id) of a Connection can be looked up by either the Qiy Nodes using the [Domain Details Message](#domain-details-message) that was transferred when the Connection was established.
+* The [Persistent Id](#persistent-id) of a Connection can be looked up by either the Qiy Nodes using the [Service Catalogue Message](#service-catalogue-message) that was transferred when the Connection was established.
 
 
 #### 6.3.2.1 First Time
@@ -577,7 +556,7 @@ This chapter describes the use case for data reuse.
 ### 8.1.1 Preconditons
 
 The preconditions for the scenario are:
-1. The Data Provider has setup a [Service Endpoint](#service-endpoint) that can provide the data.
+1. The Data Provider has setup a [Service Endpoint](#service-endpoint) for the delivery of the data it can provide.
 1. The Qiy Nodes of the Relying Party and the Individual have a Connection with eachother, see [8.2.1 Individual and Relying Party Connect](#821-individual-and-relying-party-connect).
 1. The Qiy Nodes of the Individual and the Data Provider have a Connection with eachother, see [8.2.2 Individual and Data Provider Connect](#822-individual-and-data-provider-connect).
 1. The Connections between the Qiy Nodes will remain for the duration of the scenario.
@@ -585,32 +564,9 @@ The preconditions for the scenario are:
 1. The Relying Party requests Personal Data that the Data Provider can provide.
 1. The Qiy Applications of the Relying Party, the Individual and the Data Provider are listening to the [Qiy Node Events](#qiy-node-event) and will do so for the duration of the scenario.
 
-### 8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue
+### 8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue
 
-The Qiy App of the Data Provider sends its [Service Catalogue](#service-catalogue) using a [Domain Details Message](#domain-details-message).
-
-![D1 DP Sends Service Catalogue](./images/D1_DP_Sends_Service_Catalogue_-_QS_User_Node_Protocol.png)
-
-(Diagram source code: [11.2.1 D1 DP Sends Service Catalogue](#1121-d1-dp-sends-service-catalogue))
-
-
-#### 8.1.2.1 Example Message
-
-```
-message={
-    'payload': 'eyJwdWJsaWNLZXkiOiJNSUlCSWpBTkJna3Foa2lHOXcwQkFRRUZBQU9DQVE4QU1JSUJDZ0tDQVFFQTFqdmd6a2hoME5sVkxSbkpCUmhWYTBnU1VSQlBudVhtQmpFVVJFMU1RRXJtUExOSUpPQkpPOUFheVdtV2srVUdxSnFuUVpFTVlSNmJCdnNHRHZmWHVrbTRVdFFDQ1VrQTFFbU84TndXd2U2Uzl6NlV3aU8vMks4ZDhHaEhaTENmdVRsVzVvTUdiS0k2UWJWMnZmcFdaOUUwem9ocmlKNzdMQlJJQ3o1Zm1LZVIyaUlESDVVV3llTVpwQmJBeDdHcE14MzNrK1FtYndPTmpET3dZVEV2enNLUHhkbnI2WWFDMUREYWNkdHhTeVJiK00vT0ZDd0M4ajJYYUl6T2Rxa21jbW9sYWljdlVQcWJQV2pZMG1Vb3NxS081cW9PRFNXYUtuZVRGQVdjZUJ6dU1OVmI5NzRuSlhTVXNzUkxDek4vdFpaemEvMDJCNmdiY3pzLzNrSFlmUUlEQVFBQiIsInBlcnNpc3RlbnRJZCI6IlgvV0gwNkxpTm1SdXBhQXdjM256SWc9PSIsInByb3RvY29scyI6WyJodHRwczovL3Byb3RvY29scy5xaXkubmwvaW52aXRlcy92LjEuMC4wIiwiaHR0cHM6Ly9wcm90b2NvbHMucWlkaWRhLm5sL2RhcHByZS92LjEuMC4wIl0sIm5hbWUiOiJjYXJkbm9kZS10ZXN0LnNjaGVtZS5xaXkifQ==',
-    'protocol': 'https://protocols.qiy.nl/domain-details/v.1.0.0',
-    'refSerialNr': None,
-    'text': 'Our details'
-}
-
-payload={
-    "name":"cardnode-test.scheme.qiy",
-    "persistentId":"X/WH06LiNmRupaAwc3nzIg==",
-    "protocols":["https://protocols.qiy.nl/invites/v.1.0.0","https://protocols.qidida.nl/dappre/v.1.0.0"],
-    "publicKey":"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1jvgzkhh0NlVLRnJBRhVa0gSURBPnuXmBjEURE1MQErmPLNIJOBJO9AayWmWk+UGqJqnQZEMYR6bBvsGDvfXukm4UtQCCUkA1EmO8NwWwe6S9z6UwiO/2K8d8GhHZLCfuTlW5oMGbKI6QbV2vfpWZ9E0zohriJ77LBRICz5fmKeR2iIDH5UWyeMZpBbAx7GpMx33k+QmbwONjDOwYTEvzsKPxdnr6YaC1DDacdtxSyRb+M/OFCwC8j2XaIzOdqkmcmolaicvUPqbPWjY0mUosqKO5qoODSWaKneTFAWceBzuMNVb974nJXSUssRLCzN/tZZza/02B6gbczs/3kHYfQIDAQAB"
-}
-```
+The Qiy App of the Data Provider updates the [Service Catalogue](#service-catalogue) of the Data Provider using a [Service Catalogue Replace Request](#service-catalogue-replace-request) and the Qiy Node of the Individual receives the [Service Catalogue](#service-catalogue) in a [Service Catalogue Message](#service-catalogue-message). The change is also propagated to the App of the Individual in a [Service Catalogue Event](#service-catalogue-event).
 
 ### 8.1.3 D2 Qiy App of Relying Party Asks for Reference
 
@@ -818,13 +774,6 @@ Specification | Reference
 [QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 [QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
-## Domain Details Message
-
-Specification | Reference
-------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Domain Details Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#DomainDetailsMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
-
 ## Dynamic Path Endpoint Addresses
 
 Specification | Reference
@@ -1003,6 +952,34 @@ Specification | Reference
 [Definitions](Definitions.md)                       | [Service Catalogue](Definitions.md#service-catalogue)
 [QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
 
+## Service Catalogue Event
+
+Specification | Reference
+------------- | ---------
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueEventModel)
+
+## Service Catalogue Message
+
+Specification | Reference
+------------- | ---------
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueMessageModel)
+
+## Service Catalogue Replace Request
+
+Specification | Reference
+------------- | ---------
+[QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditions](#811-preconditions)
+[QS User Node API](QS%20User%20Node%20API.json) | [PUT /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointPut)
+
+## Service Catalogue Request
+
+Specification | Reference
+------------- | ---------
+[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Sends Service Catalogue](#812-d1-qiy-app-of-data-provider-sends-service-catalogue)
+[QS User Node API](QS%20User%20Node%20API.json) | [GET /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointGet)
+
 ## Service Desk
 
 Specification | Reference
@@ -1013,11 +990,13 @@ Specification | Reference
 
 Specification | Reference
 ------------- | ---------
-[Definitions](Definitions.md)                       | [Service Endpoint](Definitions.md#service-endpoint)
+[Definitions](Definitions.md)       | [Service Endpoint](Definitions.md#service-endpoint)
 [QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
 
 ## Source Candidates Event
 
+Specification | Reference
+------------- | ---------
 [Definitions](Definitions.md)       | [Source Candidates Event](Definitions.md#source-candidates-event)
 [QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
 [QS User Node API](QS%20User%20Node%20API.json) | [Source Candidates Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#SourceCandidatesEventModel)
@@ -1124,7 +1103,7 @@ participant "Qiy Node of RP" as RPq
 participant "Service Endpoint of DP" as DPs
 
 
-DPa -> INq: D1 DP sends service catalogue
+DPa -> INq: D1 DP provides service catalogue
 RPa -> INq: D2 RP asks for reference
 INq -> INa: D3 Qiy proposes DP
 INa -> INq: D4 Individual chooses DP
@@ -1135,26 +1114,6 @@ RPa -> RPq: D8 RP asks for data
 RPq -> DPs: D9 Qiy resolves reference
 DPs -> RPq: D10 Service endpoint returns data
 RPq -> RPa: D11 Qiy forwards data
-
 ```
-
-## 11.2.1 D1 DP Sends Service Catalogue
-
-```
-title D1 DP Sends Service Catalogue - QS User Node Protocol
-
-
-participant "Qiy App of DP" as DPa
-participant "Qiy Node of DP" as DPq
-participant "Qiy Node of IN" as INq
-participant "Qiy App of IN" as INa
-
-DPa ->  DPq: Post service catalogue message
-DPq --> INq: Service catalogue message
-INq --> INa: Service catalogue message received notification
-INa ->  INq: Get service catalogue message
-
-```
-
 
 
