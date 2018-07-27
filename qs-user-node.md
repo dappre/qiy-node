@@ -14,7 +14,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Service Desk](#21-service-desk)
 	1. [Open API Specification](#22-open-api-specification)
 	1. [QS User Node Servers](#23-qs-user-node-servers)
-		1. [Health Check](#231-health-check)
+		1. [Access Check](#231-access-check)
 	1. [Versions](#24-versions)
 	1. [Dynamic Path Endpoint Addresses](#25-dynamic-path-endpoint-addresses)
 	1. [Registration of Data Providers and/or Relying Parties](#26-registration-of-data-providers-andor-relying-parties)
@@ -187,15 +187,15 @@ Acceptance | https://user.dolden.net/user
 Dev2       | https://dev2-user.testonly.digital-me.nl/user
 
 
-### 2.3.1 Health Check
+### 2.3.1 Access Check
 
-The health of a server can be checked with the following http request:
+Access to a server can be checked with the following http request:
 
-GET /admin/healthcheck
+GET /api
 
 Please try for yourself:
-* Acceptance Health Check: https://user.dolden.net/user/admin/healthcheck
-* Dev2 Health Check: https://dev2-user.testonly.digital-me.nl/user/admin/healthcheck
+* Acceptance Check: https://user.dolden.net/user/api
+* Dev2 Check: https://dev2-user.testonly.digital-me.nl/user/api
 
 ## 2.4 Versions
 
