@@ -252,6 +252,11 @@ font-style: italic;
   <li><a href="#refsEndpointGet"><code><span class="http-method">get</span> /refsEndpoint</code></a></li>
   <li><a href="#scanEndpointPost"><code><span class="http-method">post</span> /scanEndpoint</code></a></li>
   </ul>
+  <h4><a href="#ServiceCatalogue">ServiceCatalogue</a></h4>
+  <ul>
+  <li><a href="#serviceCatalogueEndpointGet"><code><span class="http-method">get</span> /serviceCatalogueEndpoint</code></a></li>
+  <li><a href="#serviceCatalogueEndpointPut"><code><span class="http-method">put</span> /serviceCatalogueEndpoint</code></a></li>
+  </ul>
   <h4><a href="#ServiceProvider">ServiceProvider</a></h4>
   <ul>
   <li><a href="#refsEndpointPost"><code><span class="http-method">post</span> /refsEndpoint</code></a></li>
@@ -2044,6 +2049,97 @@ font-style: italic;
         <a href="#"></a>
   </div> <!-- method -->
   <hr/>
+  <h1><a name="ServiceCatalogue">ServiceCatalogue</a></h1>
+  <div class="method"><a name="serviceCatalogueEndpointGet"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /serviceCatalogueEndpoint</code></pre></div>
+    <div class="method-summary">Service Catalogue Request (<span class="nickname">serviceCatalogueEndpointGet</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-request">Service Catalogue Request</a>.</div>
+
+
+
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#ServiceCatalogueModel">ServiceCatalogueModel</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "serviceDescriptors" : [ "http://example.com/aeiou", "http://example.com/aeiou" ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#ServiceCatalogueModel">ServiceCatalogueModel</a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="serviceCatalogueEndpointPut"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /serviceCatalogueEndpoint</code></pre></div>
+    <div class="method-summary">Service Catalogue Replace Request (<span class="nickname">serviceCatalogueEndpointPut</span>)</div>
+    <div class="method-notes">See <a href="https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-replace-request">Service Catalogue Replace Request</a>.</div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">service-catalogue <a href="#ServiceCatalogueModel">ServiceCatalogueModel</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+    <h3 class="field-label">Request headers</h3>
+    <div class="field-items">
+      
+    </div>  <!-- field-items -->
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    200, Successful execution.
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    400,600 Unsuccessful execution.
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
   <h1><a name="ServiceProvider">ServiceProvider</a></h1>
   <div class="method"><a name="refsEndpointPost"/>
     <div class="method-path">
@@ -2390,6 +2486,8 @@ font-style: italic;
     <li><a href="#ReferenceDetailsModel"><code>ReferenceDetailsModel</code> - </a></li>
     <li><a href="#ReferenceResultModel"><code>ReferenceResultModel</code> - </a></li>
     <li><a href="#ReferencesResultModel"><code>ReferencesResultModel</code> - </a></li>
+    <li><a href="#ServiceCatalogueEventModel_extraData"><code>ServiceCatalogueEventModel_extraData</code> - </a></li>
+    <li><a href="#ServiceCatalogueModel"><code>ServiceCatalogueModel</code> - </a></li>
     <li><a href="#TemplatesModel"><code>TemplatesModel</code> - </a></li>
     <li><a href="#ApiLinksModel"><code>ApiLinksModel</code> - </a></li>
     <li><a href="#ConnectTokenDataModel"><code>ConnectTokenDataModel</code> - </a></li>
@@ -2406,6 +2504,8 @@ font-style: italic;
     <li><a href="#OperationReferenceRequestEventModel"><code>OperationReferenceRequestEventModel</code> - </a></li>
     <li><a href="#OperationReferenceRequestMessageModel"><code>OperationReferenceRequestMessageModel</code> - </a></li>
     <li><a href="#PersistentIdEventModel"><code>PersistentIdEventModel</code> - </a></li>
+    <li><a href="#ServiceCatalogueEventModel"><code>ServiceCatalogueEventModel</code> - </a></li>
+    <li><a href="#ServiceCatalogueMessageModel"><code>ServiceCatalogueMessageModel</code> - </a></li>
     <li><a href="#SharedSecretReceivedEventModel"><code>SharedSecretReceivedEventModel</code> - </a></li>
     <li><a href="#SharedSecretSentEventModel"><code>SharedSecretSentEventModel</code> - </a></li>
     <li><a href="#StateHandledEventModel"><code>StateHandledEventModel</code> - </a></li>
@@ -2502,6 +2602,7 @@ font-style: italic;
 <div class="param">ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'reference'-endpoint (refEndpoint). This property is only included when the request is authenticated. format: url</div>
 <div class="param">refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'references'-endpoint (refsEndpoint). This property is only included when the request is authenticated. format: url</div>
 <div class="param">scan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'create connection'-endpoint (scanEndpoint). This property is only included when the request is authenticated. format: url</div>
+<div class="param">serviceCatalogue (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint). This property is only included when the request is authenticated. format: url</div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">
@@ -2644,6 +2745,20 @@ font-style: italic;
     </div>  <!-- field-items -->
   </div>
   <div class="model">
+    <h3><a name="ServiceCatalogueEventModel_extraData"><code>ServiceCatalogueEventModel_extraData</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>Service Catalogue</div>
+    <div class="field-items">
+      <div class="param">serviceCatalogue </div><div class="param-desc"><span class="param-type"><a href="#ServiceCatalogueModel">ServiceCatalogueModel</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ServiceCatalogueModel"><code>ServiceCatalogueModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'>See <a href="https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue">Service Catalogue</a>.</div>
+    <div class="field-items">
+      <div class="param">serviceDescriptors (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">array[String]</a></span> The Service Descriptors of the provided services. format: uri</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
     <h3><a name="TemplatesModel"><code>TemplatesModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
     <div class='model-description'>Current endpoint addresses.</div>
     <div class="field-items">
@@ -2662,6 +2777,7 @@ font-style: italic;
 <div class="param">ref (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'reference'-endpoint (refEndpoint). This property is only included when the request is authenticated. format: url</div>
 <div class="param">refs (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'references'-endpoint (refsEndpoint). This property is only included when the request is authenticated. format: url</div>
 <div class="param">scan (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'create connection'-endpoint (scanEndpoint). This property is only included when the request is authenticated. format: url</div>
+<div class="param">serviceCatalogue (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint). This property is only included when the request is authenticated. format: url</div>
 <div class="param">targetTemplate (optional)</div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> tbd. This property is only included when the request is authenticated. </div>
     </div>  <!-- field-items -->
   </div>
@@ -2801,6 +2917,25 @@ font-style: italic;
       <div class="param">connectionUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Connection Url of the created connection. format: url</div>
 <div class="param">extraData </div><div class="param-desc"><span class="param-type"><a href="#PersistentIdEventModel_extraData">PersistentIdEventModel_extraData</a></span>  </div>
 <div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: PID</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ServiceCatalogueEventModel"><code>ServiceCatalogueEventModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">connectionUrl </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Url of the related connection. format: url</div>
+<div class="param">extraData </div><div class="param-desc"><span class="param-type"><a href="#ServiceCatalogueEventModel_extraData">ServiceCatalogueEventModel_extraData</a></span>  </div>
+<div class="param">type </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span>  format: SERVICE_CATALOGUE</div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="ServiceCatalogueMessageModel"><code>ServiceCatalogueMessageModel</code> - </a> <a class="up" href="#__Models">Up</a></h3>
+    <div class='model-description'></div>
+    <div class="field-items">
+      <div class="param">protocol </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Service Catalogue Message Descriptor. format: url</div>
+<div class="param">refSerialNr </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> Reference serial number format: nullable (NB: See [OpenAPI 2.0 does not support nullable fields](https://github.com/swagger-api/swagger-node/issues/399) and [OpenAPI 3.0 'nullable'-attribute](https://swagger.io/docs/specification/data-models/data-types/#nullable).)</div>
+<div class="param">text </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Subject </div>
+<div class="param">payload </div><div class="param-desc"><span class="param-type"><a href="#ServiceCatalogueModel">ServiceCatalogueModel</a></span>  </div>
     </div>  <!-- field-items -->
   </div>
   <div class="model">

@@ -352,6 +352,13 @@
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
+                },
+                "serviceCatalogue": {
+                    "description": "Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint). This property is only included when the request is authenticated.",
+                    "format": "url",
+                    "maxItems": 1,
+                    "minItems": 0,
+                    "type": "string"
                 }
             }
         },
@@ -1008,6 +1015,74 @@
             },
             "uniqueItems": true
         },
+        "ServiceCatalogueModel": {
+            "description": "See [Service Catalogue](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue).",
+            "properties": {
+                "serviceDescriptors": {
+                    "description": "The Service Descriptors of the provided services.",
+                    "items": {
+                        "description": "Service Descriptor",
+                        "format": "uri",
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "ServiceCatalogueEventModel": {
+            "allOf": [
+                {   "$ref": "#/definitions/EventModel" },
+                {
+                    "description": "Service Catalogue Event.",
+                    "properties": {
+                        "connectionUrl": {
+                            "description": "Url of the related connection.",
+                            "type": "string",
+                            "format": "url"
+                        },
+                        "extraData": {
+                            "description": "Service Catalogue",
+                            "properties": {
+                                "serviceCatalogue": {
+                                    "$ref": "#/definitions/ServiceCatalogueModel"
+                                }
+                            },
+                            "required": [
+                                "serviceCatalogue"
+                            ],
+                            "type": "object"
+                        },
+                        "type": {
+                            "format": "SERVICE_CATALOGUE",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            ]
+        },
+        "ServiceCatalogueMessageModel": {
+            "allOf": [
+                {
+                    "$ref": "#/definitions/MessageModel"
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "payload": {
+                            "$ref": "#/definitions/ServiceCatalogueModel"
+                        },
+                        "protocol": {
+                            "description": "Service Catalogue Message Descriptor.",
+                            "format": "url",
+                            "pattern": "https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#service-catalogue-message",
+                            "type": "string"
+                        }
+                    }
+                }
+            ]
+        },
         "SharedSecretReceivedEventModel": {
             "allOf": [
                 {   "$ref": "#/definitions/EventModel" },
@@ -1634,6 +1709,64 @@
                     "Data Provider",
                     "Relying Party",
                     "Transport Requests"
+                ]
+            }
+        },
+        "/serviceCatalogueEndpoint": {
+            "get": {
+                "summary": "Service Catalogue Request",
+                "description": "See [Service Catalogue Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-request).",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/authorizationParam"
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200, Successful execution.",
+                        "schema": {
+                            "$ref": "#/definitions/ServiceCatalogueModel"
+                        }
+                    },
+                    "400": {
+                        "description": "400,600 Unsuccessful execution."
+                    }
+                },
+                "tags": [
+                    "Service Catalogue"
+                ]
+            },
+            "put": {
+                "summary": "Service Catalogue Replace Request",
+                "description": "See [Service Catalogue Replace Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-replace-request).",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/authorizationParam"
+                    },
+                    {
+                        "name": "service-catalogue",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/ServiceCatalogueModel"
+                        }
+                    }
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "200, Successful execution."
+                    },
+                    "400": {
+                        "description": "400,600 Unsuccessful execution."
+                    }
+                },
+                "tags": [
+                    "Service Catalogue"
                 ]
             }
         }
