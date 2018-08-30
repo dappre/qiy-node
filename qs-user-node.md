@@ -634,7 +634,7 @@ The Qiy App of the Relying Party obtains the Data in the response of the [Operat
 
 ```
 data = {
-   "openstaande schuld": 53,40
+   "Hello": "world!"
 }
 ```
 
@@ -705,7 +705,7 @@ Example value:
 
 ```
 data = {
-   "openstaande schuld": 53,40
+   "Hello": "world!"
 }
 ```
 
