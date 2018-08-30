@@ -1334,6 +1334,9 @@
                 "description": "See [Qiy Node Create Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#qiy-node-create-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/authorizationParam"
+                    },
+                    {
                         "in": "body",
                         "name": "Create request parameters",
                         "required": true,
