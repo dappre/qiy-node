@@ -223,7 +223,7 @@ This chapter describes the QS User Node support for Qiy Node Lifecycle processes
 ## 3.1 Create Qiy Node
 
 
-![Create Qiy Node](./images/Create_Qiy_Node_-_Qiy_Node_Protocol.png)
+![Create Qiy Node](./images/Create_Qiy_Node_-_QS_User_Node_Protocol.png)
 
 (Diagram source code: [11.3.1 Create Qiy Node](#1131-create-qiy-node))
 
