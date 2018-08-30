@@ -289,7 +289,7 @@ Accept-Encoding: gzip, deflate
 User-Agent: python-requests/2.18.4
 Connection: keep-alive
 content-type: application/json
-Authorization: QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
+Authorization: QTN pt_usernode_qnc_test_de test_app_key 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
 Content-Length: 0
 
 
@@ -338,7 +338,7 @@ public String signatureHeaderForData(String qiyNodeId, String appKey, byte[] bod
   byte[] signature = sig.sign();
 
   String result = Base64.getEncoder().encodeToString(signature);
-  return String.format("QTF %s %s %s:%s", qiyNodeId, appKey, nonce, result);
+  return String.format("QTN %s %s %s:%s", qiyNodeId, appKey, nonce, result);
 }
 ````
 
@@ -362,7 +362,7 @@ def authHeader(qiy_node_id, app_key, unix_time_in_msecs, body):
                 ,tosign
                 ,"sha256")
                 ).decode()
-        return "QTF {0} {1} {2}:{3}".format(qiy_node_id, app_key, unix_time_in_msecs, signature)
+        return "QTN {0} {1} {2}:{3}".format(qiy_node_id, app_key, unix_time_in_msecs, signature)
 ```
 
 # 5 Events
@@ -510,7 +510,7 @@ User-Agent: python-requests/2.18.4
 Accept: */*
 Connection: keep-alive
 Accept-Encoding: gzip, deflate
-Authorization: QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==
+Authorization: QTN pt_usernode_dr_dp_lo test_app_key 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==
 
 
 None

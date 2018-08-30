@@ -1183,7 +1183,7 @@
             "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#authorization-header-parameter).",
             "required": true,
             "type": "string",
-            "format": "QTF [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
+            "format": "QTN [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
         },
         "authorizationOptionalParam": {
             "name": "Authorization",
@@ -1191,7 +1191,7 @@
             "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#authorization-header-parameter).",
             "required": false,
             "type": "string",
-            "format": "QTF [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
+            "format": "QTN [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
         },
         "idParam": {
             "name": "id",
