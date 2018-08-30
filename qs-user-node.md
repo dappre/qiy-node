@@ -128,6 +128,8 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 		1. [Connect Offline](#1112-connect-offline)
 		1. [Request Connect Token](#1113-request-connect-token)
 	1. [Data Reuse Overview](#112-data-reuse-overview)
+	1. [Lifecycle](#113-lifecycle)
+		1. [Create Qiy Node](#1131-create-qiy-node)
 
 # 1 Introduction
 
@@ -183,8 +185,8 @@ The following QS User Node Servers are available:
 
 Environment | [Server Url](https://swagger.io/specification/#serverObject)
 ----------- | ----
-Acceptance | https://user.dolden.net/user
 Dev2       | https://dev2-user.testonly.digital-me.nl/user
+Acceptance | https://user.dolden.net/user
 
 
 ### 2.3.1 Access Check
@@ -194,8 +196,8 @@ Access to a server can be checked with the following http request:
 GET /api
 
 Please try for yourself:
-* Acceptance Check: https://user.dolden.net/user/api
 * Dev2 Check: https://dev2-user.testonly.digital-me.nl/user/api
+* Acceptance Check: https://user.dolden.net/user/api
 
 ## 2.4 Versions
 
@@ -220,7 +222,16 @@ This chapter describes the QS User Node support for Qiy Node Lifecycle processes
 
 ## 3.1 Create Qiy Node
 
-A Qiy Node can be created with a [Qiy Node Create Request](#qiy-node-create-request).
+
+![Create Qiy Node](./images/Create_Qiy_Node_-_Qiy_Node_Protocol.png)
+
+(Diagram source code: [11.3.1 Create Qiy Node](#1131-create-qiy-node))
+
+A Qiy Node can be created by a Qiy Node Client as follows:
+1. Create and persist the [Qiy Node Credential](#qiy-node-credential), which consists of a [Qiy Node Id](#qiy-node-id), a key pair and a [Transport Password](#transport-password).
+1. Get the current address of the [Create Endpoint](#create-endpoint) using [GET /api](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#apiGet), see [2.3.1 Access Check](#231-access-check).
+1. Create the Qiy Node using [POST /createEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#createEndpointPost). 
+
 
 ### 3.1.1 Transport Password
 Creation of a Qiy Node requires providing a [Transport Password](#transport-password) : this password is mandatory for transport-related requests.
@@ -702,55 +713,55 @@ data = {
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [4 Authentication](#4-authentication)
+[QS User Node](qs-user-node.md) | [4 Authentication](#4-authentication)
 
 ## Connect Token
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connect Token](Definitions.md#connect-token)
-[QS User Node API](QS%20User%20Node%20API.json) | [Connect Token Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ConnectTokenModel)
+[QS User Node API](qs-user-node-api.json) | [Connect Token Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ConnectTokenModel)
 
 ## Connect Token Create Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connect Token Create Request](Definitions.md#connect-token-create-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /ctCreateEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ctCreateEndpointPost)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /connectTokenUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectTokenUrlGet)
-[QS User Node](QS%20User%20Node.md) | [6.1 Qiy App Requests Connect Token](#61-qiy-app-requests-connect-token)
+[QS User Node API](qs-user-node-api.json) | [POST /ctCreateEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ctCreateEndpointPost)
+[QS User Node API](qs-user-node-api.json) | [GET /connectTokenUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectTokenUrlGet)
+[QS User Node](qs-user-node.md) | [6.1 Qiy App Requests Connect Token](#61-qiy-app-requests-connect-token)
 
 ## Connect Token Register Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connect Token Register Request](Definitions.md#connect-token-register-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /ctCreateEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ctCreateEndpointPost)
-[QS User Node](QS%20User%20Node.md) | [6.4 Connect Offline](#64-connect-offline)
+[QS User Node API](qs-user-node-api.json) | [POST /ctCreateEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ctCreateEndpointPost)
+[QS User Node](qs-user-node.md) | [6.4 Connect Offline](#64-connect-offline)
 
 ## Connection Create Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connection Create Request](Definitions.md#connection-create-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /scanEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#scanEndpointPost)
-[QS User Node](QS%20User%20Node.md) | [6.2 Qiy App Creates Connection](#62-qiy-app-creates-connection)
+[QS User Node API](qs-user-node-api.json) | [POST /scanEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#scanEndpointPost)
+[QS User Node](qs-user-node.md) | [6.2 Qiy App Creates Connection](#62-qiy-app-creates-connection)
 
 ## Connection Details Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connection Details Request](Definitions.md#connection-details-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /connectionUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectionUrlGet)
-[QS User Node](QS%20User%20Node.md) | [7.1 Send Message](#71-send-message)
+[QS User Node API](qs-user-node-api.json) | [GET /connectionUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectionUrlGet)
+[QS User Node](qs-user-node.md) | [7.1 Send Message](#71-send-message)
 
 ## Connections Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Connections Request](Definitions.md#connections-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /connectionsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectionsEndpointGet)
-[QS User Node](QS%20User%20Node.md) | [6.5 Connections Request](#65-connections-request)
+[QS User Node API](qs-user-node-api.json) | [GET /connectionsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#connectionsEndpointGet)
+[QS User Node](qs-user-node.md) | [6.5 Connections Request](#65-connections-request)
 
 ## Data Provider
 
@@ -769,133 +780,133 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)       | [Data Reference Request](Definitions.md#data-reference-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+[QS User Node](qs-user-node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](qs-user-node.md) | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
+[QS User Node](qs-user-node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Dynamic Path Endpoint Addresses
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Path Endpoint Addresses](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#PathEndpointAddresses)
-[QS User Node](QS%20User%20Node.md) | [2.5 Dynamic Path Endpoint Addresses](#25-dynamic-path-endpoint-addresses)
+[QS User Node API](qs-user-node-api.json) | [Path Endpoint Addresses](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#PathEndpointAddresses)
+[QS User Node](qs-user-node.md) | [2.5 Dynamic Path Endpoint Addresses](#25-dynamic-path-endpoint-addresses)
 
 ## Events
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#EventModel)
-[QS User Node](QS%20User%20Node.md) | [5 Events](#5-events)
+[QS User Node API](qs-user-node-api.json) | [Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#EventModel)
+[QS User Node](qs-user-node.md) | [5 Events](#5-events)
 
 ## Events Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /eventsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#eventsEndpointGet)
-[QS User Node](QS%20User%20Node.md) | [5 Events](#5-events)
+[QS User Node API](qs-user-node-api.json) | [GET /eventsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#eventsEndpointGet)
+[QS User Node](qs-user-node.md) | [5 Events](#5-events)
 
 ## Message Post Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Message Post Request](Definitions.md#message-post-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /mboxUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#mboxUrlPost)
-[QS User Node](QS%20User%20Node.md) | [7.1 Send Message](#71-send-message)
+[QS User Node API](qs-user-node-api.json) | [POST /mboxUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#mboxUrlPost)
+[QS User Node](qs-user-node.md) | [7.1 Send Message](#71-send-message)
 
 ## Messages Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Messages Request](Definitions.md#messages-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /mboxUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#mboxUrlGet)
-[QS User Node](QS%20User%20Node.md) | [7.3 Receive Message](#73-receive-message)
+[QS User Node API](qs-user-node-api.json) | [GET /mboxUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#mboxUrlGet)
+[QS User Node](qs-user-node.md) | [7.3 Receive Message](#73-receive-message)
 
 ## Operate Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operate Request](Definitions.md#operate-request)
-[QS User Node](QS%20User%20Node.md) | [8.1.10 D9 Qiy Node of Relying Party Resolves Reference](#8110-d9-qiy-node-of-relying-party-resolves-reference)
+[QS User Node](qs-user-node.md) | [8.1.10 D9 Qiy Node of Relying Party Resolves Reference](#8110-d9-qiy-node-of-relying-party-resolves-reference)
 
 ## Operation Execute Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Execute Request](Definitions.md#operation-execute-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointGet)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /refEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refEndpointGet)
-[QS User Node](QS%20User%20Node.md) | [8.1.9 D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
+[QS User Node API](qs-user-node-api.json) | [GET /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointGet)
+[QS User Node API](qs-user-node-api.json) | [GET /refEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refEndpointGet)
+[QS User Node](qs-user-node.md) | [8.1.9 D8 Qiy App of Relying Party Asks for Data](#819-d8-qiy-app-of-relying-party-asks-for-data)
 
 ## Operation Reference Message
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                   | [Operation Reference Message](Definitions.md#operation-reference-message)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceMessageModel)
-[QS User Node](QS%20User%20Node.md)             | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
-[QS User Node](QS%20User%20Node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
+[QS User Node API](qs-user-node-api.json) | [Operation Reference Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceMessageModel)
+[QS User Node](qs-user-node.md)             | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+[QS User Node](qs-user-node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 
 ## Operation Reference Received Event
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                   | [Operation Reference Received Event](Definitions.md#operation-reference-received-event)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Received Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceReceivedEventModel)
-[QS User Node](QS%20User%20Node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
+[QS User Node API](qs-user-node-api.json) | [Operation Reference Received Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceReceivedEventModel)
+[QS User Node](qs-user-node.md)             | [8.1.8 D7 Qiy Node of Individual Forwards Reference](#818-d7-qiy-node-of-individual-forwards-reference)
 
 ## Operation Reference Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                   | [Operation Reference Request](Definitions.md#operation-reference-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /operationReferenceRequestUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#operationReferenceRequestUrlPost)
-[QS User Node](QS%20User%20Node.md)             | [8.1.5 D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider) 
+[QS User Node API](qs-user-node-api.json) | [POST /operationReferenceRequestUrl](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#operationReferenceRequestUrlPost)
+[QS User Node](qs-user-node.md)             | [8.1.5 D4 Individual chooses Data Provider](#815-d4-individual-chooses-data-provider) 
 
 ## Operation Reference Request Event
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                   | [Operation Reference Request Event](Definitions.md#operation-reference-request-event)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestEventModel)
-[QS User Node](QS%20User%20Node.md)             | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
+[QS User Node API](qs-user-node-api.json) | [Operation Reference Request Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestEventModel)
+[QS User Node](qs-user-node.md)             | [8.1.4 D3 Qiy Node of Individual Proposes Data Provider](#814-d3-qiy-node-of-individual-proposes-data-provider)
 
 ## Operation Reference Request Message
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Reference Request Message](Definitions.md#operation-reference-request-message)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
-[QS User Node](QS%20User%20Node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
+[QS User Node API](qs-user-node-api.json) | [Operation Reference Request Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationReferenceRequestMessageModel)
+[QS User Node](qs-user-node.md) | [8.1.3 D2 Qiy App of Relying Party Asks for Reference](#813-d2-qiy-app-of-relying-party-asks-for-reference)
+[QS User Node](qs-user-node.md) | [8.1.6 D5 Qiy Node of Individual Forwards Reference Request](#816-d5-qiy-node-of-individual-forwards-reference-request)
 
 ## Operation Register Request
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Register Request](Definitions.md#operation-register-request)
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointPost)
-[QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+[QS User Node API](qs-user-node-api.json) | [POST /refsEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#refsEndpointPost)
+[QS User Node](qs-user-node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 
 ## Operation Specification
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Operation Specification](Definitions.md#operation-specification)
-[QS User Node API](QS%20User%20Node%20API.json) | [Operation Specification Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationSpecificationModel)
-[QS User Node](QS%20User%20Node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
+[QS User Node API](qs-user-node-api.json) | [Operation Specification Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#OperationSpecificationModel)
+[QS User Node](qs-user-node.md) | [8.1.7 D6 Qiy App of Data Provider Generates Reference](#817-d6-qiy-app-of-data-provider-generates-reference)
 
 ## Persistent Id
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [6.3.2 Accepter Events](#632-accepter-events)
+[QS User Node](qs-user-node.md) | [6.3.2 Accepter Events](#632-accepter-events)
 
 ## Persistent Id Event
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Persistent Id Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#PersistentIdEventModel)
-[QS User Node](QS%20User%20Node.md) | [6.3.2 Accepter Events](#632-accepter-events)
+[QS User Node API](qs-user-node-api.json) | [Persistent Id Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#PersistentIdEventModel)
+[QS User Node](qs-user-node.md) | [6.3.2 Accepter Events](#632-accepter-events)
 
 ## Qiy Node
 
@@ -907,24 +918,24 @@ Specification | Reference
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [POST /createEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#createEndpointPost)
-[QS User Node](QS%20User%20Node.md) | [3.1 Create Qiy Node](#31-create-qiy-node)
+[QS User Node API](qs-user-node-api.json) | [POST /createEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#createEndpointPost)
+[QS User Node](qs-user-node.md) | [3.1 Create Qiy Node](#31-create-qiy-node)
 
 ## Qiy Node Delete Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [DELETE /owners/id/{id}](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ownersIdIdDelete)
-[QS User Node](QS%20User%20Node.md) | [3.2 Delete Qiy Node](#32-delete-qiy-node)
+[QS User Node API](qs-user-node-api.json) | [DELETE /owners/id/{id}](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ownersIdIdDelete)
+[QS User Node](qs-user-node.md) | [3.2 Delete Qiy Node](#32-delete-qiy-node)
 
 ## Qiy Node Message
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Qiy Node Message](Definitions.md#qiy-node-message)
-[QS User Node API](QS%20User%20Node%20API.json) | [Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#MessageModel)
-[QS User Node](QS%20User%20Node.md) | [7.1 Send Message](#71-send-message)
-[QS User Node](QS%20User%20Node.md) | [7.3 Receive Message](#73-receive-message)
+[QS User Node API](qs-user-node-api.json) | [Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#MessageModel)
+[QS User Node](qs-user-node.md) | [7.1 Send Message](#71-send-message)
+[QS User Node](qs-user-node.md) | [7.3 Receive Message](#73-receive-message)
 
 ## Qiy App
 
@@ -949,57 +960,57 @@ Specification | Reference
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Service Catalogue](Definitions.md#service-catalogue)
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
-[QS User Node](QS%20User%20Node.md) | [6.2 Qiy App Creates Connection](#62-qiy-app-creates-connection) 
+[QS User Node](qs-user-node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node](qs-user-node.md) | [6.2 Qiy App Creates Connection](#62-qiy-app-creates-connection) 
 
 ## Service Catalogue Event
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
-[QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueEventModel)
+[QS User Node](qs-user-node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node API](qs-user-node-api.json) | [Service Catalogue Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueEventModel)
 
 ## Service Catalogue Message
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
-[QS User Node API](QS%20User%20Node%20API.json) | [Service Catalogue Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueMessageModel)
+[QS User Node](qs-user-node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node API](qs-user-node-api.json) | [Service Catalogue Message Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#ServiceCatalogueMessageModel)
 
 ## Service Catalogue Replace Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
-[QS User Node API](QS%20User%20Node%20API.json) | [PUT /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointPut)
+[QS User Node](qs-user-node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node API](qs-user-node-api.json) | [PUT /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointPut)
 
 ## Service Catalogue Request
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
-[QS User Node API](QS%20User%20Node%20API.json) | [GET /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointGet)
+[QS User Node](qs-user-node.md) | [8.1.2 D1 Qiy App of Data Provider Provides Service Catalogue](#812-d1-qiy-app-of-data-provider-provides-service-catalogue)
+[QS User Node API](qs-user-node-api.json) | [GET /serviceCatalogueEndpoint](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#serviceCatalogueEndpointGet)
 
 ## Service Desk
 
 Specification | Reference
 ------------- | ---------
-[QS User Node](QS%20User%20Node.md) | [2.1 Service Desk](#21-service-desk)
+[QS User Node](qs-user-node.md) | [2.1 Service Desk](#21-service-desk)
 
 ## Service Endpoint
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)       | [Service Endpoint](Definitions.md#service-endpoint)
-[QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
+[QS User Node](qs-user-node.md) | [8.1.1 Preconditons](#811-preconditons)
 
 ## Source Candidates Event
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)       | [Source Candidates Event](Definitions.md#source-candidates-event)
-[QS User Node](QS%20User%20Node.md) | [8.1.1 Preconditons](#811-preconditons)
-[QS User Node API](QS%20User%20Node%20API.json) | [Source Candidates Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#SourceCandidatesEventModel)
+[QS User Node](qs-user-node.md) | [8.1.1 Preconditons](#811-preconditons)
+[QS User Node API](qs-user-node-api.json) | [Source Candidates Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#SourceCandidatesEventModel)
 
 ## Source Register Request
 
@@ -1009,29 +1020,29 @@ tbd
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [State Handled Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#StateHandledEventModel)
-[QS User Node](QS%20User%20Node.md) | [6.3.1 Proposer Events](#631-proposer-events)
+[QS User Node API](qs-user-node-api.json) | [State Handled Event Model](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#StateHandledEventModel)
+[QS User Node](qs-user-node.md) | [6.3.1 Proposer Events](#631-proposer-events)
 
 ## Transport Layer
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Transport Layer](Definitions.md#transport-layer)
-[QS User Node](QS%20User%20Node.md) | [7.2 Transmit Message](#72-transmit-message)
+[QS User Node](qs-user-node.md) | [7.2 Transmit Message](#72-transmit-message)
 
 ## Transport Protocol
 
 Specification | Reference
 ------------- | ---------
 [Definitions](Definitions.md)                       | [Transport Protocol](Definitions.md#transport-protocol)
-[QS User Node](QS%20User%20Node.md) | [7.2 Transmit Message](#72-transmit-message)
+[QS User Node](qs-user-node.md) | [7.2 Transmit Message](#72-transmit-message)
 
 ## Transport Password
 
 Specification | Reference
 ------------- | ---------
-[QS User Node API](QS%20User%20Node%20API.json) | [Transport Requests](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests)
-[QS User Node](QS%20User%20Node.md) | [3.1.1 Transport Password](#311-transport-password)
+[QS User Node API](qs-user-node-api.json) | [Transport Requests](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests)
+[QS User Node](qs-user-node.md) | [3.1.1 Transport Password](#311-transport-password)
 
 
 # 11 Diagram sources
@@ -1116,4 +1127,26 @@ DPs -> RPq: D10 Service endpoint returns data
 RPq -> RPa: D11 Qiy forwards data
 ```
 
+## 11.3 Lifecycle
 
+### 11.3.1 Create Qiy Node
+
+```
+title Create Qiy Node
+ 
+participant "Qiy Node Client" as c
+participant "Access Provider" as a
+
+    note over c
+        1. Create and persist Qiy Node Credential:
+        * Qiy Node id 
+        * key pair 
+        * Transport Password
+    end note
+    note over c, a: 2. Get address of Create Endpoint
+        c ->  a: GET api
+        a --> c: ...'create': '<createEndpoint>'...
+    note over c, a: 3. Create Qiy Node
+        c ->  a: POST createEndpoint
+        a --> c: 201
+```
