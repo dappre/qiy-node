@@ -320,23 +320,25 @@ Most requests must be authenticated using the [Authorization Header Parameter](#
 
 In Java, the value of the Authorization header parameter can be calculated as follows:
 ```
-public String signatureHeaderForData(String uuid, byte[] data) {
-  String nonce = "" + System.currentTimeMillis();
-  byte[] nonceBytes = nonce.getBytes(StandardCharsets.UTF_8);
-  byte[] id = uuid.getBytes();
-  PrivateKey pk = getKeyPair(uuid).getPrivate();
+public String signatureHeaderForData(String qiyNodeId, String appKey, byte[] body) {
+  String unixTimeInMsecs = "" + System.currentTimeMillis();
+  byte[] nonceBytes = unixTimeInMsecs.getBytes(StandardCharsets.UTF_8);
+  byte[] id = qiyNodeId.getBytes();
+  byte[] ak = appKey.getBytes();
+  PrivateKey pk = getKeyPair(qiyNodeId).getPrivate();
 
   Signature sig = Signature.getInstance("SHA256withRSA", "SunRsaSign");
   sig.initSign(pk);
   sig.update(id, 0, id.length);
+  sig.update(ak, 0, id.length);
   sig.update(nonceBytes, 0, nonceBytes.length);
-  if (data != null) {
-	sig.update(data, 0, data.length);
+  if (body != null) {
+	sig.update(body, 0, body.length);
   }
   byte[] signature = sig.sign();
 
   String result = Base64.getEncoder().encodeToString(signature);
-  return String.format("QTF %s %s:%s", uuid, nonce, result);
+  return String.format("QTF %s %s %s:%s", qiyNodeId, appKey, nonce, result);
 }
 ````
 
@@ -349,8 +351,8 @@ from OpenSSL.crypto import sign
 from base64 import b64encode
 import OpenSSL
 
-def authHeader(uuid, nonce, Input):
-        tosign="{0}{1}{2}".format(uuid,nonce,Input)
+def authHeader(qiy_node_id, app_key, unix_time_in_msecs, body):
+        tosign="{0}{1}{2}{3}".format(qiy_node_id, app_key, unix_time_in_msecs, body)
         print("tosign: '{0}'".format(tosign))
         with open(<File with private key in pem format>,"r") as f:
                 buffer=f.read()
@@ -360,7 +362,7 @@ def authHeader(uuid, nonce, Input):
                 ,tosign
                 ,"sha256")
                 ).decode()
-        return "QTF {0} {1}:{2}".format(uuid, nonce, signature)
+        return "QTF {0} {1} {2}:{3}".format(qiy_node_id, app_key, unix_time_in_msecs, signature)
 ```
 
 # 5 Events
