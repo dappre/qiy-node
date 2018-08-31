@@ -298,69 +298,79 @@
             "description": "Current endpoint addresses.",
             "properties": {
                 "create": {
-                    "description": "Current address for the 'create'-endpoint (createEndpoint). This property is only included when the request is not authenticated.",
+                    "description": "Current address for the 'create'-endpoint (createEndpoint). This property is only included when the request is authenticated using the Qiy Node credential of an Application Provider.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "connections": {
-                    "description": "Current address for the 'connections'-endpoint (connectionsEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'connections'-endpoint (connectionsEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ctCreate": {
-                    "description": "Current address for the 'connect token create'-endpoint (ctCreateEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'connect token create'-endpoint (ctCreateEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ctList": {
-                    "description": "Current address for the 'connect token list'-endpoint (ctListEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'connect token list'-endpoint (ctListEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "events": {
-                    "description": "Current address for the 'events'-endpoint (eventsEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'events'-endpoint (eventsEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ref": {
-                    "description": "Current address for the 'reference'-endpoint (refEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'reference'-endpoint (refEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "refs": {
-                    "description": "Current address for the 'references'-endpoint (refsEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'references'-endpoint (refsEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "scan": {
-                    "description": "Current address for the 'create connection'-endpoint (scanEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'create connection'-endpoint (scanEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "serviceCatalogue": {
-                    "description": "Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint). This property is only included when the request is authenticated.",
+                    "description": "Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint).",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 }
-            }
+	    },
+	    "required": [
+		    "connections",
+		    "ctCreate",
+		    "ctList",
+		    "events",
+		    "ref",
+		    "refs",
+		    "scan",
+		    "serviceCatalogue"
+            ]
         },
         "EventStreamModel": {
             "allOf": [
@@ -1185,14 +1195,6 @@
             "type": "string",
             "format": "QTN [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
         },
-        "authorizationOptionalParam": {
-            "name": "Authorization",
-            "in": "header",
-            "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#authorization-header-parameter).",
-            "required": false,
-            "type": "string",
-            "format": "QTN [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
-        },
         "idParam": {
             "name": "id",
             "in": "query",
@@ -1223,7 +1225,7 @@
                 "description": "Get api information and current endpoint addresses. Use this request daily to remain operational, see [Dynamic Path Endpoint Addresses](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#dynamic-path-endpoint-addresses) for more information.",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/authorizationOptionalParam"
+                        "$ref": "#/parameters/authorizationParam"
                     }
                 ],
                 "produces": [
@@ -1511,7 +1513,7 @@
                 "description": "See [Operation Reference Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#operation-reference-request).",
                 "parameters": [
                     {
-                        "$ref": "#/parameters/authorizationOptionalParam"
+                        "$ref": "#/parameters/authorizationParam"
                     },
                     {
                         "name": "OperationReferenceRequest",

@@ -191,7 +191,7 @@ Acceptance | https://user.dolden.net/user
 
 ### 2.3.1 Access Check
 
-Access to a server can be checked with the following http request:
+Access to the two servers can be checked with the following http request:
 
 GET /api
 
@@ -221,7 +221,6 @@ Please contact the [Service Desk](#service-desk) to register as a Data Provider 
 This chapter describes the QS User Node support for Qiy Node Lifecycle processes.
 
 ## 3.1 Create Qiy Node
-
 
 ![Create Qiy Node](./images/Create_Qiy_Node_-_QS_User_Node_Protocol.png)
 
@@ -315,7 +314,9 @@ Content-Type: text/plain; charset=UTF-8
 
 # 4 Authentication
 
-Most requests must be authenticated using the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the current Unix time in ms using a Private Key which is unique for the Qiy Node.
+All requests must be authenticated using the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the App Key, the current Unix time in ms using a Private Key which is unique for the Qiy Node.
+The exception for this rule is [GET /api](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#apiGet): this request must be authenticated using the credential of the Qiy Node of an Application Provider.
+
 
 ## 4.1 Java
 
