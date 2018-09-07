@@ -317,7 +317,7 @@ Content-Type: text/plain; charset=UTF-8
 
 # 4 Authentication
 
-All requests must be authenticated using an [Access Provider Token](#access-provider-token) and the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the current Unix time in milliseconds using a Private Key which is unique for the Qiy Node.
+All requests must be authenticated using an [Access Provider Token](#access-provider-token) and the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the current Unix time in milliseconds and the request body using a Private Key which is unique for the Qiy Node.
 The exception for this rule is [GET /api](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#apiGet): the Authorization Header Parameter in this request is optional.
 
 
