@@ -1187,13 +1187,21 @@
         }
     },
     "parameters": {
+        "accessProviderTokenParam": {
+            "name": "Ap-Token",
+            "in": "header",
+            "description": "See [Access Provider Token](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#access-provider-token).",
+            "required": true,
+            "type": "string",
+            "format": "jwt"
+        },
         "authorizationParam": {
             "name": "Authorization",
             "in": "header",
             "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#authorization-header-parameter).",
             "required": true,
             "type": "string",
-            "format": "QTN [Qiy Node id] [App Key] [Unix time in ms]:[signature]"
+            "format": "QTF [Qiy Node id] [Unix time in ms]:[signature]"
         },
         "idParam": {
             "name": "id",
@@ -1225,6 +1233,9 @@
                 "description": "Get api information and current endpoint addresses. Use this request daily to remain operational, see [Dynamic Path Endpoint Addresses](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#dynamic-path-endpoint-addresses) for more information.",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     }
                 ],
@@ -1250,6 +1261,9 @@
                 "summary": "Get Connection Details",
                 "description": "See [Connection Details Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connection-details-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/authorizationParam"
                     }
@@ -1277,6 +1291,9 @@
                 "summary": "Get Connections",
                 "description": "See [Connections Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connections-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/authorizationParam"
                     },
@@ -1307,6 +1324,9 @@
                 "description": "Get Connect Token Details, see [Connect Token Create Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connect-token-create-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     }
                 ],
@@ -1335,6 +1355,9 @@
                 ],
                 "description": "See [Qiy Node Create Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#qiy-node-create-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/authorizationParam"
                     },
@@ -1368,6 +1391,9 @@
                 ],
                 "description": "See [Connect Token Create Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connect-token-create-request) or [Connect Token Register Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connect-token-register-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/passwordParam"
                     },
@@ -1439,6 +1465,9 @@
                 "description": "See [Messages Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#messages-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
@@ -1472,6 +1501,9 @@
                 ],
                 "description": "See [Message Post Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#message-post-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/passwordParam"
                     },
@@ -1513,6 +1545,9 @@
                 "description": "See [Operation Reference Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#operation-reference-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
@@ -1538,6 +1573,9 @@
                 "summary": "Delete Qiy Node.",
                 "description": "See [Qiy Node Delete Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#qiy-node-delete-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/passwordParam"
                     },
@@ -1572,6 +1610,9 @@
                 "description": "See [Operation Execute Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#operation-execute-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
@@ -1605,6 +1646,9 @@
                 "description": "See [Operation Execute Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#operation-execute-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     },
                     {
@@ -1635,6 +1679,9 @@
                 "summary": "Register Operation Specification",
                 "description": "See [Operation Register Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#operation-register-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/authorizationParam"
                     },
@@ -1682,6 +1729,9 @@
                 "description": "See [Connection Create Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#connection-create-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/passwordParam"
                     },
                     {
@@ -1723,6 +1773,9 @@
                 "description": "See [Service Catalogue Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-request).",
                 "parameters": [
                     {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
+                    {
                         "$ref": "#/parameters/authorizationParam"
                     }
                 ],
@@ -1748,6 +1801,9 @@
                 "summary": "Service Catalogue Replace Request",
                 "description": "See [Service Catalogue Replace Request](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#service-catalogue-replace-request).",
                 "parameters": [
+                    {
+                        "$ref": "#/parameters/accessProviderTokenParam"
+                    },
                     {
                         "$ref": "#/parameters/authorizationParam"
                     },

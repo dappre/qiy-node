@@ -77,6 +77,7 @@ This document describes the [QS User Node](#qs-user-node): the [Qiy Node Impleme
 	1. [Test Data](#91-test-data)
 1. [Index](#10-index)
 	1. [Authorization Header Parameter](#authorization-header-parameter)
+	1. [Access Provider Token](#access-provider-token)
 	1. [Connect Token](#connect-token)
 	1. [Connect Token Create Request](#connect-token-create-request)
 	1. [Connect Token Register Request](#connect-token-register-request)
@@ -214,7 +215,7 @@ The QS User Node uses [Dynamic Path Endpoint Addresses](#dynamic-path-endpoint-a
 
 ## 2.6 Registration of Data Providers and/or Relying Parties
 
-Please contact the [Service Desk](#service-desk) to register as a Data Provider and/or a Relying Party and obtain the credentials to access to Qiy.
+Please contact the [Service Desk](#service-desk) to register as a Data Provider and/or a Relying Party and obtain the credentials to access Qiy.
 
 # 3 Lifecycle
 
@@ -247,7 +248,8 @@ Accept-Encoding: gzip, deflate
 Accept: application/json
 User-Agent: python-requests/2.18.4
 Content-Type: application/json
-Authorization: QTN pt_usernode_qnc_test_de test_app_key 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
+Authorization: QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
+Ap-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 Content-Length: 530
 
 
@@ -289,7 +291,8 @@ Accept-Encoding: gzip, deflate
 User-Agent: python-requests/2.18.4
 Connection: keep-alive
 content-type: application/json
-Authorization: QTN pt_usernode_qnc_test_de test_app_key 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
+Authorization: QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==
+Ap-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 Content-Length: 0
 
 
@@ -314,7 +317,7 @@ Content-Type: text/plain; charset=UTF-8
 
 # 4 Authentication
 
-All requests must be authenticated using the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the App Key, the current Unix time in ms using a Private Key which is unique for the Qiy Node.
+All requests must be authenticated using an [Access Provider Token](#access-provider-token) and the [Authorization Header Parameter](#authorization-header-parameter) containing a signature over the Qiy Node Id, the current Unix time in milliseconds using a Private Key which is unique for the Qiy Node.
 The exception for this rule is [GET /api](http://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#apiGet): this request must be authenticated using the credential of the Qiy Node of an Application Provider.
 
 
@@ -322,17 +325,15 @@ The exception for this rule is [GET /api](http://htmlpreview.github.io/?https://
 
 In Java, the value of the Authorization header parameter can be calculated as follows:
 ```
-public String signatureHeaderForData(String qiyNodeId, String appKey, byte[] body) {
+public String signatureHeaderForData(String qiyNodeId, byte[] body) {
   String unixTimeInMsecs = "" + System.currentTimeMillis();
   byte[] nonceBytes = unixTimeInMsecs.getBytes(StandardCharsets.UTF_8);
   byte[] id = qiyNodeId.getBytes();
-  byte[] ak = appKey.getBytes();
   PrivateKey pk = getKeyPair(qiyNodeId).getPrivate();
 
   Signature sig = Signature.getInstance("SHA256withRSA", "SunRsaSign");
   sig.initSign(pk);
   sig.update(id, 0, id.length);
-  sig.update(ak, 0, id.length);
   sig.update(nonceBytes, 0, nonceBytes.length);
   if (body != null) {
 	sig.update(body, 0, body.length);
@@ -340,7 +341,7 @@ public String signatureHeaderForData(String qiyNodeId, String appKey, byte[] bod
   byte[] signature = sig.sign();
 
   String result = Base64.getEncoder().encodeToString(signature);
-  return String.format("QTN %s %s %s:%s", qiyNodeId, appKey, nonce, result);
+  return String.format("QTF %s %s:%s", qiyNodeId, nonce, result);
 }
 ````
 
@@ -353,8 +354,8 @@ from OpenSSL.crypto import sign
 from base64 import b64encode
 import OpenSSL
 
-def authHeader(qiy_node_id, app_key, unix_time_in_msecs, body):
-        tosign="{0}{1}{2}{3}".format(qiy_node_id, app_key, unix_time_in_msecs, body)
+def authHeader(qiy_node_id, unix_time_in_msecs, body):
+        tosign="{0}{1}{2}".format(qiy_node_id, unix_time_in_msecs, body)
         print("tosign: '{0}'".format(tosign))
         with open(<File with private key in pem format>,"r") as f:
                 buffer=f.read()
@@ -364,7 +365,7 @@ def authHeader(qiy_node_id, app_key, unix_time_in_msecs, body):
                 ,tosign
                 ,"sha256")
                 ).decode()
-        return "QTN {0} {1} {2}:{3}".format(qiy_node_id, app_key, unix_time_in_msecs, signature)
+        return "QTF {0} {1}:{2}".format(qiy_node_id, unix_time_in_msecs, signature)
 ```
 
 # 5 Events
@@ -512,7 +513,8 @@ User-Agent: python-requests/2.18.4
 Accept: */*
 Connection: keep-alive
 Accept-Encoding: gzip, deflate
-Authorization: QTN pt_usernode_dr_dp_lo test_app_key 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==
+Authorization: QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==
+Ap-Token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
 
 
 None
@@ -714,6 +716,12 @@ data = {
 # 10 Index
 
 ## Authorization Header Parameter
+
+Specification | Reference
+------------- | ---------
+[QS User Node](qs-user-node.md) | [4 Authentication](#4-authentication)
+
+## Access Provider Token
 
 Specification | Reference
 ------------- | ---------
