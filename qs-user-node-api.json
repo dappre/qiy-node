@@ -298,79 +298,69 @@
             "description": "Current endpoint addresses.",
             "properties": {
                 "create": {
-                    "description": "Current address for the 'create'-endpoint (createEndpoint). This property is only included when the request is authenticated using the Qiy Node credential of an Application Provider.",
+                    "description": "Current address for the 'create'-endpoint (createEndpoint). This property is only included when the request is partly authenticated, e.g. only by an Access Provider Token.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "connections": {
-                    "description": "Current address for the 'connections'-endpoint (connectionsEndpoint).",
+                    "description": "Current address for the 'connections'-endpoint (connectionsEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ctCreate": {
-                    "description": "Current address for the 'connect token create'-endpoint (ctCreateEndpoint).",
+                    "description": "Current address for the 'connect token create'-endpoint (ctCreateEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ctList": {
-                    "description": "Current address for the 'connect token list'-endpoint (ctListEndpoint).",
+                    "description": "Current address for the 'connect token list'-endpoint (ctListEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "events": {
-                    "description": "Current address for the 'events'-endpoint (eventsEndpoint).",
+                    "description": "Current address for the 'events'-endpoint (eventsEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "ref": {
-                    "description": "Current address for the 'reference'-endpoint (refEndpoint).",
+                    "description": "Current address for the 'reference'-endpoint (refEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "refs": {
-                    "description": "Current address for the 'references'-endpoint (refsEndpoint).",
+                    "description": "Current address for the 'references'-endpoint (refsEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "scan": {
-                    "description": "Current address for the 'create connection'-endpoint (scanEndpoint).",
+                    "description": "Current address for the 'create connection'-endpoint (scanEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 },
                 "serviceCatalogue": {
-                    "description": "Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint).",
+                    "description": "Current address for the 'service catalogue'-endpoint (serviceCatalogueEndpoint). This property is only included when the request is fully authenticated.",
                     "format": "url",
                     "maxItems": 1,
                     "minItems": 0,
                     "type": "string"
                 }
-	    },
-	    "required": [
-		    "connections",
-		    "ctCreate",
-		    "ctList",
-		    "events",
-		    "ref",
-		    "refs",
-		    "scan",
-		    "serviceCatalogue"
-            ]
+	    }
         },
         "EventStreamModel": {
             "allOf": [
@@ -1195,6 +1185,14 @@
             "type": "string",
             "format": "jwt"
         },
+        "authorizationOptionalParam": {
+            "name": "Authorization",
+            "in": "header",
+            "description": "See [Authorization Header Parameter](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#authorization-header-parameter).",
+            "required": false,
+            "type": "string",
+            "format": "QTF [Qiy Node id] [Unix time in ms]:[signature]"
+        },
         "authorizationParam": {
             "name": "Authorization",
             "in": "header",
@@ -1236,7 +1234,7 @@
                         "$ref": "#/parameters/accessProviderTokenParam"
                     },
                     {
-                        "$ref": "#/parameters/authorizationParam"
+                        "$ref": "#/parameters/authorizationOptionalParam"
                     }
                 ],
                 "produces": [
