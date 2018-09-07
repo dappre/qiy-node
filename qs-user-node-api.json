@@ -1178,7 +1178,7 @@
     },
     "parameters": {
         "accessProviderTokenParam": {
-            "name": "Ap-Token",
+            "name": "AP-Token",
             "in": "header",
             "description": "See [Access Provider Token](https://github.com/digital-me/qiy-node/tree/topic/data-reuse/qs-user-node.md#access-provider-token).",
             "required": true,
