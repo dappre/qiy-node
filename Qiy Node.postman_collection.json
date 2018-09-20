@@ -2,708 +2,30 @@
 	"info": {
 		"_postman_id": "87eb4502-4203-4f6b-b4d0-27f8fe813c81",
 		"name": "Qiy Node",
-		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#43-qiy-node) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual connects with a Service Provider](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) using a [Connect Token of a Service Provider]().\n3. The [Service Provider requests for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n4. The [Individual receives the request](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de) and assigns the feed to one of the Service Providers in his [Service Portfolio](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/Definitions.md#service-portfolio).\n5. The [Service Provider accesses the feed](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) whenever the service is required.\n",
+		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#43-qiy-node) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask permission to use subscribed services](https://qiy.api.digital-me.nl/#bf6403a7-89b2-4028-95c3-b39d5d444bf3).\n4. The [Individual may grant this and provide feeds to do so](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party can accesses the feeds when needed](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "End User App",
+			"name": "API Basics",
 			"item": [
 				{
-					"name": "Setup",
-					"item": [],
-					"description": "An End User App can only access the Qiy Trust Network under the following preconditions:\n1. The End User App uses a valid [Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. The [End User App correctly authenticates Qiy Node requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n3. The End User App must allow End Users to use a [new Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) or reuse an existing one.",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "a0086e02-4f2c-4ec9-95a8-19b689af2239",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "e290a794-b5b4-4f56-a16c-478d6188ae6a",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Subscribe",
-					"item": [
-						{
-							"name": "Connect with a Service Provider",
-							"item": [],
-							"description": "This section describes how an [End User App](https://qiy.api.digital-me.nl/#265b0209-d297-429d-a891-f1eba6cf2083) can [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4).\n\nThis process uses a Connect Token of the Service Provider that can be produced by the End User App or the Service Provider.\n\n## Connecting using a Connect Token created by the End User App\n\nWhen the End User App creates the Connect Token of the Service Provider, connecting goes as follows:\n2. The End User App creates a so-called [Offline Connect Token](https://qiy.api.digital-me.nl/#e2324a33-022e-4b02-bde0-c438d12b2683), but does not register it.\n1. The End User App provides the Offline Connect Token to the Service Provider (out-of-scope) who will [register it](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).\n2. The End User App uses the [Offline Connect Token to create the connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\n\n\n## Connecting using a Connect Token created by the Service Provider\n",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "a7d34c27-5b51-46bb-acef-ef44338d8741",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "4970c4e6-8f8b-4e14-bdfd-a25c42b4d308",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								}
-							],
-							"_postman_isSubFolder": true
-						}
-					],
-					"description": "An Individual can subscribe to a service as follows:\n1. Conclude an subscription agreement (out-of-scope).\n2. [Connect with the Service Provider](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167).\n\n",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "9bcc6ebc-da8a-42d8-af27-115a73287c13",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "48b9dad8-d95b-4c89-8ef9-ddeba30c7690",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Orchestrate",
-					"item": [
-						{
-							"name": "Feed assignment",
-							"item": [
-								{
-									"name": "Add feed",
-									"request": {
-										"method": "PUT",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": "{{actionUrl}}",
-											"host": [
-												"{{actionUrl}}"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Set feeds",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": "{{actionUrl}}",
-											"host": [
-												"{{actionUrl}}"
-											]
-										}
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Get user action message",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "f5db43d4-afc0-4a20-806e-f23a49bf8969",
-										"type": "text/javascript",
-										"exec": [
-											"// Extract the orchestrationRequestUrl from the 'extraData'-member of the 'USER_ACION_MESSAGE'-event."
-										]
-									}
-								}
-							],
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{authorizationHeader}}"
-									},
-									{
-										"key": "AP-Token",
-										"value": "{{apToken}}"
-									}
-								],
-								"body": {},
-								"url": {
-									"raw": "{{userActionMessageUrl}}",
-									"host": [
-										"{{userActionMessageUrl}}"
-									]
-								},
-								"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799)."
-							},
-							"response": []
-						}
-					],
-					"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Start listening to events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the possible service providers and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected Service Providers.\n6. If and when applicable, [assign the feed to the selected service provider](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) using the related actionUrl.",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "9a03b650-bf0b-4dea-b0eb-97a85897f839",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "31486811-1550-4a3a-b03c-74f94233eee8",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				}
-			],
-			"description": "\nAn [End User App](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#5-the-application-layer) is a [Qiy Node Client](https://qiy.api.digital-me.nl/#821514ce-5005-4408-be95-a400b6b4181c) which enables an [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to [subscribe to](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89) and [orchestrate](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de) (data) services.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "76c5e861-b69c-4316-8adb-1c8396612847",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "2a89aebc-1c3f-4729-a106-bc98bd4d0517",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Service Provider",
-			"item": [
-				{
-					"name": "General",
-					"item": [
-						{
-							"name": "Setup",
-							"item": [
-								{
-									"name": "On-Connected Endpoint",
-									"item": [],
-									"description": "An On-Connected Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to receive [notifications when a connection has been created](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f).",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
-									"name": "Feed Request Endpoint",
-									"item": [],
-									"description": "A Feed Request Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a Service Provider to receive [Feed Requests](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) from [Individuals when they orchestrate the subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "006a2435-8113-4b06-937b-2443ddb27374",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"id": "a59355c8-95eb-4f91-8765-f712fbec2643",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
-									"name": "Service Catalogue",
-									"item": [
-										{
-											"name": "Get service catalogue",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "ed86a9c4-5d02-4758-a6cc-cbd5285132a8",
-														"type": "text/javascript",
-														"exec": [
-															"// Use '//Dynamic Endpoint Addresses/GET Api' to get the serviceCatalogueEndpointUrl"
-														]
-													}
-												}
-											],
-											"request": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-														"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-													},
-													{
-														"key": "AP-Token",
-														"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-														"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-													},
-													{
-														"key": "",
-														"value": ""
-													}
-												],
-												"body": {},
-												"url": {
-													"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
-													"host": [
-														"{{serviceCatalogueEndpointUrl}}"
-													],
-													"query": [
-														{
-															"key": "internal",
-															"value": "True",
-															"description": "If False or None, only external services will be gotten."
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"name": "Get Service Catalogue - OK",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Authorization",
-																"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-																"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-															},
-															{
-																"key": "AP-Token",
-																"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-																"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-															}
-														],
-														"body": {},
-														"url": {
-															"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
-															"host": [
-																"{{serviceCatalogueEndpointUrl}}"
-															],
-															"query": [
-																{
-																	"key": "internal",
-																	"value": "True"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "",
-													"header": [],
-													"cookie": [],
-													"body": "{\r\n        \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\"type\": \"internal\"},\r\n        \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
-												}
-											]
-										},
-										{
-											"name": "Set service catalogue",
-											"request": {
-												"method": "PUT",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": ""
-													},
-													{
-														"key": "AP-Token",
-														"value": ""
-													},
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\r\n  \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\r\n    \"type\": \"internal\"\r\n  },\r\n  \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
-												},
-												"url": {
-													"raw": "{{serviceCatalogueEndpointUrl}}",
-													"host": [
-														"{{serviceCatalogueEndpointUrl}}"
-													]
-												},
-												"description": "A Service Provider can use Set Service Catalogue to:\n1. Update his Service Catalogue\n2. Define the [Feed Request Endpoint](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67)"
-											},
-											"response": []
-										}
-									],
-									"description": "A [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for service type descriptions with additional details, for example for the associated [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67).\n\nA Service Type Description can contain a list of urls for the description of the operation types of the service which are used in [Feed Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nHowever, if not, the Service Type Description Url must be used instead.\n",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "0ddac47a-5d01-41c9-8825-c15e26cd87bc",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"id": "afeff0e7-2df9-49c1-8588-e1300aa76ce5",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
-									"name": "Service Endpoint",
-									"item": [],
-									"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
-									"_postman_isSubFolder": true
-								}
-							],
-							"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup an [On-Connect Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) for easily processing connect requests.\n2. Setup [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67) for his services.\n2. Setup [Service Endpoints]() to serve [feed access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\n3. Prepare the Computer systems to correctly produce [authenticated requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n1. [Contact an Access Provider](https://qiy.api.digital-me.nl/#208534d5-bf93-43af-b644-420ced7caef4) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\n",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "18a3c7ec-e220-4739-aa13-f600c00ba5c9",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "8429e058-4991-4ec9-bb01-d0cdb775355f",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Connect with an Individual",
-							"item": [],
-							"_postman_isSubFolder": true
-						}
-					],
-					"description": "The topics in this section apply to all types of Service Providers:\n1. [Setup](https://qiy.api.digital-me.nl/#0225107f-58a0-4ff9-b82c-45240e549541)\n2. [Connect with an Individual](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "92b03af8-f2c5-460d-8fdd-ae9da70d3581",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "9cf2cc57-3839-4254-a060-dbd65ca60893",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Relying Party",
-					"item": [
-						{
-							"name": "Feeds",
-							"item": [
-								{
-									"name": "Request for feed",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "ffbc1a52-cdf3-4500-8939-2c1198fe3dc8",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										}
-									],
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											},
-											{
-												"key": "password",
-												"value": "{{transportPassword}}"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n  \"protocol\": {{operationTypeUrl}},\r\n  \"refSerialNr\": -1,\r\n  \"text\": \"Requesting feed.\"\r\n}"
-										},
-										"url": {
-											"raw": "{{mboxUrl}}",
-											"host": [
-												"{{mboxUrl}}"
-											]
-										}
-									},
-									"response": []
-								},
-								{
-									"name": "Access feed",
-									"request": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
-												"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-											},
-											{
-												"key": "AP-Token",
-												"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-												"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": "{{url}}?id={{feed_id}}",
-											"host": [
-												"{{url}}"
-											],
-											"query": [
-												{
-													"key": "id",
-													"value": "{{feed_id}}"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Access feed - OK",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
-														"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-													},
-													{
-														"key": "AP-Token",
-														"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-														"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-													}
-												],
-												"body": {},
-												"url": {
-													"raw": "{{ref}}?id={{feed_id}}",
-													"host": [
-														"{{ref}}"
-													],
-													"query": [
-														{
-															"key": "id",
-															"value": "{{feed_id}}"
-														},
-														{
-															"key": "",
-															"value": null
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [],
-											"cookie": [],
-											"body": "{\n    \"activities-heart\": [\n        {\n            \"customHeartRateZones\": [],\n            \"dateTime\": \"today\",\n            \"heartRateZones\": [\n                {\n                    \"caloriesOut\": 138.8351,\n                    \"max\": 86,\n                    \"min\": 30,\n                    \"minutes\": 65,\n                    \"name\": \"Out of Range\"\n                },\n                {\n                    \"caloriesOut\": 309.96824,\n                    \"max\": 120,\n                    \"min\": 86,\n                    \"minutes\": 177,\n                    \"name\": \"Fat Burn\"\n                },\n                {\n                    \"caloriesOut\": 198.6678,\n                    \"max\": 146,\n                    \"min\": 120,\n                    \"minutes\": 59,\n                    \"name\": \"Cardio\"\n                },\n                {\n                    \"caloriesOut\": 8.1326,\n                    \"max\": 220,\n                    \"min\": 146,\n                    \"minutes\": 7,\n                    \"name\": \"Peak\"\n                }\n            ],\n            \"value\": \"102.28\"\n        }\n    ],\n    \"activities-heart-intraday\": {\n        \"dataset\": [\n\n            {\n                \"time\": \"12:00:00\",\n                \"value\": 111\n            },\n            {\n                \"time\": \"12:01:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:02:00\",\n                \"value\": 112\n            },\n            {\n                \"time\": \"12:03:00\",\n                \"value\": 114\n            },\n            {\n                \"time\": \"12:04:00\",\n                \"value\": 136\n            },\n            {\n                \"time\": \"12:05:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:06:00\",\n                \"value\": 90\n            },\n            {\n                \"time\": \"12:07:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"12:08:00\",\n                \"value\": 90\n            },\n            {\n                \"time\": \"12:09:00\",\n                \"value\": 98\n            },\n            {\n                \"time\": \"12:10:00\",\n                \"value\": 113\n            },\n            {\n                \"time\": \"12:11:00\",\n                \"value\": 144\n            },\n            {\n                \"time\": \"12:12:00\",\n                \"value\": 125\n            },\n            {\n                \"time\": \"12:13:00\",\n                \"value\": 108\n            },\n            {\n                \"time\": \"12:14:00\",\n                \"value\": 136\n            },\n            {\n                \"time\": \"12:15:00\",\n                \"value\": 135\n            },\n            {\n                \"time\": \"12:16:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:17:00\",\n                \"value\": 126\n            },\n            {\n                \"time\": \"12:18:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:19:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:20:00\",\n                \"value\": 114\n            },\n            {\n                \"time\": \"12:21:00\",\n                \"value\": 106\n            },\n            {\n                \"time\": \"12:22:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:23:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:24:00\",\n                \"value\": 112\n            },\n            {\n                \"time\": \"12:25:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:26:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"12:27:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:28:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:29:00\",\n                \"value\": 98\n            },\n            {\n                \"time\": \"12:30:00\",\n                \"value\": 100\n            },\n            {\n                \"time\": \"12:31:00\",\n                \"value\": 99\n            },\n            {\n                \"time\": \"12:32:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:33:00\",\n                \"value\": 134\n            },\n            {\n                \"time\": \"12:34:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:35:00\",\n                \"value\": 141\n            },\n            {\n                \"time\": \"12:36:00\",\n                \"value\": 129\n            },\n            {\n                \"time\": \"12:37:00\",\n                \"value\": 134\n            },\n            {\n                \"time\": \"12:38:00\",\n                \"value\": 137\n            },\n            {\n                \"time\": \"12:39:00\",\n                \"value\": 127\n            },\n            {\n                \"time\": \"12:40:00\",\n                \"value\": 120\n            },\n            {\n                \"time\": \"12:41:00\",\n                \"value\": 115\n            },\n            {\n                \"time\": \"12:43:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:44:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:45:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:46:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:47:00\",\n                \"value\": 111\n            },\n            {\n                \"time\": \"12:48:00\",\n                \"value\": 107\n            },\n            {\n                \"time\": \"12:49:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:50:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:51:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:52:00\",\n                \"value\": 102\n            },\n            {\n                \"time\": \"12:53:00\",\n                \"value\": 107\n            },\n            {\n                \"time\": \"12:54:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:55:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:56:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:57:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:58:00\",\n                \"value\": 88\n            },\n            {\n                \"time\": \"12:59:00\",\n                \"value\": 91\n            },\n            {\n                \"time\": \"13:00:00\",\n                \"value\": 89\n            },\n            {\n                \"time\": \"13:01:00\",\n                \"value\": 88\n            },\n            {\n                \"time\": \"13:02:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:03:00\",\n                \"value\": 83\n            },\n            {\n                \"time\": \"13:04:00\",\n                \"value\": 76\n            },\n            {\n                \"time\": \"13:05:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:06:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:07:00\",\n                \"value\": 74\n            },\n            {\n                \"time\": \"13:08:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:09:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:10:00\",\n                \"value\": 86\n            },\n            {\n                \"time\": \"13:11:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:12:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:13:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:14:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:15:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:16:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:17:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:18:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:19:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:20:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:21:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:22:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:23:00\",\n                \"value\": 78\n            },\n            {\n                \"time\": \"13:24:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:25:00\",\n                \"value\": 79\n            },\n            {\n                \"time\": \"13:26:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:27:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:28:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:29:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:30:00\",\n                \"value\": 79\n            },\n            {\n                \"time\": \"13:31:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:32:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:33:00\",\n                \"value\": 81\n            },\n            {\n                \"time\": \"13:34:00\",\n                \"value\": 81\n            },\n            {\n                \"time\": \"13:35:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:36:00\",\n                \"value\": 78\n            },\n            {\n                \"time\": \"13:37:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:38:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:39:00\",\n                \"value\": 66\n            },\n            {\n                \"time\": \"13:40:00\",\n                \"value\": 68\n            },\n            {\n                \"time\": \"13:41:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:42:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:43:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:44:00\",\n                \"value\": 72\n            },\n            {\n                \"time\": \"13:45:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:46:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:47:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:48:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:50:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:51:00\",\n                \"value\": 73\n            },\n            {\n                \"time\": \"13:52:00\",\n                \"value\": 74\n            },\n            {\n                \"time\": \"13:53:00\",\n                \"value\": 86\n            },\n            {\n                \"time\": \"13:54:00\",\n                \"value\": 83\n            },\n            {\n                \"time\": \"13:55:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:56:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:57:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:58:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:59:00\",\n                \"value\": 83\n            }\n        ],\n        \"datasetInterval\": 1,\n        \"datasetType\": \"minute\"\n    }\n}"
-										}
-									]
-								}
-							],
-							"description": "A Relying Party can access a Services that is orchestrated by an Individual as follows:\n1. [Request for feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "e8ed0165-c998-44bd-992d-0e972f8dd0d4",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "a12457c7-ad3b-4c3e-949a-5c66d8003e74",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								}
-							],
-							"_postman_isSubFolder": true
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Data Provider",
+					"name": "Registration",
 					"item": [],
 					"_postman_isSubFolder": true
-				}
-			],
-			"description": "A [Service Provider](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#42-service-provider) is a [Qiy User](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) that provides [Services](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0) via the Qiy Trust Network.\nA Service Provider can be a Relying Party or a Data Provider:\n1. A [Data Provider](https://qiy.api.digital-me.nl/#d0c5c5f9-2e94-4b0c-9933-0186d39560be) is a Service Provider that provides data services.\n2. A [Relying Party](https://qiy.api.digital-me.nl/#bf6403a7-89b2-4028-95c3-b39d5d444bf3) is a Service Provider that provides Services that depends on other services.\n",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "d15ba202-3159-4433-ad11-599dcb91ed11",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
 				},
 				{
-					"listen": "test",
-					"script": {
-						"id": "002f9cc2-ec9d-4ffc-af90-d52efd4311a6",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Qiy Node Client",
-			"item": [
+					"name": "Service Desk",
+					"item": [],
+					"description": "For contact details of the Digital Me Service Desk, please refer to [section 2.1 Service Desk](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#21-service-desk) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Versions",
+					"item": [],
+					"description": "For more information on versions, please refer to [section 2.4 Versions](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#24-versions) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+					"_postman_isSubFolder": true
+				},
 				{
 					"name": "Authentication",
 					"item": [],
@@ -733,337 +55,12 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "On-Connected Actions",
-					"item": [
-						{
-							"name": "Create a connect token with an on-connected action",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{authorizationHeader}}"
-									},
-									{
-										"key": "AP-Token",
-										"value": "{{apToken}}"
-									},
-									{
-										"key": "password",
-										"value": "{{transportPassword}}"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\t\t\t\r\n}"
-								},
-								"url": {
-									"raw": "{{connectTokenCreateEndpointUrl}}",
-									"host": [
-										"{{connectTokenCreateEndpointUrl}}"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection.",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "2458523d-d2d8-4ab6-8fe9-3a8a6ff368ef",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "35961d62-5f88-4da8-9187-e3e804315325",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Connect Tokens",
-					"item": [
-						{
-							"name": "Offline Connect Tokens",
-							"item": [
-								{
-									"name": "Register connect token",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "password",
-												"value": "{{transportPassword}}"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n\t\"useBudget\": 1\n}"
-										},
-										"url": {
-											"raw": "{{ctCreateEndpointUrl}}",
-											"host": [
-												"{{ctCreateEndpointUrl}}"
-											]
-										}
-									},
-									"response": [
-										{
-											"name": "Register connect token - OK",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "{{authorizationHeader}}"
-													},
-													{
-														"key": "AP-Token",
-														"value": "{{apToken}}"
-													},
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "password",
-														"value": "{{transportPassword}}"
-													}
-												],
-												"body": {},
-												"url": {
-													"raw": "{{ctCreateEndpointUrl}}",
-													"host": [
-														"{{ctCreateEndpointUrl}}"
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "",
-											"header": [
-												{
-													"key": "Location",
-													"value": "{{connectionUrl}}",
-													"name": "Location",
-													"description": "",
-													"type": "text"
-												}
-											],
-											"cookie": [],
-											"body": ""
-										}
-									]
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Online Connect Tokens",
-							"item": [
-								{
-									"name": "Create connect token",
-									"request": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											},
-											{
-												"key": "password",
-												"value": "{{transportPassword}}"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": ""
-										}
-									},
-									"response": []
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
-							"name": "List connect tokens",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw": "{{ctCreateEndpointUrl}}",
-									"host": [
-										"{{ctCreateEndpointUrl}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Get connect token",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "{{authorizationHeader}}"
-									},
-									{
-										"key": "AP-Token",
-										"value": "{{apToken}}"
-									},
-									{
-										"key": "Accept",
-										"value": "application/json"
-									}
-								],
-								"body": {},
-								"url": {
-									"raw": "{{connectionUrl}}",
-									"host": [
-										"{{connectionUrl}}"
-									]
-								},
-								"description": "The Get connect token request can be used to get the details of a Connect Token, using a connectionUrl that has been returned in the Location header of the response of a [Create Token Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f)."
-							},
-							"response": [
-								{
-									"name": "Get connect token - OK",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											},
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": "{{connectionUrl}}",
-											"host": [
-												"{{connectionUrl}}"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [],
-									"cookie": [],
-									"body": "{\n    \"expires\": 2349020398,\n    \"name\": \"example token of a Service Provider with an on-connected action using the On-Connected Endpoint.\",\n    \"note\": \"Just an example\",\n    \"useBudget\": 1,\n    \"actions\": {\n        \"actions\": [\n            {\n                \"key\": \"callback\",\n                \"uri\": \"{{onConnectedUrl}}\",\n                \"method\": \"POST\",\n                \"body\": {\n                    \"Hello\": \"world!\"\n                }\n            }\n        ]\n    },\n    \"json\": {\n        \"identifier\": \"Service Provider\",\n        \"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n        \"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n    }\n}"
-								}
-							]
-						}
-					],
-					"description": "A Connect Token is a [token](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/Definitions.md#token) which enables Individuals to establish an initially anonymous [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with another Qiy User.\nA Connect Token can be created and used both online and offline:\n\n1. When online, Connect Tokens can be created using a [Connect Token Create Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f).\n2. When offline, a [Connect Token can be created locally](https://qiy.api.digital-me.nl/#fbc534ce-9453-4344-ad66-a5ba3a547b41) and registered later using a [Connect Token Register Request](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) when online again.",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "56b4f821-3945-41e0-af4e-b2954cf08205",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "56af1d2c-229d-435c-8d9a-868c4d1ff1db",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Connections",
-					"item": [
-						{
-							"name": "Create connection",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw": "{{connectionCreateEndpointUrl}}",
-									"host": [
-										"{{connectionCreateEndpointUrl}}"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "List connections",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"body": {},
-								"url": {
-									"raw": "{{connectionsEndpointUrl}}",
-									"host": [
-										"{{connectionsEndpointUrl}}"
-									]
-								}
-							},
-							"response": []
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
 					"name": "Dynamic Endpoint Addresses",
 					"item": [
 						{
 							"name": "Connect Token Create Endpoint",
 							"item": [],
-							"description": "The Connect Token Create Endpoint is returned in the \"ctCreate\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to work with [Connect Tokens](https://qiy.api.digital-me.nl/#e2324a33-022e-4b02-bde0-c438d12b2683).",
+							"description": "The Connect Token Create Endpoint can be used to create [Connect Tokens](https://qiy.api.digital-me.nl/#e2324a33-022e-4b02-bde0-c438d12b2683).\nThe current address of the endpoint is returned in the \"ctCreate\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1089,9 +86,37 @@
 							"_postman_isSubFolder": true
 						},
 						{
+							"name": "Connection Create Endpoint",
+							"item": [],
+							"description": "The Connection Create Endpoint can be used to [create a connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\nThe current address of the endpoint is returned in the \"scan\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d076b40c-af58-4804-954d-bfaae8210e8b",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "7934862f-61ae-49b9-946a-9ed163144cf9",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
 							"name": "Connections Endpoint",
 							"item": [],
-							"description": "The Connections Endpoint is returned in the \"ctList\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to list [Connections](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).",
+							"description": "The Connections Endpoint can be used to list [Connections](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\nThe current address of the endpoint is returned in the \"ctList\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1119,7 +144,7 @@
 						{
 							"name": "Create Endpoint",
 							"item": [],
-							"description": "The Create Endpoint is returned in the \"create\"-member of the [response of an api call without an Authorization header parameter](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to create a Qiy Node, or rather: request the creation of one with an Access Provider.",
+							"description": "The Create Endpoint can be used to [create a Qiy Node](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c), or rather: request the creation of one with an Access Provider.\nThe current address of the endpoint is returned in the \"create\"-member of the [response of a GET /api without an Authorization header parameter](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1147,13 +172,35 @@
 						{
 							"name": "Delete Endpoint",
 							"item": [],
-							"description": "The Delete Endpoint can be used to delete a Qiy Node, or rather: request the deletion of one with an Access Provider.",
+							"description": "The Delete Endpoint can be used to [delete a Qiy Node](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c), or rather: request the deletion of one with an Access Provider.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "bcd9e91a-400b-4886-9e85-c9cfc0e3d380",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "dfbc0612-5e7a-4152-8354-4569f885f904",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
 							"name": "Events Endpoint",
 							"item": [],
-							"description": "The Events Endpoint is returned in the \"events\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to receive events [Events](https://qiy.api.digital-me.nl/#a0dfd715-bcb9-4bfd-9a94-c5e97edaeb1f).",
+							"description": "The Events Endpoint can be used to receive [events](https://qiy.api.digital-me.nl/#a0dfd715-bcb9-4bfd-9a94-c5e97edaeb1f).\nThe current address of the endpoint is returned in the \"events\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1179,37 +226,9 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "References Endpoint",
-							"item": [],
-							"description": "The References Endpoint is returned in the \"refs\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and is a convenience call to  [access all feeds](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321) with one call.",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "b23157a9-5900-4206-af9a-787894132ed7",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "58694284-a8f8-4ccf-8364-c58ae298e84d",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
 							"name": "Reference Endpoint",
 							"item": [],
-							"description": "The Reference Endpoint is returned in the \"ref\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to [access a single feed](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
+							"description": "The Reference Endpoint can be used to [access a single feed](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nThe current address of the endpoint is returned in the \"ref\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1235,15 +254,59 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Service Catalogue Endpoint",
+							"name": "References Endpoint",
 							"item": [],
-							"description": "The Service Catalogue Endpoint address is returned in the \"ctCreate\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to maintain a [Service Catalogue](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).",
+							"description": "The References Endpoint is a convenience endpoint which allows to [access all feeds with one call](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nThe current address of the endpoint is returned in the \"refs\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b23157a9-5900-4206-af9a-787894132ed7",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "58694284-a8f8-4ccf-8364-c58ae298e84d",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Connection Create Endpoint",
+							"name": "Service Catalogue Endpoint",
 							"item": [],
-							"description": "The address of the Connection Create Endpoint is returned in the \"scan\"-member of the [api response](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and can be used to [create a connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).",
+							"description": "The Service Catalogue Endpoint can be used to maintain a [Service Catalogue](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\nThe current address of the endpoint is returned in the \"serviceCatalogue\"-member of the [response of GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "7455d6a1-3e8e-4c50-ab38-d09526a76298",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "b8178c8a-8013-4260-81c3-736f720d65da",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
@@ -1396,7 +459,7 @@
 							]
 						}
 					],
-					"description": "The Qiy Node Api uses dynamic path endpoint addresses the addresses of which can be obtained using [GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).",
+					"description": "The Qiy Node Api uses dynamic path endpoint addresses which can be obtained using [GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82).\nThe addresses can be cached, but should be refreshed every day.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1419,6 +482,12 @@
 							}
 						}
 					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Servers",
+					"item": [],
+					"description": "Digital Me provides the Qiy Node service on different servers.\nFor details, please refer to [section 2.3 QS User Node Servers](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#23-qs-user-node-servers) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
 					"_postman_isSubFolder": true
 				},
 				{
@@ -1505,16 +574,871 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Lifecycle",
+					"name": "Documentation",
 					"item": [
 						{
-							"name": "Create Qiy Node",
-							"request": {
+							"name": "End User App",
+							"item": [
+								{
+									"name": "Setup",
+									"item": [],
+									"description": "An End User App can only access the Qiy Trust Network under the following preconditions:\n1. The End User App uses a valid [Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. The [End User App correctly authenticates Qiy Node requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n3. The End User App must allow End Users to use a [new Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) or reuse an existing one.",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "a0086e02-4f2c-4ec9-95a8-19b689af2239",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "e290a794-b5b4-4f56-a16c-478d6188ae6a",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Subscribe",
+									"item": [
+										{
+											"name": "Connect with a Service Provider",
+											"item": [],
+											"description": "This section describes how an [End User App](https://qiy.api.digital-me.nl/#265b0209-d297-429d-a891-f1eba6cf2083) can [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4).\n\nThis process uses a Connect Token of the Service Provider that can be produced by the End User App or the Service Provider.\n\n## Connecting using a Connect Token created by the End User App\n\nWhen the End User App creates the Connect Token of the Service Provider, connecting goes as follows:\n2. The End User App creates a so-called [Offline Connect Token](https://qiy.api.digital-me.nl/#e2324a33-022e-4b02-bde0-c438d12b2683), but does not register it.\n1. The End User App provides the Offline Connect Token to the Service Provider (out-of-scope) who will [register it](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).\n2. The End User App uses the [Offline Connect Token to create the connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\n\n\n## Connecting using a Connect Token created by the Service Provider\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "a7d34c27-5b51-46bb-acef-ef44338d8741",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "4970c4e6-8f8b-4e14-bdfd-a25c42b4d308",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										}
+									],
+									"description": "An Individual can subscribe to a service as follows:\n1. Conclude an subscription agreement (out-of-scope).\n2. [Connect with the Service Provider](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167).\n\n",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "9bcc6ebc-da8a-42d8-af27-115a73287c13",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "48b9dad8-d95b-4c89-8ef9-ddeba30c7690",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Orchestrate",
+									"item": [
+										{
+											"name": "Feed assignment",
+											"item": [
+												{
+													"name": "Add feed",
+													"request": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "{{authorizationHeader}}"
+															},
+															{
+																"key": "AP-Token",
+																"value": "{{apToken}}"
+															}
+														],
+														"body": {},
+														"url": {
+															"raw": "{{actionUrl}}",
+															"host": [
+																"{{actionUrl}}"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "Set feeds",
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "{{authorizationHeader}}"
+															},
+															{
+																"key": "AP-Token",
+																"value": "{{apToken}}"
+															}
+														],
+														"body": {},
+														"url": {
+															"raw": "{{actionUrl}}",
+															"host": [
+																"{{actionUrl}}"
+															]
+														}
+													},
+													"response": []
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Get user action message",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "f5db43d4-afc0-4a20-806e-f23a49bf8969",
+														"type": "text/javascript",
+														"exec": [
+															"// Extract the orchestrationRequestUrl from the 'extraData'-member of the 'USER_ACION_MESSAGE'-event."
+														]
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "{{authorizationHeader}}"
+													},
+													{
+														"key": "AP-Token",
+														"value": "{{apToken}}"
+													}
+												],
+												"body": {},
+												"url": {
+													"raw": "{{userActionMessageUrl}}",
+													"host": [
+														"{{userActionMessageUrl}}"
+													]
+												},
+												"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799)."
+											},
+											"response": []
+										}
+									],
+									"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Start listening to events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the possible service providers and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected Service Providers.\n6. If and when applicable, [assign the feed to the selected service provider](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) using the related actionUrl.",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "9a03b650-bf0b-4dea-b0eb-97a85897f839",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "31486811-1550-4a3a-b03c-74f94233eee8",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								}
+							],
+							"description": "\nAn [End User App](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#5-the-application-layer) is a [Qiy Node Client](https://qiy.api.digital-me.nl/#821514ce-5005-4408-be95-a400b6b4181c) which enables an [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to [subscribe to](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89) and [orchestrate](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de) (data) services.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "76c5e861-b69c-4316-8adb-1c8396612847",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "2a89aebc-1c3f-4729-a106-bc98bd4d0517",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Service Provider",
+							"item": [
+								{
+									"name": "General",
+									"item": [
+										{
+											"name": "Setup",
+											"item": [
+												{
+													"name": "On-Connected Endpoint",
+													"item": [],
+													"description": "An On-Connected Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to receive [notifications when a connection has been created](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f).",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
+													"_postman_isSubFolder": true
+												},
+												{
+													"name": "Feed Request Endpoint",
+													"item": [],
+													"description": "A Feed Request Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a Service Provider to receive [Feed Requests](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) from [Individuals when they orchestrate the subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "006a2435-8113-4b06-937b-2443ddb27374",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "a59355c8-95eb-4f91-8765-f712fbec2643",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
+													"_postman_isSubFolder": true
+												},
+												{
+													"name": "Service Catalogue",
+													"item": [
+														{
+															"name": "Get service catalogue",
+															"event": [
+																{
+																	"listen": "prerequest",
+																	"script": {
+																		"id": "ed86a9c4-5d02-4758-a6cc-cbd5285132a8",
+																		"type": "text/javascript",
+																		"exec": [
+																			"// Use '//Dynamic Endpoint Addresses/GET Api' to get the serviceCatalogueEndpointUrl"
+																		]
+																	}
+																}
+															],
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Authorization",
+																		"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
+																		"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																	},
+																	{
+																		"key": "AP-Token",
+																		"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+																		"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																	},
+																	{
+																		"key": "",
+																		"value": ""
+																	}
+																],
+																"body": {},
+																"url": {
+																	"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+																	"host": [
+																		"{{serviceCatalogueEndpointUrl}}"
+																	],
+																	"query": [
+																		{
+																			"key": "internal",
+																			"value": "True",
+																			"description": "If False or None, only external services will be gotten."
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"name": "Get Service Catalogue - OK",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Authorization",
+																				"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
+																				"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																			},
+																			{
+																				"key": "AP-Token",
+																				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+																				"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																			}
+																		],
+																		"body": {},
+																		"url": {
+																			"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+																			"host": [
+																				"{{serviceCatalogueEndpointUrl}}"
+																			],
+																			"query": [
+																				{
+																					"key": "internal",
+																					"value": "True"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "",
+																	"header": [],
+																	"cookie": [],
+																	"body": "{\r\n        \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\"type\": \"internal\"},\r\n        \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
+																}
+															]
+														},
+														{
+															"name": "Set service catalogue",
+															"request": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Authorization",
+																		"value": ""
+																	},
+																	{
+																		"key": "AP-Token",
+																		"value": ""
+																	},
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n  \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\r\n    \"type\": \"internal\"\r\n  },\r\n  \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
+																},
+																"url": {
+																	"raw": "{{serviceCatalogueEndpointUrl}}",
+																	"host": [
+																		"{{serviceCatalogueEndpointUrl}}"
+																	]
+																},
+																"description": "A Service Provider can use Set Service Catalogue to:\n1. Update his Service Catalogue\n2. Define the [Feed Request Endpoint](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67)"
+															},
+															"response": []
+														}
+													],
+													"description": "A [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for service type descriptions with additional details, for example for the associated [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67).\n\nA Service Type Description can contain a list of urls for the description of the operation types of the service which are used in [Feed Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nHowever, if not, the Service Type Description Url must be used instead.\n",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "0ddac47a-5d01-41c9-8825-c15e26cd87bc",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "afeff0e7-2df9-49c1-8588-e1300aa76ce5",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
+													"_postman_isSubFolder": true
+												},
+												{
+													"name": "Service Endpoint",
+													"item": [],
+													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
+													"_postman_isSubFolder": true
+												}
+											],
+											"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup an [On-Connect Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) for easily processing connect requests.\n2. Setup [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67) for his services.\n2. Setup [Service Endpoints]() to serve [feed access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\n3. Prepare the Computer systems to correctly produce [authenticated requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n1. [Contact an Access Provider](https://qiy.api.digital-me.nl/#208534d5-bf93-43af-b644-420ced7caef4) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "18a3c7ec-e220-4739-aa13-f600c00ba5c9",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "8429e058-4991-4ec9-bb01-d0cdb775355f",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Connect with an Individual",
+											"item": [],
+											"_postman_isSubFolder": true
+										}
+									],
+									"description": "The topics in this section apply to all types of Service Providers:\n1. [Setup](https://qiy.api.digital-me.nl/#0225107f-58a0-4ff9-b82c-45240e549541)\n2. [Connect with an Individual](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "92b03af8-f2c5-460d-8fdd-ae9da70d3581",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "9cf2cc57-3839-4254-a060-dbd65ca60893",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Relying Party",
+									"item": [
+										{
+											"name": "Feeds",
+											"item": [
+												{
+													"name": "Request for feed",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "ffbc1a52-cdf3-4500-8939-2c1198fe3dc8",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "{{authorizationHeader}}"
+															},
+															{
+																"key": "AP-Token",
+																"value": "{{apToken}}"
+															},
+															{
+																"key": "password",
+																"value": "{{transportPassword}}"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n  \"protocol\": {{operationTypeUrl}},\r\n  \"refSerialNr\": -1,\r\n  \"text\": \"Requesting feed.\"\r\n}"
+														},
+														"url": {
+															"raw": "{{mboxUrl}}",
+															"host": [
+																"{{mboxUrl}}"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "Access feed",
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Authorization",
+																"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
+																"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+															},
+															{
+																"key": "AP-Token",
+																"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+																"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+															}
+														],
+														"body": {},
+														"url": {
+															"raw": "{{url}}?id={{feed_id}}",
+															"host": [
+																"{{url}}"
+															],
+															"query": [
+																{
+																	"key": "id",
+																	"value": "{{feed_id}}"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"name": "Access feed - OK",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Authorization",
+																		"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
+																		"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																	},
+																	{
+																		"key": "AP-Token",
+																		"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+																		"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+																	}
+																],
+																"body": {},
+																"url": {
+																	"raw": "{{ref}}?id={{feed_id}}",
+																	"host": [
+																		"{{ref}}"
+																	],
+																	"query": [
+																		{
+																			"key": "id",
+																			"value": "{{feed_id}}"
+																		},
+																		{
+																			"key": "",
+																			"value": null
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [],
+															"cookie": [],
+															"body": "{\n    \"activities-heart\": [\n        {\n            \"customHeartRateZones\": [],\n            \"dateTime\": \"today\",\n            \"heartRateZones\": [\n                {\n                    \"caloriesOut\": 138.8351,\n                    \"max\": 86,\n                    \"min\": 30,\n                    \"minutes\": 65,\n                    \"name\": \"Out of Range\"\n                },\n                {\n                    \"caloriesOut\": 309.96824,\n                    \"max\": 120,\n                    \"min\": 86,\n                    \"minutes\": 177,\n                    \"name\": \"Fat Burn\"\n                },\n                {\n                    \"caloriesOut\": 198.6678,\n                    \"max\": 146,\n                    \"min\": 120,\n                    \"minutes\": 59,\n                    \"name\": \"Cardio\"\n                },\n                {\n                    \"caloriesOut\": 8.1326,\n                    \"max\": 220,\n                    \"min\": 146,\n                    \"minutes\": 7,\n                    \"name\": \"Peak\"\n                }\n            ],\n            \"value\": \"102.28\"\n        }\n    ],\n    \"activities-heart-intraday\": {\n        \"dataset\": [\n\n            {\n                \"time\": \"12:00:00\",\n                \"value\": 111\n            },\n            {\n                \"time\": \"12:01:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:02:00\",\n                \"value\": 112\n            },\n            {\n                \"time\": \"12:03:00\",\n                \"value\": 114\n            },\n            {\n                \"time\": \"12:04:00\",\n                \"value\": 136\n            },\n            {\n                \"time\": \"12:05:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:06:00\",\n                \"value\": 90\n            },\n            {\n                \"time\": \"12:07:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"12:08:00\",\n                \"value\": 90\n            },\n            {\n                \"time\": \"12:09:00\",\n                \"value\": 98\n            },\n            {\n                \"time\": \"12:10:00\",\n                \"value\": 113\n            },\n            {\n                \"time\": \"12:11:00\",\n                \"value\": 144\n            },\n            {\n                \"time\": \"12:12:00\",\n                \"value\": 125\n            },\n            {\n                \"time\": \"12:13:00\",\n                \"value\": 108\n            },\n            {\n                \"time\": \"12:14:00\",\n                \"value\": 136\n            },\n            {\n                \"time\": \"12:15:00\",\n                \"value\": 135\n            },\n            {\n                \"time\": \"12:16:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:17:00\",\n                \"value\": 126\n            },\n            {\n                \"time\": \"12:18:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:19:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:20:00\",\n                \"value\": 114\n            },\n            {\n                \"time\": \"12:21:00\",\n                \"value\": 106\n            },\n            {\n                \"time\": \"12:22:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:23:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:24:00\",\n                \"value\": 112\n            },\n            {\n                \"time\": \"12:25:00\",\n                \"value\": 97\n            },\n            {\n                \"time\": \"12:26:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"12:27:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:28:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:29:00\",\n                \"value\": 98\n            },\n            {\n                \"time\": \"12:30:00\",\n                \"value\": 100\n            },\n            {\n                \"time\": \"12:31:00\",\n                \"value\": 99\n            },\n            {\n                \"time\": \"12:32:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:33:00\",\n                \"value\": 134\n            },\n            {\n                \"time\": \"12:34:00\",\n                \"value\": 124\n            },\n            {\n                \"time\": \"12:35:00\",\n                \"value\": 141\n            },\n            {\n                \"time\": \"12:36:00\",\n                \"value\": 129\n            },\n            {\n                \"time\": \"12:37:00\",\n                \"value\": 134\n            },\n            {\n                \"time\": \"12:38:00\",\n                \"value\": 137\n            },\n            {\n                \"time\": \"12:39:00\",\n                \"value\": 127\n            },\n            {\n                \"time\": \"12:40:00\",\n                \"value\": 120\n            },\n            {\n                \"time\": \"12:41:00\",\n                \"value\": 115\n            },\n            {\n                \"time\": \"12:43:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:44:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:45:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:46:00\",\n                \"value\": 110\n            },\n            {\n                \"time\": \"12:47:00\",\n                \"value\": 111\n            },\n            {\n                \"time\": \"12:48:00\",\n                \"value\": 107\n            },\n            {\n                \"time\": \"12:49:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:50:00\",\n                \"value\": 103\n            },\n            {\n                \"time\": \"12:51:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:52:00\",\n                \"value\": 102\n            },\n            {\n                \"time\": \"12:53:00\",\n                \"value\": 107\n            },\n            {\n                \"time\": \"12:54:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:55:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:56:00\",\n                \"value\": 104\n            },\n            {\n                \"time\": \"12:57:00\",\n                \"value\": 95\n            },\n            {\n                \"time\": \"12:58:00\",\n                \"value\": 88\n            },\n            {\n                \"time\": \"12:59:00\",\n                \"value\": 91\n            },\n            {\n                \"time\": \"13:00:00\",\n                \"value\": 89\n            },\n            {\n                \"time\": \"13:01:00\",\n                \"value\": 88\n            },\n            {\n                \"time\": \"13:02:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:03:00\",\n                \"value\": 83\n            },\n            {\n                \"time\": \"13:04:00\",\n                \"value\": 76\n            },\n            {\n                \"time\": \"13:05:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:06:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:07:00\",\n                \"value\": 74\n            },\n            {\n                \"time\": \"13:08:00\",\n                \"value\": 75\n            },\n            {\n                \"time\": \"13:09:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:10:00\",\n                \"value\": 86\n            },\n            {\n                \"time\": \"13:11:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:12:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:13:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:14:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:15:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:16:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:17:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:18:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:19:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:20:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:21:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:22:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:23:00\",\n                \"value\": 78\n            },\n            {\n                \"time\": \"13:24:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:25:00\",\n                \"value\": 79\n            },\n            {\n                \"time\": \"13:26:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:27:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:28:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:29:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:30:00\",\n                \"value\": 79\n            },\n            {\n                \"time\": \"13:31:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:32:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:33:00\",\n                \"value\": 81\n            },\n            {\n                \"time\": \"13:34:00\",\n                \"value\": 81\n            },\n            {\n                \"time\": \"13:35:00\",\n                \"value\": 80\n            },\n            {\n                \"time\": \"13:36:00\",\n                \"value\": 78\n            },\n            {\n                \"time\": \"13:37:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:38:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:39:00\",\n                \"value\": 66\n            },\n            {\n                \"time\": \"13:40:00\",\n                \"value\": 68\n            },\n            {\n                \"time\": \"13:41:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:42:00\",\n                \"value\": 67\n            },\n            {\n                \"time\": \"13:43:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:44:00\",\n                \"value\": 72\n            },\n            {\n                \"time\": \"13:45:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:46:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:47:00\",\n                \"value\": 70\n            },\n            {\n                \"time\": \"13:48:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:50:00\",\n                \"value\": 71\n            },\n            {\n                \"time\": \"13:51:00\",\n                \"value\": 73\n            },\n            {\n                \"time\": \"13:52:00\",\n                \"value\": 74\n            },\n            {\n                \"time\": \"13:53:00\",\n                \"value\": 86\n            },\n            {\n                \"time\": \"13:54:00\",\n                \"value\": 83\n            },\n            {\n                \"time\": \"13:55:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:56:00\",\n                \"value\": 85\n            },\n            {\n                \"time\": \"13:57:00\",\n                \"value\": 84\n            },\n            {\n                \"time\": \"13:58:00\",\n                \"value\": 82\n            },\n            {\n                \"time\": \"13:59:00\",\n                \"value\": 83\n            }\n        ],\n        \"datasetInterval\": 1,\n        \"datasetType\": \"minute\"\n    }\n}"
+														}
+													]
+												}
+											],
+											"description": "A Relying Party can access a Services that is orchestrated by an Individual as follows:\n1. [Request for feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "e8ed0165-c998-44bd-992d-0e972f8dd0d4",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "a12457c7-ad3b-4c3e-949a-5c66d8003e74",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Data Provider",
+									"item": [],
+									"_postman_isSubFolder": true
+								}
+							],
+							"description": "A [Service Provider](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#42-service-provider) is a [Qiy User](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) that provides [Services](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0) via the Qiy Trust Network.\nA Service Provider can be a Relying Party or a Data Provider:\n1. A [Data Provider](https://qiy.api.digital-me.nl/#d0c5c5f9-2e94-4b0c-9933-0186d39560be) is a Service Provider that provides data services.\n2. A [Relying Party](https://qiy.api.digital-me.nl/#bf6403a7-89b2-4028-95c3-b39d5d444bf3) is a Service Provider that provides Services that depends on other services.\n",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d15ba202-3159-4433-ad11-599dcb91ed11",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "002f9cc2-ec9d-4ffc-af90-d52efd4311a6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "On-Connected Actions",
+							"item": [
+								{
+									"name": "Create a connect token with an on-connected action",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{authorizationHeader}}"
+											},
+											{
+												"key": "AP-Token",
+												"value": "{{apToken}}"
+											},
+											{
+												"key": "password",
+												"value": "{{transportPassword}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\t\t\t\r\n}"
+										},
+										"url": {
+											"raw": "{{connectTokenCreateEndpointUrl}}",
+											"host": [
+												"{{connectTokenCreateEndpointUrl}}"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2458523d-d2d8-4ab6-8fe9-3a8a6ff368ef",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "35961d62-5f88-4da8-9187-e3e804315325",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Online Connect Tokens",
+							"item": [],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Offline Connect Tokens",
+							"item": [],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Qiy Node Client",
+							"item": [],
+							"description": "A Qiy Node Client is any [Application Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075) that accesses a Qiy Node.\nThis section addresses topics that are relevant for developers of both [End User Apps](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) and computer systems of [Service Providers](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "ca18428b-5f28-470c-a950-e84905bbcb2c",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "6dbc8dd2-78f7-4da0-92f4-8d7663dee37f",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Nodes",
+			"item": [
+				{
+					"name": "Create Qiy Node",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{createEndpointUrl}}",
+							"host": [
+								"{{createEndpointUrl}}"
+							]
+						},
+						"description": "See also [section 3.1 Create Qiy Node](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#31-create-qiy-node) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction)."
+					},
+					"response": [
+						{
+							"name": "Create Qiy Node - OK",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
+										"key": "AP-Token",
+										"value": "{{apToken}}",
+										"description": "[Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c)"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "password",
+										"value": "{{transportPassword}}"
 									}
 								],
 								"body": {
@@ -1522,62 +1446,52 @@
 									"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\"\r\n}\r\n"
 								},
 								"url": {
-									"raw": "{{createEndpointUrl}}?Content-Type=application/json&AP-Token={{apToken}}",
+									"raw": "{{createEndpointUrl}}",
 									"host": [
 										"{{createEndpointUrl}}"
-									],
-									"query": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										},
-										{
-											"key": "AP-Token",
-											"value": "{{apToken}}"
-										}
 									]
-								},
-								"description": "See also [section 3.1 Create Qiy Node](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#31-create-qiy-node) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction)."
-							},
-							"response": [
-								{
-									"name": "Create Qiy Node - OK",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}",
-												"description": "[Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c)"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\"\r\n}\r\n"
-										},
-										"url": {
-											"raw": "{{createEndpointUrl}}",
-											"host": [
-												"{{createEndpointUrl}}"
-											]
-										}
-									},
-									"status": "Created",
-									"code": 201,
-									"_postman_previewlanguage": "",
-									"header": [],
-									"cookie": [],
-									"body": ""
 								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "Delete Qiy Node",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{deleteEndpointUrl}}",
+							"host": [
+								"{{deleteEndpointUrl}}"
 							]
 						},
+						"description": "The Delete Qiy Node request can be used to delete a Qiy Node, or rather: request the deletion of one with an Access Provider.\n\nSee also [Section 3.2 Delete Qiy Node](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#32-delete-qiy-node) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction)."
+					},
+					"response": [
 						{
-							"name": "Delete Qiy Node",
-							"request": {
+							"name": "Delete Qiy Node - OK",
+							"originalRequest": {
 								"method": "DELETE",
 								"header": [
 									{
@@ -1599,77 +1513,137 @@
 									"host": [
 										"{{deleteEndpointUrl}}"
 									]
-								},
-								"description": "The Delete Qiy Node request can be used to delete a Qiy Node, or rather: request the deletion of one with an Access Provider.\n\nSee also [Section 3.2 Delete Qiy Node](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#32-delete-qiy-node) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction)."
-							},
-							"response": [
-								{
-									"name": "Delete Qiy Node - OK",
-									"originalRequest": {
-										"method": "DELETE",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "{{authorizationHeader}}"
-											},
-											{
-												"key": "AP-Token",
-												"value": "{{apToken}}"
-											},
-											{
-												"key": "password",
-												"value": "{{transportPassword}}"
-											}
-										],
-										"body": {},
-										"url": {
-											"raw": "{{deleteEndpointUrl}}",
-											"host": [
-												"{{deleteEndpointUrl}}"
-											]
-										}
-									},
-									"status": "No Content",
-									"code": 204,
-									"_postman_previewlanguage": "",
-									"header": [],
-									"cookie": [],
-									"body": ""
 								}
-							]
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": ""
 						}
-					],
-					"description": "See also  [chapter 3 Lifecycle](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#3-lifecycle) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "a9fbb5c7-5699-4cae-af29-616a52af8a37",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "6728ae1d-b509-44cc-9473-a9b8c20d9238",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
+					]
+				}
+			],
+			"description": "See also  [chapter 3 Lifecycle](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#3-lifecycle) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a9fbb5c7-5699-4cae-af29-616a52af8a37",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
 				},
 				{
-					"name": "Messages",
-					"item": [
+					"listen": "test",
+					"script": {
+						"id": "6728ae1d-b509-44cc-9473-a9b8c20d9238",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Connections",
+			"item": [
+				{
+					"name": "Create connection",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{connectionCreateEndpointUrl}}",
+							"host": [
+								"{{connectionCreateEndpointUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List connections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{connectionsEndpointUrl}}",
+							"host": [
+								"{{connectionsEndpointUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create connect token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register connect token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"useBudget\": 1\n}"
+						},
+						"url": {
+							"raw": "{{ctCreateEndpointUrl}}",
+							"host": [
+								"{{ctCreateEndpointUrl}}"
+							]
+						}
+					},
+					"response": [
 						{
-							"name": "Send message",
-							"request": {
+							"name": "Register connect token - OK",
+							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
@@ -1681,71 +1655,124 @@
 										"value": "{{apToken}}"
 									},
 									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
 										"key": "password",
 										"value": "{{transportPassword}}"
 									}
 								],
 								"body": {},
 								"url": {
-									"raw": "{{mboxUrl}}",
+									"raw": "{{ctCreateEndpointUrl}}",
 									"host": [
-										"{{mboxUrl}}"
+										"{{ctCreateEndpointUrl}}"
 									]
 								}
 							},
-							"response": []
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "Location",
+									"value": "{{connectionUrl}}",
+									"name": "Location",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
 						}
-					],
-					"description": "A Qiy Node Client can exchange Messages with other clients that it has a [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with.\nFor more information, please refer to [chapter 7. Messaging](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#7-messaging) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "1f2a2387-c5da-4248-8ae3-d8d29745dc92",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
+					]
+				},
+				{
+					"name": "Get connect token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
 							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{connectionUrl}}",
+							"host": [
+								"{{connectionUrl}}"
+							]
 						},
+						"description": "The Get connect token request can be used to get the details of a Connect Token, using a connectionUrl that has been returned in the Location header of the response of a [Create Token Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f)."
+					},
+					"response": [
 						{
-							"listen": "test",
-							"script": {
-								"id": "bb05eac3-76a4-41ee-af1a-f98ccf829881",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
+							"name": "Get connect token - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{connectionUrl}}",
+									"host": [
+										"{{connectionUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"expires\": 2349020398,\n    \"name\": \"example token of a Service Provider with an on-connected action using the On-Connected Endpoint.\",\n    \"note\": \"Just an example\",\n    \"useBudget\": 1,\n    \"actions\": {\n        \"actions\": [\n            {\n                \"key\": \"callback\",\n                \"uri\": \"{{onConnectedUrl}}\",\n                \"method\": \"POST\",\n                \"body\": {\n                    \"Hello\": \"world!\"\n                }\n            }\n        ]\n    },\n    \"json\": {\n        \"identifier\": \"Service Provider\",\n        \"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n        \"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n    }\n}"
 						}
-					],
-					"_postman_isSubFolder": true
+					]
 				},
 				{
-					"name": "Servers",
-					"item": [],
-					"description": "Digital Me provides the Qiy Node service on different servers.\nFor details, please refer to [section 2.3 QS User Node Servers](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#23-qs-user-node-servers) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Service Desk",
-					"item": [],
-					"description": "For contact details of the Digital Me Service Desk, please refer to [section 2.1 Service Desk](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#21-service-desk) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Versions",
-					"item": [],
-					"description": "For more information on versions, please refer to [section 2.4 Versions](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#24-versions) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
-					"_postman_isSubFolder": true
+					"name": "List connect tokens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{ctCreateEndpointUrl}}",
+							"host": [
+								"{{ctCreateEndpointUrl}}"
+							]
+						}
+					},
+					"response": []
 				}
 			],
-			"description": "A Qiy Node Client is any [Application Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075) that accesses a Qiy Node.\nThis section addresses topics that are relevant for developers of both [End User Apps](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) and computer systems of [Service Providers](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4).",
+			"description": "Connection can be created with a Connect Token.\n\nA Connect Token is a [token](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/Definitions.md#token) which enables Individuals to establish an initially anonymous [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with another Qiy User.\nA Connect Token can be created and used both online and offline:\n\n1. When online, Connect Tokens can be created using a [Connect Token Create Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f).\n2. When offline, a [Connect Token can be created locally](https://qiy.api.digital-me.nl/#fbc534ce-9453-4344-ad66-a5ba3a547b41) and registered later using a [Connect Token Register Request](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) when online again.",
 			"event": [
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ca18428b-5f28-470c-a950-e84905bbcb2c",
+						"id": "01d675cc-9a61-4d53-b618-c70d5fd4c4fe",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1755,7 +1782,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "6dbc8dd2-78f7-4da0-92f4-8d7663dee37f",
+						"id": "d52d54a1-6c4a-4089-8a80-bb2ada44d287",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1763,6 +1790,97 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Relations",
+			"item": []
+		},
+		{
+			"name": "Messages",
+			"item": [
+				{
+					"name": "Send message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{mboxUrl}}",
+							"host": [
+								"{{mboxUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{mboxUrl}}",
+							"host": [
+								"{{mboxUrl}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "A Qiy Node Client can exchange Messages with other clients that it has a [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with.\nFor more information, please refer to [chapter 7. Messaging](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#7-messaging) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1f2a2387-c5da-4248-8ae3-d8d29745dc92",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "bb05eac3-76a4-41ee-af1a-f98ccf829881",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": []
+		},
+		{
+			"name": "Consents",
+			"item": []
+		},
+		{
+			"name": "Feeds",
+			"item": []
+		},
+		{
+			"name": "Getting help",
+			"item": []
 		}
 	],
 	"event": [
