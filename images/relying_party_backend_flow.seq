@@ -1,10 +1,10 @@
-title fiKks Back End Qiy Flow
+title Relying Party Back End Flow
 
 participant "Data Provider"          as d
 participant "Individual"             as i
-participant "fiKks app"              as a
-participant "fiKks backend"          as b
-participant "fiKks backend Qiy Node" as q
+participant "Relying Party app"              as a
+participant "Relying Party backend"          as b
+participant "Relying Party backend Qiy Node" as q
 
 note over d, q
     Setup for Back End
@@ -18,29 +18,11 @@ note over d, q
     Operate
 end note
 
-note over i, a:  1. New Individual registers in fiKks
-    note over a, b:  1.a App initiates connecting the Qiy Nodes of Individual and fiKks
-        b ->  q: 6.1 create connect token
-        q --> b: Response: connect token
-        b ->  b: Persist target member of connect token
-        b ->  b: Wait for CONNECTED_TO_ROUTER event where event.extraData matches target
-        b ->  a: Backend forwards connect token to app
-        a ->  q: 6.2 App uses the connect token to create a connection
-        q --> b: 6.3.1 CONNECTED_TO_ROUTER event
-        b ->  b: Persist the connection url of the event
-        b ->  b: Wait for SHARED_SECRET_RECEIVED event with matching connection url
-        b ->  b: Wait for STATE_HANDLED event with matching connection url
-        alt Qiy Nodes are not connected
-            q --> b: 6.3.1 SHARED_SECRET_RECEIVED event
-            q --> b: 6.3.1 STATE_HANDLED event
-            note over b: Qiy Nodes are connected for the first time
-        else Qiy Nodes are already connected
-            q --> b: 6.3.1 STATE_HANDLED event
-            note over b
-                1.b Stop waiting for SHARED_SECRET_RECEIVED event
-                1.c Use connection as provided in extraData
-            end note
-        end
+note over i, a:  1. New Individual registers in Relying Party
+    note over a, b:  1.a App initiates connecting the Qiy Nodes of Individual and Relying Party
+        b ->  q: Create connect token with callback
+        b ->  b: Wait for callback
+        b ->  b: Extract Persistent Id and update user administration
 note over i, a:  2. Individual selects buddy
 note over i, a:  3. Individual fills in income
 note over i, a:  4. Individual fills in costs
@@ -49,7 +31,7 @@ note over i, a:  6. Individual selects Data Provider which is a Qiy partner (for
 note over i, d:  7. Individual is redirected to the Data Provider login (web)page
 note over i, d:  8. Individual logs in
 note over i, d:  9. Individual sees payments information in Data Provider webpage
-note over i, d: 10. Individual selects option to take over Data Provider payments information (in fiKks)
+note over i, d: 10. Individual selects option to take over Data Provider payments information (in Relying Party)
     note over d, a: 10.a Data Provider connects with Individual via Qiy
     note over a, b: 10.b App notifies backend of new connection with Data Provider
     note over b, q: 10.c Backend gets operation reference
@@ -73,7 +55,7 @@ note over i, d: 10. Individual selects option to take over Data Provider payment
             b ->  b: Look up operation reference for Data Provider
             b ->  q: Request for due payments since {unixTimeInMilliSeconds}
             q --> b: Response: new due payments
-note over i, a: 11. Individual comes back in the fiKks ‘standard’ app and sees due payments loaded into fiKks
+note over i, a: 11. Individual comes back in the Relying Party ‘standard’ app and sees due payments loaded into Relying Party
             b ->  a: Push new due payments
             a --> b: Response
             b ->  b: Update due payments for Data Provider
@@ -83,4 +65,5 @@ note over a, b:    12.a Get due payments from backend
         a ->  b: Request for due payments
         b ->  b: Look up persisted due payments
         b --> a: Latest due payments
+
 
