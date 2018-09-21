@@ -448,7 +448,29 @@
 						{
 							"name": "Connected to Router Event",
 							"item": [],
-							"description": "A Qiy Node [waits for this event](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) after [creating a connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40).",
+							"description": "A Connected to Router Event is fired after a [request for a connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and can be [used](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) to monitor the [creation of a  connection](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "e6b1969e-a8cc-48ab-9756-78ccd5e1ae80",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "988873f6-47ca-4746-8ba7-17b669375e9f",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
@@ -460,7 +482,29 @@
 						{
 							"name": "Persistent Id Event",
 							"item": [],
-							"description": "The Persistent Id Event is an Event that is fired when a [Service Provider connects with an Individual](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+							"description": "A Persistent Id Event is an Event that is fired after a [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) and can be [used](https://qiy.api.digital-me.nl/#0868bc6f-1e77-46fe-a11c-aa7a5c079dd6) to detect whether [a connection has been created](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "57c744e8-0fc2-496a-a644-96c8a16fca04",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f953c79a-0f21-4020-899c-635cc59e28a9",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
@@ -1013,15 +1057,8 @@
 								},
 								{
 									"name": "Connections",
-									"item": [
-										{
-											"name": "Creating connection using events",
-											"item": [],
-											"description": "Creating a connection using events goes as follows:\n1. [Create connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and extract the Connection Url from the response.\n2. [Wait for the Connected to Router Event](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) with matching Connection Url.\n3. [Wait for the Persistent Id Event](https://qiy.api.digital-me.nl/#0868bc6f-1e77-46fe-a11c-aa7a5c079dd6) with matching Connection Url.",
-											"_postman_isSubFolder": true
-										}
-									],
-									"description": "[Individuals](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can connect and interact with other Individuals and [Service Providers](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) using connections between the related [Qiy Nodes](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6).\nThese connections can be [created](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) using [Connect Tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c), see also [End User App documentation](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) or [Service Provider documentation](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+									"item": [],
+									"description": "[Individuals](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can connect and interact with other Individuals and [Service Providers](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) using connections between the related [Qiy Nodes](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6).\n\nConnections can be created between an invitor and an invitee using [connect tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) as follows:\n1. The invitor [requests](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or creates and [registers](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) a Connect Token.\n2. The invitor invites the invitee to connect with the Connect Token out-of-band.\n3. The invitee [requests a connection using the connect token](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40).\n4. The invitor receives a notification that the connect token has been used to create a connection.\n5. The invitee receives a [notification that the connection has been established](https://qiy.api.digital-me.nl/#9803c85c-8046-4a51-9de2-26bbb0bdd89f).",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1134,7 +1171,7 @@
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create a connection between the Qiy Nodes of two [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider. ",
+									"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) between [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but when connecting to a Service Provider it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider.\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -2281,7 +2318,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "The [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) is the first event when [creating a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+						"description": "The [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) can be used to monitor the [creation of a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
 					},
 					"response": []
 				},
