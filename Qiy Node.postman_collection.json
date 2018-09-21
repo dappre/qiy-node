@@ -217,7 +217,7 @@
 						{
 							"name": "Events Endpoint",
 							"item": [],
-							"description": "The Events Endpoint can be used to receive [events](https://qiy.api.digital-me.nl/#a0dfd715-bcb9-4bfd-9a94-c5e97edaeb1f).\nThe current address of the endpoint is returned in the \"events\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "The Events Endpoint can be used to [receive events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040).\nThe current address of the endpoint is returned in the \"events\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -446,6 +446,18 @@
 					"name": "Events",
 					"item": [
 						{
+							"name": "Connected to Router Event",
+							"item": [],
+							"description": "A Qiy Node [waits for this event](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) after [creating a connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40).",
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Data Reference Received Event-v2",
+							"item": [],
+							"description": "The Data Reference Received Event-v2 can be used by a Service Provider to obtain a feed from an Individual.\n",
+							"_postman_isSubFolder": true
+						},
+						{
 							"name": "Persistent Id Event",
 							"item": [],
 							"description": "The Persistent Id Event is an Event that is fired when a [Service Provider connects with an Individual](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
@@ -456,15 +468,8 @@
 							"item": [],
 							"description": "The User Action Message Event is fired by a Qiy Node when it receives a [message]() that requires interaction with the End User.",
 							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Data Reference Received Event-v2",
-							"item": [],
-							"description": "The Data Reference Received Event-v2 can be used by a Service Provider to obtain a feed from an Individual.\n",
-							"_postman_isSubFolder": true
 						}
 					],
-					"description": "A Qiy Node can send Server-Sent Events to communicate with a Qiy Node Client.\n\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1010,116 +1015,9 @@
 									"name": "Connections",
 									"item": [
 										{
-											"name": "Connect Tokens",
-											"item": [
-												{
-													"name": "Online Connect Tokens",
-													"item": [],
-													"description": "An Online Connect Token is a connect token that has been created using a [Request Connect Token](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "9aaf443a-1e2c-4a43-90a7-310bd2a29517",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "5ab9b4c2-0870-4ed2-99e3-c3165ff2a1b9",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Offline Connect Tokens",
-													"item": [],
-													"description": "An Offline Connect Token is a Connect Token that has been created by a Qiy Node Client and registered later using [Register connect token](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5).",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "d7da616e-3c24-45ae-9097-c287437b78d4",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "3bac0676-2fff-4b8d-835d-d03adb5dd11f",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "On-Connected Actions",
-													"item": [],
-													"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection, see for example this [Create connect token](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36)-call.",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "2458523d-d2d8-4ab6-8fe9-3a8a6ff368ef",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "35961d62-5f88-4da8-9187-e3e804315325",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												}
-											],
-											"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create a connection between the Qiy Nodes of two [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider. ",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "f5268bab-9fab-4739-ac0f-66c93528d7db",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												},
-												{
-													"listen": "test",
-													"script": {
-														"id": "c64873b3-933a-42ff-b0fe-5d34fbb5879d",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												}
-											],
+											"name": "Creating connection using events",
+											"item": [],
+											"description": "Creating a connection using events goes as follows:\n1. [Create connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and extract the Connection Url from the response.\n2. [Wait for the Connected to Router Event](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) with matching Connection Url.\n3. [Wait for the Persistent Id Event](https://qiy.api.digital-me.nl/#0868bc6f-1e77-46fe-a11c-aa7a5c079dd6) with matching Connection Url.",
 											"_postman_isSubFolder": true
 										}
 									],
@@ -1149,9 +1047,122 @@
 									"_postman_isSubFolder": true
 								},
 								{
+									"name": "Connect Tokens",
+									"item": [
+										{
+											"name": "Online Connect Tokens",
+											"item": [],
+											"description": "An Online Connect Token is a connect token that has been created using a [Request Connect Token](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "9aaf443a-1e2c-4a43-90a7-310bd2a29517",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "5ab9b4c2-0870-4ed2-99e3-c3165ff2a1b9",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Offline Connect Tokens",
+											"item": [],
+											"description": "An Offline Connect Token is a Connect Token that has been created by a Qiy Node Client and registered later using [Register connect token](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5).",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "d7da616e-3c24-45ae-9097-c287437b78d4",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "3bac0676-2fff-4b8d-835d-d03adb5dd11f",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "On-Connected Actions",
+											"item": [],
+											"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection, see for example this [Create connect token](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36)-call.",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "2458523d-d2d8-4ab6-8fe9-3a8a6ff368ef",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "35961d62-5f88-4da8-9187-e3e804315325",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										}
+									],
+									"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create a connection between the Qiy Nodes of two [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider. ",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "f5268bab-9fab-4739-ac0f-66c93528d7db",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "c64873b3-933a-42ff-b0fe-5d34fbb5879d",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
 									"name": "Feeds",
 									"item": [],
-									"description": "A feed can be used by a Relying Party to [access subscribed services of an individual](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+									"description": "A feed can be used by a Relying Party to [access subscribed services of an individual](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or use [Access all feeds](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1167,6 +1178,34 @@
 											"listen": "test",
 											"script": {
 												"id": "41c0f2b4-2fd3-4c19-a729-6cb037b83690",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Events",
+									"item": [],
+									"description": "A Qiy Node can use [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)-[events](https://qiy.api.digital-me.nl/#a0dfd715-bcb9-4bfd-9a94-c5e97edaeb1f) to communicate with a Qiy Node Client.\n\n",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "4ea7791c-b668-4b50-8a26-caf7201d0f7b",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "d3717dd2-bb73-4d00-8a9d-a95056fc4efc",
 												"type": "text/javascript",
 												"exec": [
 													""
@@ -1677,7 +1716,8 @@
 							"host": [
 								"{{eventsEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [Events Endpoint](https://qiy.api.digital-me.nl/#220e545c-a66d-4e2a-a0fa-0cb75e473430)-call can be used to start listening to [Qiy Node events]()."
 					},
 					"response": []
 				},
@@ -1943,54 +1983,6 @@
 			"name": "Connections",
 			"item": [
 				{
-					"name": "Create connection",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "{{authorizationHeader}}"
-							},
-							{
-								"key": "AP-Token",
-								"value": "{{apToken}}"
-							},
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n}"
-						},
-						"url": {
-							"raw": "{{connectionCreateEndpointUrl}}",
-							"host": [
-								"{{connectionCreateEndpointUrl}}"
-							]
-						},
-						"description": "This [Connection Create Endpoint](https://qiy.api.digital-me.nl/#73b87a63-f9a4-41c1-afc5-930d8f7b353d)-call [creates a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) using a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
-					},
-					"response": []
-				},
-				{
-					"name": "List connections",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"url": {
-							"raw": "{{connectionsEndpointUrl}}",
-							"host": [
-								"{{connectionsEndpointUrl}}"
-							]
-						},
-						"description": "This [Connections List Endpoint](https://qiy.api.digital-me.nl/#ef3d0b04-f3ff-41e6-8b87-1e5ef0b885b6)-call can be used to list [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
-					},
-					"response": []
-				},
-				{
 					"name": "Request connect token",
 					"request": {
 						"method": "POST",
@@ -2221,6 +2213,128 @@
 							]
 						},
 						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+					},
+					"response": []
+				},
+				{
+					"name": "Request connection",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n}"
+						},
+						"url": {
+							"raw": "{{connectionCreateEndpointUrl}}",
+							"host": [
+								"{{connectionCreateEndpointUrl}}"
+							]
+						},
+						"description": "This [Connection Create Endpoint](https://qiy.api.digital-me.nl/#73b87a63-f9a4-41c1-afc5-930d8f7b353d)-call can be used to [request a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df), but only when a valid and active [Connect Token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) is given."
+					},
+					"response": []
+				},
+				{
+					"name": "Wait for Connected to Router Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
+								"type": "text/javascript",
+								"exec": [
+									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ""
+							},
+							{
+								"key": "AP-Token",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{eventsEndpointUrl}}",
+							"host": [
+								"{{eventsEndpointUrl}}"
+							]
+						},
+						"description": "The [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) is the first event when [creating a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+					},
+					"response": []
+				},
+				{
+					"name": "Wait for Persistent Id Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
+								"type": "text/javascript",
+								"exec": [
+									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ""
+							},
+							{
+								"key": "AP-Token",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{eventsEndpointUrl}}",
+							"host": [
+								"{{eventsEndpointUrl}}"
+							]
+						},
+						"description": "The [Persistent Id Event](https://qiy.api.digital-me.nl/#9803c85c-8046-4a51-9de2-26bbb0bdd89f) is the second and last event when [creating a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+					},
+					"response": []
+				},
+				{
+					"name": "List connections",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{connectionsEndpointUrl}}",
+							"host": [
+								"{{connectionsEndpointUrl}}"
+							]
+						},
+						"description": "This [Connections List Endpoint](https://qiy.api.digital-me.nl/#ef3d0b04-f3ff-41e6-8b87-1e5ef0b885b6)-call can be used to list [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
 					},
 					"response": []
 				},
