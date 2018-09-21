@@ -103,9 +103,37 @@
 					"name": "Dynamic Endpoint Addresses",
 					"item": [
 						{
-							"name": "Connect Token Create Endpoint",
+							"name": "Connect Token Endpoint",
 							"item": [],
-							"description": "The Connect Token Create Endpoint can be used to create [Connect Tokens](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\nThe current address of the endpoint is returned in the \"ctCreate\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
+							"description": "This endpoint can be used to [request](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [register](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) [Connect Tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c).\nThe current address of the endpoint is returned in the \"ctCreate\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "b6499bbb-1200-482b-88aa-0ede70878dda",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "924d48c8-d161-4e1d-944c-27fc3a29f835",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Connect Token List Endpoint",
+							"item": [],
+							"description": "This endpoint can be used to [list Connect Tokens](https://qiy.api.digital-me.nl/#366060cb-b312-418d-a677-7650d6a80a1f).\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -301,7 +329,7 @@
 						{
 							"name": "Reference Endpoint",
 							"item": [],
-							"description": "The Reference Endpoint can be used to [access a single feed](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nThe current address of the endpoint is returned in the \"ref\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "The Reference Endpoint can be used to [access a single feed](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\nThe current address of the endpoint is returned in the \"ref\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -329,7 +357,7 @@
 						{
 							"name": "References Endpoint",
 							"item": [],
-							"description": "The References Endpoint is a convenience endpoint which allows to [access all feeds with one call](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "The References Endpoint is a convenience endpoint which allows to [access all feeds with one call](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -638,99 +666,7 @@
 								},
 								{
 									"name": "Orchestrate",
-									"item": [
-										{
-											"name": "Feed assignment",
-											"item": [
-												{
-													"name": "Add feed",
-													"request": {
-														"method": "PUT",
-														"header": [
-															{
-																"key": "Authorization",
-																"value": "{{authorizationHeader}}"
-															},
-															{
-																"key": "AP-Token",
-																"value": "{{apToken}}"
-															}
-														],
-														"body": {},
-														"url": {
-															"raw": "{{actionUrl}}",
-															"host": [
-																"{{actionUrl}}"
-															]
-														}
-													},
-													"response": []
-												},
-												{
-													"name": "Set feeds",
-													"request": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Authorization",
-																"value": "{{authorizationHeader}}"
-															},
-															{
-																"key": "AP-Token",
-																"value": "{{apToken}}"
-															}
-														],
-														"body": {},
-														"url": {
-															"raw": "{{actionUrl}}",
-															"host": [
-																"{{actionUrl}}"
-															]
-														}
-													},
-													"response": []
-												}
-											],
-											"_postman_isSubFolder": true
-										},
-										{
-											"name": "Get user action message",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "f5db43d4-afc0-4a20-806e-f23a49bf8969",
-														"type": "text/javascript",
-														"exec": [
-															"// Extract the orchestrationRequestUrl from the 'extraData'-member of the 'USER_ACION_MESSAGE'-event."
-														]
-													}
-												}
-											],
-											"request": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Authorization",
-														"value": "{{authorizationHeader}}"
-													},
-													{
-														"key": "AP-Token",
-														"value": "{{apToken}}"
-													}
-												],
-												"body": {},
-												"url": {
-													"raw": "{{userActionMessageUrl}}",
-													"host": [
-														"{{userActionMessageUrl}}"
-													]
-												},
-												"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799)."
-											},
-											"response": []
-										}
-									],
+									"item": [],
 									"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Start listening to events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the possible service providers and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected Service Providers.\n6. If and when applicable, [assign the feed to the selected service provider](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) using the related actionUrl.",
 									"event": [
 										{
@@ -848,134 +784,20 @@
 													"_postman_isSubFolder": true
 												},
 												{
+													"name": "Service Endpoint",
+													"item": [],
+													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
+													"_postman_isSubFolder": true
+												},
+												{
 													"name": "Service Catalogue",
-													"item": [
-														{
-															"name": "Get service catalogue",
-															"event": [
-																{
-																	"listen": "prerequest",
-																	"script": {
-																		"id": "ed86a9c4-5d02-4758-a6cc-cbd5285132a8",
-																		"type": "text/javascript",
-																		"exec": [
-																			"// Use '//Dynamic Endpoint Addresses/GET Api' to get the serviceCatalogueEndpointUrl"
-																		]
-																	}
-																}
-															],
-															"request": {
-																"method": "GET",
-																"header": [
-																	{
-																		"key": "Authorization",
-																		"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-																		"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-																	},
-																	{
-																		"key": "AP-Token",
-																		"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-																		"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-																	},
-																	{
-																		"key": "",
-																		"value": ""
-																	}
-																],
-																"body": {},
-																"url": {
-																	"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
-																	"host": [
-																		"{{serviceCatalogueEndpointUrl}}"
-																	],
-																	"query": [
-																		{
-																			"key": "internal",
-																			"value": "True",
-																			"description": "If False or None, only external services will be gotten."
-																		}
-																	]
-																}
-															},
-															"response": [
-																{
-																	"name": "Get Service Catalogue - OK",
-																	"originalRequest": {
-																		"method": "GET",
-																		"header": [
-																			{
-																				"key": "Authorization",
-																				"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-																				"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-																			},
-																			{
-																				"key": "AP-Token",
-																				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-																				"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-																			}
-																		],
-																		"body": {},
-																		"url": {
-																			"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
-																			"host": [
-																				"{{serviceCatalogueEndpointUrl}}"
-																			],
-																			"query": [
-																				{
-																					"key": "internal",
-																					"value": "True"
-																				}
-																			]
-																		}
-																	},
-																	"status": "OK",
-																	"code": 200,
-																	"_postman_previewlanguage": "",
-																	"header": [],
-																	"cookie": [],
-																	"body": "{\r\n        \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\"type\": \"internal\"},\r\n        \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
-																}
-															]
-														},
-														{
-															"name": "Set service catalogue",
-															"request": {
-																"method": "PUT",
-																"header": [
-																	{
-																		"key": "Authorization",
-																		"value": ""
-																	},
-																	{
-																		"key": "AP-Token",
-																		"value": ""
-																	},
-																	{
-																		"key": "Content-Type",
-																		"value": "application/json"
-																	}
-																],
-																"body": {
-																	"mode": "raw",
-																	"raw": "{\r\n  \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\r\n    \"type\": \"internal\"\r\n  },\r\n  \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
-																},
-																"url": {
-																	"raw": "{{serviceCatalogueEndpointUrl}}",
-																	"host": [
-																		"{{serviceCatalogueEndpointUrl}}"
-																	]
-																},
-																"description": "A Service Provider can use Set Service Catalogue to:\n1. Update his Service Catalogue\n2. Define the [Feed Request Endpoint](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67)"
-															},
-															"response": []
-														}
-													],
+													"item": [],
 													"description": "A [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for service type descriptions with additional details, for example for the associated [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67).\n\nA Service Type Description can contain a list of urls for the description of the operation types of the service which are used in [Feed Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nHowever, if not, the Service Type Description Url must be used instead.\n",
 													"event": [
 														{
 															"listen": "prerequest",
 															"script": {
-																"id": "0ddac47a-5d01-41c9-8825-c15e26cd87bc",
+																"id": "fe001859-3fc8-4697-8a7b-413303c7a2ff",
 																"type": "text/javascript",
 																"exec": [
 																	""
@@ -985,7 +807,7 @@
 														{
 															"listen": "test",
 															"script": {
-																"id": "afeff0e7-2df9-49c1-8588-e1300aa76ce5",
+																"id": "5a94c789-12ef-4232-a05a-a2b6c7671591",
 																"type": "text/javascript",
 																"exec": [
 																	""
@@ -993,12 +815,6 @@
 															}
 														}
 													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Service Endpoint",
-													"item": [],
-													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
 													"_postman_isSubFolder": true
 												}
 											],
@@ -1199,11 +1015,57 @@
 												{
 													"name": "Online Connect Tokens",
 													"item": [],
+													"description": "An Online Connect Token is a connect token that has been created using a [Request Connect Token](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "9aaf443a-1e2c-4a43-90a7-310bd2a29517",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "5ab9b4c2-0870-4ed2-99e3-c3165ff2a1b9",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
 													"_postman_isSubFolder": true
 												},
 												{
 													"name": "Offline Connect Tokens",
 													"item": [],
+													"description": "An Offline Connect Token is a Connect Token that has been created by a Qiy Node Client and registered later using [Register connect token](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5).",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "d7da616e-3c24-45ae-9097-c287437b78d4",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "3bac0676-2fff-4b8d-835d-d03adb5dd11f",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
 													"_postman_isSubFolder": true
 												},
 												{
@@ -1235,10 +1097,33 @@
 													"_postman_isSubFolder": true
 												}
 											],
+											"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create a connection between the Qiy Nodes of two [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider. ",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "f5268bab-9fab-4739-ac0f-66c93528d7db",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "c64873b3-933a-42ff-b0fe-5d34fbb5879d",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "[Individuals]() can connect and interact with other Individuals and [Service Providers] using connections between the related [Qiy Nodes]().\nThese connections can be created using [Connect Tokens]().",
+									"description": "[Individuals](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can connect and interact with other Individuals and [Service Providers](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) using connections between the related [Qiy Nodes](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6).\nThese connections can be [created](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) using [Connect Tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c), see also [End User App documentation](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) or [Service Provider documentation](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1254,6 +1139,34 @@
 											"listen": "test",
 											"script": {
 												"id": "eb7a208e-be8b-4478-b015-f1cf8939f107",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Feeds",
+									"item": [],
+									"description": "A feed can be used by a Relying Party to [access subscribed services of an individual](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "81545cf9-9fce-4444-bc0e-1cd84a2a6406",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "41c0f2b4-2fd3-4c19-a729-6cb037b83690",
 												"type": "text/javascript",
 												"exec": [
 													""
@@ -1880,21 +1793,184 @@
 			]
 		},
 		{
+			"name": "Service Catalogue",
+			"item": [
+				{
+					"name": "Get service catalogue",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ed86a9c4-5d02-4758-a6cc-cbd5285132a8",
+								"type": "text/javascript",
+								"exec": [
+									"// Use '//Dynamic Endpoint Addresses/GET Api' to get the serviceCatalogueEndpointUrl"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
+								"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+							},
+							{
+								"key": "AP-Token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+								"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+							},
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+							"host": [
+								"{{serviceCatalogueEndpointUrl}}"
+							],
+							"query": [
+								{
+									"key": "internal",
+									"value": "True",
+									"description": "If False or None, only external services will be gotten."
+								}
+							]
+						},
+						"description": "This [Service Catalogue Endpoint](https://qiy.api.digital-me.nl/#7f081d6c-77f8-4184-9497-7ddf2b74bb00)-call gets the [Service Catalogue](https://qiy.api.digital-me.nl/#089b271b-fdbe-4ee8-80ee-21a487cf4d8a)."
+					},
+					"response": [
+						{
+							"name": "Get Service Catalogue - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
+										"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+									},
+									{
+										"key": "AP-Token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
+										"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+									"host": [
+										"{{serviceCatalogueEndpointUrl}}"
+									],
+									"query": [
+										{
+											"key": "internal",
+											"value": "True"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n        \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\"type\": \"internal\"},\r\n        \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Set service catalogue",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ""
+							},
+							{
+								"key": "AP-Token",
+								"value": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\r\n    \"type\": \"internal\"\r\n  },\r\n  \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
+						},
+						"url": {
+							"raw": "{{serviceCatalogueEndpointUrl}}",
+							"host": [
+								"{{serviceCatalogueEndpointUrl}}"
+							]
+						},
+						"description": "This [Service Catalogue Endpoint](https://qiy.api.digital-me.nl/#7f081d6c-77f8-4184-9497-7ddf2b74bb00)-call sets the [Service Catalogue](https://qiy.api.digital-me.nl/#089b271b-fdbe-4ee8-80ee-21a487cf4d8a) including details of [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67)"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "0ddac47a-5d01-41c9-8825-c15e26cd87bc",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "afeff0e7-2df9-49c1-8588-e1300aa76ce5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
 			"name": "Connections",
 			"item": [
 				{
 					"name": "Create connection",
 					"request": {
 						"method": "POST",
-						"header": [],
-						"body": {},
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n}"
+						},
 						"url": {
 							"raw": "{{connectionCreateEndpointUrl}}",
 							"host": [
 								"{{connectionCreateEndpointUrl}}"
 							]
 						},
-						"description": "This [Connection Create Endpoint](https://qiy.api.digital-me.nl/#73b87a63-f9a4-41c1-afc5-930d8f7b353d)-call can be used to [create a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df), see also [End User App documentation](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) or [Service Provider documentation](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+						"description": "This [Connection Create Endpoint](https://qiy.api.digital-me.nl/#73b87a63-f9a4-41c1-afc5-930d8f7b353d)-call [creates a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) using a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
 					},
 					"response": []
 				},
@@ -1915,7 +1991,7 @@
 					"response": []
 				},
 				{
-					"name": "Create connect token",
+					"name": "Request connect token",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1941,16 +2017,16 @@
 							"raw": "{\n\t\"useBudget\": 1\n}"
 						},
 						"url": {
-							"raw": "{{connectTokenCreateEndpointUrl}}",
+							"raw": "{{connectTokenEndpointUrl}}",
 							"host": [
-								"{{connectTokenCreateEndpointUrl}}"
+								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Create Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call can be used to [create a connect token](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call can be used to [request a connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
 					},
 					"response": [
 						{
-							"name": "Create connect token - OK",
+							"name": "Request connect token - OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1976,9 +2052,9 @@
 									"raw": "{\n\t\"useBudget\": 1\n}"
 								},
 								"url": {
-									"raw": "{{ctCreateEndpointUrl}}",
+									"raw": "{{connectTokenEndpointUrl}}",
 									"host": [
-										"{{ctCreateEndpointUrl}}"
+										"{{connectTokenEndpointUrl}}"
 									]
 								}
 							},
@@ -1992,7 +2068,7 @@
 					]
 				},
 				{
-					"name": "Create connect token with callback",
+					"name": "Request connect token with callback",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -2018,12 +2094,12 @@
 							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"json\": {\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n\t},\r\n\t\"useBudget\": 1\r\n}"
 						},
 						"url": {
-							"raw": "{{connectTokenCreateEndpointUrl}}",
+							"raw": "{{connectTokenEndpointUrl}}",
 							"host": [
-								"{{connectTokenCreateEndpointUrl}}"
+								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Create Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call creates a connect token with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call requests a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
 					},
 					"response": []
 				},
@@ -2054,11 +2130,12 @@
 							"raw": "{\n\t\"useBudget\": 1,\n\t\"json\": {\n\t\t\"identifier\": \"Service Provider\",\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n\t}\n}"
 						},
 						"url": {
-							"raw": "{{connectTokenCreateEndpointUrl}}",
+							"raw": "{{connectTokenEndpointUrl}}",
 							"host": [
-								"{{connectTokenCreateEndpointUrl}}"
+								"{{connectTokenEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
 					},
 					"response": [
 						{
@@ -2088,9 +2165,9 @@
 									"raw": "{\n\t\"useBudget\": 1,\n\t\"json\": {\n\t\t\"identifier\": \"Service Provider\",\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n\t}\n}"
 								},
 								"url": {
-									"raw": "{{connectTokenCreateEndpointUrl}}",
+									"raw": "{{connectTokenEndpointUrl}}",
 									"host": [
-										"{{connectTokenCreateEndpointUrl}}"
+										"{{connectTokenEndpointUrl}}"
 									]
 								}
 							},
@@ -2138,12 +2215,12 @@
 							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\t\t\t\r\n}"
 						},
 						"url": {
-							"raw": "{{connectTokenCreateEndpointUrl}}",
+							"raw": "{{connectTokenEndpointUrl}}",
 							"host": [
-								"{{connectTokenCreateEndpointUrl}}"
+								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Create Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call creates a connect token with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
 					},
 					"response": []
 				},
@@ -2172,7 +2249,7 @@
 								"{{connectTokenUrl}}"
 							]
 						},
-						"description": "The Get connect token request can be used to get the details of a Connect Token, using a connectionUrl that has been returned in the Location header of the response of a [Create Token Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f)."
+						"description": "The Get connect token request can be used to get the details of a [Connect Token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c), using a connectionUrl that has been returned in the Location header of the response of a [Create Token Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f)."
 					},
 					"response": [
 						{
@@ -2217,11 +2294,12 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "{{ctCreateEndpointUrl}}",
+							"raw": "{{connectTokenEndpointUrl}}",
 							"host": [
-								"{{ctCreateEndpointUrl}}"
+								"{{connectTokenEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [Connect Token List Endpoint](https://qiy.api.digital-me.nl/#810b87f6-54d1-47e0-afd5-e6ea15f34596)-call lists the [connect tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
 					},
 					"response": []
 				}
@@ -2268,6 +2346,33 @@
 					"listen": "test",
 					"script": {
 						"id": "500d6bbc-a34a-45a6-8e6e-7b98d246d00f",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Subscriptions",
+			"item": [],
+			"description": "To be specified.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e51d9d8e-e7b3-4c1c-b19c-54e1707cf9f7",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "cb569b8d-40a3-4e5d-bc66-3dab25482275",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2339,33 +2444,6 @@
 					"listen": "test",
 					"script": {
 						"id": "bb05eac3-76a4-41ee-af1a-f98ccf829881",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Subscriptions",
-			"item": [],
-			"description": "To be specified.",
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "e51d9d8e-e7b3-4c1c-b19c-54e1707cf9f7",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "cb569b8d-40a3-4e5d-bc66-3dab25482275",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -2452,6 +2530,91 @@
 					"response": []
 				},
 				{
+					"name": "Get user action message",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f5db43d4-afc0-4a20-806e-f23a49bf8969",
+								"type": "text/javascript",
+								"exec": [
+									"// Extract the orchestrationRequestUrl from the 'extraData'-member of the 'USER_ACION_MESSAGE'-event."
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{userActionMessageUrl}}",
+							"host": [
+								"{{userActionMessageUrl}}"
+							]
+						},
+						"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799)."
+					},
+					"response": []
+				},
+				{
+					"name": "Set feeds",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{actionUrl}}",
+							"host": [
+								"{{actionUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add feed",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{actionUrl}}",
+							"host": [
+								"{{actionUrl}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Access feed",
 					"request": {
 						"method": "GET",
@@ -2479,7 +2642,8 @@
 									"value": "{{feed_id}}"
 								}
 							]
-						}
+						},
+						"description": "This [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call accesses a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": [
 						{
@@ -2500,9 +2664,9 @@
 								],
 								"body": {},
 								"url": {
-									"raw": "{{ref}}?id={{feed_id}}",
+									"raw": "{{referenceEndpointUrl}}?id={{feed_id}}",
 									"host": [
-										"{{ref}}"
+										"{{referenceEndpointUrl}}"
 									],
 									"query": [
 										{
@@ -2529,19 +2693,28 @@
 					"name": "Access feeds",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
 						"body": {},
 						"url": {
 							"raw": "{{referencesEndpointUrl}}",
 							"host": [
 								"{{referencesEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call accesses all [feeds](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": []
 				}
 			],
-			"description": "A Relying Party can access a Services that is orchestrated by an Individual as follows:\n1. [Request for feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
 			"event": [
 				{
 					"listen": "prerequest",
