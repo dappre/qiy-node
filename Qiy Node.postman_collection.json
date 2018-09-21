@@ -542,34 +542,6 @@
 					"name": "Documentation",
 					"item": [
 						{
-							"name": "Example End User flow",
-							"item": [],
-							"description": "![Example End User flow](https://github.com/digital-me/qiy-node/raw/topic/data-reuse/images/fikks_user_flow.png \"Example End User flow\")\n",
-							"event": [
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "ea47bc41-54b2-48e0-b0f0-eccd84942f4e",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								},
-								{
-									"listen": "test",
-									"script": {
-										"id": "f2ee81f3-bb3e-4c1e-b6f7-cd0e376b8f6c",
-										"type": "text/javascript",
-										"exec": [
-											""
-										]
-									}
-								}
-							],
-							"_postman_isSubFolder": true
-						},
-						{
 							"name": "Qiy Scheme",
 							"item": [],
 							"description": "The [Qiy Scheme](https://www.qiyfoundation.org/qiy-scheme/) is a scheme which is initiated by the [Qiy Foundation](https://www.qiyfoundation.org) as a means to give individuals control over their data while creating value for organisations, see [https://qiy-foundation.org](https://qiy-foundation.org).",
@@ -601,34 +573,6 @@
 							"name": "End User App",
 							"item": [
 								{
-									"name": "Example End User App flow",
-									"item": [],
-									"description": "![Example End User App flow](https://github.com/digital-me/qiy-node/raw/topic/data-reuse/images/fikks_app_qiy_flow.png \"Example End User App flow\")\n",
-									"event": [
-										{
-											"listen": "prerequest",
-											"script": {
-												"id": "ea47bc41-54b2-48e0-b0f0-eccd84942f4e",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										},
-										{
-											"listen": "test",
-											"script": {
-												"id": "f2ee81f3-bb3e-4c1e-b6f7-cd0e376b8f6c",
-												"type": "text/javascript",
-												"exec": [
-													""
-												]
-											}
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
 									"name": "Setup",
 									"item": [],
 									"description": "An End User App can only access the Qiy Trust Network under the following preconditions:\n1. The End User App uses a valid [Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. The [End User App correctly authenticates Qiy Node requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n3. The End User App must allow End Users to use a [new Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) or reuse an existing one.",
@@ -658,36 +602,7 @@
 								},
 								{
 									"name": "Subscribe",
-									"item": [
-										{
-											"name": "Connect with a Service Provider",
-											"item": [],
-											"description": "This section describes how an [End User App](https://qiy.api.digital-me.nl/#265b0209-d297-429d-a891-f1eba6cf2083) can [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4).\n\nThis process uses a Connect Token of the Service Provider that can be produced by the End User App or the Service Provider.\n\n## Connecting using a Connect Token created by the End User App\n\nWhen the End User App creates the Connect Token of the Service Provider, connecting goes as follows:\n2. The End User App creates a so-called [Offline Connect Token](https://qiy.api.digital-me.nl/#e2324a33-022e-4b02-bde0-c438d12b2683), but does not register it.\n1. The End User App provides the Offline Connect Token to the Service Provider (out-of-scope) who will [register it](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).\n2. The End User App uses the [Offline Connect Token to create the connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\n\n\n## Connecting using a Connect Token created by the Service Provider\n",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "a7d34c27-5b51-46bb-acef-ef44338d8741",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												},
-												{
-													"listen": "test",
-													"script": {
-														"id": "4970c4e6-8f8b-4e14-bdfd-a25c42b4d308",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												}
-											],
-											"_postman_isSubFolder": true
-										}
-									],
+									"item": [],
 									"description": "An Individual can subscribe to a service as follows:\n1. Conclude an subscription agreement (out-of-scope).\n2. [Connect with the Service Provider](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167).\n\n",
 									"event": [
 										{
@@ -771,108 +686,17 @@
 							"name": "Service Provider",
 							"item": [
 								{
-									"name": "General",
+									"name": "Setup",
 									"item": [
 										{
-											"name": "Setup",
-											"item": [
-												{
-													"name": "On-Connected Endpoint",
-													"item": [],
-													"description": "An On-Connected Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to receive [notifications when a connection has been created](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f).",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Feed Request Endpoint",
-													"item": [],
-													"description": "A Feed Request Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a Service Provider to receive [Feed Requests](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) from [Individuals when they orchestrate the subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "006a2435-8113-4b06-937b-2443ddb27374",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "a59355c8-95eb-4f91-8765-f712fbec2643",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Service Endpoint",
-													"item": [],
-													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Service Catalogue",
-													"item": [],
-													"description": "A [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for service type descriptions with additional details, for example for the associated [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67).\n\nA Service Type Description can contain a list of urls for the description of the operation types of the service which are used in [Feed Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nHowever, if not, the Service Type Description Url must be used instead.\n",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "fe001859-3fc8-4697-8a7b-413303c7a2ff",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "5a94c789-12ef-4232-a05a-a2b6c7671591",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												}
-											],
-											"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup an [On-Connect Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) for easily processing connect requests.\n2. Setup [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67) for his services.\n2. Setup [Service Endpoints]() to serve [feed access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\n3. Prepare the Computer systems to correctly produce [authenticated requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n1. [Contact an Access Provider](https://qiy.api.digital-me.nl/#208534d5-bf93-43af-b644-420ced7caef4) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\n",
+											"name": "On-Connected Endpoint",
+											"item": [],
+											"description": "An On-Connected Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be setup and used by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to  [detect that a connect token has been used to create a connection](https://qiy.api.digital-me.nl/#792c1c8f-532e-4d4d-b71f-8cd601c94ceb).",
 											"event": [
 												{
 													"listen": "prerequest",
 													"script": {
-														"id": "18a3c7ec-e220-4739-aa13-f600c00ba5c9",
+														"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
 														"type": "text/javascript",
 														"exec": [
 															""
@@ -882,7 +706,7 @@
 												{
 													"listen": "test",
 													"script": {
-														"id": "8429e058-4991-4ec9-bb01-d0cdb775355f",
+														"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
 														"type": "text/javascript",
 														"exec": [
 															""
@@ -893,17 +717,74 @@
 											"_postman_isSubFolder": true
 										},
 										{
-											"name": "Connect with an Individual",
+											"name": "Feed Request Endpoint",
 											"item": [],
+											"description": "A Feed Request Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a Service Provider to receive [Feed Requests](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) from [Individuals when they orchestrate the subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "006a2435-8113-4b06-937b-2443ddb27374",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "a59355c8-95eb-4f91-8765-f712fbec2643",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Service Endpoint",
+											"item": [],
+											"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) to serve [Feed Access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).",
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Service Catalogue",
+											"item": [],
+											"description": "A [Service Provider](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for service type descriptions with additional details, for example for the associated [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67).\n\nA Service Type Description can contain a list of urls for the description of the operation types of the service which are used in [Feed Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nHowever, if not, the Service Type Description Url must be used instead.\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "fe001859-3fc8-4697-8a7b-413303c7a2ff",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "5a94c789-12ef-4232-a05a-a2b6c7671591",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "The topics in this section apply to all types of Service Providers:\n1. [Setup](https://qiy.api.digital-me.nl/#0225107f-58a0-4ff9-b82c-45240e549541)\n2. [Connect with an Individual](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)",
+									"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup an [On-Connect Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) for easily processing connect requests.\n2. Setup [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67) for his services.\n2. Setup [Service Endpoints]() to serve [feed access requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\n3. Prepare the Computer systems to correctly produce [authenticated requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n1. [Contact an Access Provider](https://qiy.api.digital-me.nl/#208534d5-bf93-43af-b644-420ced7caef4) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\n",
 									"event": [
 										{
 											"listen": "prerequest",
 											"script": {
-												"id": "92b03af8-f2c5-460d-8fdd-ae9da70d3581",
+												"id": "18a3c7ec-e220-4739-aa13-f600c00ba5c9",
 												"type": "text/javascript",
 												"exec": [
 													""
@@ -913,80 +794,12 @@
 										{
 											"listen": "test",
 											"script": {
-												"id": "9cf2cc57-3839-4254-a060-dbd65ca60893",
+												"id": "8429e058-4991-4ec9-bb01-d0cdb775355f",
 												"type": "text/javascript",
 												"exec": [
 													""
 												]
 											}
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
-									"name": "Relying Party",
-									"item": [
-										{
-											"name": "Example Relying Party flow",
-											"item": [],
-											"description": "![Example Relying Party Back End flow](https://github.com/digital-me/qiy-node/raw/topic/data-reuse/images/relying_party_backend_flow.png \"Example Relying Party Back End flow\")\n",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "ea47bc41-54b2-48e0-b0f0-eccd84942f4e",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												},
-												{
-													"listen": "test",
-													"script": {
-														"id": "f2ee81f3-bb3e-4c1e-b6f7-cd0e376b8f6c",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												}
-											],
-											"_postman_isSubFolder": true
-										}
-									],
-									"_postman_isSubFolder": true
-								},
-								{
-									"name": "Data Provider",
-									"item": [
-										{
-											"name": "Example Data Provider flow",
-											"item": [],
-											"description": "![Example Data Provider data reuse flow](https://github.com/digital-me/qiy-node/raw/topic/data-reuse/images/fikks_data_provider_qiy_flow.png \"Example Data Provider data reuse flow\")\n",
-											"event": [
-												{
-													"listen": "prerequest",
-													"script": {
-														"id": "ea47bc41-54b2-48e0-b0f0-eccd84942f4e",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												},
-												{
-													"listen": "test",
-													"script": {
-														"id": "f2ee81f3-bb3e-4c1e-b6f7-cd0e376b8f6c",
-														"type": "text/javascript",
-														"exec": [
-															""
-														]
-													}
-												}
-											],
-											"_postman_isSubFolder": true
 										}
 									],
 									"_postman_isSubFolder": true
@@ -2128,7 +1941,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call requests a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call requests a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used to detect that a connect token was used to create a connection using a callback to an [On-Connected Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c)."
 					},
 					"response": []
 				},
@@ -2249,7 +2062,26 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used by [Service Providers to create connections with individuals](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7)."
+						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c) with an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f) and can be used to detect that a connect token was used to create a connection using a callback to an [On-Connected Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c)."
+					},
+					"response": []
+				},
+				{
+					"name": "Wait for callback on On-Connected Endpoint",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"pid\": \"Service Provider\",\r\n\t\t\"connectionUrl\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"Hello\": \"world!\"\r\n}"
+						},
+						"url": {
+							"raw": "{{OnConnectedEndpointUrl}}",
+							"host": [
+								"{{OnConnectedEndpointUrl}}"
+							]
+						},
+						"description": "This callback on the [On-Connected Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) can be used to [detect that a connect token was used to create a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df), but only with a connect token that has been [requested](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36) or [registered](https://qiy.api.digital-me.nl/#d7ed9d68-f996-492d-918f-cf7411019ced) with the callback as an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f)."
 					},
 					"response": []
 				},
