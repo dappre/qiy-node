@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "87eb4502-4203-4f6b-b4d0-27f8fe813c81",
 		"name": "Qiy Node",
-		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#43-qiy-node) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask permission to use subscribed services](https://qiy.api.digital-me.nl/#bf6403a7-89b2-4028-95c3-b39d5d444bf3).\n4. The [Individual may grant this and provide feeds to do so](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party can accesses the feeds when needed](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#43-qiy-node) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask an Individual for feeds to consume services](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033).\n4. The [Individual may provide the service himself or instead deploy subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party receives feeds and consumes the services](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -187,6 +187,34 @@
 							"_postman_isSubFolder": true
 						},
 						{
+							"name": "Connection Endpoint",
+							"item": [],
+							"description": "This endpoint can be used to [get the details of a connection](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).\nThe endpoint urls are returned by [Request connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and [List connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "d076b40c-af58-4804-954d-bfaae8210e8b",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "7934862f-61ae-49b9-946a-9ed163144cf9",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
 							"name": "Connections List Endpoint",
 							"item": [],
 							"description": "The Connections List Endpoint can be used to [list connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
@@ -218,6 +246,34 @@
 							"name": "Events Endpoint",
 							"item": [],
 							"description": "The Events Endpoint can be used to [receive events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040).\nThe current address of the endpoint is returned in the \"events\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "0f7eb89d-cd49-43bd-a8e6-f17c97864004",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "d7730b36-a52e-4c5d-afe0-e630af2e00b4",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Mailbox Endpoint",
+							"item": [],
+							"description": "This endpoint can be used to [send](https://qiy.api.digital-me.nl/#9ba1358d-ed56-42ac-8f21-73a9c8dba1ca) and [receive](https://qiy.api.digital-me.nl/#1ef027e0-7e0f-431e-9389-5fe1eb8b111e) [messages](https://qiy.api.digital-me.nl/#2a0c6c4b-bd2a-4b65-9282-bfdad3c1da81).\nThe current address of the endpoint is returned in the \"mbox\"-member of the response of [List connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -543,8 +599,82 @@
 					"item": [
 						{
 							"name": "Qiy Scheme",
-							"item": [],
-							"description": "The [Qiy Scheme](https://www.qiyfoundation.org/qiy-scheme/) is a scheme which is initiated by the [Qiy Foundation](https://www.qiyfoundation.org) as a means to give individuals control over their data while creating value for organisations, see [https://qiy-foundation.org](https://qiy-foundation.org).",
+							"item": [
+								{
+									"name": "Qiy Trust Network",
+									"item": [
+										{
+											"name": "Access Provider",
+											"item": [],
+											"description": "An Access Provider is an organization which provides access to the Qiy Trust Network.",
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Application Provider",
+											"item": [],
+											"description": "An Application Provider is an organization that provides software or computing services which can be used to access the Qiy Trust Network.",
+											"_postman_isSubFolder": true
+										}
+									],
+									"description": "The Qiy Trust Network is the operational part of the Qiy Scheme: it enables its users to securely and privately connect and interact.",
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Qiy Users",
+									"item": [
+										{
+											"name": "Individual",
+											"item": [],
+											"description": "An Individual is a natural person that is using the Qiy Trust Network as such.",
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Service Provider",
+											"item": [
+												{
+													"name": "Relying Party",
+													"item": [],
+													"description": "A Relying Party is a Service Provider that is providing services which relies on services provided by other Service Providers.",
+													"_postman_isSubFolder": true
+												},
+												{
+													"name": "Data Provider",
+													"item": [],
+													"description": "A Data Provider is a Service Provider that provides data services, which may produce Personally Identifiable Information.",
+													"_postman_isSubFolder": true
+												}
+											],
+											"description": "A Service Provider is an organization that uses the Qiy Trust Network to provide services to Individuals.",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "33a9faf6-67fd-4a14-910c-05d51c81b26b",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "61282e23-21b1-4bfc-a672-76c9aa0c7aa8",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										}
+									],
+									"description": "Qiy Users are users of the Qiy Trust Network.",
+									"_postman_isSubFolder": true
+								}
+							],
+							"description": "The [Qiy Scheme](https://www.qiyfoundation.org/qiy-scheme/) and the initiated by the [Qiy Foundation](https://www.qiyfoundation.org) is a means to give individuals control over their data while creating value for organisations, see [https://qiy-foundation.org](https://qiy-foundation.org).\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1012,7 +1142,7 @@
 								{
 									"name": "Feeds",
 									"item": [],
-									"description": "A feed can be used by a Relying Party to [access subscribed services of an individual](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321).\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or use [Access all feeds](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
+									"description": "Feeds can be used by a Relying Party to consume subscribed services of an individual.\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or use [Access all feeds](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1056,6 +1186,34 @@
 											"listen": "test",
 											"script": {
 												"id": "d3717dd2-bb73-4d00-8a9d-a95056fc4efc",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
+									"_postman_isSubFolder": true
+								},
+								{
+									"name": "Messages",
+									"item": [],
+									"description": "[Qiy Users](https://qiy.api.digital-me.nl/#992ea4a2-048f-4046-9664-6a8c7d6cb34b) can use [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) to [send](https://qiy.api.digital-me.nl/#9ba1358d-ed56-42ac-8f21-73a9c8dba1ca) and [receive messages](https://qiy.api.digital-me.nl/#1ef027e0-7e0f-431e-9389-5fe1eb8b111e).",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "03b23947-32ea-4ce7-90bd-8fe58dd0ad0a",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "60bc5074-d46e-4e79-9ade-f017102a99d4",
 												"type": "text/javascript",
 												"exec": [
 													""
@@ -2192,6 +2350,61 @@
 					"response": []
 				},
 				{
+					"name": "Get connection",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{connectionEndpointUrl}}",
+							"host": [
+								"{{connectionEndpointUrl}}"
+							]
+						},
+						"description": "This [Connection Endpoint](https://qiy.api.digital-me.nl/#179d919c-3a87-4dc0-8aef-7c8d97e4b4f8)-call returns [connection details](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+					},
+					"response": [
+						{
+							"name": "Get connection - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "{{connectionEndpointUrl}}",
+									"host": [
+										"{{connectionEndpointUrl}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n  \"links\" : {\r\n    \"references\" : \"http://example.com/aeiou\",\r\n    \"self\" : \"http://example.com/aeiou\",\r\n    \"mbox\" : \"http://example.com/aeiou\"\r\n  },\r\n  \"state\" : \"connected\",\r\n  \"activeFrom\" : 0,\r\n  \"activeUntil\" : 6\r\n}"
+						}
+					]
+				},
+				{
 					"name": "List connections",
 					"request": {
 						"method": "GET",
@@ -2383,35 +2596,62 @@
 							{
 								"key": "password",
 								"value": "{{transportPassword}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"protocol\": \"https://example.com/qiy/node/message\",\n\t\"refSerialNr\": -1,\n\t\"text\": \"Hello world!\",\n\t\"payload\": \"SGVsbG8gV29ybGQh\"\n}"
+						},
 						"url": {
-							"raw": "{{mboxUrl}}",
+							"raw": "{{mailboxEndpointUrl}}",
 							"host": [
-								"{{mboxUrl}}"
+								"{{mailboxEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call sends a [message](https://qiy.api.digital-me.nl/#2a0c6c4b-bd2a-4b65-9282-bfdad3c1da81)."
 					},
 					"response": []
 				},
 				{
-					"name": "Get messages",
+					"name": "List messages",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
 						"body": {},
 						"url": {
-							"raw": "{{mboxUrl}}",
+							"raw": "{{mailboxEndpointUrl}}?since={{unixTimeInMilliSeconds}}",
 							"host": [
-								"{{mboxUrl}}"
+								"{{mailboxEndpointUrl}}"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "{{unixTimeInMilliSeconds}}"
+								}
 							]
-						}
+						},
+						"description": "This [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call lists [messages](https://qiy.api.digital-me.nl/#2a0c6c4b-bd2a-4b65-9282-bfdad3c1da81)."
 					},
 					"response": []
 				}
 			],
-			"description": "A Qiy Node Client can exchange Messages with other clients that it has a [connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5) with.\nFor more information, please refer to [chapter 7. Messaging](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#7-messaging) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -2504,11 +2744,12 @@
 							"raw": "{\r\n  \"protocol\": {{operationTypeUrl}},\r\n  \"refSerialNr\": -1,\r\n  \"text\": \"Requesting feed.\"\r\n}"
 						},
 						"url": {
-							"raw": "{{mboxUrl}}",
+							"raw": "{{mailboxEndpointUrl}}",
 							"host": [
-								"{{mboxUrl}}"
+								"{{mailboxEndpointUrl}}"
 							]
-						}
+						},
+						"description": "This [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call requests for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": []
 				},
