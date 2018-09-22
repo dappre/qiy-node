@@ -566,7 +566,29 @@
 						{
 							"name": "User Action Message Event",
 							"item": [],
-							"description": "The User Action Message Event is fired by a Qiy Node when it receives a [message]() that requires interaction with the End User.",
+							"description": "The User Action Message Event is fired by a Qiy Node when it receives a [user action message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb) that requires interaction with the End User.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "2a1f5e27-0bd0-466b-bdd7-cb344fe682f5",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "e01bb3f1-7e32-493f-bb90-aa08b079b524",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						}
 					],
@@ -761,7 +783,7 @@
 								{
 									"name": "Orchestrate",
 									"item": [],
-									"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Start listening to events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the possible service providers and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected Service Providers.\n6. If and when applicable, [assign the feed to the selected service provider](https://qiy.api.digital-me.nl/#c908455a-867e-4ca3-b8aa-5a293652f840) using the related actionUrl.",
+									"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Wait for a User Action Message Event](https://qiy.api.digital-me.nl/#e66a9caf-54a9-4cd0-8c8a-3e025172016e).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the options and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected options.\n6. [Deploy the selected services](https://qiy.api.digital-me.nl/#74e4c492-6047-423d-aab5-5f8576212168) or [change the deployment](https://qiy.api.digital-me.nl/#76cd1722-b1ae-45a3-910c-30fc155db3a4) using the related actionUrls.",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1142,7 +1164,7 @@
 								{
 									"name": "Feeds",
 									"item": [],
-									"description": "Feeds can be used by a Relying Party to consume subscribed services of an individual.\nA Relying Party can do so as follows:\n1. [Request for a feed](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6).\n0. [Start listening to Events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040) and wait for a [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d).\n3. Extract the feed id from the event and use it to [access it](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or use [Access all feeds](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
+									"description": "Feeds can be used by a Relying Party to consume subscribed services of an individual.\nA Relying Party can do so as follows:\n1. [Request for feeds](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6) to remotely execute operations of a service by reference.\n0. [Wait for the feeds](https://qiy.api.digital-me.nl/#ac3d9f3a-711d-4127-a3d2-300f5ea22e61) and [use them one by one](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or\n1. [Use polling](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -2749,7 +2771,81 @@
 								"{{mailboxEndpointUrl}}"
 							]
 						},
-						"description": "This [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call requests for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to requests for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+					},
+					"response": []
+				},
+				{
+					"name": "Wait for Data Reference Received Event-v2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
+								"type": "text/javascript",
+								"exec": [
+									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": ""
+							},
+							{
+								"key": "AP-Token",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{eventsEndpointUrl}}",
+							"host": [
+								"{{eventsEndpointUrl}}"
+							]
+						},
+						"description": "A Relying Party can use the [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d) to detect the [receipt of a feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+					},
+					"response": []
+				},
+				{
+					"name": "Wait for User Action Message Event",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
+								"type": "text/javascript",
+								"exec": [
+									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{eventsEndpointUrl}}",
+							"host": [
+								"{{eventsEndpointUrl}}"
+							]
+						},
+						"description": "An End User App can use the [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799) to detect the [receipt of a feed request](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
 					},
 					"response": []
 				},
@@ -2810,7 +2906,8 @@
 							"host": [
 								"{{actionUrl}}"
 							]
-						}
+						},
+						"description": "An End User App uses this call to [change the service deployment](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
 					},
 					"response": []
 				},
@@ -2834,7 +2931,8 @@
 							"host": [
 								"{{actionUrl}}"
 							]
-						}
+						},
+						"description": "An End User App uses this call to [deploy (an operation of) a service](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
 					},
 					"response": []
 				},
@@ -2867,7 +2965,7 @@
 								}
 							]
 						},
-						"description": "This [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call accesses a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call accesses a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": [
 						{
@@ -2934,7 +3032,7 @@
 								"{{referencesEndpointUrl}}"
 							]
 						},
-						"description": "This [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call accesses all [feeds](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party uses this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call accesses all [feeds](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": []
 				}
