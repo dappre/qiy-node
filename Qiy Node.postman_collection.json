@@ -1052,6 +1052,34 @@
 									"name": "Connect Tokens",
 									"item": [
 										{
+											"name": "Create Connect Token",
+											"item": [],
+											"description": "A Connect Token is a json-object with three members which can be created as follows:\n* id: This is a label and can be any string.\n* target: The format of this member is returned in the \"target-template\"-member of the response of [get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428), where id should be a uuid.\n* tmpSecret: This member is a string: an array of 16 random bytes which is base64-encoded.\n\nIn Java the tmpSecret can be generated as follows:\n```\nSecureRandom RANDOM = new SecureRandom();\nbyte[] tmpSecret = new byte[16];\nRANDOM.nextBytes(tmpSecret);\nString tmpSecretString = Base64.getEncoder().encodeToString(tmpSecret);\n```\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "aab94f57-e8be-4cef-b225-9b80230dec90",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "b06640bd-c837-46f3-be8e-a10141533198",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
 											"name": "Online Connect Tokens",
 											"item": [],
 											"description": "An Online Connect Token is a connect token that has been created using a [Request Connect Token](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).",
@@ -1136,7 +1164,7 @@
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) between [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be created by either of the two, but when connecting to a Service Provider it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider.\n",
+									"description": "A [Connect Token](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) can be used to create [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df) between [Qiy Users](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6), for example an [Individual](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167) and a [Service Provider](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).\nThe connect token can be [created](https://qiy.api.digital-me.nl/#20b920bc-a95a-43b6-8927-26118ae9634d) by either of the two, but when connecting to a Service Provider it must always be [requested](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [registered](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) by the Service Provider.\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1863,7 +1891,7 @@
 			]
 		},
 		{
-			"name": "Service Catalogue",
+			"name": "Services",
 			"item": [
 				{
 					"name": "Get service catalogue",
