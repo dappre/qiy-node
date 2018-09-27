@@ -2163,7 +2163,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"json\": {\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n\t},\r\n\t\"useBudget\": 1\r\n}"
+							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"useBudget\": 1\r\n}"
 						},
 						"url": {
 							"raw": "{{connectTokenEndpointUrl}}",
@@ -2284,7 +2284,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t}\t\t\t\r\n}"
+							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"json\": {\r\n\t\t\"identifier\": \"Service Provider\",\r\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\r\n\t}\t\t\t\r\n}"
 						},
 						"url": {
 							"raw": "{{connectTokenEndpointUrl}}",
@@ -2303,7 +2303,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\t\"pid\": \"Service Provider\",\r\n\t\t\"connectionUrl\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"Hello\": \"world!\"\r\n}"
+							"raw": "{\r\n\t\t\"pid\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"connectionUrl\": \"https://connection.url/example/003030\",\r\n\t\t\"Hello\": \"world!\"\r\n}"
 						},
 						"url": {
 							"raw": "{{OnConnectedEndpointUrl}}",
