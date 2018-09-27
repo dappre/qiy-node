@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "87eb4502-4203-4f6b-b4d0-27f8fe813c81",
 		"name": "Qiy Node",
-		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#43-qiy-node) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask an Individual for feeds to consume services](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033).\n4. The [Individual may provide the service himself or instead deploy subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party receives feeds and consumes the services](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask an Individual for feeds to consume services](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033).\n4. The [Individual may provide the service himself or instead deploy subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party receives feeds and consumes the services](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -46,7 +46,7 @@
 				{
 					"name": "Versions",
 					"item": [],
-					"description": "This api is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) and follows this specification. In addition, the following rules apply:\r\n* [Digital Me](https://digital-me.nl/) supports two major versions in the production environment: one primary version and one secundary version.\r\n* [Digital Me](https://digital-me.nl/) will support a secundary version for at least 6 months.\r\n* [Digital Me](https://digital-me.nl/) supports one development version in a development environment.\r\n* A development version may change at any time.\r\n",
+					"description": "This api is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) and follows this specification. In addition, the following rules apply:\r\n* [Digital Me](https://digital-me.nl/) supports two major versions in the production environment: one primary version and one secondary version.\r\n* [Digital Me](https://digital-me.nl/) will support a secondary version for at least 6 months.\r\n* [Digital Me](https://digital-me.nl/) supports one development version in a development environment.\r\n* A development version may change at any time.\r\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -329,7 +329,7 @@
 						{
 							"name": "Node Create Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [create a Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097).\nThe current address of the endpoint is returned in the \"create\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097).\nThe current address of the endpoint is returned in the \"create\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -991,11 +991,33 @@
 										{
 											"name": "Settings",
 											"item": [],
-											"description": "A Qiy Node can have diferent settings which can be maintained with [node calls](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c).",
+											"description": "A Qiy Node can have diferent settings which can be maintained with [node setting calls](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c).",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "54fb9860-f502-49e6-bf95-3848c04f7881",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "23b960e3-6d11-42f4-ad69-5aa02f478168",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "A [Qiy Node](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) is an access point for the [Qiy Trust Network](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) and can be maintained and used with [node calls](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c).",
+									"description": "A [Qiy Node](https://qiy.api.digital-me.nl/#37164def-9d2f-4bd7-b942-ba233677eaf6) is an access point for the [Qiy Trust Network](https://qiy.api.digital-me.nl/#8e5b316d-1928-46b6-adfe-9a65b481bda0) and can be maintained and used with [node calls](https://qiy.api.digital-me.nl/#53ee086e-0d81-4f0c-9b51-3f5d4f4f039c).\nQiy Nodes are provided by [Digital Me](https://digital-me.nl/infrastructure/connect-to-the-network/) to [Service Providers](https://qiy.api.digital-me.nl/#e351a4a2-a31a-4b35-af56-8b3d592d1dd4) on [registration](https://qiy.api.digital-me.nl/#09a0973b-db46-4cda-9ced-53e2eaab6a03). [End User Apps](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can create Qiy Nodes by generating a Qiy Node id and Qiy Node credential and [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) as described in [section 3.1 Create Qiy Node](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#31-create-qiy-node) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1603,7 +1625,7 @@
 					]
 				},
 				{
-					"name": "Create Qiy Node",
+					"name": "Request creation of Qiy Node",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1626,7 +1648,7 @@
 								"{{nodeCreateEndpointUrl}}"
 							]
 						},
-						"description": "This [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)-call can be used to [create a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+						"description": "This [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)-call can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
 					},
 					"response": [
 						{
