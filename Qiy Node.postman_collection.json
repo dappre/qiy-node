@@ -2163,7 +2163,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": {\r\n\t\t\t\t\t\"Hello\": \"world!\"\r\n\t\t\t\t}\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"useBudget\": 1\r\n}"
+							"raw": "{\r\n\t\"actions\": {\r\n\t\t\"actions\": [\r\n\t\t\t{\r\n\t\t\t\t\"key\": \"callback\",\r\n\t\t\t\t\"uri\": \"{{onConnectedUrl}}\",\r\n\t\t\t\t\"method\": \"POST\",\r\n\t\t\t\t\"body\": \"eyJIZWxsbyI6ICJ3b3JsZCEifQ==\"\r\n\t\t\t}\r\n\t\t]\r\n\t},\r\n\t\"useBudget\": 1\r\n}"
 						},
 						"url": {
 							"raw": "{{connectTokenEndpointUrl}}",
@@ -2303,12 +2303,22 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\t\"pid\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\r\n\t\t\"connectionUrl\": \"https://connection.url/example/003030\",\r\n\t\t\"Hello\": \"world!\"\r\n}"
+							"raw": "{\r\n\t\t\"Hello\": \"world!\"\r\n}"
 						},
 						"url": {
-							"raw": "{{OnConnectedEndpointUrl}}",
+							"raw": "{{OnConnectedEndpointUrl}}?pid=7nzMAI61N6b5dPCCYD4IgQ==&connectionUrl=https://connection.url/example/003030",
 							"host": [
 								"{{OnConnectedEndpointUrl}}"
+							],
+							"query": [
+								{
+									"key": "pid",
+									"value": "7nzMAI61N6b5dPCCYD4IgQ=="
+								},
+								{
+									"key": "connectionUrl",
+									"value": "https://connection.url/example/003030"
+								}
 							]
 						},
 						"description": "This callback on the [On-Connected Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) can be used to [detect that a connect token was used to create a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df), but only with a connect token that has been [requested](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36) or [registered](https://qiy.api.digital-me.nl/#d7ed9d68-f996-492d-918f-cf7411019ced) with the callback as an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f)."
