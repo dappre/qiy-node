@@ -2930,7 +2930,7 @@
 					"response": []
 				},
 				{
-					"name": "Wait for callback on On-New-Feed Endpoint",
+					"name": "Wait for On-New-Feed callback",
 					"request": {
 						"method": "POST",
 						"header": [],
