@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9b832c67-19d8-443c-834c-b065acc19121",
 		"name": "Qiy Node",
-		"description": "This document describes the Qiy Node API:\na [Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8) is a [Node](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084) that hosts  a single [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which enables a single [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc).\n2. The [Individual subscribes to services](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89).\n3. A [Relying Party may ask an Individual for feeds to consume services](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033).\n4. The [Individual may provide the service himself or instead deploy subscribed services](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de).\n5. The [Relying Party receives feeds and consumes the services](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\n",
+		"description": "This document describes the Qiy Node API:\na [Qiy Node][API Basics Documentation Qiy Node Client Qiy Node] is a [Node][ Archimate Node] that hosts  a single [Technology Service][ Archimate Technology Service] which enables a single [Individual][ Qiy Scheme 4 1 Qiy Users] to subscribe to and orchestrate his services as follows:\n1. The Individual chooses and launches an [End User App][API Basics Documentation End User App].\n2. The [Individual subscribes to services][API Basics Documentation End User App Subscribe].\n3. A [Relying Party may ask an Individual for feeds to consume services][Feeds Request for feed].\n4. The [Individual may provide the service himself or instead deploy subscribed services][API Basics Documentation End User App Orchestrate].\n5. The [Relying Party receives feeds][Feeds Wait for On-New-Feed callback] and [uses them][Feeds Access feed] to consume the [services][Services].\n\n\n\n[API Basics]: https://qiy.api.digital-me.nl/#f01c0f22-c9d9-45a3-83f1-31da7847dde9 \"API Basics\"\n[API Basics Registration]: https://qiy.api.digital-me.nl/#c8a0230e-621d-4712-ad41-8b85505f84ac \"API Basics/Registration\"\n[API Basics Service Desk]: https://qiy.api.digital-me.nl/#ed7fab2c-dee1-4938-ad46-72b1b2c144a5 \"API Basics/Service Desk\"\n[API Basics Versions]: https://qiy.api.digital-me.nl/#80ca583f-a0fe-46e3-a45a-8208775b8710 \"API Basics/Versions\"\n[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \"API Basics/Authentication\"\n[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \"API Basics/Dynamic Endpoint Addresses\"\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \"API Basics/Dynamic Endpoint Addresses/Connect Token Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]: https://qiy.api.digital-me.nl/#d6197981-983c-4bd0-bfa4-10b5ab989bc2 \"API Basics/Dynamic Endpoint Addresses/Connect Token List Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connection Create Endpoint]: https://qiy.api.digital-me.nl/#1f717ab4-81e7-4181-9cff-ee77fe114131 \"API Basics/Dynamic Endpoint Addresses/Connection Create Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connection Endpoint]: https://qiy.api.digital-me.nl/#8f0e9b93-2214-4550-8a74-e9f69d4d0896 \"API Basics/Dynamic Endpoint Addresses/Connection Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connections List Endpoint]: https://qiy.api.digital-me.nl/#a60e0f66-4f55-484a-97ed-3c72c19480d1 \"API Basics/Dynamic Endpoint Addresses/Connections List Endpoint\"\n[API Basics Dynamic Endpoint Addresses Events Endpoint]: https://qiy.api.digital-me.nl/#d977b310-e443-4d44-ad73-614883cff0c9 \"API Basics/Dynamic Endpoint Addresses/Events Endpoint\"\n[API Basics Dynamic Endpoint Addresses Mailbox Endpoint]: https://qiy.api.digital-me.nl/#e57ed787-8886-4779-a254-c886027e7693 \"API Basics/Dynamic Endpoint Addresses/Mailbox Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Settings Endpoint]: https://qiy.api.digital-me.nl/#9c20c9f1-60ef-440b-adc3-25fbecaeeb82 \"API Basics/Dynamic Endpoint Addresses/Node Settings Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Create Endpoint]: https://qiy.api.digital-me.nl/#f1132a46-5a61-4cf6-acef-70df6846be1c \"API Basics/Dynamic Endpoint Addresses/Node Create Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Delete Endpoint]: https://qiy.api.digital-me.nl/#126c2192-0239-44de-83ec-ace415eee347 \"API Basics/Dynamic Endpoint Addresses/Node Delete Endpoint\"\n[API Basics Dynamic Endpoint Addresses Reference Endpoint]: https://qiy.api.digital-me.nl/#6ad44cc6-692e-4a3b-bfc5-d4ba8d7c7df2 \"API Basics/Dynamic Endpoint Addresses/Reference Endpoint\"\n[API Basics Dynamic Endpoint Addresses References Endpoint]: https://qiy.api.digital-me.nl/#a3dce696-97fb-4d1d-993d-b2863a5db16b \"API Basics/Dynamic Endpoint Addresses/References Endpoint\"\n[API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]: https://qiy.api.digital-me.nl/#3f8128f6-460c-46ba-b99a-cb4689d32c10 \"API Basics/Dynamic Endpoint Addresses/Service Catalogue Endpoint\"\n[API Basics Servers]: https://qiy.api.digital-me.nl/#d28b5733-d77d-4566-954c-62f836f37a38 \"API Basics/Servers\"\n[API Basics Events]: https://qiy.api.digital-me.nl/#b0a0c1ab-6536-4e3f-b7ce-dc4822a7cd91 \"API Basics/Events\"\n[API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829 \"API Basics/Events/Connected to Router Event\"\n[API Basics Events Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#d8faf908-cb04-4fb1-84ed-06521e171234 \"API Basics/Events/Data Reference Received Event-v2\"\n[API Basics Events Persistent Id Event]: https://qiy.api.digital-me.nl/#de369648-ff07-4019-a920-e138e8842537 \"API Basics/Events/Persistent Id Event\"\n[API Basics Events User Action Message Event]: https://qiy.api.digital-me.nl/#28019302-456e-4be2-a73c-d26ef564a897 \"API Basics/Events/User Action Message Event\"\n[API Basics Documentation]: https://qiy.api.digital-me.nl/#d30a2310-f00f-40c9-8821-b10e695ddfdf \"API Basics/Documentation\"\n[API Basics Documentation Qiy Scheme]: https://qiy.api.digital-me.nl/#b51cf79a-4da3-4450-a1ce-c77ee58bff3b \"API Basics/Documentation/Qiy Scheme\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider]: https://qiy.api.digital-me.nl/#1ab15411-a026-4280-9d1b-c0a9613f2058 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network/Access Provider\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network Application Provider]: https://qiy.api.digital-me.nl/#a955a642-0bd8-4a7c-8d5d-9870c0cc5e59 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network/Application Provider\"\n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \"API Basics/Documentation/Qiy Scheme/Qiy User\"\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \"API Basics/Documentation/Qiy Scheme/Qiy User/Individual\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider]: https://qiy.api.digital-me.nl/#86c3f098-9a1e-4ab6-aa4b-1cfb321d1b2c \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider/Relying Party\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Data Provider]: https://qiy.api.digital-me.nl/#56daad85-395d-4bdf-9117-4b181faec176 \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider/Data Provider\"\n[API Basics Documentation End User App]: https://qiy.api.digital-me.nl/#72a10f2c-8e47-4771-888e-eb4757378136 \"API Basics/Documentation/End User App\"\n[API Basics Documentation End User App Setup]: https://qiy.api.digital-me.nl/#702e94f4-6738-4acf-939f-142674c86867 \"API Basics/Documentation/End User App/Setup\"\n[API Basics Documentation End User App Subscribe]: https://qiy.api.digital-me.nl/#d894b7a4-0c9a-4717-8727-8e69b1dc4b92 \"API Basics/Documentation/End User App/Subscribe\"\n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \"API Basics/Documentation/End User App/Orchestrate\"\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \"API Basics/Documentation/Service Provider\"\n[API Basics Documentation Service Provider Setup]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 \"API Basics/Documentation/Service Provider/Setup\"\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider Setup Endpoints On-Connected Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334\n[API Basics Documentation Service Provider Setup Endpoints On-New-Feed Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f\n[API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 \"API Basics/Documentation/Service Provider/Setup/Service Catalogue\"\n[API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8\n[API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 \"API Basics/Documentation/Qiy Node Client/Qiy Node\"\n[API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Documentation Qiy Node Client Connect Tokens Create Connect Token]: https://qiy.api.digital-me.nl/#ee92593b-6798-4f80-85eb-a7563ba9de92\n[API Basics Documentation Qiy Node Client Connect Tokens Online Connect Token]: https://qiy.api.digital-me.nl/#a4fe10f4-04e0-47ee-813a-9e0a6b696349\n[API Basics Documentation Qiy Node Client Connect Tokens Offline Connect Token]: https://qiy.api.digital-me.nl/#edf12d67-857e-420d-9735-dd074a1ed6c8\n[API Basics Documentation Qiy Node Client Connect Tokens On-Connected Actions]: https://qiy.api.digital-me.nl/#99d8df06-ba56-4382-9c04-ae456307d28b\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Qiy Node Client Events]: https://qiy.api.digital-me.nl/#1388f5dc-0ecc-4766-80a1-d7ae835a0c2d\n[API Basics Documentation Qiy Node Client Messages]: https://qiy.api.digital-me.nl/#97039b65-10f5-46c5-8c38-cbaa77965e9e\n[API]: https://qiy.api.digital-me.nl/#ede42470-fd30-4f2c-b5dc-62a2be09ad34\n[Nodes]: https://qiy.api.digital-me.nl/#63ad9855-5318-4b08-ab51-438f1804a8ad\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869\n[Nodes Delete Qiy Node]: https://qiy.api.digital-me.nl/#1603763e-09c7-4df0-9857-adf695fe0be5\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n[Nodes Get node settings]: https://qiy.api.digital-me.nl/#92ed39eb-059d-447c-b609-43f2c09a5ab3\n[Nodes Set node settings]: https://qiy.api.digital-me.nl/#c98eabd4-f049-4d67-bb1c-030443018cdc\n[Services]: https://qiy.api.digital-me.nl/#6977aac0-97cf-4f18-8ddf-77d842bcec8b\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n[Services Set service catalogue]: https://qiy.api.digital-me.nl/#0e943de7-c7c2-454c-b093-7b1198a3abd6\n[Connections]: https://qiy.api.digital-me.nl/#2201f953-e379-42ee-909b-62e0ebe44eda\n[Connections Request connect token]: https://qiy.api.digital-me.nl/#7d46c068-a69b-4f79-a2c9-528e84b5aa75\n[Connections Request connect token with callback]: https://qiy.api.digital-me.nl/#6eea6de9-e14e-4219-a2c5-9ac531ca0305\n[Connections Register connect token]: https://qiy.api.digital-me.nl/#a839e71c-3aa5-4515-88bf-35f6b2632616\n[Connections Register connect token with callback]: https://qiy.api.digital-me.nl/#f2a9c750-042a-4f2b-ae59-103e518d4f50\n[Connections Wait for callback on On-Connected Endpoint]: https://qiy.api.digital-me.nl/#3a85db4c-2ff3-4e2f-8033-320439c81bb8\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n[Connections Wait for Connected to Router Event]: https://qiy.api.digital-me.nl/#58d2b73f-16ea-4829-b56a-e11101de27d9b\n[Connections Wait for Persistent Id Event]: https://qiy.api.digital-me.nl/#43fe13e5-3753-4298-9d00-e055a9c527af\n[Connections Get connection]: https://qiy.api.digital-me.nl/#aa7f0f07-616c-4a93-95de-cd7571a01c7e\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n[Connections Get connect token]: https://qiy.api.digital-me.nl/#0349c55d-a79c-44d5-bd20-3eb6ca7130a1\n[Connections List connect tokens]: https://qiy.api.digital-me.nl/#6ad3e471-9c84-487c-87df-b513498b2605\n[Relations]: https://qiy.api.digital-me.nl/#f0ccc704-5e9a-474a-8fba-d4ff97f67408\n[Subscriptions]: https://qiy.api.digital-me.nl/#4867e820-a5e8-4096-811b-33c591c9849d\n[Messages]: https://qiy.api.digital-me.nl/#4c8087b1-055e-4c88-b8be-5b0d437863cc\n[Messages Send message]: https://qiy.api.digital-me.nl/#75ee9a83-b028-45c9-b539-7780e947c68f\n[Messages List messages]: https://qiy.api.digital-me.nl/#dd49e1df-847c-4744-b2d6-95b47666a771\n[Consents]: https://qiy.api.digital-me.nl/#7d80253a-7ea7-4e8f-b331-0fc1012f436d\n[Feeds]: https://qiy.api.digital-me.nl/#6c093415-6c9a-4a77-ac3b-b866c4758e9a\n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Feeds Wait for On-New-Feed callback]: https://qiy.api.digital-me.nl/#6770d95f-796e-41fd-8067-4ae5f486a6d4\n[Feeds Wait for Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#85192373-fb7c-463b-86cf-202b73d950cb\n[Feeds Wait for User Action Message Event]: https://qiy.api.digital-me.nl/#50adbee2-263a-481b-a3bb-c8c218478e01\n[Feeds Get user action message]: https://qiy.api.digital-me.nl/#f477030a-7314-4ea8-9b1a-072f74794244\n[Feeds Set feeds]: https://qiy.api.digital-me.nl/#ae70456e-e007-45bf-9df5-f0a4a8cb04f8\n[Feeds Add feed]: https://qiy.api.digital-me.nl/#0763915e-ecd5-4c22-8604-a0752e794630\n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n[Getting help]: https://qiy.api.digital-me.nl/#20d410f3-9ec8-48b6-937b-3ea62b89ac36\n\n[ Archimate Node]: http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084\n[ Archimate Technology Service]: http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097\n\n[ Qiy Scheme 4 1 Qiy Users]: https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,7 +12,7 @@
 				{
 					"name": "Registration",
 					"item": [],
-					"description": "[Service Providers](https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8) and [Application Providers](https://qiy.api.digital-me.nl/#a955a642-0bd8-4a7c-8d5d-9870c0cc5e59) can register with an [Access Provider](https://qiy.api.digital-me.nl/#1ab15411-a026-4280-9d1b-c0a9613f2058):\n1. both receive an [Access Provider Token](https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24)\n2. Service Providers can whitelist [endpoints](https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4) and receive a [Qiy Node Credential](https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483).",
+					"description": "[Service Providers][API Basics Documentation Service Provider] and [Application Providers][API Basics Documentation Qiy Scheme Qiy Trust Network Application Provider] can register with an [Access Provider][API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider]:\n1. both receive an [Access Provider Token][API Basics Authentication]\n2. Service Providers can whitelist [endpoints][API Basics Documentation Service Provider Setup Endpoints] and receive a [Qiy Node Credential][API Basics Authentication].\n\n\n[API Basics]: https://qiy.api.digital-me.nl/#f01c0f22-c9d9-45a3-83f1-31da7847dde9 \"API Basics\"\n[API Basics Registration]: https://qiy.api.digital-me.nl/#c8a0230e-621d-4712-ad41-8b85505f84ac \"API Basics/Registration\"\n[API Basics Service Desk]: https://qiy.api.digital-me.nl/#ed7fab2c-dee1-4938-ad46-72b1b2c144a5 \"API Basics/Service Desk\"\n[API Basics Versions]: https://qiy.api.digital-me.nl/#80ca583f-a0fe-46e3-a45a-8208775b8710 \"API Basics/Versions\"\n[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \"API Basics/Authentication\"\n[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \"API Basics/Dynamic Endpoint Addresses\"\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \"API Basics/Dynamic Endpoint Addresses/Connect Token Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]: https://qiy.api.digital-me.nl/#d6197981-983c-4bd0-bfa4-10b5ab989bc2 \"API Basics/Dynamic Endpoint Addresses/Connect Token List Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connection Create Endpoint]: https://qiy.api.digital-me.nl/#1f717ab4-81e7-4181-9cff-ee77fe114131 \"API Basics/Dynamic Endpoint Addresses/Connection Create Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connection Endpoint]: https://qiy.api.digital-me.nl/#8f0e9b93-2214-4550-8a74-e9f69d4d0896 \"API Basics/Dynamic Endpoint Addresses/Connection Endpoint\"\n[API Basics Dynamic Endpoint Addresses Connections List Endpoint]: https://qiy.api.digital-me.nl/#a60e0f66-4f55-484a-97ed-3c72c19480d1 \"API Basics/Dynamic Endpoint Addresses/Connections List Endpoint\"\n[API Basics Dynamic Endpoint Addresses Events Endpoint]: https://qiy.api.digital-me.nl/#d977b310-e443-4d44-ad73-614883cff0c9 \"API Basics/Dynamic Endpoint Addresses/Events Endpoint\"\n[API Basics Dynamic Endpoint Addresses Mailbox Endpoint]: https://qiy.api.digital-me.nl/#e57ed787-8886-4779-a254-c886027e7693 \"API Basics/Dynamic Endpoint Addresses/Mailbox Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Settings Endpoint]: https://qiy.api.digital-me.nl/#9c20c9f1-60ef-440b-adc3-25fbecaeeb82 \"API Basics/Dynamic Endpoint Addresses/Node Settings Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Create Endpoint]: https://qiy.api.digital-me.nl/#f1132a46-5a61-4cf6-acef-70df6846be1c \"API Basics/Dynamic Endpoint Addresses/Node Create Endpoint\"\n[API Basics Dynamic Endpoint Addresses Node Delete Endpoint]: https://qiy.api.digital-me.nl/#126c2192-0239-44de-83ec-ace415eee347 \"API Basics/Dynamic Endpoint Addresses/Node Delete Endpoint\"\n[API Basics Dynamic Endpoint Addresses Reference Endpoint]: https://qiy.api.digital-me.nl/#6ad44cc6-692e-4a3b-bfc5-d4ba8d7c7df2 \"API Basics/Dynamic Endpoint Addresses/Reference Endpoint\"\n[API Basics Dynamic Endpoint Addresses References Endpoint]: https://qiy.api.digital-me.nl/#a3dce696-97fb-4d1d-993d-b2863a5db16b \"API Basics/Dynamic Endpoint Addresses/References Endpoint\"\n[API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]: https://qiy.api.digital-me.nl/#3f8128f6-460c-46ba-b99a-cb4689d32c10 \"API Basics/Dynamic Endpoint Addresses/Service Catalogue Endpoint\"\n[API Basics Servers]: https://qiy.api.digital-me.nl/#d28b5733-d77d-4566-954c-62f836f37a38 \"API Basics/Servers\"\n[API Basics Events]: https://qiy.api.digital-me.nl/#b0a0c1ab-6536-4e3f-b7ce-dc4822a7cd91 \"API Basics/Events\"\n[API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829 \"API Basics/Events/Connected to Router Event\"\n[API Basics Events Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#d8faf908-cb04-4fb1-84ed-06521e171234 \"API Basics/Events/Data Reference Received Event-v2\"\n[API Basics Events Persistent Id Event]: https://qiy.api.digital-me.nl/#de369648-ff07-4019-a920-e138e8842537 \"API Basics/Events/Persistent Id Event\"\n[API Basics Events User Action Message Event]: https://qiy.api.digital-me.nl/#28019302-456e-4be2-a73c-d26ef564a897 \"API Basics/Events/User Action Message Event\"\n[API Basics Documentation]: https://qiy.api.digital-me.nl/#d30a2310-f00f-40c9-8821-b10e695ddfdf \"API Basics/Documentation\"\n[API Basics Documentation Qiy Scheme]: https://qiy.api.digital-me.nl/#b51cf79a-4da3-4450-a1ce-c77ee58bff3b \"API Basics/Documentation/Qiy Scheme\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider]: https://qiy.api.digital-me.nl/#1ab15411-a026-4280-9d1b-c0a9613f2058 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network/Access Provider\"\n[API Basics Documentation Qiy Scheme Qiy Trust Network Application Provider]: https://qiy.api.digital-me.nl/#a955a642-0bd8-4a7c-8d5d-9870c0cc5e59 \"API Basics/Documentation/Qiy Scheme/Qiy Trust Network/Application Provider\"\n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \"API Basics/Documentation/Qiy Scheme/Qiy User\"\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \"API Basics/Documentation/Qiy Scheme/Qiy User/Individual\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider]: https://qiy.api.digital-me.nl/#86c3f098-9a1e-4ab6-aa4b-1cfb321d1b2c \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider/Relying Party\"\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Data Provider]: https://qiy.api.digital-me.nl/#56daad85-395d-4bdf-9117-4b181faec176 \"API Basics/Documentation/Qiy Scheme/Qiy User/Service Provider/Data Provider\"\n[API Basics Documentation End User App]: https://qiy.api.digital-me.nl/#72a10f2c-8e47-4771-888e-eb4757378136 \"API Basics/Documentation/End User App\"\n[API Basics Documentation End User App Setup]: https://qiy.api.digital-me.nl/#702e94f4-6738-4acf-939f-142674c86867 \"API Basics/Documentation/End User App/Setup\"\n[API Basics Documentation End User App Subscribe]: https://qiy.api.digital-me.nl/#d894b7a4-0c9a-4717-8727-8e69b1dc4b92 \"API Basics/Documentation/End User App/Subscribe\"\n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \"API Basics/Documentation/End User App/Orchestrate\"\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \"API Basics/Documentation/Service Provider\"\n[API Basics Documentation Service Provider Setup]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 \"API Basics/Documentation/Service Provider/Setup\"\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider Setup Endpoints On-Connected Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334\n[API Basics Documentation Service Provider Setup Endpoints On-New-Feed Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f\n[API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 \"API Basics/Documentation/Service Provider/Setup/Service Catalogue\"\n[API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8\n[API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 \"API Basics/Documentation/Qiy Node Client/Qiy Node\"\n[API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Documentation Qiy Node Client Connect Tokens Create Connect Token]: https://qiy.api.digital-me.nl/#ee92593b-6798-4f80-85eb-a7563ba9de92\n[API Basics Documentation Qiy Node Client Connect Tokens Online Connect Token]: https://qiy.api.digital-me.nl/#a4fe10f4-04e0-47ee-813a-9e0a6b696349\n[API Basics Documentation Qiy Node Client Connect Tokens Offline Connect Token]: https://qiy.api.digital-me.nl/#edf12d67-857e-420d-9735-dd074a1ed6c8\n[API Basics Documentation Qiy Node Client Connect Tokens On-Connected Actions]: https://qiy.api.digital-me.nl/#99d8df06-ba56-4382-9c04-ae456307d28b\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Qiy Node Client Events]: https://qiy.api.digital-me.nl/#1388f5dc-0ecc-4766-80a1-d7ae835a0c2d\n[API Basics Documentation Qiy Node Client Messages]: https://qiy.api.digital-me.nl/#97039b65-10f5-46c5-8c38-cbaa77965e9e\n[API]: https://qiy.api.digital-me.nl/#ede42470-fd30-4f2c-b5dc-62a2be09ad34\n[Nodes]: https://qiy.api.digital-me.nl/#63ad9855-5318-4b08-ab51-438f1804a8ad\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869\n[Nodes Delete Qiy Node]: https://qiy.api.digital-me.nl/#1603763e-09c7-4df0-9857-adf695fe0be5\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n[Nodes Get node settings]: https://qiy.api.digital-me.nl/#92ed39eb-059d-447c-b609-43f2c09a5ab3\n[Nodes Set node settings]: https://qiy.api.digital-me.nl/#c98eabd4-f049-4d67-bb1c-030443018cdc\n[Services]: https://qiy.api.digital-me.nl/#6977aac0-97cf-4f18-8ddf-77d842bcec8b\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n[Services Set service catalogue]: https://qiy.api.digital-me.nl/#0e943de7-c7c2-454c-b093-7b1198a3abd6\n[Connections]: https://qiy.api.digital-me.nl/#2201f953-e379-42ee-909b-62e0ebe44eda\n[Connections Request connect token]: https://qiy.api.digital-me.nl/#7d46c068-a69b-4f79-a2c9-528e84b5aa75\n[Connections Request connect token with callback]: https://qiy.api.digital-me.nl/#6eea6de9-e14e-4219-a2c5-9ac531ca0305\n[Connections Register connect token]: https://qiy.api.digital-me.nl/#a839e71c-3aa5-4515-88bf-35f6b2632616\n[Connections Register connect token with callback]: https://qiy.api.digital-me.nl/#f2a9c750-042a-4f2b-ae59-103e518d4f50\n[Connections Wait for callback on On-Connected Endpoint]: https://qiy.api.digital-me.nl/#3a85db4c-2ff3-4e2f-8033-320439c81bb8\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n[Connections Wait for Connected to Router Event]: https://qiy.api.digital-me.nl/#58d2b73f-16ea-4829-b56a-e11101de27d9b\n[Connections Wait for Persistent Id Event]: https://qiy.api.digital-me.nl/#43fe13e5-3753-4298-9d00-e055a9c527af\n[Connections Get connection]: https://qiy.api.digital-me.nl/#aa7f0f07-616c-4a93-95de-cd7571a01c7e\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n[Connections Get connect token]: https://qiy.api.digital-me.nl/#0349c55d-a79c-44d5-bd20-3eb6ca7130a1\n[Connections List connect tokens]: https://qiy.api.digital-me.nl/#6ad3e471-9c84-487c-87df-b513498b2605\n[Relations]: https://qiy.api.digital-me.nl/#f0ccc704-5e9a-474a-8fba-d4ff97f67408\n[Subscriptions]: https://qiy.api.digital-me.nl/#4867e820-a5e8-4096-811b-33c591c9849d\n[Messages]: https://qiy.api.digital-me.nl/#4c8087b1-055e-4c88-b8be-5b0d437863cc\n[Messages Send message]: https://qiy.api.digital-me.nl/#75ee9a83-b028-45c9-b539-7780e947c68f\n[Messages List messages]: https://qiy.api.digital-me.nl/#dd49e1df-847c-4744-b2d6-95b47666a771\n[Consents]: https://qiy.api.digital-me.nl/#7d80253a-7ea7-4e8f-b331-0fc1012f436d\n[Feeds]: https://qiy.api.digital-me.nl/#6c093415-6c9a-4a77-ac3b-b866c4758e9a\n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Feeds Wait for On-New-Feed callback]: https://qiy.api.digital-me.nl/#6770d95f-796e-41fd-8067-4ae5f486a6d4\n[Feeds Wait for Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#85192373-fb7c-463b-86cf-202b73d950cb\n[Feeds Wait for User Action Message Event]: https://qiy.api.digital-me.nl/#50adbee2-263a-481b-a3bb-c8c218478e01\n[Feeds Get user action message]: https://qiy.api.digital-me.nl/#f477030a-7314-4ea8-9b1a-072f74794244\n[Feeds Set feeds]: https://qiy.api.digital-me.nl/#ae70456e-e007-45bf-9df5-f0a4a8cb04f8\n[Feeds Add feed]: https://qiy.api.digital-me.nl/#0763915e-ecd5-4c22-8604-a0752e794630\n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n[Getting help]: https://qiy.api.digital-me.nl/#20d410f3-9ec8-48b6-937b-3ea62b89ac36\n\n[ Archimate Node]: http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946084\n[ Archimate Technology Service]: http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097\n\n[ Qiy Scheme 4 1 Qiy Users]: https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -41,6 +41,28 @@
 					"name": "Service Desk",
 					"item": [],
 					"description": "For contact details of the Digital Me Service Desk, please refer to [section 2.1 Service Desk](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#21-service-desk) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "c113b708-d047-440a-92d9-ef42e80e9136",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "0b465022-cf9a-414e-addd-34be9fbfd60d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
 					"_postman_isSubFolder": true
 				},
 				{
@@ -74,7 +96,7 @@
 				{
 					"name": "Authentication",
 					"item": [],
-					"description": "In order to be able to access a Qiy Node, a Qiy Node Client MUST have:\n1. A Qiy Node Credential consisting of a Qiy Node Id, a primary key and a Transport Password.\n2. A valid Access Provider Token.\n\n## Access Provider Token\nAll requests to a Qiy Node MUST be authenticated with a valid Access Provider Token.\n\n## Authorization Header Parameter\nAll requests but the [Qiy Node Create Request](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) and the [Api Request](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) MUST be authenticated with a correct Authorization header, for details see [chapter 4 Authentication](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\nSee [GET Api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) for an example of an authenticated request.\n\n## Password Header Parameter\nRequest that require the use of the Transport Layer MUST be authenticated with a valid Transport Passowrd in the 'password' header parameter of the request.\nSee also [the Qiy Node requests that have been labeled as 'Transport Requests'](https://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests) in the [Digit Me Qiy Node API in Open API format](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.json).",
+					"description": "In order to be able to access a Qiy Node, a Qiy Node Client MUST have:\n1. A Qiy Node Credential consisting of a Qiy Node Id, a primary key and a Transport Password.\n2. A valid Access Provider Token.\n\n## Access Provider Token\nAll requests to a Qiy Node MUST be authenticated with a valid Access Provider Token.\n\n## Authorization Header Parameter\nAll requests but the [request to create a Qiy Node][Nodes Request creation of Qiy Node] and the [Api Request][API] MUST be authenticated with a correct Authorization header, for details see [chapter 4 Authentication](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\nSee [GET Api][API Get api] for an example of an authenticated request.\n\n## Password Header Parameter\nRequest that require the use of the Transport Layer MUST be authenticated with a valid Transport Passowrd in the 'password' header parameter of the request.\nSee also [the Qiy Node requests that have been labeled as 'Transport Requests'](https://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests) in the [Digit Me Qiy Node API in Open API format](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.json).\n\n[API]: https://qiy.api.digital-me.nl/#ede42470-fd30-4f2c-b5dc-62a2be09ad34\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -105,7 +127,7 @@
 						{
 							"name": "Connect Token Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [request](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef) or [register](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5) [Connect Tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c).\nThe current address of the endpoint is returned in the \"ctCreate\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
+							"description": "This endpoint can be used to [request][Connections Request connect token] or [register][Connections Register connect token] [Connect Tokens][Connections].\nThe current address of the endpoint is returned in the \"ctCreate\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Connections]: https://qiy.api.digital-me.nl/#2201f953-e379-42ee-909b-62e0ebe44eda\n[Connections Request connect token]: https://qiy.api.digital-me.nl/#7d46c068-a69b-4f79-a2c9-528e84b5aa75\n[Connections Request connect token with callback]: https://qiy.api.digital-me.nl/#6eea6de9-e14e-4219-a2c5-9ac531ca0305\n[Connections Register connect token]: https://qiy.api.digital-me.nl/#a839e71c-3aa5-4515-88bf-35f6b2632616\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -133,7 +155,7 @@
 						{
 							"name": "Connect Token List Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [list Connect Tokens](https://qiy.api.digital-me.nl/#366060cb-b312-418d-a677-7650d6a80a1f).\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
+							"description": "This endpoint can be used to [list][Connections List connections] [Connect Tokens][API Basics Documentation Qiy Node Client Connect Tokens].\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -161,7 +183,7 @@
 						{
 							"name": "Connection Create Endpoint",
 							"item": [],
-							"description": "The Connection Create Endpoint can be used to [create a connection](https://qiy.api.digital-me.nl/#96dd4e14-3580-4230-b859-a117000906f5).\nThe current address of the endpoint is returned in the \"scan\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "The Connection Create Endpoint can be used to [create a connection][Connections Request connection].\nThe current address of the endpoint is returned in the \"scan\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -189,7 +211,7 @@
 						{
 							"name": "Connection Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [get the details of a connection](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).\nThe endpoint urls are returned by [Request connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and [List connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).",
+							"description": "This endpoint can be used to [get the details of a connection][Connections Get connection].\nThe endpoint urls are returned by [Request connection][Connections Request connection] and [List connections][Connections List connections].\n\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n[Connections Get connection]: https://qiy.api.digital-me.nl/#aa7f0f07-616c-4a93-95de-cd7571a01c7e\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -217,7 +239,7 @@
 						{
 							"name": "Connections List Endpoint",
 							"item": [],
-							"description": "The Connections List Endpoint can be used to [list connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\n",
+							"description": "The Connections List Endpoint can be used to [list connections][Connections List connections].\nThe current address of the endpoint is returned in the \"ctList\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -245,7 +267,7 @@
 						{
 							"name": "Events Endpoint",
 							"item": [],
-							"description": "The Events Endpoint can be used to [receive events](https://qiy.api.digital-me.nl/#7830f7e9-d182-4b51-a2e6-058cdfead040).\nThe current address of the endpoint is returned in the \"events\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "The Events Endpoint can be used to [receive events][Nodes Start listening to events].\nThe current address of the endpoint is returned in the \"events\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -273,7 +295,7 @@
 						{
 							"name": "Mailbox Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [send](https://qiy.api.digital-me.nl/#9ba1358d-ed56-42ac-8f21-73a9c8dba1ca) and [receive](https://qiy.api.digital-me.nl/#1ef027e0-7e0f-431e-9389-5fe1eb8b111e) [messages](https://qiy.api.digital-me.nl/#2a0c6c4b-bd2a-4b65-9282-bfdad3c1da81).\nThe current address of the endpoint is returned in the \"mbox\"-member of the response of [List connections](https://qiy.api.digital-me.nl/#0b8d52c5-0338-490a-8c4f-eab25fc3fcd7).",
+							"description": "This endpoint can be used to [send][Messages Send message] and [receive][Messages List messages] [messages][Messages].\nThe current address of the endpoint is returned in a \"mbox\"-member of the response of [List connections][Connections List connections], [Get connection][Connections Get connection] or [request connection][Connections Request connection].\n\n[Connections Get connection]: https://qiy.api.digital-me.nl/#aa7f0f07-616c-4a93-95de-cd7571a01c7e\n[Connections List connections]: https://qiy.api.digital-me.nl/#09bc508a-257a-4a33-9252-542868baebe3\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n\n[Messages]: https://qiy.api.digital-me.nl/#4c8087b1-055e-4c88-b8be-5b0d437863cc\n[Messages Send message]: https://qiy.api.digital-me.nl/#75ee9a83-b028-45c9-b539-7780e947c68f\n[Messages List messages]: https://qiy.api.digital-me.nl/#dd49e1df-847c-4744-b2d6-95b47666a771\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -301,7 +323,7 @@
 						{
 							"name": "Node Settings Endpoint",
 							"item": [],
-							"description": "This Endpoint can be used to [get](https://qiy.api.digital-me.nl/#e927ef5a-f501-421d-9c05-9a529a24058c) and [set](https://qiy.api.digital-me.nl/#9ef7d36d-4611-4ce4-a19e-e3bb380233cf) [settings of a Qiy Node](https://qiy.api.digital-me.nl/#dc161dbb-f4e5-4b62-b26b-975433718438).\nThe current address of the endpoint is returned in the \"nodeSettings\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to [get][Nodes Get node settings] and [set][Nodes Set node settings] [settings of a Qiy Node][API Basics Documentation Qiy Node Client Qiy Node Settings].\nThe current address of the endpoint is returned in the \"nodeSettings\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses]\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Get node settings]: https://qiy.api.digital-me.nl/#92ed39eb-059d-447c-b609-43f2c09a5ab3\n[Nodes Set node settings]: https://qiy.api.digital-me.nl/#c98eabd4-f049-4d67-bb1c-030443018cdc\n\n[API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -329,7 +351,7 @@
 						{
 							"name": "Node Create Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097).\nThe current address of the endpoint is returned in the \"create\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to [request the creation of a Qiy Node][Nodes Request creation of Qiy Node].\nThe current address of the endpoint is returned in the \"create\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -357,7 +379,7 @@
 						{
 							"name": "Node Delete Endpoint",
 							"item": [],
-							"description": "This Endpoint can be used to [delete a Qiy Node](https://qiy.api.digital-me.nl/#1fdf73e7-e628-4513-a331-4428170dbcfb).\nThe current address of the endpoint is returned in the \"Link\"-header of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to [delete a Qiy Node][Nodes Delete Qiy Node].\nThe current address of the endpoint is returned in the \"Link\"-header of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Delete Qiy Node]: https://qiy.api.digital-me.nl/#1603763e-09c7-4df0-9857-adf695fe0be5\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -385,7 +407,7 @@
 						{
 							"name": "Reference Endpoint",
 							"item": [],
-							"description": "The Reference Endpoint can be used to [access a single feed](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43).\nThe current address of the endpoint is returned in the \"ref\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to [access a single feed][Feeds Access feed].\nThe current address of the endpoint is returned in the \"ref\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -413,7 +435,7 @@
 						{
 							"name": "References Endpoint",
 							"item": [],
-							"description": "The References Endpoint is a convenience endpoint which allows to [access all feeds with one call](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint is a convenience endpoint which allows to [access all feeds with one call][Feeds Access feeds].\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -441,7 +463,7 @@
 						{
 							"name": "Service Catalogue Endpoint",
 							"item": [],
-							"description": "The Service Catalogue Endpoint can be used to maintain a [Service Catalogue](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0).\nThe current address of the endpoint is returned in the \"serviceCatalogue\"-member of the response of [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).",
+							"description": "This endpoint can be used to maintain a [Service Catalogue][API Basics Documentation Service Provider Setup Service Catalogue].\nThe current address of the endpoint is returned in the \"serviceCatalogue\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -467,7 +489,7 @@
 							"_postman_isSubFolder": true
 						}
 					],
-					"description": "The Qiy Node Api uses dynamic path endpoint addresses which can be obtained using [GET /api](https://qiy.api.digital-me.nl/#22714043-ebc0-4a1d-87eb-2d469c8d3b82) and [Get endpoint addresses](https://qiy.api.digital-me.nl/#55a3f041-17af-4b0d-bf8c-0b959b126428).\nThe addresses can be cached, but should be refreshed every day.",
+					"description": "The Qiy Node Api uses dynamic endpoint addresses most of which can be obtained using [GET /api][API Get api] and [Get endpoint addresses][Nodes Get endpoint addresses].\nThe addresses can be cached, but should be refreshed every day.\n\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -504,7 +526,7 @@
 						{
 							"name": "Connected to Router Event",
 							"item": [],
-							"description": "A Connected to Router Event is fired after a [request for a connection](https://qiy.api.digital-me.nl/#01a84413-0b4c-47da-948a-824082408b40) and can be [used](https://qiy.api.digital-me.nl/#998dda4b-5549-4054-8596-23c540816c75) to monitor the [creation of a  connection](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+							"description": "This event is fired after a [request for a connection][Connections Request connection] and can be [used][Connections Wait for Connected to Router Event] to monitor the [creation of a connection][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[Connections Request connection]: https://qiy.api.digital-me.nl/#ba7b3ed3-f0eb-4113-92b7-a3976b87878c\n[Connections Wait for Connected to Router Event]: https://qiy.api.digital-me.nl/#58d2b73f-16ea-4829-b56a-e11101de27d9\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -532,13 +554,35 @@
 						{
 							"name": "Data Reference Received Event-v2",
 							"item": [],
-							"description": "The Data Reference Received Event-v2 can be used by a Service Provider to obtain a feed from an Individual.\n",
+							"description": "This event can be used by a [Service Provider][API Basics Documentation Service Provider] to [obtain a feed from an Individual][Feeds Wait for Data Reference Received Event-v2].\n\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \"API Basics/Documentation/Service Provider\"\n[Feeds Wait for Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#85192373-fb7c-463b-86cf-202b73d950cb\n",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "5998b001-cea6-40d5-bcf2-9219dc49496b",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "7cae39b1-03d1-4959-8095-4ea3f7e75b15",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						},
 						{
 							"name": "Persistent Id Event",
 							"item": [],
-							"description": "A Persistent Id Event is an Event that is fired after a [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) and can be [used](https://qiy.api.digital-me.nl/#0868bc6f-1e77-46fe-a11c-aa7a5c079dd6) to detect whether [a connection has been created](https://qiy.api.digital-me.nl/#49992baf-fc29-4d81-8ffa-12da0c8493d7).",
+							"description": "This event that is fired after a [Connected to Router Event][API Basics Events Connected to Router Event] and can be [used][Connections Wait for Persistent Id Event] to detect whether [a connection has been created][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829 \"API Basics/Events/Connected to Router Event\"\n[Connections Wait for Persistent Id Event]: https://qiy.api.digital-me.nl/#43fe13e5-3753-4298-9d00-e055a9c527af\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -566,7 +610,7 @@
 						{
 							"name": "User Action Message Event",
 							"item": [],
-							"description": "The User Action Message Event is fired by a Qiy Node when it receives a [user action message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb) that requires interaction with the End User.",
+							"description": "This event is fired by a Qiy Node when it receives a [message][API Basics Documentation Qiy Node Client Messages] that requires interaction with the End User, for example when a [feed request has been received][Feeds Wait for User Action Message Event].\n\n[API Basics Documentation Qiy Node Client Messages]: https://qiy.api.digital-me.nl/#97039b65-10f5-46c5-8c38-cbaa77965e9e\n[Feeds Wait for User Action Message Event]: https://qiy.api.digital-me.nl/#50adbee2-263a-481b-a3bb-c8c218478e01\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -628,26 +672,114 @@
 										{
 											"name": "Access Provider",
 											"item": [],
-											"description": "An Access Provider is an organization which provides access to the Qiy Trust Network.",
+											"description": "An Access Provider is an organisation that provides [Service Providers][API Basics Documentation Qiy Scheme Qiy User Service Provider] access to the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network].\n\n\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n[API Basics Documentation Qiy Scheme Qiy User Service Provider]: https://qiy.api.digital-me.nl/#86c3f098-9a1e-4ab6-aa4b-1cfb321d1b2c \n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "3ca3d823-9b66-4ad4-a186-fac4bc65cda1",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "9b05e25c-da47-4888-8efb-38184c0c4998",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										},
 										{
 											"name": "Application Provider",
 											"item": [],
-											"description": "An Application Provider is an organization that provides software or computing services which can be used to access the Qiy Trust Network.",
+											"description": "An Application Provider is an organisation that provides software and/or applications to [Qiy Users][API Basics Documentation Qiy Scheme Qiy User] that can be used to access the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network].\n\n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n\n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "d69a7953-cbea-4466-9c17-8f36619e2220",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "016af836-055c-4548-adbe-120f3e25b2bb",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "The Qiy Trust Network is the operational part of the Qiy Scheme: it enables its users to securely and privately connect and interact.",
+									"description": "The Qiy Trust Network is the operational part of the [Qiy Scheme][API Basics Documentation Qiy Scheme] which enables its [users][API Basics Documentation Qiy Scheme Qiy User] to securely and privately connect and interact.\n\n[API Basics Documentation Qiy Scheme]: https://qiy.api.digital-me.nl/#b51cf79a-4da3-4450-a1ce-c77ee58bff3b\n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff\n\n",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "f2d65e1a-4a88-4686-8e5c-3f4169343a2b",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "d5759358-de6d-4ea0-8dc8-4125b66de1d4",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
 									"_postman_isSubFolder": true
 								},
 								{
-									"name": "Qiy Users",
+									"name": "Qiy User",
 									"item": [
 										{
 											"name": "Individual",
 											"item": [],
-											"description": "An Individual is a natural person that is using the Qiy Trust Network as such.",
+											"description": "An Individual is a [Qiy User][API Basics Documentation Qiy Scheme Qiy User] that accesses the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network] as a natural person.\n\n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n",
+											"event": [
+												{
+													"listen": "prerequest",
+													"script": {
+														"id": "84724a3c-cadf-4be5-9036-a404e5775f22",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												},
+												{
+													"listen": "test",
+													"script": {
+														"id": "bdbfa702-6768-4e70-b0ae-5753cab17c90",
+														"type": "text/javascript",
+														"exec": [
+															""
+														]
+													}
+												}
+											],
 											"_postman_isSubFolder": true
 										},
 										{
@@ -656,17 +788,61 @@
 												{
 													"name": "Relying Party",
 													"item": [],
-													"description": "A Relying Party is a Service Provider that is providing services which relies on services provided by other Service Providers.",
+													"description": "A Relying Party is a [Service Provider][API Basics Documentation Qiy Scheme Qiy User Service Provider] that uses [services][API Basics Documentation Service Provider Setup Service Catalogue] provided by other [Service Providers][API Basics Documentation Qiy Scheme Qiy User Service Provider].\nThey can do so using [Feed requests][Feeds Request for feed].\n\n[API Basics Documentation Qiy Scheme Qiy User Service Provider]: https://qiy.api.digital-me.nl/#86c3f098-9a1e-4ab6-aa4b-1cfb321d1b2c \n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "f53a3016-fd4b-4c57-814e-645a257eb6a7",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "ad1a39f5-32e3-4787-871a-fde994812197",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
 													"_postman_isSubFolder": true
 												},
 												{
 													"name": "Data Provider",
 													"item": [],
-													"description": "A Data Provider is a Service Provider that provides data services, which may produce Personally Identifiable Information.",
+													"description": "A Data Provider is a [Service Provider][API Basics Documentation Qiy Scheme Qiy User Service Provider] that provides personal data services.\nThey provide data subjects control over personal data using [feeds][API Basics Documentation Qiy Node Client Feeds], see [Service Orchestration][API Basics Documentation End User App Orchestrate].\n\n[API Basics Documentation Qiy Scheme Qiy User Service Provider]: https://qiy.api.digital-me.nl/#86c3f098-9a1e-4ab6-aa4b-1cfb321d1b2c \n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \n",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "aaa14b63-7f17-41d9-b591-b18037ece7cf",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "eb869078-bbd4-410a-8d82-25e8d13e2f43",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
 													"_postman_isSubFolder": true
 												}
 											],
-											"description": "A Service Provider is an organization that uses the Qiy Trust Network to provide services to Individuals.",
+											"description": "A [Service Provider][API Basics Documentation Service Provider] is a [Qiy User][API Basics Documentation Qiy Scheme Qiy User] that uses the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network] to provide [services][API Basics Documentation Service Provider Setup Service Catalogue] to [Individuals][API Basics Documentation Qiy Scheme Qiy User Individual].\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[API Basics Documentation Qiy Scheme Qiy User]: https://qiy.api.digital-me.nl/#5cce4587-5fd7-4bba-82f8-504a43110aff \n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#33100ce9-7e44-459d-8704-08ceed1b3563 \n",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -692,11 +868,33 @@
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "Qiy Users are users of the Qiy Trust Network.",
+									"description": "A Qiy User is a user of the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network].\n\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"id": "1293adf2-8447-4fbf-8bee-497537c26a75",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"id": "0c9d4b28-95f6-44c6-a8b9-0a0605d1af27",
+												"type": "text/javascript",
+												"exec": [
+													""
+												]
+											}
+										}
+									],
 									"_postman_isSubFolder": true
 								}
 							],
-							"description": "The [Qiy Scheme](https://www.qiyfoundation.org/qiy-scheme/) and the initiated by the [Qiy Foundation](https://www.qiyfoundation.org) is a means to give individuals control over their data while creating value for organisations, see [https://qiy-foundation.org](https://qiy-foundation.org).\n",
+							"description": "The [Qiy Scheme](https://www.qiyfoundation.org/qiy-scheme/) of the [Qiy Foundation](https://www.qiyfoundation.org/about-qiy/) is a means to give individuals control over their data while creating value for organisations, see [https://www.qiyfoundation.org](https://www.qiyfoundation.org).\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -727,7 +925,7 @@
 								{
 									"name": "Setup",
 									"item": [],
-									"description": "An End User App can only access the Qiy Trust Network under the following preconditions:\n1. The End User App uses a valid [Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n2. The [End User App correctly authenticates Qiy Node requests](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c).\n3. The End User App must allow End Users to use a [new Qiy Node](https://qiy.api.digital-me.nl/#de1a3109-4fca-43f8-ab01-11436d62d097) or reuse an existing one.",
+									"description": "An End User App can only access the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network] under the following preconditions:\n1. The End User App uses a valid [Access Provider Token][API Basics Authentication].\n2. The [End User App correctly authenticates Qiy Node requests][API Basics Authentication].\n3. The End User App must allow End Users to use a [new Qiy Node][API Basics Documentation Qiy Node Client Qiy Node] or reuse an existing one.\n\n\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \n[API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 \n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -755,7 +953,7 @@
 								{
 									"name": "Subscribe",
 									"item": [],
-									"description": "An Individual can subscribe to a service as follows:\n1. Conclude an subscription agreement (out-of-scope).\n2. [Connect with the Service Provider](https://qiy.api.digital-me.nl/#6488c78c-9460-4dd1-bb8f-9285d5943167).\n\n",
+									"description": "An [Individual][API Basics Documentation Qiy Scheme Qiy User Individual] can subscribe to a service as follows:\n1. Conclude an subscription agreement (out-of-scope).\n2. [Connect with the Service Provider][API Basics Documentation Qiy Node Client Connections].\n\n\n\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#33100ce9-7e44-459d-8704-08ceed1b3563 \n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n\n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -783,7 +981,7 @@
 								{
 									"name": "Orchestrate",
 									"item": [],
-									"description": "When an End User has subscribed to a Service, the Service Provider may issue [Orchestration Requests](https://qiy.api.digital-me.nl/#1a616f10-1bb8-4646-8b3e-357946599321), which are termed 'Feed Requests' in this document.\nThe [End User App](https://qiy.api.digital-me.nl/#7428b29e-a414-493a-82e2-b39dabd2d5dc) can process these requests as follows:\n1. [Wait for a User Action Message Event](https://qiy.api.digital-me.nl/#e66a9caf-54a9-4cd0-8c8a-3e025172016e).\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the message](https://qiy.api.digital-me.nl/#30a0373f-2ca0-41d6-b712-ba7bc0573dbb).\n4. Extract the feed request containing the options and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected options.\n6. [Deploy the selected services](https://qiy.api.digital-me.nl/#74e4c492-6047-423d-aab5-5f8576212168) or [change the deployment](https://qiy.api.digital-me.nl/#76cd1722-b1ae-45a3-910c-30fc155db3a4) using the related actionUrls.",
+									"description": "When an [Individual][API Basics Documentation Qiy Scheme Qiy User Individual] has subscribed to a Service provided by a [Relying Party][API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party], the latter may request for a [feed][API Basics Documentation Qiy Node Client Feeds].\nThe [End User App][API Basics Documentation End User App] can process these requests as follows:\n1. [Wait for a User Action Message Event][Feeds Wait for User Action Message Event].\n3. Extract the userActionMessageUrl from the 'extraData'-field of the event and use it to [fetch the user action message][Feeds Get user action message].\n4. Extract the feed request containing the options and related actionUrls.\n5. Present the request to the End User and capture the result, e.g. the selected options.\n6. [Deploy the selected services][Feeds Add feed] or [change the deployment][Feeds Set feeds] using the related actionUrls.\n\nAfter these steps, feeds will be automatically created and provided to the requesting Service Provider allowing it direct, but anonymous, access to the services.\n\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#33100ce9-7e44-459d-8704-08ceed1b3563 \n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation End User App]: https://qiy.api.digital-me.nl/#72a10f2c-8e47-4771-888e-eb4757378136 \n[Feeds Wait for User Action Message Event]: https://qiy.api.digital-me.nl/#50adbee2-263a-481b-a3bb-c8c218478e01\n[Feeds Get user action message]: https://qiy.api.digital-me.nl/#f477030a-7314-4ea8-9b1a-072f74794244\n[Feeds Add feed]: https://qiy.api.digital-me.nl/#0763915e-ecd5-4c22-8604-a0752e794630\n[Feeds Set feeds]: https://qiy.api.digital-me.nl/#ae70456e-e007-45bf-9df5-f0a4a8cb04f8\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -809,7 +1007,7 @@
 									"_postman_isSubFolder": true
 								}
 							],
-							"description": "\nAn [End User App](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#5-the-application-layer) is a [Qiy Node Client](https://qiy.api.digital-me.nl/#821514ce-5005-4408-be95-a400b6b4181c) which enables an [Individual](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) to [subscribe to](https://qiy.api.digital-me.nl/#5656025c-a1e0-4b20-8442-1c5a25d24d89) and [orchestrate](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de) (data) services.",
+							"description": "An [End User App](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#5-the-application-layer) is a [Qiy Node Client][API Basics Documentation Qiy Node Client] which enables an [Individual][API Basics Documentation Qiy Scheme Qiy User Individual] to [subscribe to][API Basics Documentation End User App Subscribe] and [orchestrate][API Basics Documentation End User App Orchestrate] (data) services.\n\n[API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8\n[API Basics Documentation Qiy Scheme Qiy User Individual]: https://qiy.api.digital-me.nl/#33100ce9-7e44-459d-8704-08ceed1b3563 \n[API Basics Documentation End User App Subscribe]: https://qiy.api.digital-me.nl/#d894b7a4-0c9a-4717-8727-8e69b1dc4b92 \n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -991,7 +1189,6 @@
 									"_postman_isSubFolder": true
 								}
 							],
-							"description": "A [Service Provider](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#42-service-provider) is a [Qiy User](https://github.com/qiyfoundation/Qiy-Scheme/blob/topic/qiy-node-interface/High-Level%20Architectural%20Overview.md#41-qiy-users) that provides [Services](https://qiy.api.digital-me.nl/#a8223ff0-e5d6-4dbd-8c3b-3625b6e460a0) via the Qiy Trust Network.\nA Service Provider can be a Relying Party or a Data Provider:\n1. A [Data Provider](https://qiy.api.digital-me.nl/#d0c5c5f9-2e94-4b0c-9933-0186d39560be) is a Service Provider that provides data services.\n2. A [Relying Party](https://qiy.api.digital-me.nl/#bf6403a7-89b2-4028-95c3-b39d5d444bf3) is a Service Provider that provides Services that depends on other services.\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -2925,7 +3122,7 @@
 								"{{mailboxEndpointUrl}}"
 							]
 						},
-						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to requests for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to request for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": []
 				},
@@ -3162,7 +3359,7 @@
 								}
 							]
 						},
-						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call accesses a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call to access a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
 					},
 					"response": [
 						{
