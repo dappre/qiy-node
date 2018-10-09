@@ -23,6 +23,7 @@
 [API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829 
 [API Basics Events Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#d8faf908-cb04-4fb1-84ed-06521e171234 
 [API Basics Events Persistent Id Event]: https://qiy.api.digital-me.nl/#de369648-ff07-4019-a920-e138e8842537 
+[API Basics Events State Handled Event]: https://qiy.api.digital-me.nl/#3c46b7d8-2eb7-4f8b-b373-a6486b58b115
 [API Basics Events User Action Message Event]: https://qiy.api.digital-me.nl/#28019302-456e-4be2-a73c-d26ef564a897 
 [API Basics Documentation]: https://qiy.api.digital-me.nl/#d30a2310-f00f-40c9-8821-b10e695ddfdf 
 [API Basics Documentation Qiy Scheme]: https://qiy.api.digital-me.nl/#b51cf79a-4da3-4450-a1ce-c77ee58bff3b 
@@ -43,8 +44,8 @@
 [API Basics Documentation Service Provider Setup]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 
 [API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4
 [API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998
-[API Basics Documentation Service Provider Setup Endpoints On-Connected Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334
-[API Basics Documentation Service Provider Setup Endpoints On-New-Feed Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f
+[API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334
+[API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f
 [API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf
 [API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5
 [API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8
