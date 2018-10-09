@@ -68,9 +68,13 @@
 [Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30
 [Nodes Get node settings]: https://qiy.api.digital-me.nl/#92ed39eb-059d-447c-b609-43f2c09a5ab3
 [Nodes Set node settings]: https://qiy.api.digital-me.nl/#c98eabd4-f049-4d67-bb1c-030443018cdc
+[Nodes Update event callback endpoints]: https://qiy.api.digital-me.nl/#e1d1dd3a-7e69-4e36-bba7-c78aecb6d1ae
+[Nodes Get event callback endpoints]: https://qiy.api.digital-me.nl/#bd0ba09b-2d8d-4384-9f22-6f59d26a155d
+
 [Services]: https://qiy.api.digital-me.nl/#6977aac0-97cf-4f18-8ddf-77d842bcec8b
 [Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2
 [Services Set service catalogue]: https://qiy.api.digital-me.nl/#0e943de7-c7c2-454c-b093-7b1198a3abd6
+[Services Register operation]: https://qiy.api.digital-me.nl/#adebb47b-410c-49c8-9a13-da875ab7e5db
 [Connections]: https://qiy.api.digital-me.nl/#2201f953-e379-42ee-909b-62e0ebe44eda
 [Connections Request connect token]: https://qiy.api.digital-me.nl/#7d46c068-a69b-4f79-a2c9-528e84b5aa75
 [Connections Request connect token with callback]: https://qiy.api.digital-me.nl/#6eea6de9-e14e-4219-a2c5-9ac531ca0305
@@ -98,6 +102,8 @@
 [Feeds Get user action message]: https://qiy.api.digital-me.nl/#f477030a-7314-4ea8-9b1a-072f74794244
 [Feeds Set feeds]: https://qiy.api.digital-me.nl/#ae70456e-e007-45bf-9df5-f0a4a8cb04f8
 [Feeds Add feed]: https://qiy.api.digital-me.nl/#0763915e-ecd5-4c22-8604-a0752e794630
+[Feeds Wait for Feed Request callback]: https://qiy.api.digital-me.nl/#5f31a320-78d9-469b-b577-b45f79199bdd
+[Feeds Send Feed id]: https://qiy.api.digital-me.nl/#2261ddd6-06b2-4a06-8ea8-7e483226cbb2
 [Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462
 [Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c
 [Getting help]: https://qiy.api.digital-me.nl/#20d410f3-9ec8-48b6-937b-3ea62b89ac36

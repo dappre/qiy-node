@@ -435,7 +435,7 @@
 						{
 							"name": "References Endpoint",
 							"item": [],
-							"description": "This endpoint is a convenience endpoint which allows to [access all feeds with one call][Feeds Access feeds].\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n",
+							"description": "This endpoint can be used to [access all feeds with one call][Feeds Access feeds] or to [create feeds][Services Register operation].\nThe current address of the endpoint is returned in the \"refs\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Services Register operation]: https://qiy.api.digital-me.nl/#adebb47b-410c-49c8-9a13-da875ab7e5db\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -463,7 +463,7 @@
 						{
 							"name": "Service Catalogue Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to maintain a [Service Catalogue][API Basics Documentation Service Provider Setup Service Catalogue].\nThe current address of the endpoint is returned in the \"serviceCatalogue\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n",
+							"description": "This endpoint can be used to [get][Services Get service catalogue] or [set][Services Set service catalogue] the contents of a [Service Catalogue][API Basics Documentation Service Provider Setup Service Catalogue].\nThe current address of the endpoint is returned in the \"serviceCatalogue\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n[Services Set service catalogue]: https://qiy.api.digital-me.nl/#0e943de7-c7c2-454c-b093-7b1198a3abd6\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1041,7 +1041,7 @@
 										{
 											"name": "Service Catalogue",
 											"item": [],
-											"description": "A [Service Provider][API Basics Documentation Service Provider] publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for Service Type Descriptions with additional details, for example for the associated [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint].\n\nA Service Type Description can contain a list of urls for the description of the Operation Types of the service which are used in [Feed Requests][Feeds Request for feed].\nIf the Service Type Description does not contain Operation Type Urls, the Service Type Description Url can be used instead.\n\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n",
+											"description": "A [Service Provider][API Basics Documentation Service Provider] publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for Service Type Descriptions with additional details, for example for the associated [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint], see [Get service catalogue][Services Get service catalogue].\n\nA Service Type Description can contain a list of urls for the description of the Operation Types of the service which are used in [Feed Requests][Feeds Request for feed].\nIf the Service Type Description does not contain Operation Type Urls, the Service Type Description Url can be used instead.\n\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -1072,7 +1072,7 @@
 												{
 													"name": "Feed Request Endpoint",
 													"item": [],
-													"description": "A Feed Request Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a (data) [Service Provider][API Basics Documentation Service Provider] to receive [Feed Requests][Feeds] when [Individuals deploy their subscribed services][API Basics Documentation End User App Orchestrate].\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds]: https://qiy.api.digital-me.nl/#6c093415-6c9a-4a77-ac3b-b866c4758e9a\n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \n\n",
+													"description": "This endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used by a (data) [Service Provider][API Basics Documentation Service Provider] to detect and receive [Feed Requests][API Basics Documentation Qiy Node Client Feeds].\nThe address of the endpoint can be defined when [updating the service catalogue][Services Set service catalogue].\n\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Services Set service catalogue]: https://qiy.api.digital-me.nl/#0e943de7-c7c2-454c-b093-7b1198a3abd6\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n\n",
 													"event": [
 														{
 															"listen": "prerequest",
@@ -1098,9 +1098,9 @@
 													"_postman_isSubFolder": true
 												},
 												{
-													"name": "On-Connected Endpoint",
+													"name": "State Handled Callback Endpoint",
 													"item": [],
-													"description": "An On-Connected Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to  [detect that a connect token has been used to create a connection][Connections Wait for callback on On-Connected Endpoint].\n\n[Connections Wait for callback on On-Connected Endpoint]: https://qiy.api.digital-me.nl/#3a85db4c-2ff3-4e2f-8033-320439c81bb8\n",
+													"description": "This endpoint for [State Handled Event]-callbacks is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to  [detect that a connect token has been used to create a connection][Connections Wait for State Handled callback].\n\n[Connections Wait for State Handled callback]: https://qiy.api.digital-me.nl/#3a85db4c-2ff3-4e2f-8033-320439c81bb8\n",
 													"event": [
 														{
 															"listen": "prerequest",
@@ -1467,7 +1467,7 @@
 								{
 									"name": "Feeds",
 									"item": [],
-									"description": "Feeds can be used by a Relying Party to consume subscribed services of an individual.\nA Relying Party can do so as follows:\n1. [Request for feeds](https://qiy.api.digital-me.nl/#fcea7385-8304-47b4-96ac-0854e8a46da6) to remotely execute operations of a service by reference.\n0. [Wait for the feeds](https://qiy.api.digital-me.nl/#ac3d9f3a-711d-4127-a3d2-300f5ea22e61) and [use them one by one](https://qiy.api.digital-me.nl/#abf8f21c-0f31-4086-ad5e-49d2ec468f43) or\n1. [Use polling](https://qiy.api.digital-me.nl/#522366eb-5d26-4419-980d-afe6d93c7194).\n",
+									"description": "Feeds can be used by a Relying Party to consume subscribed services of an individual.\n\n## Relying Party\nA Relying Party can do so as follows:\n1. [Request for feeds][Feeds Request for feed] to remotely execute operations of a service by reference.\n0. [Wait for the feeds][Feeds Wait for On-New-Feed callback] and [use them one by one][Feeds Access feed] or\n1. [Use polling][Feeds Access feeds].\n\n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Feeds Wait for On-New-Feed callback]: https://qiy.api.digital-me.nl/#6770d95f-796e-41fd-8067-4ae5f486a6d4\n[Feeds Access feeds]: https://qiy.api.digital-me.nl/#94d7f65a-cce5-4c13-bf1e-e7cc3304843c\n\n## End User App\nFor the feed-flow of an End User App is described [here][API Basics Documentation End User App Orchestrate].\n\n[API Basics Documentation End User App Orchestrate]: https://qiy.api.digital-me.nl/#9af1e7a2-d43e-4bc3-8f58-860bb85d6052 \n\n\n## (Data) Service Provider\nThe feed-flow for a (Data) Service Provider is as follows:\n1. Wait for a [feed request callback to detect and receive feed request messages][Feeds Wait for Feed Request callback].\n2. Determine the user and the requested data service or operation.\n3. Generate and [register a corresponding operation specification][Services Register operation] and receive a feed-id.\n4. [Return the feed-id in a reply message][Feeds Send Feed id].\n\n[Services Register operation]: https://qiy.api.digital-me.nl/#adebb47b-410c-49c8-9a13-da875ab7e5db\n[Feeds Wait for Feed Request callback]: https://qiy.api.digital-me.nl/#5f31a320-78d9-469b-b577-b45f79199bdd\n[Feeds Send Feed id]: https://qiy.api.digital-me.nl/#2261ddd6-06b2-4a06-8ea8-7e483226cbb2\n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1734,6 +1734,83 @@
 			"name": "Nodes",
 			"item": [
 				{
+					"name": "Request creation of Qiy Node",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\",\r\n\t\"nodeSettings\": {\r\n\t\t\"askDappre\": \"no\",\r\n\t\t\"usePersistentId\": \"yes\"\r\n\t}\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{nodeCreateEndpointUrl}}",
+							"host": [
+								"{{nodeCreateEndpointUrl}}"
+							]
+						},
+						"description": "This [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)-call can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+					},
+					"response": [
+						{
+							"name": "Create Qiy Node - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}",
+										"description": "[Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c)"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\",\r\n\t\"nodeSettings\": {\r\n\t\t\"askDappre\": \"no\",\r\n\t\t\"usePersistentId\": \"yes\"\r\n\t}\r\n}\r\n"
+								},
+								"url": {
+									"raw": "{{nodeCreateEndpointUrl}}",
+									"host": [
+										"{{nodeCreateEndpointUrl}}"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "Text",
+							"header": [
+								{
+									"key": "Location",
+									"value": "https://dev2-user.testonly.digital-me.nl/user/owners/id/pt_usernode_qnc_test_de",
+									"name": "Location",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "Link",
+									"value": "<https://dev2-user.testonly.digital-me.nl/user/owners/id/pt_usernode_qnc_test_de>; rel=\"delete\"",
+									"name": "Link",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
 					"name": "Get endpoint addresses",
 					"request": {
 						"method": "GET",
@@ -1890,86 +1967,9 @@
 					]
 				},
 				{
-					"name": "Request creation of Qiy Node",
+					"name": "Update event callback endpoints",
 					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							},
-							{
-								"key": "AP-Token",
-								"value": "{{apToken}}"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\",\r\n\t\"nodeSettings\": {\r\n\t\t\"askDappre\": \"no\",\r\n\t\t\"usePersistentId\": \"yes\"\r\n\t}\r\n}\r\n"
-						},
-						"url": {
-							"raw": "{{nodeCreateEndpointUrl}}",
-							"host": [
-								"{{nodeCreateEndpointUrl}}"
-							]
-						},
-						"description": "This [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)-call can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
-					},
-					"response": [
-						{
-							"name": "Create Qiy Node - OK",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "AP-Token",
-										"value": "{{apToken}}",
-										"description": "[Access Provider Token](https://qiy.api.digital-me.nl/#962509fc-cd2a-463d-85e4-f1772c54ff2c)"
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n\t\"alias\": \"pt_usernode_qnc_test_de\", \r\n\t\"id\": \"pt_usernode_qnc_test_de\", \r\n\t\"publicKey\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0TK8dMRxvXp66teemQe/tzUi26LBWfkO0pWGqyzmnNO6ISALt+rgEPl5mhqztAU4xI9iE/L9dCzC3snb2OQT+2/IaV9ilt1UAmZhyuogPeTKykPRFR2oT51wWoIuG4hD0x6iBhFCorn087Te99oS1RwS1RR5wFjIs/ol3ldawZ29xemsskmPEWJ/QpfpauBxvSbZEXRy15cAWnWO9yVzizUszwNjP8Ca0/K7NKa+lOtp09egO12SBMfX871AI44wWkZqPsr+O5cpo8Srw+90dbETA1Ypno3lpel2lBMQaf0+Srmjd/bJs9dlaXCTljoLt2uvOmriDSI6eSJZ7FxH4wIDAQAB\", \r\n\t\"password\": \"9b449623-f361-425b-bca8-8c23c159e4c0\",\r\n\t\"nodeSettings\": {\r\n\t\t\"askDappre\": \"no\",\r\n\t\t\"usePersistentId\": \"yes\"\r\n\t}\r\n}\r\n"
-								},
-								"url": {
-									"raw": "{{nodeCreateEndpointUrl}}",
-									"host": [
-										"{{nodeCreateEndpointUrl}}"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "Text",
-							"header": [
-								{
-									"key": "Location",
-									"value": "https://dev2-user.testonly.digital-me.nl/user/owners/id/pt_usernode_qnc_test_de",
-									"name": "Location",
-									"description": "",
-									"type": "text"
-								},
-								{
-									"key": "Link",
-									"value": "<https://dev2-user.testonly.digital-me.nl/user/owners/id/pt_usernode_qnc_test_de>; rel=\"delete\"",
-									"name": "Link",
-									"description": "",
-									"type": "text"
-								}
-							],
-							"cookie": [],
-							"body": ""
-						}
-					]
-				},
-				{
-					"name": "Delete Qiy Node",
-					"request": {
-						"method": "DELETE",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Authorization",
@@ -1980,27 +1980,33 @@
 								"value": "{{apToken}}"
 							},
 							{
-								"key": "password",
-								"value": "{{transportPassword}}"
+								"key": "Content-Type",
+								"value": "application/json"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\r\n\t\"DATA_REFERENCE_RECEIVED2\": \"http://localhost:10443/test\",\r\n\t\"STATE_HANDLED\": \"http://localhost:10443/test\"\r\n}"
 						},
 						"url": {
-							"raw": "{{nodeDeleteEndpointUrl}}",
+							"raw": "{{baseUri}}/user/nodesettings/{{nodeId}}/eventcallbacks",
 							"host": [
-								"{{nodeDeleteEndpointUrl}}"
+								"{{baseUri}}"
+							],
+							"path": [
+								"user",
+								"nodesettings",
+								"{{nodeId}}",
+								"eventcallbacks"
 							]
 						},
-						"description": "This [Node Delete Endpoint](https://qiy.api.digital-me.nl/#0370be24-ad26-4e2b-af33-7a7df3b766c2)-call can be used to [delete a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+						"description": "Examples of JSON input that the callback URI will receive (HTTP POST operation):\n\nSTATE_HANDLED event: \n```\n{\n  \"type\": \"STATE_HANDLED\",\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/382333dc-8353-4d45-93bf-a960ca3982f9\",\n  \"extraData\": {\n    \"new-uri\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/028f3b06-216e-4394-b697-b1711eed951b\",\n    \"PID\": \"Ymj1EiS+ruOJOz5BNdgLqQ==\"\n  }\n}\n```\n    \n    \nDATA_REFERENCE_RECEIVED2 event:    \n```\n{\n  \"type\": \"DATA_REFERENCE_RECEIVED2\",\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/b2510b80-34f5-434b-b682-d1bd382a9f6b\",\n  \"extraData\": {\n    \"protocol\": \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\",\n    \"value\": \"ZWdRTVFVMTBIaUdyakxCSHhWSXVTbVJkS0lJPQ==\"\n  }\n}\n```"
 					},
 					"response": [
 						{
-							"name": "Delete Qiy Node - OK",
+							"name": "Update Event Callbacks - OK",
 							"originalRequest": {
-								"method": "DELETE",
+								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
@@ -2009,29 +2015,106 @@
 									{
 										"key": "AP-Token",
 										"value": "{{apToken}}"
-									},
-									{
-										"key": "password",
-										"value": "{{transportPassword}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": ""
+									"raw": "{\r\n\t\"DATA_REFERENCE_RECEIVED2\": \"http://localhost:10443/test\",\r\n\t\"STATE_HANDLED\": \"http://localhost:10443/test\"\r\n}"
 								},
 								"url": {
-									"raw": "{{nodeDeleteEndpointUrl}}",
+									"raw": "https://dev1-user.testonly.digital-me.nl/user/nodesettings/wip1/eventcallbacks",
+									"protocol": "https",
 									"host": [
-										"{{nodeDeleteEndpointUrl}}"
+										"dev1-user",
+										"testonly",
+										"digital-me",
+										"nl"
+									],
+									"path": [
+										"user",
+										"nodesettings",
+										"wip1",
+										"eventcallbacks"
 									]
 								}
 							},
-							"status": "No Content",
-							"code": 204,
-							"_postman_previewlanguage": "Text",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": ""
+							"body": "{\r\n\t\"DATA_REFERENCE_RECEIVED2\": \"http://localhost:10443/test\",\r\n\t\"STATE_HANDLED\": \"http://localhost:10443/test\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "Get event callback endpoints",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "{{baseUri}}/user/nodesettings/{{nodeId}}/eventcallbacks",
+							"host": [
+								"{{baseUri}}"
+							],
+							"path": [
+								"user",
+								"nodesettings",
+								"{{nodeId}}",
+								"eventcallbacks"
+							]
+						},
+						"description": "Examples of JSON input that the callback URI will receive (HTTP POST operation):\n\nPID event, first time connect:\n```\n{\n  \"type\": \"STATE_HANDLED\",\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/028f3b06-216e-4394-b697-b1711eed951b\",\n  \"extraData\": {\n    \"PID\": \"Ymj1EiS+ruOJOz5BNdgLqQ==\"\n  }\n}```\n\nSTATE_HANDLED event, subsequent connects: \n```\n{\n  \"type\": \"STATE_HANDLED\",\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/382333dc-8353-4d45-93bf-a960ca3982f9\",\n  \"extraData\": {\n    \"new-uri\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/028f3b06-216e-4394-b697-b1711eed951b\",\n    \"PID\": \"Ymj1EiS+ruOJOz5BNdgLqQ==\"\n  }\n}```\n    \n    \nDATA_REFERENCE_RECEIVED2 event:    \n```\n{\n  \"type\": \"DATA_REFERENCE_RECEIVED2\",\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/b2510b80-34f5-434b-b682-d1bd382a9f6b\",\n  \"extraData\": {\n    \"protocol\": \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\",\n    \"value\": \"ZWdRTVFVMTBIaUdyakxCSHhWSXVTbVJkS0lJPQ==\"\n  }\n}```"
+					},
+					"response": [
+						{
+							"name": "Get Event Callbacks - OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}"
+									}
+								],
+								"body": {},
+								"url": {
+									"raw": "https://dev1-user.testonly.digital-me.nl/user/nodesettings/wip1/eventcallbacks",
+									"protocol": "https",
+									"host": [
+										"dev1-user",
+										"testonly",
+										"digital-me",
+										"nl"
+									],
+									"path": [
+										"user",
+										"nodesettings",
+										"wip1",
+										"eventcallbacks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\r\n\t\"DATA_REFERENCE_RECEIVED2\": \"http://localhost:10443/test\",\r\n\t\"STATE_HANDLED\": \"http://localhost:10443/test\"\r\n}"
 						}
 					]
 				},
@@ -2167,6 +2250,75 @@
 						"description": "This [Node Settings Endpoint](https://qiy.api.digital-me.nl/#8891782a-45b0-4db1-a23c-25bd6b95c00b)-call sets the [node settings](https://qiy.api.digital-me.nl/#dc161dbb-f4e5-4b62-b26b-975433718438)."
 					},
 					"response": []
+				},
+				{
+					"name": "Delete Qiy Node",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "password",
+								"value": "{{transportPassword}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{nodeDeleteEndpointUrl}}",
+							"host": [
+								"{{nodeDeleteEndpointUrl}}"
+							]
+						},
+						"description": "This [Node Delete Endpoint](https://qiy.api.digital-me.nl/#0370be24-ad26-4e2b-af33-7a7df3b766c2)-call can be used to [delete a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+					},
+					"response": [
+						{
+							"name": "Delete Qiy Node - OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}"
+									},
+									{
+										"key": "password",
+										"value": "{{transportPassword}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{nodeDeleteEndpointUrl}}",
+									"host": [
+										"{{nodeDeleteEndpointUrl}}"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
 				}
 			],
 			"event": [
@@ -2244,7 +2396,7 @@
 								}
 							]
 						},
-						"description": "This [Service Catalogue Endpoint](https://qiy.api.digital-me.nl/#7f081d6c-77f8-4184-9497-7ddf2b74bb00)-call gets the [Service Catalogue](https://qiy.api.digital-me.nl/#089b271b-fdbe-4ee8-80ee-21a487cf4d8a)."
+						"description": "This [Service Catalogue Endpoint][API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]-call gets the [Service Catalogue][API Basics Documentation Service Provider Setup Service Catalogue].\n\n\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n[API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]: https://qiy.api.digital-me.nl/#3f8128f6-460c-46ba-b99a-cb4689d32c10 \n"
 					},
 					"response": [
 						{
@@ -2317,7 +2469,43 @@
 								"{{serviceCatalogueEndpointUrl}}"
 							]
 						},
-						"description": "This [Service Catalogue Endpoint](https://qiy.api.digital-me.nl/#7f081d6c-77f8-4184-9497-7ddf2b74bb00)-call sets the [Service Catalogue](https://qiy.api.digital-me.nl/#089b271b-fdbe-4ee8-80ee-21a487cf4d8a) including details of [Feed Request Endpoints](https://qiy.api.digital-me.nl/#e1b569b8-287d-41dc-ad3d-cd576ac1af67)"
+						"description": "This [Service Catalogue Endpoint][API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]-call sets the [Service Catalogue][API Basics Documentation Service Provider Setup Service Catalogue] including the uri and the method of [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint].\n\n[API Basics Dynamic Endpoint Addresses Service Catalogue Endpoint]: https://qiy.api.digital-me.nl/#3f8128f6-460c-46ba-b99a-cb4689d32c10 \n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Register operation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "AP-Token",
+								"type": "text",
+								"value": "{{apToken}}"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "{{authorizationHeader}}"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"dkdk\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
+						},
+						"url": {
+							"raw": "{{referencesEndpointUrl}}",
+							"host": [
+								"{{referencesEndpointUrl}}"
+							]
+						},
+						"description": "This [References Endpoint][API Basics Dynamic Endpoint Addresses References Endpoint]-call registers an operation, creates a [feed][API Basics Documentation Qiy Node Client Feeds] and returns a feed-id.\n\n\n[API Basics Dynamic Endpoint Addresses References Endpoint]: https://qiy.api.digital-me.nl/#a3dce696-97fb-4d1d-993d-b2863a5db16b \n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n"
 					},
 					"response": []
 				}
@@ -2535,7 +2723,7 @@
 							"header": [
 								{
 									"key": "Location",
-									"value": "{{connectionUrl}}",
+									"value": "{{connectTokenUrl}}",
 									"name": "Location",
 									"description": "",
 									"type": "text"
@@ -2583,31 +2771,21 @@
 					"response": []
 				},
 				{
-					"name": "Wait for callback on On-Connected Endpoint",
+					"name": "State Handled Callback",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\t\"Hello\": \"world!\"\r\n}"
+							"raw": "{\r\n  \"type\": \"STATE_HANDLED\",\r\n  \"connectionUrl\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/3b5151e3-adc7-403a-a31a-8bd504e2c8ae\",\r\n  \"extraData\": {\r\n    \"newUri\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/509f79f8-6562-49cd-bb24-4163557d7e59/ce5b2dd5-1bdd-41aa-b0ad-d0afa2e9a3cb\",\r\n    \"connectToken\": \"https://dev1-user.testonly.digital-me.nl/user/connecttokens/509f79f8-6562-49cd-bb24-4163557d7e59/7ced41dc-76ff-469e-9fa0-3f34c73d0a2b\",\r\n    \"PID\": \"9GqX94/EoOcD47hCvBQ+eg==\"\r\n  }\r\n}"
 						},
 						"url": {
-							"raw": "{{OnConnectedEndpointUrl}}?pid=7nzMAI61N6b5dPCCYD4IgQ==&connectionUrl=https://connection.url/example/003030",
+							"raw": "{{stateHandledCallbackUrl}}",
 							"host": [
-								"{{OnConnectedEndpointUrl}}"
-							],
-							"query": [
-								{
-									"key": "pid",
-									"value": "7nzMAI61N6b5dPCCYD4IgQ=="
-								},
-								{
-									"key": "connectionUrl",
-									"value": "https://connection.url/example/003030"
-								}
+								"{{stateHandledCallbackUrl}}"
 							]
 						},
-						"description": "This callback on the [On-Connected Endpoint](https://qiy.api.digital-me.nl/#e8aa13ba-4301-47c9-81a2-522dc52e296c) can be used to [detect that a connect token was used to create a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df), but only with a connect token that has been [requested](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36) or [registered](https://qiy.api.digital-me.nl/#d7ed9d68-f996-492d-918f-cf7411019ced) with the callback as an [on-connected action](https://qiy.api.digital-me.nl/#359ea19c-e5cf-4756-8bcf-4b0c6a72b21f)."
+						"description": "This callback on the [State Handled Callback Endpoint][] can be used to [detect that a connect token was used to create a connection][].\n\n"
 					},
 					"response": []
 				},
@@ -2644,16 +2822,16 @@
 					"response": []
 				},
 				{
-					"name": "Wait for Connected to Router Event",
+					"name": "Connected to Router Event",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
-								"type": "text/javascript",
 								"exec": [
 									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2684,16 +2862,16 @@
 					"response": []
 				},
 				{
-					"name": "Wait for Persistent Id Event",
+					"name": "Persistent Id Event",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
-								"type": "text/javascript",
 								"exec": [
 									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -3144,12 +3322,12 @@
 								"{{mailboxEndpointUrl}}"
 							]
 						},
-						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to request for a [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to request for a [feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n"
 					},
 					"response": []
 				},
 				{
-					"name": "Wait for On-New-Feed callback",
+					"name": "On-New-Feed Callback",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -3169,21 +3347,21 @@
 								}
 							]
 						},
-						"description": "This callback on the [On-New-Feed Endpoint](https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f) can be used to [detect a new feed](https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37)."
+						"description": "This callback on the [On-New-Feed Endpoint](https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f) can be used to [detect a new feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
 				{
-					"name": "Wait for Data Reference Received Event-v2",
+					"name": "Data Reference Received Event-v2",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
-								"type": "text/javascript",
 								"exec": [
 									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -3209,21 +3387,21 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "A Relying Party can use the [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d) to detect the [receipt of a feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party can use the [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d) to detect the [receipt of a feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
 				{
-					"name": "Wait for User Action Message Event",
+					"name": "User Action Message Event",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
 								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
-								"type": "text/javascript",
 								"exec": [
 									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -3249,7 +3427,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "An End User App can use the [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799) to detect the [receipt of a feed request](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
+						"description": "An End User App can use the [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799) to detect the [receipt of a feed request][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
@@ -3289,7 +3467,7 @@
 								"{{userActionMessageUrl}}"
 							]
 						},
-						"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event](https://qiy.api.digital-me.nl/#746ea152-a210-4ab2-9a2f-8a497ed78799)."
+						"description": "A Qiy Node Client can use this call to get the details of a received message that requires user interaction using a userActionMessageUrl extracted from a [User Action Message Event].\n\n"
 					},
 					"response": []
 				},
@@ -3317,7 +3495,7 @@
 								"{{actionUrl}}"
 							]
 						},
-						"description": "An End User App uses this call to [change the service deployment](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
+						"description": "An End User App uses this call to [change the service deployment][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
@@ -3345,7 +3523,68 @@
 								"{{actionUrl}}"
 							]
 						},
-						"description": "An End User App uses this call to [deploy (an operation of) a service](https://qiy.api.digital-me.nl/#b81e75d9-cc97-4be1-ac17-976737e516de)."
+						"description": "An End User App uses this call to [deploy (an operation of) a service][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+					},
+					"response": []
+				},
+				{
+					"name": "Feed Request Callback",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"connection\": \"https://dev1-user.testonly.digital-me.nl/user/connections/user/96cd5389-6def-4f6f-b3a9-b613a66ec522/ad4ac9cb-62e1-43ad-8495-9ac426b229c2\",\r\n  \"pid\": \"G5grIomOi7aBEV9nYE5Vlg==\",\r\n  \"message\": {\r\n    \"serialNr\": 6,\r\n    \"text\": \"Requesting 'test data'\",\r\n    \"protocol\": \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\",\r\n    \"inbound\": true,\r\n    \"sent\": false,\r\n    \"thirdPartyRef\": \"4D0OqePJ1yKD41Q9qmixVnVFLWcJHFT1hhKDKG9FmeI=\"\r\n  },\r\n  \"mbox\": \"https://dev1-user.testonly.digital-me.nl/user/mbox/user/96cd5389-6def-4f6f-b3a9-b613a66ec522/ad4ac9cb-62e1-43ad-8495-9ac426b229c2\"\r\n}"
+						},
+						"url": {
+							"raw": "{{feedRequestCallbackUrl}}",
+							"host": [
+								"{{feedRequestCallbackUrl}}"
+							]
+						},
+						"description": "A (Data) Service Provider can use callbacks on the [Feed Request Endpoint][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint] to detect and receive incoming [feed request messages][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Send feed-id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "AP-Token",
+								"value": "{{apToken}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"refSerialNumber\": 100,\n\t\"text\": \"Here is your feed-id.\",\n\t\"payload\": \"<base64 encoded feed-id>\"\n}"
+						},
+						"url": {
+							"raw": "{{mboxUrl}}",
+							"host": [
+								"{{mboxUrl}}"
+							]
+						},
+						"description": "A (Data) Service Provider can [send a feed-id][API Basics Documentation Qiy Node Client Feeds] by including it in a reply-message to the feed request message.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n"
 					},
 					"response": []
 				},
@@ -3381,7 +3620,7 @@
 								}
 							]
 						},
-						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call to access a single [feed](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call to access a single [feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": [
 						{
@@ -3454,7 +3693,7 @@
 								"{{referencesEndpointUrl}}"
 							]
 						},
-						"description": "A Relying Party uses this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call accesses all [feeds](https://qiy.api.digital-me.nl/#580a707c-16e8-40b3-9ae4-c51ffa096033)."
+						"description": "A Relying Party can use this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call to access all [feeds][API Basics Documentation Qiy Node Client Feeds] with one call.\n\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				}
