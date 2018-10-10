@@ -68,7 +68,7 @@
 				{
 					"name": "Versions",
 					"item": [],
-					"description": "This api is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) and follows this specification. In addition, the following rules apply:\r\n* [Digital Me](https://digital-me.nl/) supports two major versions in the production environment: one primary version and one secondary version.\r\n* [Digital Me](https://digital-me.nl/) will support a secondary version for at least 6 months.\r\n* [Digital Me](https://digital-me.nl/) supports one development version in a development environment.\r\n* A development version may change at any time.\r\n",
+					"description": "This api is versioned using [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html) and follows this specification. In addition, the following rules apply:\r\n* [Digital Me](https://digital-me.nl/) supports two major versions in the production environment: one primary version and one secondary version.\r\n* [Digital Me](https://digital-me.nl/) will support a secondary version for at least 6 months.\r\n* [Digital Me](https://digital-me.nl/) supports one development version in a development environment.\r\n* A development version may change at any time.\r\n\r\nThe current version of the api is returned by [Get /api][API Get Api].\r\n\r\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\r\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -351,7 +351,7 @@
 						{
 							"name": "Node Create Endpoint",
 							"item": [],
-							"description": "This endpoint can be used to [request the creation of a Qiy Node][Nodes Request creation of Qiy Node].\nThe current address of the endpoint is returned in the \"create\"-member of the response of [Get endpoint addresses][Nodes Get endpoint addresses].\n\n[Nodes Get endpoint addresses]: https://qiy.api.digital-me.nl/#cd0849d0-3606-495b-b18e-c87f1f184cf1\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869\n",
+							"description": "This endpoint can be used to [request the creation of a Qiy Node][Nodes Request creation of Qiy Node].\nThe current address of the endpoint is returned by [Get /api][API Get Api].\n\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1529,7 +1529,7 @@
 								{
 									"name": "Events",
 									"item": [],
-									"description": "A Qiy Node supports a number of events.\nThe Qiy Client can receive the events using a [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)-listener, see [Start listening to events][Nodes Start listening to events], or using [callbacks][API Basics Documentation Service Provider Setup Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n\n",
+									"description": "A Qiy Node supports a number of events.\nThe Qiy Client can receive the events using a [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)-listener, see [Start listening to events][Nodes Start listening to events], or using [callbacks][API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1623,8 +1623,7 @@
 						"header": [
 							{
 								"key": "AP-Token",
-								"value": "{{apToken}}",
-								"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"value": "{{apToken}}"
 							}
 						],
 						"body": {
@@ -1640,7 +1639,7 @@
 								"api"
 							]
 						},
-						"description": "GET /api can be used to get the [api version](https://qiy.api.digital-me.nl/#af8a7dc6-0ba9-4e3b-a7e5-6b540f1102fc) and the current address of the [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)."
+						"description": "GET /api can be used to get the [api version][API Basics Versions] and the current address of the [Node Create Endpoint][API Basics Dynamic Endpoint Addresses Node Create Endpoint].\n\n[API Basics Versions]: https://qiy.api.digital-me.nl/#80ca583f-a0fe-46e3-a45a-8208775b8710\n[API Basics Dynamic Endpoint Addresses Node Create Endpoint]: https://qiy.api.digital-me.nl/#f1132a46-5a61-4cf6-acef-70df6846be1c"
 					},
 					"response": [
 						{
@@ -1650,8 +1649,7 @@
 								"header": [
 									{
 										"key": "AP-Token",
-										"value": "{{apToken}}",
-										"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"value": "{{apToken}}"
 									}
 								],
 								"body": {
@@ -1791,7 +1789,7 @@
 								"{{nodeCreateEndpointUrl}}"
 							]
 						},
-						"description": "This [Node Create Endpoint](https://qiy.api.digital-me.nl/#b01e77ea-1ac5-4896-8703-5d5800789024)-call can be used to [request the creation of a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+						"description": "This [Node Create Endpoint][API Basics Dynamic Endpoint Addresses Node Create Endpoint]-call can be used to [request the creation of a Qiy Node][API Basics Documentation Qiy Node Client Qiy Node].\n\n[API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 \n[API Basics Dynamic Endpoint Addresses Node Create Endpoint]: https://qiy.api.digital-me.nl/#f1132a46-5a61-4cf6-acef-70df6846be1c \n"
 					},
 					"response": [
 						{
@@ -1873,7 +1871,7 @@
 								"api"
 							]
 						},
-						"description": "Get [current addresses of the dynamic path endpoints](https://qiy.api.digital-me.nl/#6fb4e75c-8dc0-4d4b-a12c-544c1a2366ce)."
+						"description": "Get [current addresses of the dynamic path endpoints][API Basics Dynamic Endpoint Addresses].\n\n[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \n"
 					},
 					"response": [
 						{
