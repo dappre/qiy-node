@@ -44,9 +44,10 @@
 [API Basics Documentation Service Provider Setup]: https://qiy.api.digital-me.nl/#71faecf8-3d47-4c39-ae12-f654b95794d5 
 [API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4
 [API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998
-[API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334
-[API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f
 [API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf
+[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987
+[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints State Handled Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334
+[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints Data Reference Received-v2 Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f
 [API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5
 [API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8
 [API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 
