@@ -1069,7 +1069,7 @@
 										{
 											"name": "Service Catalogue",
 											"item": [],
-											"description": "A [Service Provider][API Basics Documentation Service Provider] publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for Service Type Descriptions with additional details, for example for the associated [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint], see [Get service catalogue][Services Get service catalogue].\n\nA Service Type Description can contain a list of urls for the description of the Operation Types of the service which are used in [Feed Requests][Feeds Request for feed].\nIf the Service Type Description does not contain Operation Type Urls, the Service Type Description Url can be used instead.\n\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n",
+											"description": "A [Service Provider][API Basics Documentation Service Provider] publishes the (data) service types it supports in his Service Catalogue, which consists of an array of urls for Service Type Descriptions with additional details, for example for the associated [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint], see [Get service catalogue][Services Get service catalogue].\n\nA Service Type Description can contain a list of urls for the description of the Operation Types of the service which are used in as value of the protocol-member in [Feed Requests][Feeds Request for feed].\nIf the Service Type Description does not contain Operation Type Urls, the Service Type Description Url can be used instead.\n\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Request for feed]: https://qiy.api.digital-me.nl/#cf195377-dd4d-4a30-9181-d8ab5fc8db37\n[Services Get service catalogue]: https://qiy.api.digital-me.nl/#14ea5d1a-ab41-476b-9812-04dd42f9a9d2\n",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -1126,65 +1126,9 @@
 													"_postman_isSubFolder": true
 												},
 												{
-													"name": "State Handled Endpoint",
-													"item": [],
-													"description": "This event callback endpoint for [State Handled Event][API Basics Events State Handled Event]-callbacks is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to  [detect that a connection has been created][API Basics Documentation Qiy Node Client Connections] using callbacks.\nThe address of the endpoint can be defined with [Update event callback endpoint][Nodes Update event callback endpoints].\n\n[Nodes Update event callback endpoints]: https://qiy.api.digital-me.nl/#e1d1dd3a-7e69-4e36-bba7-c78aecb6d1ae\n[API Basics Events State Handled Event]: https://qiy.api.digital-me.nl/#3c46b7d8-2eb7-4f8b-b373-a6486b58b115\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
-													"name": "Data Reference Received-v2 Endpoint",
-													"item": [],
-													"description": "This event callback endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be setup and used by a [Relying Party][API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party] to  [detect a new feed][API Basics Documentation Qiy Node Client Feeds] using callbacks.\nThe address of the endpoint can be defined with [Update event callback endpoint][Nodes Update event callback endpoints].\n\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[Nodes Update event callback endpoints]: https://qiy.api.digital-me.nl/#e1d1dd3a-7e69-4e36-bba7-c78aecb6d1ae\n",
-													"event": [
-														{
-															"listen": "prerequest",
-															"script": {
-																"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														},
-														{
-															"listen": "test",
-															"script": {
-																"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
-																"type": "text/javascript",
-																"exec": [
-																	""
-																]
-															}
-														}
-													],
-													"_postman_isSubFolder": true
-												},
-												{
 													"name": "Service Endpoint",
 													"item": [],
-													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider][API Basics Documentation Service Provider] to serve [Feed Access requests][Feeds Access feed].\nThe address of the Servic Endpoint(s) is used in the url-member in [Register operation][Services Register operation]-calls.\n\n## Since query parameter\nNote that the service endpoint must support an optional since query parameter.\nThe parameter specifies the Unix Time in milliseconds with a default value of zero ('0').\nThe service endpoint is to return an empty body when the response has not changed since the given time. Otherwise, the normal response is be returned.\n\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Services Register operation]: https://qiy.api.digital-me.nl/#adebb47b-410c-49c8-9a13-da875ab7e5db\n",
+													"description": "A Service Endpoint is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) provided by a [Service Provider][API Basics Documentation Service Provider] to serve [Feed Access requests][API Basics Documentation Qiy Node Client Feeds].\nThe address of the Servic Endpoint(s) is used in the url-member in [Register operation][Services Register operation]-calls.\n\n## Since query parameter\nNote that the service endpoint must support an optional since query parameter.\nThe parameter specifies the Unix Time in milliseconds with a default value of zero ('0').\nThe service endpoint is to return an empty body when the response has not changed since the given time. Otherwise, the normal response is be returned.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Service Provider]: https://qiy.api.digital-me.nl/#450c5839-0e1a-43f5-a63c-cf20a0ff46f8 \n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n[Services Register operation]: https://qiy.api.digital-me.nl/#adebb47b-410c-49c8-9a13-da875ab7e5db\n",
 													"event": [
 														{
 															"listen": "prerequest",
@@ -1208,12 +1152,74 @@
 														}
 													],
 													"_postman_isSubFolder": true
+												},
+												{
+													"name": "Event Callback Endpoints",
+													"item": [
+														{
+															"name": "State Handled Endpoint",
+															"item": [],
+															"description": "This [event callback endpoint][API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints] for [State Handled Events][API Basics Events State Handled Event] is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be used to  [detect that a connection has been created][API Basics Documentation Qiy Node Client Connections] using callbacks.\nThe address of the endpoint can be defined with [Set event callback endpoints][Nodes Set event callback endpoints].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987\n[API Basics Events State Handled Event]: https://qiy.api.digital-me.nl/#3c46b7d8-2eb7-4f8b-b373-a6486b58b115\n[Nodes Set event callback endpoints]: https://qiy.api.digital-me.nl/#e1d1dd3a-7e69-4e36-bba7-c78aecb6d1ae\n",
+															"event": [
+																{
+																	"listen": "prerequest",
+																	"script": {
+																		"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																},
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																}
+															],
+															"_postman_isSubFolder": true
+														},
+														{
+															"name": "Data Reference Received-v2 Endpoint",
+															"item": [],
+															"description": "This [event callback endpoint][API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints] is a [Technology Service](http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946097) which can be setup and used by a [Relying Party][API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party] to  [detect new feeds][API Basics Documentation Qiy Node Client Feeds] using callbacks.\nThe address of the endpoint can be defined with [Update event callback endpoint][Nodes Update event callback endpoints].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \n[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987\n[Nodes Update event callback endpoints]: https://qiy.api.digital-me.nl/#e1d1dd3a-7e69-4e36-bba7-c78aecb6d1ae\n",
+															"event": [
+																{
+																	"listen": "prerequest",
+																	"script": {
+																		"id": "e998f9d3-2064-4191-97a9-fcdf5a69d212",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																},
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "3b7f287d-e79f-481d-a8e9-2acd1878f819",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																}
+															],
+															"_postman_isSubFolder": true
+														}
+													],
+													"_postman_isSubFolder": true
 												}
 											],
 											"_postman_isSubFolder": true
 										}
 									],
-									"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup a [State Handled Endpoint][API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint] for easily processing connect requests.\n2. (only for Data Providers:) Setup [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint] for his services.\n2. (only for Data Providers:) Setup [Service Endpoints][API Basics Documentation Service Provider Setup Endpoints Service Endpoint] to serve [feed access requests][Feeds Access feed].\n2. (only for Relying Parties:) Setup [Data Reference Received-v2 Endpoints][API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint] to detect new feeds.\n3. Prepare the Computer systems to correctly produce [authenticated requests][API Basics Authentication].\n1. Contact the [Access Provider][API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider] [Digital Me](https://digital-me.nl/infrastructure/connect-to-the-network/) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token][API Basics Authentication].\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy][API Basics Documentation Service Provider Setup Service Catalogue].\n\n\n[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \n[API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider]: https://qiy.api.digital-me.nl/#1ab15411-a026-4280-9d1b-c0a9613f2058 \n\n[API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf\n[API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334\n\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n\n\n[Feeds Access feed]: https://qiy.api.digital-me.nl/#98cbb7c0-a0ef-47c5-ada8-676b72539462\n",
+									"description": "Before a Service Provider can provide services via Qiy he has to make the following preparations:\n1. Describe the services and make these descriptions publicly available.\n2. Setup a [State Handled Endpoint][API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint] for [establishing connections using callbacks][API Basics Documentation Qiy Node Client Connections].\n2. (only for Data Providers:) Setup [Feed Request Endpoints][API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint] to process [feed requests][API Basics Documentation Qiy Node Client Feeds].\n2. (only for Data Providers:) Setup [Service Endpoints][API Basics Documentation Service Provider Setup Endpoints Service Endpoint] to process [feed access requests][API Basics Documentation Qiy Node Client Feeds].\n2. (only for Relying Parties:) Setup [Data Reference Received-v2 Endpoints][API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint] to [detect new feeds][API Basics Documentation Qiy Node Client Feeds].\n3. Prepare the Computer systems to correctly produce [authenticated requests][API Basics Authentication].\n1. Contact the [Access Provider][API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider] [Digital Me](https://digital-me.nl/infrastructure/connect-to-the-network/) to whitelist the endpoints and receive a [Qiy Node Credential and an Access Provider Token][API Basics Authentication].\n2. Configure the computer system for the Qiy Node.\n3. [Publish the Service Catalogue with Qiy][API Basics Documentation Service Provider Setup Service Catalogue].\n\n\n[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Qiy Scheme Qiy Trust Network Access Provider]: https://qiy.api.digital-me.nl/#1ab15411-a026-4280-9d1b-c0a9613f2058 \n\n[API Basics Documentation Service Provider Setup Endpoints Data Reference Received-v2 Endpoint]: https://qiy.api.digital-me.nl/#c732aaee-15dd-45c8-8313-c322d79abf6f\n[API Basics Documentation Service Provider Setup Endpoints Feed Request Endpoint]: https://qiy.api.digital-me.nl/#253be29b-0315-4c53-9990-960c24e82998\n[API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf\n[API Basics Documentation Service Provider Setup Endpoints State Handled Endpoint]: https://qiy.api.digital-me.nl/#a6acb904-2e74-44ba-aae9-93e975dd5334\n\n[API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5\n\n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -1385,7 +1391,7 @@
 										{
 											"name": "Online Connect Tokens",
 											"item": [],
-											"description": "An Online Connect Token is a connect token that has been created using a [Request Connect Token](https://qiy.api.digital-me.nl/#9251bd1f-c8d9-49e1-91fb-a9a567a68aef).",
+											"description": "An Online Connect Token is a connect token that has been created by the [Qiy Trust Network][API Basics Documentation Qiy Scheme Qiy Trust Network] when executing [Request Connect Token][Connections Request connect token].\n\n[API Basics Documentation Qiy Scheme Qiy Trust Network]: https://qiy.api.digital-me.nl/#eee63fba-4e62-4b7a-bb5d-a091232430f4 \n\n[Connections Request connect token]: https://qiy.api.digital-me.nl/#7d46c068-a69b-4f79-a2c9-528e84b5aa75\n",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -1413,7 +1419,7 @@
 										{
 											"name": "Offline Connect Tokens",
 											"item": [],
-											"description": "An Offline Connect Token is a Connect Token that has been created by a Qiy Node Client and registered later using [Register connect token](https://qiy.api.digital-me.nl/#930a6f9b-00ad-4206-9420-e393cafde2d5).",
+											"description": "An Offline Connect Token is a Connect Token that has been [created][API Basics Documentation Qiy Node Client Connect Tokens Create Connect Token] by a Qiy Node Client and registered later using [Register connect token][Connections Register connect token].\n\n[API Basics Documentation Qiy Node Client Connect Tokens Create Connect Token]: https://qiy.api.digital-me.nl/#ee92593b-6798-4f80-85eb-a7563ba9de92\n[Connections Register connect token]: https://qiy.api.digital-me.nl/#a839e71c-3aa5-4515-88bf-35f6b2632616\n",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -1441,7 +1447,7 @@
 										{
 											"name": "On-Connected Actions",
 											"item": [],
-											"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection, see for example this [Create connect token](https://qiy.api.digital-me.nl/#ee9e6392-201b-4c6b-8c17-ffc236a7af36)-call.",
+											"description": "An On-Connected Actions is an action such as the execution of a http-request that can be defined for a Connect Token and that is executed whenever the token has been used to create a connection.",
 											"event": [
 												{
 													"listen": "prerequest",
@@ -1523,7 +1529,7 @@
 								{
 									"name": "Events",
 									"item": [],
-									"description": "A Qiy Node supports a number of events.\nThe Qiy Client can receive the events using a [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)-listener or using [callbacks][API Basics Documentation Service Provider Setup Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n\n",
+									"description": "A Qiy Node supports a number of events.\nThe Qiy Client can receive the events using a [Server-Sent Events](https://en.wikipedia.org/wiki/Server-sent_events)-listener, see [Start listening to events][Nodes Start listening to events], or using [callbacks][API Basics Documentation Service Provider Setup Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n[Nodes Start listening to events]: https://qiy.api.digital-me.nl/#fe3f2dc1-bdd9-467e-b9c8-cceada55ea30\n\n",
 									"event": [
 										{
 											"listen": "prerequest",
@@ -3808,14 +3814,12 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "Authorization",
-								"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
-								"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"key": "AP-Token",
+								"value": "{{AP-Token}}"
 							},
 							{
-								"key": "AP-Token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-								"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"key": "Authorization",
+								"value": "{{authorizationHeader}}"
 							}
 						],
 						"body": {
@@ -3823,7 +3827,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{referenceEndpointUrl}}?id={{feed_id}}",
+							"raw": "{{referenceEndpointUrl}}?id={{feed_id}}&since={{unixTimeInMilliSeconds}}",
 							"host": [
 								"{{referenceEndpointUrl}}"
 							],
@@ -3831,10 +3835,14 @@
 								{
 									"key": "id",
 									"value": "{{feed_id}}"
+								},
+								{
+									"key": "since",
+									"value": "{{unixTimeInMilliSeconds}}"
 								}
 							]
 						},
-						"description": "A Relying Party uses this [Reference Endpoint](https://qiy.api.digital-me.nl/#bb9b8b2c-d3c7-4177-a55d-38ae413b3399)-call to access a single [feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "A Relying Party uses this [Reference Endpoint][API Basics Dynamic Endpoint Addresses References Endpoint]-call to access a single [feed][API Basics Documentation Qiy Node Client Feeds].\nThe call returns an empty body when nothing has changed since the given timestamp and otherwise the normal response.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Dynamic Endpoint Addresses References Endpoint]: https://qiy.api.digital-me.nl/#a3dce696-97fb-4d1d-993d-b2863a5db16b \n"
 					},
 					"response": [
 						{
@@ -3843,14 +3851,12 @@
 								"method": "GET",
 								"header": [
 									{
-										"key": "Authorization",
-										"value": "QTF pt_usernode_dr_dp_lo 1521728878364:nNNvY8BxY0LucrOFOCBgg7s0GMaO9z+883CQEyMTvTvxUYlsN4OvA18tchuplVT9nmN4btD4NXAntqBkrGzey/fdyYrz6DmYSkB1d63/guXwLXhcwW0oI3JRIrCFcVwkCzAQ0uy3ppg979acz1Q8EMcQo9P5p06rRFlp1KEZ0HMPjHTW8ox60JAVHh+mc7h38g4RtQ2kLl5MiQfc66qa3EXF5Qf35CV4QL7phmozZzb/FafscpHdriY8oGGzYJa8M2YQdtc9Ql467c3A9U5Ab9rxxGEAdkh1Tts0Le05mk2ryAV7ao2+FOgwJEmahrcLwzqrCKnkm5wiwwWXaXOZYw==",
-										"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"key": "AP-Token",
+										"value": "{{apToken}}"
 									},
 									{
-										"key": "AP-Token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-										"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
 									}
 								],
 								"body": {
@@ -3902,12 +3908,18 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{referencesEndpointUrl}}",
+							"raw": "{{referencesEndpointUrl}}?since={{unixTimeInMilliSeconds}}",
 							"host": [
 								"{{referencesEndpointUrl}}"
+							],
+							"query": [
+								{
+									"key": "since",
+									"value": "{{unixTimeInMilliSeconds}}"
+								}
 							]
 						},
-						"description": "A Relying Party can use this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call to access all [feeds][API Basics Documentation Qiy Node Client Feeds] with one call.\n\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "A Relying Party can use this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call to access all [feeds][API Basics Documentation Qiy Node Client Feeds] with one call.\nWhen a since timestamp is given, none is returned for feeds that have not changed since that timestamp.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				}
