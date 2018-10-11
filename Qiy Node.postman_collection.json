@@ -582,7 +582,7 @@
 						{
 							"name": "Persistent Id Event",
 							"item": [],
-							"description": "This event that is fired after a [Connected to Router Event][API Basics Events Connected to Router Event] and can be [used][Connections Wait for Persistent Id Event] to detect whether [a connection has been created][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829 \"API Basics/Events/Connected to Router Event\"\n[Connections Wait for Persistent Id Event]: https://qiy.api.digital-me.nl/#43fe13e5-3753-4298-9d00-e055a9c527af\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n",
+							"description": "This event can be [used][Connections Persistent Id Event] to monitor [the creation of a connection][API Basics Documentation Qiy Node Client Connections].\n\n[Connections Persistent Id Event]: https://qiy.api.digital-me.nl/#43fe13e5-3753-4298-9d00-e055a9c527af\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n",
 							"event": [
 								{
 									"listen": "prerequest",
@@ -1849,13 +1849,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "{{authorizationHeader}}",
-								"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"value": "{{authorizationHeader}}"
 							},
 							{
 								"key": "AP-Token",
-								"value": "{{apToken}}",
-								"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"value": "{{apToken}}"
 							}
 						],
 						"body": {
@@ -1871,7 +1869,7 @@
 								"api"
 							]
 						},
-						"description": "Get [current addresses of the dynamic path endpoints][API Basics Dynamic Endpoint Addresses].\n\n[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 \n"
+						"description": "Get [current addresses of the dynamic path endpoints][API Basics Dynamic Endpoint Addresses].\n\n[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#60d5faea-fe97-48b3-82d5-708e8822708d\n"
 					},
 					"response": [
 						{
@@ -1881,13 +1879,11 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "{{authorizationHeader}}",
-										"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"value": "{{authorizationHeader}}"
 									},
 									{
 										"key": "AP-Token",
-										"value": "{{apToken}}",
-										"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"value": "{{apToken}}"
 									}
 								],
 								"body": {
@@ -2039,7 +2035,7 @@
 								}
 							]
 						},
-						"description": "This call can be used to define the addresses of the [event callback endpoints][API Basics Documentation Service Provider Setup Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n"
+						"description": "This call can be used to define the addresses of the [event callback endpoints][API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987\n"
 					},
 					"response": [
 						{
@@ -2123,7 +2119,7 @@
 								}
 							]
 						},
-						"description": "This call can be used to get the addresses of the [event callback endpoints][API Basics Documentation Service Provider Setup Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints]: https://qiy.api.digital-me.nl/#bfb59e6e-5e99-46b2-9faa-b13efc724bf4\n"
+						"description": "This call can be used to get the addresses of the [event callback endpoints][API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints].\n\n[API Basics Documentation Service Provider Setup Endpoints Event Callback Endpoints]: https://qiy.api.digital-me.nl/#c7c2726a-f351-4b58-8ca9-5102f8e7d987"
 					},
 					"response": [
 						{
@@ -2177,10 +2173,10 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "5dcfaff1-f7a4-4336-8b54-d4e9fc6fdce0",
-								"type": "text/javascript",
 								"exec": [
 									"// Use '//Dynamic Endpoint Addresses/Get Api' to the eventsEndpointUrl."
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2189,11 +2185,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": ""
+								"value": "{{authorizationHeader}}"
 							},
 							{
 								"key": "AP-Token",
-								"value": ""
+								"value": "{{apToken}}"
 							}
 						],
 						"body": {
@@ -2206,7 +2202,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "This [Events Endpoint](https://qiy.api.digital-me.nl/#220e545c-a66d-4e2a-a0fa-0cb75e473430)-call can be used to start listening to [Qiy Node events]()."
+						"description": "This [Events Endpoint][API Basics Dynamic Endpoint Addresses Events Endpoint]-call can be used to start listening to [Qiy Node events][API Basics Documentation Qiy Node Client Events].\n\n[API Basics Dynamic Endpoint Addresses Events Endpoint]: https://qiy.api.digital-me.nl/#d977b310-e443-4d44-ad73-614883cff0c9 \n[API Basics Documentation Qiy Node Client Events]: https://qiy.api.digital-me.nl/#1388f5dc-0ecc-4766-80a1-d7ae835a0c2d\n"
 					},
 					"response": []
 				},
@@ -2234,7 +2230,7 @@
 								"{{nodeSettingsEndpointUrl}}"
 							]
 						},
-						"description": "This [Node Settings Endpoint](https://qiy.api.digital-me.nl/#8891782a-45b0-4db1-a23c-25bd6b95c00b)-call returns the [node settings](https://qiy.api.digital-me.nl/#dc161dbb-f4e5-4b62-b26b-975433718438)."
+						"description": "This [Node Settings Endpoint][API Basics Dynamic Endpoint Addresses Node Settings Endpoint]-call returns the [node settings][API Basics Documentation Qiy Node Client Qiy Node Settings].\n\n[API Basics Dynamic Endpoint Addresses Node Settings Endpoint]: https://qiy.api.digital-me.nl/#9c20c9f1-60ef-440b-adc3-25fbecaeeb82 \n[API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5"
 					},
 					"response": [
 						{
@@ -2299,7 +2295,7 @@
 								"{{nodeSettingsEndpoint}}"
 							]
 						},
-						"description": "This [Node Settings Endpoint](https://qiy.api.digital-me.nl/#8891782a-45b0-4db1-a23c-25bd6b95c00b)-call sets the [node settings](https://qiy.api.digital-me.nl/#dc161dbb-f4e5-4b62-b26b-975433718438)."
+						"description": "This [Node Settings Endpoint][API Basics Dynamic Endpoint Addresses Node Settings Endpoint]-call sets the [node settings][API Basics Documentation Qiy Node Client Qiy Node Settings].\n\n[API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5\n[API Basics Dynamic Endpoint Addresses Node Settings Endpoint]: https://qiy.api.digital-me.nl/#9c20c9f1-60ef-440b-adc3-25fbecaeeb82 \n"
 					},
 					"response": []
 				},
@@ -2331,7 +2327,7 @@
 								"{{nodeDeleteEndpointUrl}}"
 							]
 						},
-						"description": "This [Node Delete Endpoint](https://qiy.api.digital-me.nl/#0370be24-ad26-4e2b-af33-7a7df3b766c2)-call can be used to [delete a Qiy Node](https://qiy.api.digital-me.nl/#efef253e-5873-4546-9f5d-9e330d85e7f8)."
+						"description": "This [Node Delete Endpoint][API Basics Dynamic Endpoint Addresses Node Delete Endpoint]-call can be used to [delete a Qiy Node][API Basics Documentation Qiy Node Client Qiy Node].\n\n[API Basics Dynamic Endpoint Addresses Node Delete Endpoint]: https://qiy.api.digital-me.nl/#126c2192-0239-44de-83ec-ace415eee347 \n[API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 \n"
 					},
 					"response": [
 						{
@@ -2406,10 +2402,10 @@
 							"listen": "prerequest",
 							"script": {
 								"id": "ed86a9c4-5d02-4758-a6cc-cbd5285132a8",
-								"type": "text/javascript",
 								"exec": [
-									"// Use '//Dynamic Endpoint Addresses/GET Api' to get the serviceCatalogueEndpointUrl"
-								]
+									""
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -2418,17 +2414,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-								"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+								"value": "{{authorizationHeader}}"
 							},
 							{
 								"key": "AP-Token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-								"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
-							},
-							{
-								"key": "",
-								"value": ""
+								"value": "{{apToken}}"
 							}
 						],
 						"body": {
@@ -2436,14 +2426,14 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+							"raw": "{{serviceCatalogueEndpointUrl}}?internal=False",
 							"host": [
 								"{{serviceCatalogueEndpointUrl}}"
 							],
 							"query": [
 								{
 									"key": "internal",
-									"value": "True",
+									"value": "False",
 									"description": "If False or None, only external services will be gotten."
 								}
 							]
@@ -2458,13 +2448,11 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "QTF pt_usernode_qnc_test_de 1519064940667:qtLYGGLWtsBELt9YWh/MBwqofyMNiTzUZypYeA+VjbOWt6LWdG1Fp3xZHlfPHADZUlBgvyWGyirCEqg8qBYiJXJsXaZDz5t+qQSZx0Euod7aMaSDPIUqeicujiKJAQLEyQYb5g9nJFXswKus6gq1DlXU807eGLkf8LYMrRMLijLcXnSbu7iW0ZZgnNwVS3+9NOTBLTwhy166DO7Th7IGz/4FxWq7ba90Hhp24PzYvskaC8FCEj1iNs4T8uu6KWvazN3xZL40WLUFK9m5FjJP4epaCwjqJSOtmhovqkEu++ML3K7Us5rPM9toshPZwut5VYEJFkMBSMsoTK5xdz7Qrw==",
-										"description": "See https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"value": "{{authorizationHeader}}"
 									},
 									{
 										"key": "AP-Token",
-										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3d3dy5kaWdpdGFsLW1lLm5sIiwic3ViIjoiaHR0cHM6Ly93d3cuenVyaWNoLmNvbSIsImlhdCI6MTUzNjU2NzQ1MCwiZXhwIjoxNTM4MzUyMDAwfQ.mDgmvkfrt7BKWMtDaIevBHGTD3T5j5Wzc8Mf25SN0IE",
-										"description": "Access Provider Token, see https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication"
+										"value": "{{apToken}}"
 									}
 								],
 								"body": {
@@ -2472,14 +2460,14 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{serviceCatalogueEndpointUrl}}?internal=True",
+									"raw": "{{serviceCatalogueEndpointUrl}}?internal=False",
 									"host": [
 										"{{serviceCatalogueEndpointUrl}}"
 									],
 									"query": [
 										{
 											"key": "internal",
-											"value": "True"
+											"value": "False"
 										}
 									]
 								}
@@ -2489,7 +2477,7 @@
 							"_postman_previewlanguage": "Text",
 							"header": [],
 							"cookie": [],
-							"body": "{\r\n        \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\"type\": \"internal\"},\r\n        \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
+							"body": "{\r\n        \"{{serviceTypeUrl}}\": {\r\n            \"type\": \"external\",\r\n            \"uri\": \"{{feedRequestEndpointUrl}}\",\r\n            \"method\": \"POST\"\r\n        }\r\n}"
 						}
 					]
 				},
@@ -2500,11 +2488,11 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": ""
+								"value": "{{authorizationHeader}}"
 							},
 							{
 								"key": "AP-Token",
-								"value": ""
+								"value": "{{apToken}}"
 							},
 							{
 								"key": "Content-Type",
@@ -2513,7 +2501,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"https://protocols.qidida.nl/dappre/v.1.0.0\": {\r\n    \"type\": \"internal\"\r\n  },\r\n  \"https://github.com/qiyfoundation/fiKks/tree/969b4fb67ff6c1678848bb258544530e15ab4b47/schema%201.0\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"http://localhost:8097/dataprovider/qiymessageendpoint\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
+							"raw": "{\r\n  \"{{serviceTypeUrl}}\": {\r\n    \"type\": \"external\",\r\n    \"uri\": \"{{feedRequestEndpointUrl}}\",\r\n    \"method\": \"POST\"\r\n  }\r\n}"
 						},
 						"url": {
 							"raw": "{{serviceCatalogueEndpointUrl}}",
@@ -2549,7 +2537,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"dkdk\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
+							"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"query_parameter\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
 						},
 						"url": {
 							"raw": "{{referencesEndpointUrl}}",
@@ -2584,7 +2572,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"dkdk\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
+									"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"query_parameter\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
 								},
 								"url": {
 									"raw": "{{referencesEndpointUrl}}",
@@ -2603,32 +2591,69 @@
 				{
 					"name": "Operation request",
 					"request": {
-						"method": "GET",
-						"header": [],
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"user_id\": \"example-user-id\"\n}"
 						},
 						"url": {
-							"raw": ""
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Operation response",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
+							"raw": "{{serviceEndpointUrl}}?example=query_param",
+							"host": [
+								"{{serviceEndpointUrl}}"
+							],
+							"query": [
+								{
+									"key": "example",
+									"value": "query_param"
+								}
+							]
 						},
-						"url": {
-							"raw": ""
-						}
+						"description": "This [Service Endpoint][API Basics Documentation Service Provider Setup Endpoints Service Endpoint]-call is used to [execute an operation when a feed is accessed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Service Provider Setup Endpoints Service Endpoint]: https://qiy.api.digital-me.nl/#e07ccfda-653e-48c1-bf02-657dc4581cdf\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Operation request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"user_id\": \"example-user-id\"\n}"
+								},
+								"url": {
+									"raw": "{{serviceEndpointUrl}}?example=query_param",
+									"host": [
+										"{{serviceEndpointUrl}}"
+									],
+									"query": [
+										{
+											"key": "example",
+											"value": "query_param"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{{operationResponseExample}}"
+						}
+					]
 				}
 			],
 			"event": [
@@ -2689,7 +2714,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call can be used to [request a connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
+						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call can be used to [request a connect token][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
 					},
 					"response": [
 						{
@@ -2766,7 +2791,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint](https://qiy.api.digital-me.nl/#e734037d-11a5-4e91-bf84-8744d08ba04c)-call registers a [connect token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
+						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call registers a [connect token][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
 					},
 					"response": [
 						{
@@ -2906,7 +2931,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "The [Connected to Router Event](https://qiy.api.digital-me.nl/#84b8e4ef-5a2a-48a0-a16b-c67ad0288692) can be used to monitor the [creation of a connection](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+						"description": "The [Connected to Router Event][API Basics Events Connected to Router Event] can be used to monitor the [creation of a connection][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Events Connected to Router Event]: https://qiy.api.digital-me.nl/#f9240b5c-ebbc-4e59-a56b-add09ed40829"
 					},
 					"response": []
 				},
@@ -2946,7 +2971,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "The [Persistent Id Event](https://qiy.api.digital-me.nl/#9803c85c-8046-4a51-9de2-26bbb0bdd89f) is an event that is created upon [creation of a connection][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n"
+						"description": "The [Persistent Id Event][API Basics Events Persistent Id Event] is an event that is created upon [creation of a connection][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Events Persistent Id Event]: https://qiy.api.digital-me.nl/#de369648-ff07-4019-a920-e138e8842537 \n"
 					},
 					"response": [
 						{
@@ -3106,7 +3131,7 @@
 								"{{connectionEndpointUrl}}"
 							]
 						},
-						"description": "This [Connection Endpoint](https://qiy.api.digital-me.nl/#179d919c-3a87-4dc0-8aef-7c8d97e4b4f8)-call returns [connection details](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+						"description": "This [Connection Endpoint][API Basics Dynamic Endpoint Addresses Connection Endpoint]-call returns [connection details][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Dynamic Endpoint Addresses Connection Endpoint]: https://qiy.api.digital-me.nl/#8f0e9b93-2214-4550-8a74-e9f69d4d0896 \n"
 					},
 					"response": [
 						{
@@ -3158,7 +3183,7 @@
 								"{{connectionsEndpointUrl}}"
 							]
 						},
-						"description": "This [Connections List Endpoint](https://qiy.api.digital-me.nl/#ef3d0b04-f3ff-41e6-8b87-1e5ef0b885b6)-call can be used to list [connections](https://qiy.api.digital-me.nl/#8a36da9d-6f90-481d-83e7-f5c7398105df)."
+						"description": "This [Connections List Endpoint][API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]-call can be used to list [connections][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n[API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]: https://qiy.api.digital-me.nl/#d6197981-983c-4bd0-bfa4-10b5ab989bc2 \n"
 					},
 					"response": []
 				},
@@ -3190,7 +3215,7 @@
 								"{{connectTokenUrl}}"
 							]
 						},
-						"description": "The Get connect token request can be used to get the details of a [Connect Token](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c), using a connectionUrl that has been returned in the Location header of the response of a [Create Token Request](https://qiy.api.digital-me.nl/#b8ad134d-b693-48d7-bdac-5a9a63be319f)."
+						"description": "This call returns the details of a [Connect Token][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n"
 					},
 					"response": [
 						{
@@ -3246,7 +3271,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token List Endpoint](https://qiy.api.digital-me.nl/#810b87f6-54d1-47e0-afd5-e6ea15f34596)-call lists the [connect tokens](https://qiy.api.digital-me.nl/#815d43f7-d59f-4293-994d-1543d244cb1c)."
+						"description": "This [Connect Token List Endpoint][API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]-call lists the [connect tokens][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]: https://qiy.api.digital-me.nl/#d6197981-983c-4bd0-bfa4-10b5ab989bc2 \n"
 					},
 					"response": []
 				}
@@ -3401,7 +3426,7 @@
 								}
 							]
 						},
-						"description": "This [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call lists [messages](https://qiy.api.digital-me.nl/#2a0c6c4b-bd2a-4b65-9282-bfdad3c1da81)."
+						"description": "This [Mailbox Endpoint][API Basics Dynamic Endpoint Addresses Mailbox Endpoint]-call lists [messages][API Basics Documentation Qiy Node Client Messages].\n\n[API Basics Dynamic Endpoint Addresses Mailbox Endpoint]: https://qiy.api.digital-me.nl/#e57ed787-8886-4779-a254-c886027e7693 \n[API Basics Documentation Qiy Node Client Messages]: https://qiy.api.digital-me.nl/#97039b65-10f5-46c5-8c38-cbaa77965e9e\n"
 					},
 					"response": []
 				}
@@ -3503,7 +3528,7 @@
 								"{{mailboxEndpointUrl}}"
 							]
 						},
-						"description": "A [Relying Party](https://qiy.api.digital-me.nl/#3ec67316-76d5-4e42-bc26-5d893d7686bb) uses this [Mailbox Endpoint](https://qiy.api.digital-me.nl/#2f065134-6a80-49f4-869b-1ff8308544db)-call to request for a [feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n"
+						"description": "A [Relying Party][API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party] uses this [Mailbox Endpoint][API Basics Dynamic Endpoint Addresses Mailbox Endpoint]-call to request for a [feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Documentation Qiy Scheme Qiy User Service Provider Relying Party]: https://qiy.api.digital-me.nl/#83e71a3d-fdac-488b-a1bb-3364130736cf \n[API Basics Dynamic Endpoint Addresses Mailbox Endpoint]: https://qiy.api.digital-me.nl/#e57ed787-8886-4779-a254-c886027e7693 \n"
 					},
 					"response": []
 				},
@@ -3569,7 +3594,7 @@
 								"{{eventsEndpointUrl}}"
 							]
 						},
-						"description": "A Relying Party can use the [Data Reference Received Event-v2](https://qiy.api.digital-me.nl/#6a83bdd6-5a06-4022-8864-db5e1f75d01d) to detect the [receipt of a feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "A Relying Party can use the [Data Reference Received Event-v2][API Basics Events Data Reference Received Event-v2] to detect a [new feed][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Events Data Reference Received Event-v2]: https://qiy.api.digital-me.nl/#d8faf908-cb04-4fb1-84ed-06521e171234 \n"
 					},
 					"response": [
 						{
@@ -3708,7 +3733,7 @@
 								"{{actionUrl}}"
 							]
 						},
-						"description": "An End User App uses this call to [change the service deployment][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "An End User App uses this call to [set Data Providers as sources for a feed request][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
@@ -3736,7 +3761,7 @@
 								"{{actionUrl}}"
 							]
 						},
-						"description": "An End User App uses this call to [deploy (an operation of) a service][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "An End User App uses this call to [add a Data Provider as a source for a feed request][API Basics Documentation Qiy Node Client Feeds].\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
 					},
 					"response": []
 				},
@@ -3907,7 +3932,7 @@
 								"{{referencesEndpointUrl}}"
 							]
 						},
-						"description": "A Relying Party can use this [References Endpoint](https://qiy.api.digital-me.nl/#e05d1fd5-8d25-4603-9d97-74eb48e4695d)-call to access all [feeds][API Basics Documentation Qiy Node Client Feeds] with one call.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5"
+						"description": "A Relying Party can use this [References Endpoint][API Basics Dynamic Endpoint Addresses References Endpoint]-call to access all [feeds][API Basics Documentation Qiy Node Client Feeds] with one call.\n\n[API Basics Documentation Qiy Node Client Feeds]: https://qiy.api.digital-me.nl/#da1fbe7f-e134-4b94-94be-f1627696b4d5\n[API Basics Dynamic Endpoint Addresses References Endpoint]: https://qiy.api.digital-me.nl/#a3dce696-97fb-4d1d-993d-b2863a5db16b \n"
 					},
 					"response": []
 				}
