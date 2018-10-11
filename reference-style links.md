@@ -3,8 +3,8 @@
 [API Basics Registration]: https://qiy.api.digital-me.nl/#c8a0230e-621d-4712-ad41-8b85505f84ac 
 [API Basics Service Desk]: https://qiy.api.digital-me.nl/#ed7fab2c-dee1-4938-ad46-72b1b2c144a5 
 [API Basics Versions]: https://qiy.api.digital-me.nl/#80ca583f-a0fe-46e3-a45a-8208775b8710 
-[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 
-[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24 
+[API Basics Authentication]: https://qiy.api.digital-me.nl/#04f646a9-412a-4a0d-8bed-cafd2aa3da24
+[API Basics Dynamic Endpoint Addresses]: https://qiy.api.digital-me.nl/#60d5faea-fe97-48b3-82d5-708e8822708d
 [API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 
 [API Basics Dynamic Endpoint Addresses Connect Token List Endpoint]: https://qiy.api.digital-me.nl/#d6197981-983c-4bd0-bfa4-10b5ab989bc2 
 [API Basics Dynamic Endpoint Addresses Connection Create Endpoint]: https://qiy.api.digital-me.nl/#1f717ab4-81e7-4181-9cff-ee77fe114131 
