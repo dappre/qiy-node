@@ -95,8 +95,44 @@
 				},
 				{
 					"name": "Authentication",
-					"item": [],
-					"description": "In order to be able to access a Qiy Node, a Qiy Node Client MUST have:\n1. A Qiy Node Credential consisting of a Qiy Node Id, a primary key and a Transport Password.\n2. A valid Access Provider Token.\n\n## Access Provider Token\nAll requests to a Qiy Node MUST be authenticated with a valid Access Provider Token.\n\n## Authorization Header Parameter\nAll requests but the [request to create a Qiy Node][Nodes Request creation of Qiy Node] and the [Api Request][API] MUST be authenticated with a correct Authorization header, for details see [chapter 4 Authentication](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\nSee [GET Api][API Get api] for an example of an authenticated request.\n\n## Password Header Parameter\nRequest that require the use of the Transport Layer MUST be authenticated with a valid Transport Passowrd in the 'password' header parameter of the request.\nSee also [the Qiy Node requests that have been labeled as 'Transport Requests'](https://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests) in the [Digit Me Qiy Node API in Open API format](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.json).\n\n[API]: https://qiy.api.digital-me.nl/#ede42470-fd30-4f2c-b5dc-62a2be09ad34\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869",
+					"item": [
+						{
+							"name": "Authorization Header Parameter",
+							"item": [
+								{
+									"name": "Bash",
+									"item": [],
+									"description": "The authorization header parameter can be generated with this Bass script:\n\n```\n#!/usr/bin/env bash\n\nset -eu\n\n#########################\n# Test input to make things reproducable\n#########################\nUUID=\"bd89bab6-9d28-48ae-ba90-c3ed6472f502\"\nNONCE=\"1497006092128\"\nINPUT=\"\"\n\n#########################\n# Cacluate the actual signature\n#########################\nauthHeader() {\n\tlocal -r NONCE=$(date +%s%3N)\n\tlocal -r TOSIGN=\"${UUID}${NONCE}${1:-}\"\n    local -r SIG=$(printf \"%s\" \"${TOSIGN}\" | openssl dgst -sha256 -sign ${UUID}_private.pem | base64 -w0)\n    AUTH_HEADER=\"QTF ${UUID} ${NONCE}:${SIG}\"\n}\n\n#########################\n# Convert private key to PEM\n#########################\ngenPem() {\n\tlocal -r dashes=\"-----\"\n\tlocal -r private_key='<MAKE SURE TO REPLACE THIS TEXT WITH THE PRIVATE KEY BEFORE USING THIS SCRIPT>'\n\tprintf \"%sBEGIN RSA PRIVATE KEY%s\\n%s\\n%sEND RSA PRIVATE KEY%s\\n\" \"${dashes}\" \"${dashes}\" \"${private_key}\" \"${dashes}\" \"${dashes}\" > ${UUID}_private.pem\n}\n\n\n\n\n\n#########################\n# Do actual work\n#########################\ngenPem\nauthHeader \"${INPUT}\"\necho -e \"Given \\n  input = [${INPUT}], \\n  nonce = [${NONCE}] and \\n  ID    = [${UUID}] \\nWhen I calculate the Authorization header\\nThen the value should be: \\n  [${AUTH_HEADER}]\"\n\n```",
+									"_postman_isSubFolder": true
+								}
+							],
+							"description": "All requests but the [request to create a Qiy Node][Nodes Request creation of Qiy Node] and the [Api Request][API] MUST be authenticated with a correct Authorization header, for details see [chapter 4 Authentication](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#4-authentication) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\n\n## Python\n\nIn Python, the authorization header parameter can be calculated with the package 'pyOpenSSL'.\nUsing a [pem-file with the primary key of the Qiy Node][API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential Qiy Node Primary Key] it can be generated as follows:\n\n```\nfrom OpenSSL.crypto import sign\nfrom base64 import b64encode\nimport OpenSSL\n\ndef authHeader(qiy_node_id, unix_time_in_msecs, body):\n        tosign=\"{0}{1}{2}\".format(qiy_node_id, unix_time_in_msecs, body)\n        print(\"tosign: '{0}'\".format(tosign))\n        with open(<File with private key in pem format>,\"r\") as f:\n                buffer=f.read()\n        key=OpenSSL.crypto.load_privatekey(OpenSSL.crypto.FILETYPE_PEM,buffer)\n        signature=b64encode(sign(\n                key\n                ,tosign\n                ,\"sha256\")\n                ).decode()\n        return \"QTF {0} {1}:{2}\".format(qiy_node_id, unix_time_in_msecs, signature)\n```\n\n[API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential Qiy Node Primary Key]: https://qiy.api.digital-me.nl/#184c27c7-8a12-4ea4-87a7-b7daa39724ae\n",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "1b853b19-a641-4e79-8704-03fe3eb1475a",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "a3b53a0f-f5dc-45e5-9293-27dff1727cc6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"description": "In order to be able to access a Qiy Node, a Qiy Node Client MUST have:\n1. A [Qiy Node Credential][API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential] consisting of a Qiy Node Id, a [primary key][API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential Qiy Node Primary Key] and a Transport Password.\n2. A valid Access Provider Token.\n\n[API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential]: https://qiy.api.digital-me.nl/#9982e691-f8c2-437f-b617-81b880f78957\n[API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential Qiy Node Primary Key]: https://qiy.api.digital-me.nl/#184c27c7-8a12-4ea4-87a7-b7daa39724ae\n\n\n\n## Access Provider Token\nAll requests to a Qiy Node MUST be authenticated with a valid Access Provider Token.\n\n## Password Header Parameter\nRequest that require the use of the Transport Layer MUST be authenticated with a valid Transport Passowrd in the 'password' header parameter of the request.\nSee also [the Qiy Node requests that have been labeled as 'Transport Requests'](https://htmlpreview.github.io/?https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.html#TransportRequests) in the [Digit Me Qiy Node API in Open API format](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node-api.json).\n\n[API]: https://qiy.api.digital-me.nl/#ede42470-fd30-4f2c-b5dc-62a2be09ad34\n[API Get Api]: https://qiy.api.digital-me.nl/#cfcdd3d9-af6b-42f7-bd54-8db9c30670ca\n[Nodes Request creation of Qiy Node]: https://qiy.api.digital-me.nl/#ff5de5df-0327-46d2-b23c-2090031ed869",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1299,6 +1335,69 @@
 															""
 														]
 													}
+												}
+											],
+											"_postman_isSubFolder": true
+										},
+										{
+											"name": "Qiy Node Credential",
+											"item": [
+												{
+													"name": "Qiy Node Primary Key",
+													"item": [
+														{
+															"name": "Qiy Node Public Key",
+															"item": [],
+															"description": "In python, the public key can be obtained using the package 'pyOpenSSL'.\nGiven the pem-file, this goes as follows:\n\n```\nimport OpenSSL\n\nwith open(\"data/\"+target_short_node_id+\".pem\" , \"r\") as f:\n    buffer = f.read()\nprivate_key = OpenSSL.crypto.load_privatekey(OpenSSL.crypto.FILETYPE_PEM, buffer)\npublic_key=OpenSSL.crypto.dump_publickey(\n    OpenSSL.crypto.FILETYPE_ASN1,\n    private_key)\n```",
+															"event": [
+																{
+																	"listen": "prerequest",
+																	"script": {
+																		"id": "a7a79fc1-57ff-44c4-85a3-6a5d64fd38c8",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																},
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "f1f0e2a7-d217-4336-976e-b06289a02704",
+																		"type": "text/javascript",
+																		"exec": [
+																			""
+																		]
+																	}
+																}
+															],
+															"_postman_isSubFolder": true
+														}
+													],
+													"description": "One element of the Qiy Node Credential is the primary key.\n\n## Python\nIn Python, the primary key can be created with the package 'cryptography'.\nThe key can be created and persisted as follows:\n\n```\nfrom cryptography.hazmat.backends import default_backend\nfrom cryptography.hazmat.primitives.asymmetric.rsa import generate_private_key\nfrom cryptography.hazmat.primitives import serialization\n\nprivate_key = generate_private_key(\n                backend=default_backend(),\n                public_exponent=65537,\n                key_size=2048\n                )\n           \nwith open(pem_filename, \"wb\") as f:\n    f.write(private_key.private_bytes(\n        encoding=serialization.Encoding.PEM,\n        format=serialization.PrivateFormat.TraditionalOpenSSL,\n        encryption_algorithm=serialization.NoEncryption())\n        )\n\n```",
+													"event": [
+														{
+															"listen": "prerequest",
+															"script": {
+																"id": "9a6531da-7c03-4a6c-8f1d-3879d1be716f",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														},
+														{
+															"listen": "test",
+															"script": {
+																"id": "9dab7ec7-654d-41b3-a791-76effce2cede",
+																"type": "text/javascript",
+																"exec": [
+																	""
+																]
+															}
+														}
+													],
+													"_postman_isSubFolder": true
 												}
 											],
 											"_postman_isSubFolder": true
@@ -2753,7 +2852,14 @@
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "json",
-							"header": [],
+							"header": [
+								{
+									"key": "Location",
+									"value": "{{connectTokenUrl}}",
+									"description": "",
+									"type": "text"
+								}
+							],
 							"cookie": [],
 							"body": "{\n    \"expires\": 2349020398,\n    \"name\": \"example token\",\n    \"note\": \"Just an example\",\n    \"useBudget\": 1,\n    \"json\": {\n        \"identifier\": \"Service Provider\",\n        \"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n        \"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n    }\n}"
 						}
