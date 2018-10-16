@@ -51,6 +51,8 @@
 [API Basics Documentation Service Provider Setup Service Catalogue]: https://qiy.api.digital-me.nl/#c44dce48-4751-4005-bdba-6548008c6bd5
 [API Basics Documentation Qiy Node Client]: https://qiy.api.digital-me.nl/#e0eb3de1-46e1-4e68-bc19-9bb5b4bc1fb8
 [API Basics Documentation Qiy Node Client Qiy Node]: https://qiy.api.digital-me.nl/#8df46271-d5b2-4f76-87db-efb6e4947483 
+[API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential]: https://qiy.api.digital-me.nl/#9982e691-f8c2-437f-b617-81b880f78957
+[API Basics Documentation Qiy Node Client Qiy Node Qiy Node Credential Qiy Node Primary Key]: https://qiy.api.digital-me.nl/#184c27c7-8a12-4ea4-87a7-b7daa39724ae
 [API Basics Documentation Qiy Node Client Qiy Node Settings]: https://qiy.api.digital-me.nl/#8280a435-f84e-44e7-a5c3-d2f9bbea62e5
 [API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475
 [API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68
