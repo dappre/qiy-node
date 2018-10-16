@@ -2901,6 +2901,46 @@
 					},
 					"response": [
 						{
+							"name": "Register connect token - NOK: connect token already exists",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{authorizationHeader}}"
+									},
+									{
+										"key": "AP-Token",
+										"value": "{{apToken}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "password",
+										"value": "{{transportPassword}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"useBudget\": 1,\n\t\"json\": {\n\t\t\"identifier\": \"Service Provider\",\n\t\t\"tmpSecret\": \"7nzMAI61N6b5dPCCYD4IgQ==\",\n\t\t\"target\": \"https://issuer.dolden.net/issuer/routes/webhook/5e581908-06d3-4ad0-9f14-8ec85b9b9fb4\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "{{connectTokenEndpointUrl}}",
+									"host": [
+										"{{connectTokenEndpointUrl}}"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						},
+						{
 							"name": "Register connect token - OK",
 							"originalRequest": {
 								"method": "POST",
