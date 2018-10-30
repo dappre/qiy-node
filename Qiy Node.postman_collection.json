@@ -2813,7 +2813,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call can be used to [request a connect token][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
+						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call can be used to [request a connect token][API Basics Documentation Qiy Node Client Connect Tokens]: a json object with the members 'identifier', 'tmpSecret' and 'target'. The call returns the Connect Token Url in the Location header of the response.\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
 					},
 					"response": [
 						{
@@ -2897,7 +2897,7 @@
 								"{{connectTokenEndpointUrl}}"
 							]
 						},
-						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call registers a [connect token][API Basics Documentation Qiy Node Client Connect Tokens].\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
+						"description": "This [Connect Token Endpoint][API Basics Dynamic Endpoint Addresses Connect Token Endpoint]-call registers a [connect token][API Basics Documentation Qiy Node Client Connect Tokens]: a json object with the members 'identifier', 'tmpSecret' and 'target'.  The call returns the Connect Token Url in the Location header of the response.\n\n[API Basics Documentation Qiy Node Client Connect Tokens]: https://qiy.api.digital-me.nl/#1944c8e7-d114-4de1-ab5f-b3f1f7025e68\n[API Basics Dynamic Endpoint Addresses Connect Token Endpoint]: https://qiy.api.digital-me.nl/#ddf77be7-0ade-43ed-b796-9ed97b22cf30 \n"
 					},
 					"response": [
 						{
@@ -3037,7 +3037,7 @@
 								"{{connectionCreateEndpointUrl}}"
 							]
 						},
-						"description": "This [Connection Create Endpoint][API Basics Dynamic Endpoint Addresses Connection Create Endpoint]-call can be used to [request a connection][API Basics Documentation Qiy Node Client Connections].\n\n[API Basics Dynamic Endpoint Addresses Connection Create Endpoint]: https://qiy.api.digital-me.nl/#1f717ab4-81e7-4181-9cff-ee77fe114131 \n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n"
+						"description": "This [Connection Create Endpoint][API Basics Dynamic Endpoint Addresses Connection Create Endpoint]-call can be used to [request a connection][API Basics Documentation Qiy Node Client Connections] using a Connect Token: a json object with the members 'identifier', 'tmpSecret' and 'target'.\n\n[API Basics Dynamic Endpoint Addresses Connection Create Endpoint]: https://qiy.api.digital-me.nl/#1f717ab4-81e7-4181-9cff-ee77fe114131 \n[API Basics Documentation Qiy Node Client Connections]: https://qiy.api.digital-me.nl/#1778d5ca-9420-4ae3-826e-9a8a729b5475\n"
 					},
 					"response": []
 				},
