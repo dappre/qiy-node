@@ -2642,7 +2642,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"body\": { \"user_id\": \"example-user-id\" },\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": { \"example\": \"query_parameter\" },\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
+							"raw": "{\n\t\"body\": \"{\\\"user_id\\\": \\\"example-user-id\\\"}\",\n\t\"headers\": { \"content-type\": \"application/json\", \"content-encoding\": \"identity\" },\n\t\"method\": \"POST\",\n\t\"queryParams\": \"example=query_parameter\",\n\t\"transport\": \"HTTPS\",\n\t\"url\": \"https://service-endpoint.org/\"\n}"
 						},
 						"url": {
 							"raw": "{{referencesEndpointUrl}}",
