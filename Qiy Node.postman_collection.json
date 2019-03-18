@@ -553,7 +553,29 @@
 				{
 					"name": "Servers",
 					"item": [],
-					"description": "Digital Me provides the Qiy Node service on different servers.\nFor details, please refer to [section 2.3 QS User Node Servers](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#23-qs-user-node-servers) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+					"description": "The Qiy Node service runs in the test environment, the acceptance environment and the production environment.\nFor details, please refer to [section 2.3 QS User Node Servers](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#23-qs-user-node-servers) of the [Digital Me Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\n\nEnsure that the following system settings are configurable to allow for smooth switching between the environments:\n* server url\n* Qiy Node Id\n* Qiy Node private key\n* Transport password\n* Access Provider Token\n\n",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "30830172-47da-41ad-8537-c2880462c7f0",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "fbd2e8cf-2e31-46a7-9460-d76f28c11392",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
 					"_postman_isSubFolder": true
 				},
 				{
