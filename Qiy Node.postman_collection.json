@@ -40,7 +40,7 @@
 				{
 					"name": "Service Desk",
 					"item": [],
-					"description": "For contact details of the DigitalMe Service Desk, please refer to [section 2.1 Service Desk](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#21-service-desk) of the [DigitalMe Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).",
+					"description": "Please contact the Service Desk for your requests. The Service Desk is available during regular CEST office hours and can be contacted by e-mail or phone:\r\n* service@digital-me.nl\r\n* +31 (0) 411-616565\r\n",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -642,10 +642,33 @@
 						{
 							"name": "Mock Server",
 							"item": [],
+							"description": "NB: Please ignore the contents in this folder\n\nThe requests are used to define the behaviour of the Mock Server.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3b2d626c-2e9b-4207-8996-6b91d86614b2",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "87dd80de-d4af-4d0a-a95f-d915c4ff2871",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
 							"_postman_isSubFolder": true
 						}
 					],
-					"description": "The Qiy Node service runs in the test environment, the acceptance environment and the production environment.\nFor the server urls please refer to [section 2.3 QS User Node Servers](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#23-qs-user-node-servers) of the [DigitalMe Qiy Node specification](https://github.com/digital-me/qiy-node/blob/topic/data-reuse/qs-user-node.md#1-introduction).\n\nEnsure that the following system settings are configurable to allow for smooth switching between the environments:\n* server url\n* Qiy Node Id\n* Qiy Node private key\n* Transport password\n* Access Provider Token\n\n\n",
+					"description": "The Qiy Node service runs in a Mock environment, a development environment, the acceptance environment and the production environment. The server urls are:\n\n<table>\n  <tr>\n    <th>DTAP environment</th>\n    <th>Server url</th>\n  </tr>\n  <tr>\n    <td>Mock</td>\n    <td> - See the url variable in the Postman 'Mock Server' environment - </td>\n  </tr>\n  <tr><td>Dev2\n    </td><td>https://dev2-user.testonly.digital-me.nl/user\n    </td></tr>\n  <tr><td>Acceptance\n    </td><td>https://user.dolden.net/user\n    </td></tr>\n</table>\n\nThe server url of the Production environment will be given during the entry-transition phase, when your Qiy Trust Based solution will go live.\n\nEnsure that the following system settings are configurable to allow for smooth switching between the environments:\n* server url\n* Qiy Node Id\n* Qiy Node private key\n* Transport password\n* API key\n\n\n",
 					"event": [
 						{
 							"listen": "prerequest",
