@@ -2865,7 +2865,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{{pid1sp1feed1bodyBase64Encoded}}"
+															"raw": ""
 														},
 														"url": {
 															"raw": "{{sp1feedsEndpointUrl}}/{{pid1sp1feedId1}}",
@@ -2927,7 +2927,7 @@
 																"key": "Content-Type",
 																"name": "Content-Type",
 																"type": "text",
-																"value": "text/plain"
+																"value": "application/xml"
 															},
 															{
 																"key": "x-mock-response-name",
@@ -2938,7 +2938,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{{duePaymentsRpFeedRequestBodyBase64Encoded}}"
+															"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n    <ds:KeyValue>\r\n        <ds:RSAKeyValue>\r\n            <ds:Modulus>6sNhgtNVksGD4ZK1rW2iiGO11O/BzEIZazovnMK37y3RVvvjmv1z44uA505gyyUTziCntHV9tONmJ11bH4koqqJQFZPXuKAyuu9eR3W/pZ4EGBMMIVH2aqSOsPMTI5K9l2YOW8fAoEZQtYVWsCrygOyctBiamJZRJ+AKFZCIY5E=</ds:Modulus>\r\n            <ds:Exponent>AQAB</ds:Exponent>\r\n        </ds:RSAKeyValue>\r\n    </ds:KeyValue>\r\n</ds:KeyInfo>\r\n"
 														},
 														"url": {
 															"raw": "{{duePaymentsRpFeedsEndpointUrl}}/{{duePaymentsOfUser1FeedId}}",
@@ -2959,18 +2959,18 @@
 																	{
 																		"key": "Content-Type",
 																		"name": "Content-Type",
-																		"value": "text/plain",
+																		"value": "application/xml",
 																		"type": "text"
 																	},
 																	{
 																		"key": "Accept",
-																		"value": "text/xml",
+																		"value": "application/xml",
 																		"type": "text"
 																	}
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "PD94bWwgdmVyc2lvbj1cIjEuMFwiIGVuY29kaW5nPVwiVVRGLThcIj8+CjxkczpLZXlJbmZvIHhtbG5zOmRzPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI1wiPgogICAgPGRzOktleVZhbHVlPgogICAgICAgIDxkczpSU0FLZXlWYWx1ZT4KICAgICAgICAgICAgPGRzOk1vZHVsdXM+NnNOaGd0TlZrc0dENFpLMXJXMmlpR08xMU8vQnpFSVphem92bk1LMzd5M1JWdnZqbXYxejQ0dUE1MDVneXlVVHppQ250SFY5dE9ObSYjMTM7IAogICAgICAgICAgICAgICAgSjExYkg0a29xcUpRRlpQWHVLQXl1dTllUjNXL3BaNEVHQk1NSVZIMmFxU09zUE1USTVLOWwyWU9XOGZBb0VaUXRZVldzQ3J5Z095YyYjMTM7CiAgICAgICAgICAgICAgICB0QmlhbUpaUkorQUtGWkNJWTVFPTwvZHM6TW9kdWx1cz4KICAgICAgICAgICAgPGRzOkV4cG9uZW50PkFRQUI8L2RzOkV4cG9uZW50PgogICAgICAgIDwvZHM6UlNBS2V5VmFsdWU+CiAgICA8L2RzOktleVZhbHVlPiAKPC9kczpLZXlJbmZvPg=="
+																	"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n    <ds:KeyValue>\r\n        <ds:RSAKeyValue>\r\n            <ds:Modulus>6sNhgtNVksGD4ZK1rW2iiGO11O/BzEIZazovnMK37y3RVvvjmv1z44uA505gyyUTziCntHV9tONmJ11bH4koqqJQFZPXuKAyuu9eR3W/pZ4EGBMMIVH2aqSOsPMTI5K9l2YOW8fAoEZQtYVWsCrygOyctBiamJZRJ+AKFZCIY5E=</ds:Modulus>\r\n            <ds:Exponent>AQAB</ds:Exponent>\r\n        </ds:RSAKeyValue>\r\n    </ds:KeyValue>\r\n</ds:KeyInfo>"
 																},
 																"url": {
 																	"raw": "{{url}}/duePaymentsRpFeedsEndpointUrl/{{duePaymentsOfUser1FeedId}}",
@@ -7096,17 +7096,18 @@
 												"key": "Content-Type",
 												"name": "Content-Type",
 												"type": "text",
-												"value": "text/plain"
+												"value": "application/xml"
 											},
 											{
 												"key": "x-mock-response-name",
 												"type": "text",
-												"value": "Mock Access feed - fikks - encrypted - OK"
+												"value": "Mock Access feed - fikks - encrypted - OK",
+												"disabled": true
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{{duePaymentsRpFeedRequestBodyBase64Encoded}}"
+											"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n    <ds:KeyValue>\r\n        <ds:RSAKeyValue>\r\n            <ds:Modulus>6sNhgtNVksGD4ZK1rW2iiGO11O/BzEIZazovnMK37y3RVvvjmv1z44uA505gyyUTziCntHV9tONmJ11bH4koqqJQFZPXuKAyuu9eR3W/pZ4EGBMMIVH2aqSOsPMTI5K9l2YOW8fAoEZQtYVWsCrygOyctBiamJZRJ+AKFZCIY5E=</ds:Modulus>\r\n            <ds:Exponent>AQAB</ds:Exponent>\r\n        </ds:RSAKeyValue>\r\n    </ds:KeyValue>\r\n</ds:KeyInfo>\r\n"
 										},
 										"url": {
 											"raw": "{{duePaymentsRpFeedsEndpointUrl}}/{{duePaymentsOfUser1FeedId}}",
@@ -7127,18 +7128,18 @@
 													{
 														"key": "Content-Type",
 														"name": "Content-Type",
-														"value": "text/plain",
+														"value": "application/xml",
 														"type": "text"
 													},
 													{
 														"key": "Accept",
-														"value": "text/xml",
+														"value": "application/xml",
 														"type": "text"
 													}
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "PD94bWwgdmVyc2lvbj1cIjEuMFwiIGVuY29kaW5nPVwiVVRGLThcIj8+CjxkczpLZXlJbmZvIHhtbG5zOmRzPVwiaHR0cDovL3d3dy53My5vcmcvMjAwMC8wOS94bWxkc2lnI1wiPgogICAgPGRzOktleVZhbHVlPgogICAgICAgIDxkczpSU0FLZXlWYWx1ZT4KICAgICAgICAgICAgPGRzOk1vZHVsdXM+NnNOaGd0TlZrc0dENFpLMXJXMmlpR08xMU8vQnpFSVphem92bk1LMzd5M1JWdnZqbXYxejQ0dUE1MDVneXlVVHppQ250SFY5dE9ObSYjMTM7IAogICAgICAgICAgICAgICAgSjExYkg0a29xcUpRRlpQWHVLQXl1dTllUjNXL3BaNEVHQk1NSVZIMmFxU09zUE1USTVLOWwyWU9XOGZBb0VaUXRZVldzQ3J5Z095YyYjMTM7CiAgICAgICAgICAgICAgICB0QmlhbUpaUkorQUtGWkNJWTVFPTwvZHM6TW9kdWx1cz4KICAgICAgICAgICAgPGRzOkV4cG9uZW50PkFRQUI8L2RzOkV4cG9uZW50PgogICAgICAgIDwvZHM6UlNBS2V5VmFsdWU+CiAgICA8L2RzOktleVZhbHVlPiAKPC9kczpLZXlJbmZvPg=="
+													"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<ds:KeyInfo xmlns:ds=\"http://www.w3.org/2000/09/xmldsig#\">\r\n    <ds:KeyValue>\r\n        <ds:RSAKeyValue>\r\n            <ds:Modulus>6sNhgtNVksGD4ZK1rW2iiGO11O/BzEIZazovnMK37y3RVvvjmv1z44uA505gyyUTziCntHV9tONmJ11bH4koqqJQFZPXuKAyuu9eR3W/pZ4EGBMMIVH2aqSOsPMTI5K9l2YOW8fAoEZQtYVWsCrygOyctBiamJZRJ+AKFZCIY5E=</ds:Modulus>\r\n            <ds:Exponent>AQAB</ds:Exponent>\r\n        </ds:RSAKeyValue>\r\n    </ds:KeyValue>\r\n</ds:KeyInfo>"
 												},
 												"url": {
 													"raw": "{{duePaymentsRpFeedsEndpointUrl}}/{{duePaymentsOfUser1FeedId}}",
@@ -7172,10 +7173,9 @@
 										"method": "POST",
 										"header": [
 											{
-												"key": "x-mock-response-name",
+												"key": "Accept",
 												"type": "text",
-												"value": "Mock Access feed - fikks - not encrypted - OK",
-												"disabled": true
+												"value": "application/xml"
 											}
 										],
 										"url": {
@@ -7193,7 +7193,13 @@
 											"name": "Access feed - fikks - not encrypted - OK",
 											"originalRequest": {
 												"method": "POST",
-												"header": [],
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/xml",
+														"type": "text"
+													}
+												],
 												"url": {
 													"raw": "{{url}}/duePaymentsRpFeedsEndpointUrl/{{duePaymentsOfUser1FeedId}}",
 													"host": [
@@ -7217,7 +7223,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{{duePaymentsOfUser1}}"
+											"body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!-- speciale response... Deze is gewijzigd! En weer! -->\r\n<!--Voorbeeld van een openstaande factuur waarvan de vervaldatum nog niet is gepasseerd.-->\r\n<!--Betaalwijze automatische incasso.-->\r\n<PaymentDueList xmlns=\"urn:qiyfoundation.org:names:fikks:schema:xsd:PaymentDueList\"\r\n\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n\txsi:schemaLocation=\"urn:qiyfoundation.org:names:fikks:schema:xsd:PaymentDueList https://raw.githubusercontent.com/qiyfoundation/fiKks/master/schema/v1/xsd/PaymentDueList-1.0.xsd\"\r\n\txmlns:cac=\"urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2\"\r\n\txmlns:cbc=\"urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2\">\r\n\t<Invoice>\r\n\t\t<cbc:ID>1</cbc:ID>\r\n\t\t<cbc:IssueDate>2017-12-01</cbc:IssueDate>\r\n\t\t<cbc:Note>ZieZo zorgverzekering premie december 2017.</cbc:Note>\r\n\t\t<cbc:CurrencyCode>EUR</cbc:CurrencyCode>\r\n\t\t<cac:AccountingSupplierParty>\r\n\t\t\t<cac:Party>\r\n\t\t\t\t<cac:PartyIdentification>\r\n\t\t\t\t\t<cbc:ID schemeAgencyID=\"NL\" schemeAgencyName=\"KVK\">06088185</cbc:ID>\r\n\t\t\t\t</cac:PartyIdentification>\r\n\t\t\t\t<cac:PartyName>\r\n\t\t\t\t\t<cbc:Name>Zilveren Kruis Zorgverzekeringen N.V.</cbc:Name>\r\n\t\t\t\t</cac:PartyName>\r\n\t\t\t\t<cac:PostalAddress>\r\n\t\t\t\t\t<cbc:StreetName>Postbus 444</cbc:StreetName>\r\n\t\t\t\t\t<cbc:CityName>Leiden</cbc:CityName>\r\n\t\t\t\t\t<cbc:PostalZone>2300AK</cbc:PostalZone>\r\n\t\t\t\t\t<cac:Country>\r\n\t\t\t\t\t\t<cbc:IdentificationCode>NL</cbc:IdentificationCode>\r\n\t\t\t\t\t\t<cbc:Name>Nederland</cbc:Name>\r\n\t\t\t\t\t</cac:Country>\r\n\t\t\t\t</cac:PostalAddress>\r\n\t\t\t\t<cac:PartyLegalEntity>\r\n\t\t\t\t\t<cbc:CompanyID>06088185</cbc:CompanyID>\r\n\t\t\t\t</cac:PartyLegalEntity>\r\n\t\t\t\t<cac:Contact>\r\n\t\t\t\t\t<cbc:Telephone>+31 71 751 00 52 </cbc:Telephone>\r\n\t\t\t\t</cac:Contact>\r\n\t\t\t</cac:Party>\r\n\t\t</cac:AccountingSupplierParty>\r\n\t\t<cac:PaymentMeans>\r\n\t\t\t<cbc:ID>1</cbc:ID>\r\n\t\t\t<cbc:PaymentMeansCode listID=\"UN/ECE 4461\" listName=\"Payment Means\" listURI=\"http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/PaymentMeansCode-2.0.gc\">49</cbc:PaymentMeansCode>\r\n\t\t\t<cbc:PaymentDueDate>2017-12-15</cbc:PaymentDueDate>\r\n\t\t\t<cbc:InstructionNote>000123456789</cbc:InstructionNote>\r\n\t\t\t<cac:PayeeFinancialAccount>\r\n\t\t\t\t<cbc:ID schemeName=\"IBAN\">NL51RABO0XXXXX678</cbc:ID>\r\n\t\t\t\t<cac:FinancialInstitutionBranch>\r\n\t\t\t\t\t<cac:FinancialInstitution>\r\n\t\t\t\t\t\t<cbc:ID schemeName=\"BIC\">RABONL2U</cbc:ID>\r\n\t\t\t\t\t</cac:FinancialInstitution>\r\n\t\t\t\t</cac:FinancialInstitutionBranch>\r\n\t\t\t</cac:PayeeFinancialAccount>\r\n\t\t</cac:PaymentMeans>\r\n\t\t<cac:PaymentTerms>\r\n\t\t\t<cbc:ID>1</cbc:ID>\r\n\t\t\t<cbc:PaymentMeansID>1</cbc:PaymentMeansID>\r\n\t\t\t<cbc:Note>Het factuuredrag wordt automatisch van uw rekening afgeschreven.</cbc:Note>\r\n\t\t\t<cbc:PaymentDueDate>2017-12-15</cbc:PaymentDueDate>\r\n\t\t\t<cac:SettlementPeriod>\r\n\t\t\t\t<cbc:StartDate>2017-12-10</cbc:StartDate>\r\n\t\t\t\t<cbc:EndDate>2017-12-15</cbc:EndDate>\r\n\t\t\t</cac:SettlementPeriod>\r\n\t\t\t<cac:ValidityPeriod>\r\n\t\t\t\t<cbc:EndDate>2017-12-31</cbc:EndDate>\r\n\t\t\t</cac:ValidityPeriod>\r\n\t\t</cac:PaymentTerms>\r\n\t\t<cac:LegalMonetaryTotal>\r\n\t\t\t<cbc:LineExtensionAmount currencyID=\"EUR\">122.20</cbc:LineExtensionAmount>\r\n\t\t\t<cbc:TaxExclusiveAmount currencyID=\"EUR\">122.20</cbc:TaxExclusiveAmount>\r\n\t\t\t<cbc:TaxInclusiveAmount currencyID=\"EUR\">122.20</cbc:TaxInclusiveAmount>\r\n\t\t\t<cbc:PayableAmount currencyID=\"EUR\">122.20</cbc:PayableAmount>\r\n\t\t</cac:LegalMonetaryTotal>\r\n\t</Invoice>\r\n</PaymentDueList>\r\n"
 										}
 									]
 								}
