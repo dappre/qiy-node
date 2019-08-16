@@ -7342,7 +7342,7 @@
 									"_postman_previewlanguage": "json",
 									"header": [],
 									"cookie": [],
-									"body": "{\n    \"protocol\": \"https://service_type_url\",\n    \"feedId\": \"3J2UVSFIAH6X77HXR4MVHBVNG46GWT3M\"\n}"
+									"body": "{\n    \"protocol\": \"{{operationTypeUrl}}\",\n    \"feedId\": \"3J2UVSFIAH6X77HXR4MVHBVNG46GWT3M\"\n}"
 								}
 							]
 						},
