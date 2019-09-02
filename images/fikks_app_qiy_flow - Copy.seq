@@ -1,0 +1,74 @@
+title fiKks App Qiy Flow
+
+participant "Data Provider"       as d
+participant "Individual"          as i
+participant "fiKks app"           as a
+participant "Individual Qiy Node" as q
+participant "fiKks backend"       as b
+
+note over i, a:  1. New individual registers in fiKks
+    i ->  a: Install & launch
+    note over a
+        1.a Create and persist Qiy Node id, key pair and password
+        1.b 3 Create Qiy Node for Individual
+        1.c 2.5, 4 Get endpoint addresses using authenticated GET /api
+        1.d 5 Start listening to events
+    end note
+    note over a, b: 1.e Connect Qiy Nodes of Individual and fiKks
+        b ->  b: 6.1 create connect token
+        b ->  a: send connect token
+        a ->  q: 6.2 create connection with fiKks backend
+        q ->  b: Connect
+        b --> q: Response
+        q --> a: Response: connection url and mailbox url
+        a ->  a: Persist connection url and mailbox url
+        a ->  a: Wait for CONNECTED_TO_ROUTER event with matching connection url
+        q --> a: 6.3.2 CONNECTED_TO_ROUTER event
+        a ->  a: Wait for PID event with matching connection url
+        q --> a: 6.3.2 PID event
+        alt Qiy Nodes are not connected
+            note over a: Qiy Nodes are connected for the first time
+        else Qiy Nodes were already connected
+            note over a
+                Qiy Nodes were already connected
+                
+                1.f Use connection as provided in new-uri member of PID event.
+            end note
+        end
+note over i, a:  2. Individual selects buddy
+note over i, a:  3. Individual fills in income
+note over i, a:  4. Individual fills in costs
+note over i, a:  5. Individual starts filling in data providers
+note over i, a:  6. Individual selects data provider which is a Qiy partner (for actual due payments)
+    a ->  i: 'Is it ok to share info from Data Provider with fiKks?'
+    i ->  a: 'ok'
+    a ->  a: Persist consent
+note over a, d:  7. Individual is redirected to the data provider login (web)page
+    note over a
+        7.a App creates an offline connect token
+        7.b App redirects the individual while passing the connect token and the return_url in the redirect url
+    end note
+note over i, d:  8. Individual logs in
+note over i, d:  9. Individual sees payments information in data provider webpage
+alt 10. Individual selects option to take over data provider due payments (in fiKks)
+        d ->  a: Data Provider returns Individual back to app using the return_url with 'ok' status query parameter
+        note over a, q: 10.a Create connection with Data Provider, see 1.e
+        note over a, b: 10.b notify backend of connection with Data Provider
+        note over b, q: 10.c backend requests for Operation Reference
+            q --> a: 8.1.4 D3 Qiy Node proposes Data Provider using a Operation Reference Request Event
+            a ->  a: Check consent
+            a ->  q: 8.1.5 D4 fiKks app accepts the proposal
+            q ->  d: Request for Operation Reference
+            d --> q: Response: Operation Reference
+            q --> b: 8.1.8 D7 backend receives Operation Reference
+    note over i, a: 11. Individual comes back in the fiKks ‘standard’ app and sees due payments loaded into fiKks
+        b ->  a: Push new due payments
+    note over i, a: 12. Information is up-to-date each time the individual accesses the app
+        a ->  b: Get due payments
+        b --> a: Response: due payments
+else 10. Individual selects option NOT to take over data provider due payments (in fiKks)
+    d ->  a: Data Provider returns Individual back to app using the return_url with 'ko' status query parameter
+end
+
+
+

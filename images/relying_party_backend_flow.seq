@@ -1,0 +1,69 @@
+title Relying Party Back End Flow
+
+participant "Data Provider"          as d
+participant "Individual"             as i
+participant "Relying Party app"              as a
+participant "Relying Party backend"          as b
+participant "Relying Party backend Qiy Node" as q
+
+note over d, q
+    Setup for Back End
+
+    a. Register with Access Provider and obtain Qiy Node
+end note
+    note over b, q: b. 5 Start listening to events
+    b ->  q: GET /eventsEndpoint
+
+note over d, q
+    Operate
+end note
+
+note over i, a:  1. New Individual registers in Relying Party
+    note over a, b:  1.a App initiates connecting the Qiy Nodes of Individual and Relying Party
+        b ->  q: Create connect token with callback
+        b ->  b: Wait for callback
+        b ->  b: Extract Persistent Id and update user administration
+note over i, a:  2. Individual selects buddy
+note over i, a:  3. Individual fills in income
+note over i, a:  4. Individual fills in costs
+note over i, a:  5. Individual starts filling in Data Providers
+note over i, a:  6. Individual selects Data Provider which is a Qiy partner (for actual due payments)
+note over i, d:  7. Individual is redirected to the Data Provider login (web)page
+note over i, d:  8. Individual logs in
+note over i, d:  9. Individual sees payments information in Data Provider webpage
+note over i, d: 10. Individual selects option to take over Data Provider payments information (in Relying Party)
+    note over d, a: 10.a Data Provider connects with Individual via Qiy
+    note over a, b: 10.b App notifies backend of new connection with Data Provider
+    note over b, q: 10.c Backend gets operation reference
+        b ->  b: Look up connection url for user
+        b ->  q: Use connection url to get (and cache) the mailbox url
+        q --> b: Response: Connection details with mailbox url
+        b ->  q: 8.1.3 d2 Operation Reference Request
+        b ->  b: Wait for Operation Reference Received Event
+        q ->  d: Request for Operation Reference
+        d --> q: Operation Reference
+        q --> b: 8.1.8 d7 Backend receives Operation Reference Received Event
+    note over b, q: 10.d Backend gets due payments to obtain Data Provider id
+        b ->  q: 8.1.9 d8 Operation Execute Request
+        q ->  d: Request for data
+        d --> q: Response: data
+        q --> b: 8.1.11 d10 Response: due payments
+        b ->  b: Extract Data Provider id
+        b ->  b: Persist Operation Reference for Data Provider
+        b ->  b: Persist due payments for Data Provider
+        loop 10.e Backend keeps data up-to-date for all Individuals and Data Providers
+            b ->  b: Look up operation reference for Data Provider
+            b ->  q: Request for due payments since {unixTimeInMilliSeconds}
+            q --> b: Response: new due payments
+note over i, a: 11. Individual comes back in the Relying Party ‘standard’ app and sees due payments loaded into Relying Party
+            b ->  a: Push new due payments
+            a --> b: Response
+            b ->  b: Update due payments for Data Provider
+        end
+note over i, a:    12. Information is up-to-date each time the Individual accesses the app
+note over a, b:    12.a Get due payments from backend
+        a ->  b: Request for due payments
+        b ->  b: Look up persisted due payments
+        b --> a: Latest due payments
+
+
